@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace User_Interface {
+namespace User_Interface.DataSql {
     
     
     /// <summary>
