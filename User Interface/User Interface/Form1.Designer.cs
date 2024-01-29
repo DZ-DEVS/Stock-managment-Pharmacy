@@ -118,7 +118,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(356, 63);
             this.button1.TabIndex = 8;
-            this.button1.Text = "big booty ";
+            this.button1.Text = "big  booty ";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
