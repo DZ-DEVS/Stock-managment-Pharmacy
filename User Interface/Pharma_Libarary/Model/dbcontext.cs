@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace Pharma_Libarary.Model
 {
-    public partial class Models : DbContext
+    public partial class dbcontext : DbContext
     {
-        public Models()
-            : base("name=Models")
+        public dbcontext()
+            : base("name=dbcontext")
         {
         }
 

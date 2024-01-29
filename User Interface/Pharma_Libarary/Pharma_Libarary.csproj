@@ -172,10 +172,10 @@
     <Compile Include="Model\Classe_pharmacologique.cs" />
     <Compile Include="Model\Classe_thérapeutique.cs" />
     <Compile Include="Model\DCI.cs" />
+    <Compile Include="Model\dbcontext.cs" />
     <Compile Include="Model\Générique.cs" />
     <Compile Include="Model\Laboratoire.cs" />
     <Compile Include="Model\Medicament.cs" />
-    <Compile Include="Model\Models.cs" />
     <Compile Include="Model\Pay.cs" />
     <Compile Include="Model\Selle.cs" />
     <Compile Include="Model\sysdiagram.cs" />
