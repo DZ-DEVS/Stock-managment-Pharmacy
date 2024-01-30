@@ -8,7 +8,7 @@ namespace Pharma_Libarary.Model
     public partial class dbcontext : DbContext
     {
         public dbcontext()
-            : base("Data Source=DESKTOP-TPC2FMV;Initial Catalog=pharma;Integrated Security=True;Encrypt=False")
+            : base("dbcontext")
         {
         }
 
