@@ -218,10 +218,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frm_login.cs">
+    <Compile Include="forms\frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_login.Designer.cs">
+    <Compile Include="forms\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGINFrame.cs">
@@ -230,12 +230,6 @@
     <Compile Include="LOGINFrame.Designer.cs">
       <DependentUpon>LOGINFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainPage.Designer.cs">
-      <DependentUpon>MainPage.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataSql\Stock_Managment_PharmacyDataSet.Designer.cs">
@@ -243,7 +237,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frm_login.resx">
+    <Compile Include="winfromClassLibrary.cs" />
+    <EmbeddedResource Include="forms\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGINFrame.resx">
