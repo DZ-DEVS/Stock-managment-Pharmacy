@@ -30,7 +30,7 @@ namespace User_Interface
             if (authLogin(tb_userName.Text, tb_password.Text))
             {
                 enter_theapp();
-                this.Close();
+               
             }
             else
             {
@@ -77,7 +77,7 @@ namespace User_Interface
 
             MainPage mp = new MainPage();
 
-            mp.ShowDialog();
+            mp.Show();
 
             this.Close();
 
