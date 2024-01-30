@@ -8,7 +8,7 @@ namespace Pharma_Libarary.Model
     public partial class dbcontext : DbContext
     {
         public dbcontext()
-            : base("name=dbcontext")
+            : base("Data Source=DESKTOP-TPC2FMV;Initial Catalog=pharma;Integrated Security=True;Encrypt=False")
         {
         }
 
@@ -22,7 +22,7 @@ namespace Pharma_Libarary.Model
         public virtual DbSet<Selle> Selles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-
+        public virtual DbSet<UserSession> UserSessions { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Classe_pharmacologique>()
@@ -213,6 +213,11 @@ namespace Pharma_Libarary.Model
                 .HasMany(e => e.Selles)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
+            modelBuilder.Entity<User>()
+    .HasMany(e => e.Sessions)
+    .WithRequired(e => e.User)
+    .HasForeignKey(e => e.UserId)
+    .WillCascadeOnDelete(false);
         }
     }
 }
