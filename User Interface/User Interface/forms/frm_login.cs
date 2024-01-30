@@ -29,7 +29,7 @@ namespace User_Interface
         {
             if (authLogin(tb_userName.Text, tb_password.Text))
             {
-                enter_theapp();
+                //enter_theapp();
                
             }
             else
@@ -72,19 +72,19 @@ namespace User_Interface
         /// <summary>
         /// creates a frame
         /// </summary>
-        private void enter_theapp()
-        {
+        //private void enter_theapp()
+        //{
 
-            MainPage mp = new MainPage();
+        //    MainPage mp = new MainPage();
 
-            mp.Show();
+        //    mp.Show();
 
-            this.Close();
-
-
+        //    this.Close();
 
 
-        }
+
+
+        //}
         /// <summary>
         /// rests the textbots for a new try at loging in
         /// </summary>
