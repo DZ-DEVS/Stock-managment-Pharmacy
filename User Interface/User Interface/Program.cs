@@ -16,7 +16,7 @@ namespace User_Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LOGINFrame());
+            Application.Run(new frm_login());
         }
     }
 }

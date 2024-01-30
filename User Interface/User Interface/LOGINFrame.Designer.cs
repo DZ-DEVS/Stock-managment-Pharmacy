@@ -28,88 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.PictureBox pictureBox1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LOGINFrame));
-            this.UsernameTB = new MaterialSkin.Controls.MaterialTextBox();
-            this.PassTB = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.connectionBtn = new MaterialSkin.Controls.MaterialButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tb_userName = new MaterialSkin.Controls.MaterialTextBox();
+            this.tb_password = new MaterialSkin.Controls.MaterialTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // UsernameTB
-            // 
-            this.UsernameTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.UsernameTB.AnimateReadOnly = false;
-            this.UsernameTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UsernameTB.Depth = 0;
-            this.UsernameTB.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.UsernameTB.LeadingIcon = null;
-            this.UsernameTB.Location = new System.Drawing.Point(403, 271);
-            this.UsernameTB.MaxLength = 50;
-            this.UsernameTB.MouseState = MaterialSkin.MouseState.OUT;
-            this.UsernameTB.Multiline = false;
-            this.UsernameTB.Name = "UsernameTB";
-            this.UsernameTB.Size = new System.Drawing.Size(290, 50);
-            this.UsernameTB.TabIndex = 0;
-            this.UsernameTB.Text = "";
-            this.UsernameTB.TrailingIcon = null;
-            // 
-            // PassTB
-            // 
-            this.PassTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.PassTB.AnimateReadOnly = false;
-            this.PassTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PassTB.Depth = 0;
-            this.PassTB.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.PassTB.LeadingIcon = null;
-            this.PassTB.Location = new System.Drawing.Point(403, 380);
-            this.PassTB.MaxLength = 50;
-            this.PassTB.MouseState = MaterialSkin.MouseState.OUT;
-            this.PassTB.Multiline = false;
-            this.PassTB.Name = "PassTB";
-            this.PassTB.Size = new System.Drawing.Size(290, 50);
-            this.PassTB.TabIndex = 1;
-            this.PassTB.Text = "";
-            this.PassTB.TrailingIcon = null;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(208, 283);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(127, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "nom d\'ustilisateur";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(247, 397);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(88, 19);
-            this.materialLabel2.TabIndex = 3;
-            this.materialLabel2.Text = "mot de pass";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(461, 90);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 175);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // connectionBtn
             // 
@@ -119,8 +47,8 @@
             this.connectionBtn.Depth = 0;
             this.connectionBtn.HighEmphasis = true;
             this.connectionBtn.Icon = null;
-            this.connectionBtn.Location = new System.Drawing.Point(478, 494);
-            this.connectionBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.connectionBtn.Location = new System.Drawing.Point(358, 373);
+            this.connectionBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.connectionBtn.MouseState = MaterialSkin.MouseState.HOVER;
             this.connectionBtn.Name = "connectionBtn";
             this.connectionBtn.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -132,35 +60,108 @@
             this.connectionBtn.UseVisualStyleBackColor = true;
             this.connectionBtn.Click += new System.EventHandler(this.connectionBtn_Click_1);
             // 
+            // tb_userName
+            // 
+            this.tb_userName.AnimateReadOnly = false;
+            this.tb_userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_userName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_userName.Depth = 0;
+            this.tb_userName.Font = new System.Drawing.Font("Roboto", 12F);
+            this.tb_userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_userName.Hint = "Type here";
+            this.tb_userName.LeadingIcon = null;
+            this.tb_userName.Location = new System.Drawing.Point(302, 220);
+            this.tb_userName.MaxLength = 50;
+            this.tb_userName.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_userName.Multiline = false;
+            this.tb_userName.Name = "tb_userName";
+            this.tb_userName.Size = new System.Drawing.Size(218, 50);
+            this.tb_userName.TabIndex = 6;
+            this.tb_userName.Text = "";
+            this.tb_userName.TrailingIcon = null;
+            // 
+            // tb_password
+            // 
+            this.tb_password.AnimateReadOnly = false;
+            this.tb_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_password.Depth = 0;
+            this.tb_password.Font = new System.Drawing.Font("Roboto", 12F);
+            this.tb_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_password.Hint = "Password";
+            this.tb_password.LeadingIcon = null;
+            this.tb_password.Location = new System.Drawing.Point(302, 282);
+            this.tb_password.MaxLength = 50;
+            this.tb_password.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_password.Multiline = false;
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Password = true;
+            this.tb_password.Size = new System.Drawing.Size(218, 50);
+            this.tb_password.TabIndex = 7;
+            this.tb_password.Text = "";
+            this.tb_password.TrailingIcon = null;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(76, 232);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 25);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nome Utilisateur :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(120, 298);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(166, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Mot de Passe :";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            pictureBox1.ErrorImage = null;
+            pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            pictureBox1.Location = new System.Drawing.Point(349, 85);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(103, 108);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // LOGINFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(pictureBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_password);
+            this.Controls.Add(this.tb_userName);
             this.Controls.Add(this.connectionBtn);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.PassTB);
-            this.Controls.Add(this.UsernameTB);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
+            this.MinimizeBox = false;
             this.Name = "LOGINFrame";
+            this.Padding = new System.Windows.Forms.Padding(3, 24, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "SE CONNECTER";
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialTextBox UsernameTB;
-        private MaterialSkin.Controls.MaterialTextBox PassTB;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton connectionBtn;
+        private MaterialSkin.Controls.MaterialTextBox tb_userName;
+        private MaterialSkin.Controls.MaterialTextBox tb_password;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

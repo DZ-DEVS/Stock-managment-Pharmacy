@@ -37,7 +37,7 @@ namespace User_Interface
         private void connectionBtn_Click_1(object sender, EventArgs e)
         {
 
-            if (authLogin(UsernameTB.Text, PassTB.Text))
+            if (authLogin(tb_userName.Text, tb_password.Text))
             {
                 enter_theapp();
                 this.Close();
@@ -45,7 +45,7 @@ namespace User_Interface
             else
             {
                 MessageBox.Show("invalid creditianls");
-                rest_textboxes(UsernameTB, PassTB);
+                rest_textboxes(tb_userName, tb_password);
             }
 
 

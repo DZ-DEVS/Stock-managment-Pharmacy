@@ -51,5 +51,10 @@ namespace Pharma_Libarary.Model
         public virtual Pay Pay { get; set; }
 
         public virtual Medicament Medicament { get; set; }
+
+        public Laboratoire() { }
+        
+            
+        
     }
 }
