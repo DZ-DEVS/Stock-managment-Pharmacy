@@ -42,17 +42,15 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(395, 15);
+            pictureBox1.Location = new System.Drawing.Point(498, 105);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(129, 135);
+            pictureBox1.Size = new System.Drawing.Size(150, 150);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
@@ -61,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(160, 294);
+            this.label2.Location = new System.Drawing.Point(256, 426);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(266, 32);
@@ -73,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Code", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 215);
+            this.label1.Location = new System.Drawing.Point(256, 347);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(266, 32);
@@ -91,7 +89,7 @@
             this.tb_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_password.Hint = "Password";
             this.tb_password.LeadingIcon = null;
-            this.tb_password.Location = new System.Drawing.Point(442, 278);
+            this.tb_password.Location = new System.Drawing.Point(538, 410);
             this.tb_password.Margin = new System.Windows.Forms.Padding(4);
             this.tb_password.MaxLength = 50;
             this.tb_password.MouseState = MaterialSkin.MouseState.OUT;
@@ -113,7 +111,7 @@
             this.tb_userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_userName.Hint = "Tapez ici";
             this.tb_userName.LeadingIcon = null;
-            this.tb_userName.Location = new System.Drawing.Point(442, 200);
+            this.tb_userName.Location = new System.Drawing.Point(538, 332);
             this.tb_userName.Margin = new System.Windows.Forms.Padding(4);
             this.tb_userName.MaxLength = 50;
             this.tb_userName.MouseState = MaterialSkin.MouseState.OUT;
@@ -132,7 +130,7 @@
             this.BTN_Annuler.Depth = 0;
             this.BTN_Annuler.HighEmphasis = false;
             this.BTN_Annuler.Icon = null;
-            this.BTN_Annuler.Location = new System.Drawing.Point(522, 409);
+            this.BTN_Annuler.Location = new System.Drawing.Point(591, 528);
             this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.BTN_Annuler.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTN_Annuler.Name = "BTN_Annuler";
@@ -152,7 +150,7 @@
             this.BTN_Connecter.Depth = 0;
             this.BTN_Connecter.HighEmphasis = true;
             this.BTN_Connecter.Icon = null;
-            this.BTN_Connecter.Location = new System.Drawing.Point(278, 409);
+            this.BTN_Connecter.Location = new System.Drawing.Point(347, 528);
             this.BTN_Connecter.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.BTN_Connecter.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTN_Connecter.Name = "BTN_Connecter";
@@ -172,7 +170,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(960, 484);
+            this.ClientSize = new System.Drawing.Size(1132, 623);
             this.Controls.Add(this.BTN_Connecter);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(pictureBox1);
