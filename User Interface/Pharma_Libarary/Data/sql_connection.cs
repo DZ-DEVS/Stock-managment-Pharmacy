@@ -151,6 +151,44 @@ namespace Pharma_Libarary.Data
 
 
         }
+        public static void add_Lab(Laboratoire lab)
+        {
+            try
+            {
+                using (var context = new dbcontext())
+                {
+                    /// check is exist 
+                    bool recordExists = context.Laboratoires.Any(e => e.Lab_code == lab.Lab_code);
+                    if (recordExists)
+                    {
+                        MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        Laboratoire instance = new Laboratoire
+                        {
+                            Lab_code = lab.Lab_code,
+                            Lab_nom = lab.Lab_nom,
+                            Adress = lab.Adress,
+                            tel = lab.tel,
+                            pay_code = lab.pay_code
+                        };
+                        context.Laboratoires.Add(instance);
+                        context.SaveChanges();
+
+                        MessageBox.Show("la class DCI a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
+
+            }
+
+
+        }
 
         #endregion
     }

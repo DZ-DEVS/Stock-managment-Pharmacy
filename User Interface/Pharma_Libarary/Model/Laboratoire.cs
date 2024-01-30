@@ -9,6 +9,16 @@ namespace Pharma_Libarary.Model
     [Table("Laboratoire")]
     public partial class Laboratoire
     {
+        public Laboratoire(string lab_code, string lab_nom, string adress, string tel, string web_adress, string pay_code)
+        {
+            Lab_code = lab_code;
+            Lab_nom = lab_nom;
+            Adress = adress;
+            this.tel = tel;
+            this.web_adress = web_adress;
+            this.pay_code = pay_code;
+        }
+
         [Key]
         [StringLength(10)]
         public string Lab_code { get; set; }
@@ -22,6 +32,14 @@ namespace Pharma_Libarary.Model
 
         [StringLength(10)]
         public string tel { get; set; }
+
+        public Laboratoire(string lab_code, string lab_nom, string adress, string pay_code)
+        {
+            Lab_code = lab_code;
+            Lab_nom = lab_nom;
+            Adress = adress;
+            this.pay_code = pay_code;
+        }
 
         [StringLength(50)]
         public string web_adress { get; set; }

@@ -25,6 +25,8 @@ namespace User_Interface
             sql_connection.add_newClass_phatmacologique("hello");
             sql_connection.add_newClass_therapeutique("hello");
             sql_connection.add_newClass_DCI("hello");
+            Laboratoire lab = new Laboratoire("vvd", "youcef", "alger 16", "dzd");
+            sql_connection.add_Lab(lab);
 
         }
     }
