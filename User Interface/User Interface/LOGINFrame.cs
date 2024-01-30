@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using Pharma_Libarary.Model;
 namespace User_Interface
 {
-    public partial class Form1 : Form
+    public partial class LOGINFrame : Form
     {
-        public Form1()
+        public LOGINFrame()
         {
             InitializeComponent();
         }

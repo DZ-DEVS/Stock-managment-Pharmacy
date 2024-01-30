@@ -1,6 +1,6 @@
 ﻿namespace User_Interface
 {
-    partial class Form1
+    partial class LOGINFrame
     {
         /// <summary>
         /// Required designer variable.
