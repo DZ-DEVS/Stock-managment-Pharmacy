@@ -39,6 +39,7 @@ namespace Pharma_Libarary.Model
         [Required]
         [StringLength(15)]
         public string prenom { get; set; }
+        public bool isAdmin { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medicament> Medicaments { get; set; }
