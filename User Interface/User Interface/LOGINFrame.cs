@@ -18,11 +18,14 @@ namespace User_Interface
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             sql_connection.add_newClass_phatmacologique("hello");
             sql_connection.add_newClass_therapeutique("hello");
             sql_connection.add_newClass_DCI("hello");
+
         }
     }
 }
