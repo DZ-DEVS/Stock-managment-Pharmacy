@@ -169,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Data\sql_connection.cs" />
     <Compile Include="Model\Classe_pharmacologique.cs" />
     <Compile Include="Model\Classe_thérapeutique.cs" />
     <Compile Include="Model\DCI.cs" />
