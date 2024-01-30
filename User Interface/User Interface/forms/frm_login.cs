@@ -13,14 +13,13 @@ using System.Windows.Forms;
 
 namespace User_Interface
 {
-    public partial class frm_login : Form
+    public partial class frm_login : MaterialForm
     {
         public frm_login()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue700, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+
+            MaterialFormTheme.ApplyTheme(this);
         }
 
 
@@ -75,11 +74,11 @@ namespace User_Interface
         private void enter_theapp()
         {
 
-            MainPage mp = new MainPage();
+         //   MainPage mp = new MainPage();
 
-            mp.Show();
+        //    mp.Show();
 
-            this.Close();
+       //     this.Close();
 
 
 

@@ -224,12 +224,7 @@
     <Compile Include="forms\frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
-    <Compile Include="LOGINFrame.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LOGINFrame.Designer.cs">
-      <DependentUpon>LOGINFrame.cs</DependentUpon>
-    </Compile>
+    <Compile Include="MaterialFormTheme.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataSql\Stock_Managment_PharmacyDataSet.Designer.cs">
@@ -240,9 +235,6 @@
     <Compile Include="winfromClassLibrary.cs" />
     <EmbeddedResource Include="forms\frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LOGINFrame.resx">
-      <DependentUpon>LOGINFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
