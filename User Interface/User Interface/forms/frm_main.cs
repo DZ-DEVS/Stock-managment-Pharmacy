@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using Pharma_Libarary.Model;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,12 @@ namespace User_Interface.forms
         public frm_main()
         {
             InitializeComponent();
-            MaterialFormTheme.ApplyTheme(this);
+            //MaterialFormTheme.ApplyTheme(this);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue500, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
         }
 
         private void frm_main_Load(object sender, EventArgs e)
@@ -29,6 +35,7 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
+            tp_home.Focus();
 
 
 
@@ -61,8 +68,10 @@ namespace User_Interface.forms
 
         }
 
-
-    
+        private void tab_control_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.Text = tab_control.SelectedTab.Text;
+        }
     }
 
        

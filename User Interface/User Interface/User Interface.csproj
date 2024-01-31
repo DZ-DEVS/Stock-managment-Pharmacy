@@ -284,6 +284,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\diag_addNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\diag_addNewProduct.Designer.cs">
+      <DependentUpon>diag_addNewProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_icon_firstApear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="winfromClassLibrary.cs" />
+    <EmbeddedResource Include="forms\diag_addNewProduct.resx">
+      <DependentUpon>diag_addNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_icon_firstApear.resx">
       <DependentUpon>frm_icon_firstApear.cs</DependentUpon>
     </EmbeddedResource>

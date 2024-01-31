@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using User_Interface.forms;
 
 namespace User_Interface
 {
@@ -27,16 +28,19 @@ namespace User_Interface
 
         private void BTN_Connecter_Click(object sender, EventArgs e)
         {
-            if (authLogin(tb_userName.Text, tb_password.Text))
-            {
-                //enter_theapp();
-               
-            }
-            else
-            {
-                MessageBox.Show("invalid creditianls");
-                reset_textboxes(tb_userName, tb_password);
-            }
+            frm_main frm = new frm_main();
+            this.Hide();
+            frm.Show();
+            //if (authLogin(tb_userName.Text, tb_password.Text))
+            //{
+            //    //enter_theapp();
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("invalid creditianls");
+            //    reset_textboxes(tb_userName, tb_password);
+            //}
         }
 
 
