@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.tab_control = new MaterialSkin.Controls.MaterialTabControl();
             this.tp_home = new System.Windows.Forms.TabPage();
@@ -135,7 +135,7 @@
             this.tab_control.Controls.Add(this.tp_admin);
             this.tab_control.Controls.Add(this.tp_alert);
             this.tab_control.Depth = 0;
-            this.tab_control.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tab_control.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tab_control.ImageList = this.imageList1;
             this.tab_control.Location = new System.Drawing.Point(2, 66);
             this.tab_control.Margin = new System.Windows.Forms.Padding(2);
@@ -145,7 +145,7 @@
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(994, 612);
+            this.tab_control.Size = new System.Drawing.Size(1034, 698);
             this.tab_control.TabIndex = 0;
             this.tab_control.SelectedIndexChanged += new System.EventHandler(this.tab_control_SelectedIndexChanged);
             // 
@@ -157,7 +157,7 @@
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(986, 565);
+            this.tp_home.Size = new System.Drawing.Size(1026, 651);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -171,7 +171,7 @@
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(986, 565);
+            this.tp_list_stock.Size = new System.Drawing.Size(1006, 608);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -188,15 +188,15 @@
             this.dgv_stocklist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgv_stocklist.BackgroundColor = System.Drawing.Color.White;
             this.dgv_stocklist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_stocklist.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_stocklist.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_stocklist.Location = new System.Drawing.Point(0, 127);
             this.dgv_stocklist.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_stocklist.Name = "dgv_stocklist";
@@ -261,7 +261,7 @@
             this.tp_manamnt.Margin = new System.Windows.Forms.Padding(2);
             this.tp_manamnt.Name = "tp_manamnt";
             this.tp_manamnt.Padding = new System.Windows.Forms.Padding(2);
-            this.tp_manamnt.Size = new System.Drawing.Size(986, 565);
+            this.tp_manamnt.Size = new System.Drawing.Size(1006, 608);
             this.tp_manamnt.TabIndex = 1;
             this.tp_manamnt.Text = "Management de stock";
             // 
@@ -807,7 +807,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(2, 2);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(982, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1002, 24);
             this.menuStrip2.TabIndex = 21;
             // 
             // ajouterStockToolStripMenuItem
@@ -843,7 +843,7 @@
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(966, 522);
+            this.tp_transaction.Size = new System.Drawing.Size(1006, 608);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -877,7 +877,7 @@
             this.menuStrip4.Location = new System.Drawing.Point(0, 0);
             this.menuStrip4.Name = "menuStrip4";
             this.menuStrip4.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip4.Size = new System.Drawing.Size(966, 24);
+            this.menuStrip4.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip4.TabIndex = 1;
             this.menuStrip4.Text = "menuStrip4";
             // 
@@ -927,7 +927,7 @@
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(966, 522);
+            this.tp_admin.Size = new System.Drawing.Size(1006, 608);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -1151,7 +1151,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(966, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip1.TabIndex = 24;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1183,7 +1183,7 @@
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(966, 522);
+            this.tp_alert.Size = new System.Drawing.Size(1006, 608);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -1200,7 +1200,7 @@
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(966, 24);
+            this.menuStrip3.Size = new System.Drawing.Size(1006, 24);
             this.menuStrip3.TabIndex = 1;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -1241,7 +1241,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1000, 682);
+            this.ClientSize = new System.Drawing.Size(1040, 768);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;

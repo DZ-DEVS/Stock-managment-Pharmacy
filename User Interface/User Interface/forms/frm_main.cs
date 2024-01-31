@@ -26,7 +26,7 @@ namespace User_Interface.forms
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue500, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.LightBlue300, Accent.Blue700, TextShade.WHITE);
         }
 
         private void frm_main_Load(object sender, EventArgs e)
