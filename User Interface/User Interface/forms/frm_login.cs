@@ -13,13 +13,14 @@ using System.Windows.Forms;
 
 namespace User_Interface
 {
-    public partial class frm_login : MaterialForm
+    public partial class frm_login : Form
     {
         public frm_login()
         {
             InitializeComponent();
-
-            MaterialFormTheme.ApplyTheme(this);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue700, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
         }
 
 
@@ -28,7 +29,7 @@ namespace User_Interface
         {
             if (authLogin(tb_userName.Text, tb_password.Text))
             {
-                enter_theapp();
+                //enter_theapp();
                
             }
             else
@@ -71,19 +72,19 @@ namespace User_Interface
         /// <summary>
         /// creates a frame
         /// </summary>
-        private void enter_theapp()
-        {
+        //private void enter_theapp()
+        //{
 
-         //   MainPage mp = new MainPage();
+        //    MainPage mp = new MainPage();
 
         //    mp.Show();
 
-       //     this.Close();
+        //    this.Close();
 
 
 
 
-        }
+        //}
         /// <summary>
         /// rests the textbots for a new try at loging in
         /// </summary>

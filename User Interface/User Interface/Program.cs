@@ -17,7 +17,11 @@ namespace User_Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new frm_main());
+=======
+            Application.Run(new frm_icon_firstApear());
+>>>>>>> 4c42553b8b58c535e4429cd495b65226f7119174
         }
     }
 }
