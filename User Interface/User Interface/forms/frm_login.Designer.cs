@@ -47,7 +47,7 @@
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            pictureBox1.Location = new System.Drawing.Point(498, 105);
+            pictureBox1.Location = new System.Drawing.Point(507, 105);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(150, 150);
@@ -170,7 +170,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1132, 623);
+            this.ClientSize = new System.Drawing.Size(1150, 670);
             this.Controls.Add(this.BTN_Connecter);
             this.Controls.Add(this.BTN_Annuler);
             this.Controls.Add(pictureBox1);
