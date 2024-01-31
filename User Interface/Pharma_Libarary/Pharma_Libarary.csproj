@@ -185,7 +185,6 @@
     <Compile Include="Model\Selle.cs" />
     <Compile Include="Model\sysdiagram.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,8 @@ namespace Pharma_Libarary.Model
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+
+      
         public User()
         {
             Medicaments = new HashSet<Medicament>();
@@ -47,7 +49,5 @@ namespace Pharma_Libarary.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selle> Selles { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserSession> Sessions { get; set; }
     }
 }
