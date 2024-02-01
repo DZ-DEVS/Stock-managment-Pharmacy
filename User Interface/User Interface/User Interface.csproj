@@ -368,6 +368,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User Controls\diag_addGene_userControl.resx">
+      <DependentUpon>diag_addGene_userControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\diag_addLABOuserControl.resx">
       <DependentUpon>diag_addLABOuserControl.cs</DependentUpon>
     </EmbeddedResource>

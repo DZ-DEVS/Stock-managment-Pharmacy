@@ -92,10 +92,10 @@
             this.panel1.Controls.Add(this.materialTextBox1);
             this.panel1.Controls.Add(this.materialTextBox3);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(-34, 36);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(825, 577);
+            this.panel1.Size = new System.Drawing.Size(791, 599);
             this.panel1.TabIndex = 101;
             // 
             // label12
