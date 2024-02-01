@@ -322,12 +322,6 @@
     <Compile Include="User Controls\diag_AddNewEMP_UserControl.Designer.cs">
       <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\diag_addNewProduct_userControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\diag_addNewProduct_userControl.Designer.cs">
-      <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="User Controls\diag_addThera_userControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -376,9 +370,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\diag_AddNewEMP_UserControl.resx">
       <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\diag_addNewProduct_userControl.resx">
-      <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\diag_addThera_userControl.resx">
       <DependentUpon>diag_addThera_userControl.cs</DependentUpon>

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.tab_control = new MaterialSkin.Controls.MaterialTabControl();
             this.tp_home = new System.Windows.Forms.TabPage();
@@ -55,7 +55,6 @@
             this.outdatedMedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.diag_addNewProduct_userControl1 = new User_Interface.User_Controls.diag_addNewProduct_userControl();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_stocklist)).BeginInit();
@@ -88,7 +87,7 @@
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1663, 977);
+            this.tab_control.Size = new System.Drawing.Size(1685, 977);
             this.tab_control.TabIndex = 0;
             this.tab_control.SelectedIndexChanged += new System.EventHandler(this.tab_control_SelectedIndexChanged);
             // 
@@ -100,7 +99,7 @@
             this.tp_home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.tp_home.Size = new System.Drawing.Size(1655, 930);
+            this.tp_home.Size = new System.Drawing.Size(1677, 930);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -131,15 +130,15 @@
             this.dgv_stocklist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgv_stocklist.BackgroundColor = System.Drawing.Color.White;
             this.dgv_stocklist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_stocklist.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_stocklist.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_stocklist.Location = new System.Drawing.Point(0, 268);
             this.dgv_stocklist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_stocklist.Name = "dgv_stocklist";
@@ -221,13 +220,12 @@
             // tp_admin
             // 
             this.tp_admin.BackColor = System.Drawing.Color.White;
-            this.tp_admin.Controls.Add(this.diag_addNewProduct_userControl1);
             this.tp_admin.Controls.Add(this.menuStrip_pageAdmin);
             this.tp_admin.ImageKey = "admin.png";
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1655, 930);
+            this.tp_admin.Size = new System.Drawing.Size(1677, 930);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -243,7 +241,7 @@
             this.menuStrip_pageAdmin.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_pageAdmin.Name = "menuStrip_pageAdmin";
             this.menuStrip_pageAdmin.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1655, 40);
+            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1677, 40);
             this.menuStrip_pageAdmin.TabIndex = 0;
             this.menuStrip_pageAdmin.Text = "menuStrip1";
             // 
@@ -253,19 +251,19 @@
             this.ajouterToolStripMenuItem,
             this.listesDeEmployeeToolStripMenuItem});
             this.aDMINToolStripMenuItem.Name = "aDMINToolStripMenuItem";
-            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.aDMINToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.aDMINToolStripMenuItem.Text = "Admin Tab";
             // 
             // ajouterToolStripMenuItem
             // 
             this.ajouterToolStripMenuItem.Name = "ajouterToolStripMenuItem";
-            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ajouterToolStripMenuItem.Size = new System.Drawing.Size(239, 30);
             this.ajouterToolStripMenuItem.Text = "Ajouter employee";
             // 
             // listesDeEmployeeToolStripMenuItem
             // 
             this.listesDeEmployeeToolStripMenuItem.Name = "listesDeEmployeeToolStripMenuItem";
-            this.listesDeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.listesDeEmployeeToolStripMenuItem.Size = new System.Drawing.Size(239, 30);
             this.listesDeEmployeeToolStripMenuItem.Text = "Listes de employee";
             // 
             // eMPToolStripMenuItem
@@ -276,33 +274,33 @@
             this.ajouterGeniriqueToolStripMenuItem,
             this.aJouterThérapeutiqueToolStripMenuItem});
             this.eMPToolStripMenuItem.Name = "eMPToolStripMenuItem";
-            this.eMPToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
+            this.eMPToolStripMenuItem.Size = new System.Drawing.Size(118, 36);
             this.eMPToolStripMenuItem.Text = "EmployeTab";
             this.eMPToolStripMenuItem.Click += new System.EventHandler(this.eMPToolStripMenuItem_Click);
             // 
             // ajouterMedicinToolStripMenuItem
             // 
             this.ajouterMedicinToolStripMenuItem.Name = "ajouterMedicinToolStripMenuItem";
-            this.ajouterMedicinToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.ajouterMedicinToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.ajouterMedicinToolStripMenuItem.Text = "Ajouter Medicin";
             this.ajouterMedicinToolStripMenuItem.Click += new System.EventHandler(this.ajouterMedicinToolStripMenuItem_Click);
             // 
             // ajouterLabToolStripMenuItem
             // 
             this.ajouterLabToolStripMenuItem.Name = "ajouterLabToolStripMenuItem";
-            this.ajouterLabToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.ajouterLabToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.ajouterLabToolStripMenuItem.Text = "Ajouter Lab";
             // 
             // ajouterGeniriqueToolStripMenuItem
             // 
             this.ajouterGeniriqueToolStripMenuItem.Name = "ajouterGeniriqueToolStripMenuItem";
-            this.ajouterGeniriqueToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.ajouterGeniriqueToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.ajouterGeniriqueToolStripMenuItem.Text = "Ajouter Genirique";
             // 
             // aJouterThérapeutiqueToolStripMenuItem
             // 
             this.aJouterThérapeutiqueToolStripMenuItem.Name = "aJouterThérapeutiqueToolStripMenuItem";
-            this.aJouterThérapeutiqueToolStripMenuItem.Size = new System.Drawing.Size(240, 26);
+            this.aJouterThérapeutiqueToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.aJouterThérapeutiqueToolStripMenuItem.Text = "AJouter thérapeutique";
             // 
             // tp_alert
@@ -365,24 +363,12 @@
             this.imageList1.Images.SetKeyName(4, "management.png");
             this.imageList1.Images.SetKeyName(5, "transaction.png");
             // 
-            // diag_addNewProduct_userControl1
-            // 
-            this.diag_addNewProduct_userControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.diag_addNewProduct_userControl1.BackColor = System.Drawing.Color.White;
-            this.diag_addNewProduct_userControl1.Location = new System.Drawing.Point(0, 36);
-            this.diag_addNewProduct_userControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.diag_addNewProduct_userControl1.Name = "diag_addNewProduct_userControl1";
-            this.diag_addNewProduct_userControl1.Size = new System.Drawing.Size(1655, 898);
-            this.diag_addNewProduct_userControl1.TabIndex = 1;
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1687, 1102);
+            this.ClientSize = new System.Drawing.Size(1709, 1102);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -438,6 +424,6 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterLabToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterGeniriqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aJouterThérapeutiqueToolStripMenuItem;
-        private User_Controls.diag_addNewProduct_userControl diag_addNewProduct_userControl1;
+       
     }
 }
