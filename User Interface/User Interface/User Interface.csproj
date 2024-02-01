@@ -328,23 +328,23 @@
     <Compile Include="User Controls\diag_addNewProduct_userControl.Designer.cs">
       <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UserControlTODO.cs">
+    <Compile Include="User Controls\diag_addThera_userControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UserControlTODO.Designer.cs">
-      <DependentUpon>UserControlTODO.cs</DependentUpon>
+    <Compile Include="User Controls\diag_addThera_userControl.Designer.cs">
+      <DependentUpon>diag_addThera_userControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UserControlTODO2.cs">
+    <Compile Include="User Controls\diag_addLABOuserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UserControlTODO2.Designer.cs">
-      <DependentUpon>UserControlTODO2.cs</DependentUpon>
+    <Compile Include="User Controls\diag_addLABOuserControl.Designer.cs">
+      <DependentUpon>diag_addLABOuserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\UserControlTODO3.cs">
+    <Compile Include="User Controls\diag_addGene_userControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="User Controls\UserControlTODO3.Designer.cs">
-      <DependentUpon>UserControlTODO3.cs</DependentUpon>
+      <DependentUpon>diag_addGene_userControl.cs</DependentUpon>
     </Compile>
     <Compile Include="winfromClassLibrary.cs" />
     <EmbeddedResource Include="forms\diag_addNewProduct.resx">
@@ -368,11 +368,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User Controls\diag_addLABOuserControl.resx">
+      <DependentUpon>diag_addLABOuserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\diag_AddNewEMP_UserControl.resx">
+      <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Controls\diag_addNewProduct_userControl.resx">
       <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\UserControlTODO.resx">
-      <DependentUpon>UserControlTODO.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\diag_addThera_userControl.resx">
+      <DependentUpon>diag_addThera_userControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

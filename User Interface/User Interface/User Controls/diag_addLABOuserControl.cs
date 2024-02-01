@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace User_Interface.User_Controls
 {
-    public partial class UserControlTODO2 : UserControl
+    public partial class diag_addLABOuserControl : UserControl
     {
-        public UserControlTODO2()
+        public diag_addLABOuserControl()
         {
             InitializeComponent();
         }

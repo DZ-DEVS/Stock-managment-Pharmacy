@@ -1,6 +1,6 @@
 ﻿namespace User_Interface.User_Controls
 {
-    partial class UserControlTODO2
+    partial class diag_addThera_userControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // UserControlTODO
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "UserControlTODO";
+            this.Size = new System.Drawing.Size(1066, 719);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
