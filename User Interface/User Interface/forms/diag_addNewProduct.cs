@@ -1,4 +1,5 @@
 ﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,15 +12,18 @@ using System.Windows.Forms;
 
 namespace User_Interface.forms
 {
-    public partial class diag_addNewProduct : Form
+    public partial class diag_addNewProduct : MaterialForm
     {
         public diag_addNewProduct()
         {
             InitializeComponent();
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //var materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+
+            MaterialFormTheme.ApplyTheme(this);
+            
         }
 
         private void label13_Click(object sender, EventArgs e)
@@ -88,6 +92,16 @@ namespace User_Interface.forms
         }
 
         private void rb_comme_Oui_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Annuler_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialButton9_Click(object sender, EventArgs e)
         {
 
         }

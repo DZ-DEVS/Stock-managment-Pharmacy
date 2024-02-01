@@ -20,13 +20,14 @@ namespace User_Interface.forms
     {
         public frm_main()
         {
+
+
             InitializeComponent();
-            //MaterialFormTheme.ApplyTheme(this);
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            MaterialFormTheme.ApplyTheme(this);
+            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin);
             
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue800, Primary.LightBlue300, Accent.Blue700, TextShade.WHITE);
+            
+          
         }
 
         private void frm_main_Load(object sender, EventArgs e)
@@ -35,9 +36,9 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
+            HideUserControls(diag_addNewProduct_userControl1);
             tp_home.Focus();
-
-
+         
 
       
         }
@@ -72,7 +73,41 @@ namespace User_Interface.forms
         {
             this.Text = tab_control.SelectedTab.Text;
         }
+
+      
+
+        private void eMPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ajouterMedicinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            diag_addNewProduct_userControl1.Show();
+        }
+
+
+
+
+        private void HideUserControls(params UserControl[] userControls)
+        {
+            foreach(UserControl us in userControls)
+            {
+
+
+                us.Hide();
+
+
+            }
+            
+
+
+        }
+
+  
+
+        }
     }
 
        
-}
+

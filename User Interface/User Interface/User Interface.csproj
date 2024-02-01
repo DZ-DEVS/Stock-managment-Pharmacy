@@ -316,6 +316,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\diag_AddNewEMP_UserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\diag_AddNewEMP_UserControl.Designer.cs">
+      <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\diag_addNewProduct_userControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\diag_addNewProduct_userControl.Designer.cs">
+      <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO.Designer.cs">
+      <DependentUpon>UserControlTODO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO2.Designer.cs">
+      <DependentUpon>UserControlTODO2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UserControlTODO3.Designer.cs">
+      <DependentUpon>UserControlTODO3.cs</DependentUpon>
+    </Compile>
     <Compile Include="winfromClassLibrary.cs" />
     <EmbeddedResource Include="forms\diag_addNewProduct.resx">
       <DependentUpon>diag_addNewProduct.cs</DependentUpon>
@@ -338,6 +368,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="User Controls\diag_addNewProduct_userControl.resx">
+      <DependentUpon>diag_addNewProduct_userControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UserControlTODO.resx">
+      <DependentUpon>UserControlTODO.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -367,9 +403,7 @@
       <Name>Pharma_Libarary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
