@@ -24,7 +24,7 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
-            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin);
+            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
             
             
           
@@ -36,7 +36,7 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
-            HideUserControls(diag_addNewProduct_userControl1);
+   
             tp_home.Focus();
          
 
@@ -83,7 +83,7 @@ namespace User_Interface.forms
 
         private void ajouterMedicinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            diag_addNewProduct_userControl1.Show();
+     
         }
 
 

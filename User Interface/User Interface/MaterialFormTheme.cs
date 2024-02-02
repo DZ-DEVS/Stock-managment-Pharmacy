@@ -2,21 +2,35 @@
     using System.Drawing;
     using System.Windows.Forms;
 
-    public static class MaterialFormTheme    {        public static void ApplyTheme(MaterialForm form)        {            var materialSkinManager = MaterialSkinManager.Instance;            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
-            materialSkinManager.AddFormToManage(form);            materialSkinManager.ThemeChanged += (sender) => form.Invalidate();            form.Disposed += (sender, args) => materialSkinManager.RemoveFormToManage(form);        }        public static void ApplyMenuStripTheme(MenuStrip menuStrip)
+    public static class MaterialFormTheme    {        public static void ApplyTheme(MaterialForm form)        {            var materialSkinManager = MaterialSkinManager.Instance;            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue500, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+            materialSkinManager.AddFormToManage(form);            materialSkinManager.ThemeChanged += (sender) => form.Invalidate();            form.Disposed += (sender, args) => materialSkinManager.RemoveFormToManage(form);        }        public static void ApplyMenuStripTheme(params MenuStrip[] menuStrips)
         {
 
-
-            // Apply the custom renderer to the MenuStrip
-            menuStrip.RenderMode = ToolStripRenderMode.System;
-            menuStrip.BackColor = Color.SteelBlue;
-            menuStrip.ForeColor = Color.White;
-            menuStrip.Font = new Font("poppins", 8, FontStyle.Bold);
-            menuStrip.Dock = DockStyle.Top;
-            menuStrip.Location = new Point(0, 0);
+            foreach (MenuStrip menuStrip in menuStrips) {
 
 
-            // Set the TopMost property to true if needed
+
+
+
+                menuStrip.RenderMode = ToolStripRenderMode.System;
+                menuStrip.BackColor = Color.DodgerBlue;
+                menuStrip.ForeColor = Color.White;
+                menuStrip.Font = new Font("poppins", 8, FontStyle.Bold);
+                menuStrip.Dock = DockStyle.Top;
+                menuStrip.Location = new Point(0, 0);
+                
+                
+
+
+
+
+
+
+
+
+            }
+
+    
 
         }    }
 
