@@ -180,6 +180,8 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="ReactiveUI, Version=19.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReactiveUI.19.5.41\lib\net472\ReactiveUI.dll</HintPath>
       <Private>True</Private>
@@ -269,6 +271,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -316,30 +319,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="User Controls\diag_AddNewEMP_UserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\diag_AddNewEMP_UserControl.Designer.cs">
-      <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\diag_addThera_userControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\diag_addThera_userControl.Designer.cs">
-      <DependentUpon>diag_addThera_userControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\diag_addLABOuserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\diag_addLABOuserControl.Designer.cs">
-      <DependentUpon>diag_addLABOuserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="User Controls\diag_addGene_userControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="User Controls\UserControlTODO3.Designer.cs">
-      <DependentUpon>diag_addGene_userControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="winfromClassLibrary.cs" />
     <EmbeddedResource Include="forms\diag_addNewProduct.resx">
       <DependentUpon>diag_addNewProduct.cs</DependentUpon>
@@ -362,18 +341,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="User Controls\diag_addGene_userControl.resx">
-      <DependentUpon>diag_addGene_userControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\diag_addLABOuserControl.resx">
-      <DependentUpon>diag_addLABOuserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\diag_AddNewEMP_UserControl.resx">
-      <DependentUpon>diag_AddNewEMP_UserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User Controls\diag_addThera_userControl.resx">
-      <DependentUpon>diag_addThera_userControl.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -403,7 +370,6 @@
       <Name>Pharma_Libarary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

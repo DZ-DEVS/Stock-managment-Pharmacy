@@ -19,20 +19,27 @@
                 menuStrip.Dock = DockStyle.Top;
                 menuStrip.Location = new Point(0, 0);
                 
-                
-
-
-
-
-
 
 
 
             }
 
-    
+        }        public static void ApplyHeaderSkin(params Label[] labels)
+        {
 
-        }    }
+            foreach(Label label in labels)
+            {
+
+                label.Size = new System.Drawing.Size(1529, 58);
+                label.BackColor = System.Drawing.Color.CornflowerBlue;
+                label.ForeColor = Color.White;
+                label.Font = new System.Drawing.Font("Poppins", 20F);
+
+
+            }
+
+
+        }    }
 
 
 }

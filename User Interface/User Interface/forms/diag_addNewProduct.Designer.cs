@@ -827,7 +827,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1028, 561);
+            this.ClientSize = new System.Drawing.Size(1506, 826);
             this.Controls.Add(this.materialButton9);
             this.Controls.Add(this.materialButton5);
             this.Controls.Add(this.BTN_Annuler);
