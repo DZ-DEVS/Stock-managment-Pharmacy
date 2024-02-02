@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Pharma_Libarary.Model;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ListView = System.Windows.Forms.ListView;
 
 namespace User_Interface.forms
 {
@@ -33,12 +36,12 @@ namespace User_Interface.forms
         private void frm_main_Load(object sender, EventArgs e)
         {
 
-
-            filldatatable<Medicament>(dgv_stocklist);
-            filldatatable<Selle>(dgb_soldMed);
+            
+            //filldatatable<Medicament>();
+            //filldatatable<Selle>(dgb_soldMed);
+            fillListView<Pay>(lv_listStock);
 
             tab_control.SelectedTab = tp_alert;
-
 
 
 
@@ -56,19 +59,45 @@ namespace User_Interface.forms
         /// 
 
 
-        private void filldatatable<T>(DataGridView dgv) where T : class
+        private void fillListView<T>(ListView listView) where T : class
         {
+            if (listView == null)
+            {
+                throw new ArgumentNullException(nameof(listView), "ListView cannot be null.");
+            }
 
             using (dbcontext context = new dbcontext())
             {
                 var data = context.Set<T>().ToList();
-                dgv.DataSource = data;
+
+                foreach (var item in data)
+                {
+                    var listViewItem = new ListViewItem();
+
+                    // Get the value of the "pay_nom" property
+                    var payNomProperty = typeof(T).GetProperty("Pays_code");
+
+                    if (payNomProperty != null)
+                    {
+                        var payNomValue = payNomProperty.GetValue(item);
+
+                        // Set the item text directly for the first column
+                        listViewItem.Text = payNomValue?.ToString();
+
+                        // Add the ListViewItem to the ListView
+                        listView.Items.Add(listViewItem);
+                    }
+                }
             }
-
-
-
-
         }
+
+
+
+
+
+
+
+
 
         private void tab_control_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -136,8 +165,14 @@ namespace User_Interface.forms
             
 
         }
+        
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
        
 
+                                                  

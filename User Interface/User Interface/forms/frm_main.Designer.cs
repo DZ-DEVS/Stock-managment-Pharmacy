@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_main));
             this.tab_control = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -37,7 +36,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
-            this.dgv_stocklist = new System.Windows.Forms.DataGridView();
+            this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.BTN_rechercher = new MaterialSkin.Controls.MaterialButton();
             this.tp_transaction = new System.Windows.Forms.TabPage();
@@ -60,14 +66,12 @@
             this.tp_expired_med = new System.Windows.Forms.TabPage();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.tp_other = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_stocklist)).BeginInit();
             this.tp_transaction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgb_soldMed)).BeginInit();
             this.tp_admin.SuspendLayout();
@@ -105,7 +109,7 @@
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1267, 784);
+            this.tab_control.Size = new System.Drawing.Size(1327, 913);
             this.tab_control.TabIndex = 0;
             this.tab_control.SelectedIndexChanged += new System.EventHandler(this.tab_control_SelectedIndexChanged);
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
@@ -114,7 +118,7 @@
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1259, 737);
+            this.tabPage1.Size = new System.Drawing.Size(1319, 866);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -123,7 +127,7 @@
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1136, 694);
+            this.tabPage2.Size = new System.Drawing.Size(1299, 823);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -132,7 +136,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1136, 694);
+            this.tabPage3.Size = new System.Drawing.Size(1299, 823);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -145,53 +149,96 @@
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1136, 694);
+            this.tp_home.Size = new System.Drawing.Size(1299, 823);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tp_list_stock.Controls.Add(this.dgv_stocklist);
+            this.tp_list_stock.Controls.Add(this.lv_listStock);
             this.tp_list_stock.Controls.Add(this.materialTextBox1);
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
             this.tp_list_stock.ImageKey = "list.png";
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1136, 694);
+            this.tp_list_stock.Size = new System.Drawing.Size(1319, 866);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
-            // dgv_stocklist
+            // lv_listStock
             // 
-            this.dgv_stocklist.AllowUserToAddRows = false;
-            this.dgv_stocklist.AllowUserToDeleteRows = false;
-            this.dgv_stocklist.AllowUserToOrderColumns = true;
-            this.dgv_stocklist.AllowUserToResizeColumns = false;
-            this.dgv_stocklist.AllowUserToResizeRows = false;
-            this.dgv_stocklist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_stocklist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgv_stocklist.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_stocklist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_stocklist.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_stocklist.Location = new System.Drawing.Point(0, 218);
-            this.dgv_stocklist.Margin = new System.Windows.Forms.Padding(2);
-            this.dgv_stocklist.Name = "dgv_stocklist";
-            this.dgv_stocklist.RowHeadersWidth = 51;
-            this.dgv_stocklist.RowTemplate.Height = 24;
-            this.dgv_stocklist.Size = new System.Drawing.Size(1242, 400);
-            this.dgv_stocklist.TabIndex = 4;
+            this.lv_listStock.AllowColumnReorder = true;
+            this.lv_listStock.AutoSizeTable = false;
+            this.lv_listStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lv_listStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_listStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lv_listStock.Depth = 0;
+            this.lv_listStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lv_listStock.FullRowSelect = true;
+            this.lv_listStock.HideSelection = false;
+            this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.lv_listStock.Location = new System.Drawing.Point(12, 95);
+            this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
+            this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
+            this.lv_listStock.Name = "lv_listStock";
+            this.lv_listStock.OwnerDraw = true;
+            this.lv_listStock.Size = new System.Drawing.Size(1172, 491);
+            this.lv_listStock.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lv_listStock.StateImageList = this.imageList1;
+            this.lv_listStock.TabIndex = 4;
+            this.lv_listStock.UseCompatibleStateImageBehavior = false;
+            this.lv_listStock.View = System.Windows.Forms.View.Details;
+            this.lv_listStock.SelectedIndexChanged += new System.EventHandler(this.materialListView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Dessert (100g serving)";
+            this.columnHeader1.Width = 200;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Calories";
+            this.columnHeader2.Width = 99;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Fat (g)";
+            this.columnHeader3.Width = 94;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Protein (g)";
+            this.columnHeader4.Width = 154;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Width = 154;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Width = 154;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.White;
+            this.imageList1.Images.SetKeyName(0, "home.png");
+            this.imageList1.Images.SetKeyName(1, "admin.png");
+            this.imageList1.Images.SetKeyName(2, "danger.png");
+            this.imageList1.Images.SetKeyName(3, "list.png");
+            this.imageList1.Images.SetKeyName(4, "management.png");
+            this.imageList1.Images.SetKeyName(5, "transaction.png");
+            this.imageList1.Images.SetKeyName(6, "product.png");
+            this.imageList1.Images.SetKeyName(7, "exit.png");
             // 
             // materialTextBox1
             // 
@@ -243,7 +290,7 @@
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1136, 694);
+            this.tp_transaction.Size = new System.Drawing.Size(1319, 866);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -260,7 +307,7 @@
             this.dgb_soldMed.Name = "dgb_soldMed";
             this.dgb_soldMed.RowHeadersWidth = 51;
             this.dgb_soldMed.RowTemplate.Height = 24;
-            this.dgb_soldMed.Size = new System.Drawing.Size(1282, 636);
+            this.dgb_soldMed.Size = new System.Drawing.Size(1302, 679);
             this.dgb_soldMed.TabIndex = 0;
             // 
             // tp_admin
@@ -271,7 +318,7 @@
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1136, 694);
+            this.tp_admin.Size = new System.Drawing.Size(1299, 823);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -288,7 +335,7 @@
             this.menuStrip_pageAdmin.Name = "menuStrip_pageAdmin";
             this.menuStrip_pageAdmin.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip_pageAdmin.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1136, 28);
+            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1299, 28);
             this.menuStrip_pageAdmin.TabIndex = 0;
             this.menuStrip_pageAdmin.Text = "menuStrip1";
             // 
@@ -358,7 +405,7 @@
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1136, 694);
+            this.tp_alert.Size = new System.Drawing.Size(1299, 823);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -457,19 +504,6 @@
             this.tp_other.TabIndex = 2;
             this.tp_other.Text = "Autre";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.White;
-            this.imageList1.Images.SetKeyName(0, "home.png");
-            this.imageList1.Images.SetKeyName(1, "admin.png");
-            this.imageList1.Images.SetKeyName(2, "danger.png");
-            this.imageList1.Images.SetKeyName(3, "list.png");
-            this.imageList1.Images.SetKeyName(4, "management.png");
-            this.imageList1.Images.SetKeyName(5, "transaction.png");
-            this.imageList1.Images.SetKeyName(6, "product.png");
-            this.imageList1.Images.SetKeyName(7, "exit.png");
-            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BackColor = System.Drawing.Color.White;
@@ -490,7 +524,7 @@
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 43);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1136, 694);
+            this.tabPage5.Size = new System.Drawing.Size(1299, 823);
             this.tabPage5.TabIndex = 10;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -501,7 +535,7 @@
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1136, 694);
+            this.tp_logout.Size = new System.Drawing.Size(1299, 823);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -509,7 +543,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1136, 694);
+            this.tabPage6.Size = new System.Drawing.Size(1299, 823);
             this.tabPage6.TabIndex = 13;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -519,7 +553,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1269, 615);
+            this.ClientSize = new System.Drawing.Size(1329, 744);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -535,7 +569,6 @@
             this.tab_control.ResumeLayout(false);
             this.tp_list_stock.ResumeLayout(false);
             this.tp_list_stock.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_stocklist)).EndInit();
             this.tp_transaction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgb_soldMed)).EndInit();
             this.tp_admin.ResumeLayout(false);
@@ -561,7 +594,6 @@
         private System.Windows.Forms.TabPage tp_list_stock;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
         private MaterialSkin.Controls.MaterialButton BTN_rechercher;
-        private System.Windows.Forms.DataGridView dgv_stocklist;
         private System.Windows.Forms.DataGridView dgb_soldMed;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.MenuStrip menuStrip_pageAdmin;
@@ -587,5 +619,12 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tp_logout;
         private System.Windows.Forms.TabPage tabPage6;
+        private MaterialSkin.Controls.MaterialListView lv_listStock;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }
