@@ -24,11 +24,18 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
+<<<<<<< HEAD
             MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin, menuStrip_pageAlerts);
             MaterialFormTheme.ApplyHeaderSkin(labelheader_EMP,labelheader_gene,labelheader_produit1,label_headerlabo);
 
 
 
+=======
+            //MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
+            
+            
+          
+>>>>>>> 744d095ff054ddbaea682d803e0803bfcdd02b9f
         }
 
         private void frm_main_Load(object sender, EventArgs e)
@@ -37,9 +44,16 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
+<<<<<<< HEAD
             HideUserControls(panel_addemp,panel_addgen,panel_addpro,panel_addLabo);
             tp_home.Focus();
 
+=======
+
+            tab_control.SelectedTab = tp_alert;
+
+
+>>>>>>> 744d095ff054ddbaea682d803e0803bfcdd02b9f
 
 
         }
@@ -108,6 +122,7 @@ namespace User_Interface.forms
        {
             var clickedSecondaryTab = sender as System.Windows.Forms.ToolStripMenuItem;
 
+<<<<<<< HEAD
             Dictionary<System.Windows.Forms.ToolStripMenuItem, Panel> clickingMap = new Dictionary<ToolStripMenuItem, Panel>
     {
         {ajouterGeniriqueToolStripMenuItem, panel_addgen},
@@ -150,4 +165,41 @@ namespace User_Interface.forms
     }
 }
   
+=======
+        private void tab_control_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+
+
+            switch (e.TabPage.Name)
+            {
+                case "tabPage1":
+                    // Perform actions for tabPage1 if needed
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage2":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage3":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage5":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage6":
+                    e.Cancel = true;
+                    break;
+
+            }       
+            
+
+        }
+    }
+    }
+
+       
+>>>>>>> 744d095ff054ddbaea682d803e0803bfcdd02b9f
 
