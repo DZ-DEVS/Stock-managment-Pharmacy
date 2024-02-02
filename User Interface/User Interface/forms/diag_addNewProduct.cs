@@ -12,17 +12,17 @@ using System.Windows.Forms;
 
 namespace User_Interface.forms
 {
-    public partial class diag_addNewProduct : MaterialForm
+    public partial class diag_addNewProduct : Form
     {
         public diag_addNewProduct()
         {
             InitializeComponent();
-            //var materialSkinManager = MaterialSkinManager.Instance;
-            //materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
-            //materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
 
-            MaterialFormTheme.ApplyTheme(this);
+            //MaterialFormTheme.ApplyTheme(this);
             
         }
 

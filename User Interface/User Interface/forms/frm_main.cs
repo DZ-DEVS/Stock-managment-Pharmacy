@@ -24,7 +24,7 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
-            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
+            //MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
             
             
           
@@ -36,11 +36,12 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
-   
-            tp_home.Focus();
-         
 
-      
+            tab_control.SelectedTab = tp_alert;
+
+
+
+
         }
 
 
@@ -104,9 +105,38 @@ namespace User_Interface.forms
 
         }
 
-  
+        private void tab_control_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+
+
+            switch (e.TabPage.Name)
+            {
+                case "tabPage1":
+                    // Perform actions for tabPage1 if needed
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage2":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage3":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage5":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage6":
+                    e.Cancel = true;
+                    break;
+
+            }       
+            
 
         }
+    }
     }
 
        
