@@ -75,7 +75,7 @@ namespace User_Interface.forms
                     var listViewItem = new ListViewItem();
 
                     // Get the value of the "pay_nom" property
-                    var payNomProperty = typeof(T).GetProperty("Pays_code");
+                    var payNomProperty = typeof(T).GetProperty("pay_nom");
 
                     if (payNomProperty != null)
                     {
