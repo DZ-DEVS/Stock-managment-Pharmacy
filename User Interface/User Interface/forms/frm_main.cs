@@ -24,10 +24,11 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
-            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
-            
-            
-          
+            MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin, menuStrip_pageAlerts);
+            MaterialFormTheme.ApplyHeaderSkin(labelheader_EMP,labelheader_gene,labelheader_produit1,label_headerlabo);
+
+
+
         }
 
         private void frm_main_Load(object sender, EventArgs e)
@@ -36,11 +37,11 @@ namespace User_Interface.forms
 
             filldatatable<Medicament>(dgv_stocklist);
             filldatatable<Selle>(dgb_soldMed);
-   
+            HideUserControls(panel_addemp,panel_addgen,panel_addpro,panel_addLabo);
             tp_home.Focus();
-         
 
-      
+
+
         }
 
 
@@ -74,40 +75,79 @@ namespace User_Interface.forms
             this.Text = tab_control.SelectedTab.Text;
         }
 
-      
+
 
         private void eMPToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void ajouterMedicinToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+        private void HideUserControls(params Panel[] panels)
         {
-     
-        }
-
-
-
-
-        private void HideUserControls(params UserControl[] userControls)
-        {
-            foreach(UserControl us in userControls)
+            foreach (Panel p in panels)
             {
 
 
-                us.Hide();
+                p.Hide();
 
 
             }
-            
+
 
 
         }
+        /// <summary>
+        /// make it in a clss later
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ajouterLabToolStripMenuItem_Click(object sender, EventArgs e)
+       {
+            var clickedSecondaryTab = sender as System.Windows.Forms.ToolStripMenuItem;
 
-  
+            Dictionary<System.Windows.Forms.ToolStripMenuItem, Panel> clickingMap = new Dictionary<ToolStripMenuItem, Panel>
+    {
+        {ajouterGeniriqueToolStripMenuItem, panel_addgen},
+        {ajouterMedicinToolStripMenuItem, panel_addpro},
+        {ajouterToolStripMenuItem,panel_addemp},
+        {ajouterLabToolStripMenuItem, panel_addLabo}
+    };
+
+            if (clickingMap.ContainsKey(clickedSecondaryTab))
+            {
+                Panel targetedPanel = clickingMap[clickedSecondaryTab];
+
+                if (tp_admin.Controls.Count > 1)
+                {
+                    foreach (Control otherPanels in tp_admin.Controls)
+                    {
+                        if (otherPanels is Panel)
+                        {
+                            if (otherPanels != targetedPanel)
+                            {
+                                otherPanels.Visible = false;
+                            }
+                        }
+                    }
+
+                    targetedPanel.Visible = true;
+                }
+            }
+        }
+
+        private void groupBox9_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_addpro_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
-
-       
+}
+  
 
