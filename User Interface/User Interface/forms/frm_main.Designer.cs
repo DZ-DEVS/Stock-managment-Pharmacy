@@ -195,7 +195,7 @@
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1624, 1019);
+            this.tab_control.Size = new System.Drawing.Size(1646, 1019);
             this.tab_control.TabIndex = 0;
             this.tab_control.SelectedIndexChanged += new System.EventHandler(this.tab_control_SelectedIndexChanged);
             // 
@@ -338,7 +338,7 @@
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1616, 972);
+            this.tp_admin.Size = new System.Drawing.Size(1638, 972);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -355,7 +355,7 @@
             this.menuStrip_pageAdmin.Name = "menuStrip_pageAdmin";
             this.menuStrip_pageAdmin.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.menuStrip_pageAdmin.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1616, 35);
+            this.menuStrip_pageAdmin.Size = new System.Drawing.Size(1638, 35);
             this.menuStrip_pageAdmin.TabIndex = 0;
             this.menuStrip_pageAdmin.Text = "menuStrip1";
             // 
@@ -426,7 +426,7 @@
             this.panel_addpro.Controls.Add(this.panel_textfields_of_addNewProduct);
             this.panel_addpro.Location = new System.Drawing.Point(-4, 38);
             this.panel_addpro.Name = "panel_addpro";
-            this.panel_addpro.Size = new System.Drawing.Size(1620, 934);
+            this.panel_addpro.Size = new System.Drawing.Size(1642, 934);
             this.panel_addpro.TabIndex = 5;
             this.panel_addpro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_addpro_Paint);
             // 
@@ -439,7 +439,7 @@
             this.labelheader_produit1.ForeColor = System.Drawing.Color.White;
             this.labelheader_produit1.Location = new System.Drawing.Point(3, 0);
             this.labelheader_produit1.Name = "labelheader_produit1";
-            this.labelheader_produit1.Size = new System.Drawing.Size(1617, 58);
+            this.labelheader_produit1.Size = new System.Drawing.Size(1639, 58);
             this.labelheader_produit1.TabIndex = 135;
             this.labelheader_produit1.Text = "Ajouter Produit";
             // 
@@ -543,7 +543,7 @@
             this.panel_textfields_of_addNewProduct.Location = new System.Drawing.Point(3, 62);
             this.panel_textfields_of_addNewProduct.Margin = new System.Windows.Forms.Padding(4);
             this.panel_textfields_of_addNewProduct.Name = "panel_textfields_of_addNewProduct";
-            this.panel_textfields_of_addNewProduct.Size = new System.Drawing.Size(1617, 745);
+            this.panel_textfields_of_addNewProduct.Size = new System.Drawing.Size(1639, 745);
             this.panel_textfields_of_addNewProduct.TabIndex = 134;
             // 
             // label10
@@ -1190,7 +1190,7 @@
             this.panel_addgen.Controls.Add(this.labelheader_gene);
             this.panel_addgen.Location = new System.Drawing.Point(-4, 30);
             this.panel_addgen.Name = "panel_addgen";
-            this.panel_addgen.Size = new System.Drawing.Size(1620, 939);
+            this.panel_addgen.Size = new System.Drawing.Size(1642, 939);
             this.panel_addgen.TabIndex = 6;
             // 
             // panel_textfield_Of_addnewgene
@@ -1207,7 +1207,7 @@
             this.panel_textfield_Of_addnewgene.Location = new System.Drawing.Point(6, 62);
             this.panel_textfield_Of_addnewgene.Margin = new System.Windows.Forms.Padding(4);
             this.panel_textfield_Of_addnewgene.Name = "panel_textfield_Of_addnewgene";
-            this.panel_textfield_Of_addnewgene.Size = new System.Drawing.Size(1610, 644);
+            this.panel_textfield_Of_addnewgene.Size = new System.Drawing.Size(1632, 644);
             this.panel_textfield_Of_addnewgene.TabIndex = 136;
             // 
             // materialMultiLineTextBox21
@@ -1362,7 +1362,7 @@
             this.labelheader_gene.ForeColor = System.Drawing.Color.White;
             this.labelheader_gene.Location = new System.Drawing.Point(7, 4);
             this.labelheader_gene.Name = "labelheader_gene";
-            this.labelheader_gene.Size = new System.Drawing.Size(1613, 54);
+            this.labelheader_gene.Size = new System.Drawing.Size(1635, 54);
             this.labelheader_gene.TabIndex = 133;
             this.labelheader_gene.Text = "Ajouter JSP";
             // 
@@ -1396,7 +1396,7 @@
             this.panel_addLabo.Controls.Add(this.panel4);
             this.panel_addLabo.Location = new System.Drawing.Point(-4, 34);
             this.panel_addLabo.Name = "panel_addLabo";
-            this.panel_addLabo.Size = new System.Drawing.Size(1624, 941);
+            this.panel_addLabo.Size = new System.Drawing.Size(1646, 941);
             this.panel_addLabo.TabIndex = 141;
             // 
             // label_headerlabo
@@ -1408,7 +1408,7 @@
             this.label_headerlabo.ForeColor = System.Drawing.Color.White;
             this.label_headerlabo.Location = new System.Drawing.Point(3, 2);
             this.label_headerlabo.Name = "label_headerlabo";
-            this.label_headerlabo.Size = new System.Drawing.Size(1617, 58);
+            this.label_headerlabo.Size = new System.Drawing.Size(1639, 58);
             this.label_headerlabo.TabIndex = 138;
             this.label_headerlabo.Text = "Ajouter Labo";
             // 
@@ -1687,7 +1687,7 @@
             this.panel_addemp.Controls.Add(this.materialButton5);
             this.panel_addemp.Location = new System.Drawing.Point(-1, 33);
             this.panel_addemp.Name = "panel_addemp";
-            this.panel_addemp.Size = new System.Drawing.Size(1617, 939);
+            this.panel_addemp.Size = new System.Drawing.Size(1639, 939);
             this.panel_addemp.TabIndex = 109;
             // 
             // labelheader_EMP
@@ -1699,7 +1699,7 @@
             this.labelheader_EMP.ForeColor = System.Drawing.Color.White;
             this.labelheader_EMP.Location = new System.Drawing.Point(0, 1);
             this.labelheader_EMP.Name = "labelheader_EMP";
-            this.labelheader_EMP.Size = new System.Drawing.Size(1617, 58);
+            this.labelheader_EMP.Size = new System.Drawing.Size(1639, 58);
             this.labelheader_EMP.TabIndex = 137;
             this.labelheader_EMP.Text = "Ajouter Produit";
             // 
@@ -1723,7 +1723,7 @@
             this.panel2.Location = new System.Drawing.Point(1, 85);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(959, 554);
+            this.panel2.Size = new System.Drawing.Size(981, 554);
             this.panel2.TabIndex = 136;
             // 
             // materialTextBox2
@@ -2063,7 +2063,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1617, 1102);
+            this.ClientSize = new System.Drawing.Size(1639, 1102);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
