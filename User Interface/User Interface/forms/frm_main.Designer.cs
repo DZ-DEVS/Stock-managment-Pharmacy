@@ -221,7 +221,7 @@
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1594, 972);
+            this.tp_list_stock.Size = new System.Drawing.Size(1616, 972);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -305,7 +305,7 @@
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1594, 972);
+            this.tp_transaction.Size = new System.Drawing.Size(1616, 972);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -1998,7 +1998,7 @@
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1594, 972);
+            this.tp_alert.Size = new System.Drawing.Size(1616, 972);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2016,7 +2016,7 @@
             this.menuStrip_pageAlerts.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_pageAlerts.Name = "menuStrip_pageAlerts";
             this.menuStrip_pageAlerts.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip_pageAlerts.Size = new System.Drawing.Size(1594, 26);
+            this.menuStrip_pageAlerts.Size = new System.Drawing.Size(1616, 26);
             this.menuStrip_pageAlerts.TabIndex = 1;
             this.menuStrip_pageAlerts.Text = "menuStrip_pageAlerts";
             // 
