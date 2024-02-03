@@ -11,7 +11,7 @@ namespace Pharma_Libarary.Data
     public  class sql_connection
     {
         #region insert in data base tables
-        public static void add_newUser(User newUser)
+        public static bool add_newUser(User newUser)
         {
             try
             {
@@ -21,6 +21,7 @@ namespace Pharma_Libarary.Data
                     if (recordExists)
                     {
                         MessageBox.Show("Ce utilisatuer existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return false;
                     }
                     else {
                         // Step 2: Create a new User instance and set its properties
@@ -41,12 +42,12 @@ namespace Pharma_Libarary.Data
                     }
                     
                 }
-
+                return true;
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-
+                return false;
             }
             
         }
@@ -151,7 +152,7 @@ namespace Pharma_Libarary.Data
 
 
         }
-        public static void add_Lab(Laboratoire lab)
+        public static bool add_Lab(Laboratoire lab)
         {
             try
             {
@@ -180,15 +181,87 @@ namespace Pharma_Libarary.Data
                     }
 
                 }
+                return true;
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-
+                return false;
             }
 
 
         }
+
+      public static bool add_Med(Medicament med)
+        {
+           
+                try
+                {
+                    using (var context = new dbcontext())
+                    {
+                        bool recordExist = context.Medicaments.Any(e => e.Ref_med == med.Ref_med);
+
+                        if (recordExist)
+                        {
+                            MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            Medicament instance = new Medicament 
+                            {
+
+                                Ref_med = med.Ref_med,
+                                nom_comrsl = med.nom_comrsl,
+                                Form = med.Form,
+                                Dossage = med.Dossage,
+                                Conditionnement = med.Conditionnement,
+                                Type = med.Type,
+                                Liste = med.Liste,
+                                Commercialisation = med.Commercialisation,
+                                Remboursable = med.Remboursable,
+                                Tarif = med.Tarif,
+                                PPA = med.PPA,
+                                edited_by = med.edited_by,
+                                nom_Cpharma = med.nom_Cpharma,
+                                code_Cthera = med.code_Cthera,
+                                nom_DCI = med.nom_DCI,
+                                Classe_pharmacologique = med.Classe_pharmacologique,
+                                Classe_thérapeutique = med.Classe_thérapeutique,
+                                DCI = med.DCI
+
+
+                            };
+
+                        context.Medicaments.Add(instance);
+                        context.SaveChanges();
+
+                        MessageBox.Show("la class Produit a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    }
+                    }
+
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
+                    return false;
+                }
+            }
+
+
+
+
+
+
+          
+
+
+        
+
+
+
 
         #endregion
     }
