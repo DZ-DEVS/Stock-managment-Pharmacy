@@ -172,12 +172,13 @@ namespace Pharma_Libarary.Data
                             Lab_nom = lab.Lab_nom,
                             Adress = lab.Adress,
                             tel = lab.tel,
+                            web_adress = lab.web_adress,
                             pay_code = lab.pay_code
                         };
                         context.Laboratoires.Add(instance);
                         context.SaveChanges();
 
-                        MessageBox.Show("la class DCI a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("la class labo a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }

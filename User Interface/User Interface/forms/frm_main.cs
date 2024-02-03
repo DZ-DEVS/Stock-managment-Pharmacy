@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
+using Microsoft.IdentityModel.Tokens;
 
 namespace User_Interface.forms
 {
@@ -33,10 +34,16 @@ namespace User_Interface.forms
             InitializeComponent();
 
             MaterialFormTheme.ApplyTheme(this);
-         
 
+           
 
         }
+
+
+     
+
+
+
 
         private void frm_main_Load(object sender, EventArgs e)
         {
@@ -45,13 +52,37 @@ namespace User_Interface.forms
             //filldatatable<Medicament>();
             //filldatatable<Selle>(dgb_soldMed);
             fillListView<Pay>(lv_listStock);
-
+            intialiazeCountries<Pay>(cb_pay, "Pays_code", "Pays_code");
             tab_control.SelectedTab = tp_alert;
 
+            
 
 
         }
 
+        /// <summary>
+        /// use this to fill combo box withh all talbe infos
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="comboBox"></param>
+        /// <param name="name"> champs t 3 </param>
+        /// <param name="id">primary key</param>
+
+        private void intialiazeCountries<T>(MaterialComboBox comboBox, string name, string id) where T : class
+        {
+
+          
+            using (var dbContext = new dbcontext())
+            {
+                var table = dbContext.Set<T>().ToList();
+                comboBox.DataSource = table;
+                comboBox.DisplayMember = name;
+                comboBox.ValueMember = id;
+            }
+
+
+
+        }
 
 
 
@@ -197,15 +228,46 @@ namespace User_Interface.forms
                 t.Text = "";
 
             }
-        
-            foreach(RadioButton c in gb.Controls) {  c.Checked = false; } 
-        
+
+           if(gb != null)
+            foreach (RadioButton c in gb.Controls) 
+
+            {
+                c.Checked = false; 
+            }
+
+           
+        }
+
+
+        private bool validatphoneNumber(string phone)
+        {
+
+            if (string.IsNullOrEmpty(phone)) return false;
+            if (phone.Length != 10) return false;
+            if (phone[0] != '0') return false;
+
+
+
+
+            return true;
+        }
+
+        private bool validateWebadress(string webadress)
+        {
+
+            if(!webadress.Contains('@') || !webadress.Contains('.') ) return false;
+            
+
+
+
+            return true;
         }
 
 
         private void BTN_ajouterPerso_Click(object sender, EventArgs e)
         {
-
+            
             if (!validateallInputs(tb_username, tb_Nom, tb_motpass,tb_prenom)) 
             {
                 MessageBox.Show("Please make sure to fill all neccassery shit"); 
@@ -219,16 +281,23 @@ namespace User_Interface.forms
 
             if (tb_motpass.Text.Length < 8) 
             { 
-                MessageBox.Show("For security reason , the passowrd must me atleast 8 chars long "); 
+                MessageBox.Show("For security reason , the passowrd must me atleast 8 chars long "); clear_fields(null, tb_motpass, tb_conPass);
                 return; 
             }
 
             if (!confirmerpass()) 
             {
-                MessageBox.Show("password Doesnt match"); clear_fields(groupBox_role, tb_motpass, tb_conPass);
+                MessageBox.Show("password Doesnt match"); clear_fields(null, tb_motpass, tb_conPass);
                 return;
             }
             
+            if(!validateWebadress(tb_webAdress.Text)) 
+            {
+
+                MessageBox.Show("invalid web adress"); clear_fields(null,tb_webAdress);
+                return;
+            }
+
 
             User user = new User
             {
@@ -245,13 +314,75 @@ namespace User_Interface.forms
             {
                 MessageBox.Show("User added succefuly UwU"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
             }
-            else MessageBox.Show("error adding user , wtf did u do");
+            else MessageBox.Show("error adding user , wtf did u do"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
 
 
 
         }
 
-    
+        private void tb_addLab_Click(object sender, EventArgs e)
+        {
+
+            if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab, tb_phone))
+            {
+                MessageBox.Show("Please make sure to fill all neccassery shit");
+                return;
+            }
+
+            if (!validatphoneNumber(tb_phone.Text)) 
+            { 
+                MessageBox.Show("invalid phone number"); 
+                clear_fields(null, tb_phone); return;  
+            }
+
+            
+
+
+            Laboratoire lab = new Laboratoire
+            {
+                
+              Lab_code = tb_codeLab.Text,
+              Lab_nom = tb_nomLab.Text,
+              Adress = tb_adress.Text,
+              tel = tb_phone.Text,
+              web_adress = tb_webAdress.Text,
+              //error hna
+              pay_code = cb_pays.SelectedText,
+
+
+            };
+
+            if (sql_connection.add_Lab(lab))
+            {
+                MessageBox.Show("Lab added succefuly UwU"); clear_fields(null,tb_nomLab,tb_adress,tb_codeLab,tb_phone,tb_webAdress);
+            }
+            else MessageBox.Show("error adding user , wtf did u do");clear_fields(null,tb_nomLab,tb_adress,tb_codeLab,tb_phone,tb_webAdress);
+
+
+
+
+
+
+
+        }
+
+        private void tb_nomLab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            {
+               
+                e.Handled = true;
+            }
+        }
+
+        private void tb_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
+            {
+
+                e.Handled = true;
+            }
+        }
     }
 
 
