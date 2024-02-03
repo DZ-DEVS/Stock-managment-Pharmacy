@@ -319,7 +319,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="winfromClassLibrary.cs" />
+    <Compile Include="Ui_classes\ListViewExtender.cs" />
+    <Compile Include="Ui_classes\winfromClassLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="forms\diag_addNewProduct.resx">
       <DependentUpon>diag_addNewProduct.cs</DependentUpon>
     </EmbeddedResource>

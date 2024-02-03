@@ -175,6 +175,11 @@ namespace User_Interface.forms
                     e.Cancel = true;
                     break;
 
+                case "tp_admin":
+                    WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
+
+                 break;
+
             }
 
 
@@ -389,6 +394,11 @@ namespace User_Interface.forms
 
                 e.Handled = true;
             }
+        }
+
+        private void tab_control_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("f");
         }
     }
 
