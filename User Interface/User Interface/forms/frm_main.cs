@@ -28,8 +28,8 @@ namespace User_Interface.forms
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
             //MaterialFormTheme.ApplyMenuStripTheme(menuStrip_pageAdmin,menuStrip_pageAlerts);
-            
-            
+            UserControl userControl = new UserControl();
+                      
           
         }
 
@@ -165,8 +165,8 @@ namespace User_Interface.forms
             
 
         }
-        
-        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void materialTabSelector2_Click(object sender, EventArgs e)
         {
 
         }
