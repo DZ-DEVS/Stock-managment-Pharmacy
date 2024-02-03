@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 using Pharma_Libarary.Model;
 using Pharma_Libarary.Data;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
@@ -347,7 +346,7 @@ namespace User_Interface.forms
               tel = tb_phone.Text,
               web_adress = tb_webAdress.Text,
               //error hna
-              pay_code = cb_pays.SelectedText,
+              //pay_code = cb_pays.SelectedText,
 
 
             };

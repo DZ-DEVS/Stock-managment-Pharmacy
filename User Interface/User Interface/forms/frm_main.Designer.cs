@@ -1,4 +1,6 @@
-﻿namespace User_Interface.forms
+﻿using System.Windows.Forms;
+
+namespace User_Interface.forms
 {
     partial class frm_main
     {
@@ -52,27 +54,11 @@
             this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.secondaryTabs_admin = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage_khdam = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_conPass = new MaterialSkin.Controls.MaterialTextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tb_Nom = new MaterialSkin.Controls.MaterialTextBox();
-            this.tb_prenom = new MaterialSkin.Controls.MaterialTextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tb_motpass = new MaterialSkin.Controls.MaterialTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tb_username = new MaterialSkin.Controls.MaterialTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox_role = new System.Windows.Forms.GroupBox();
-            this.rb_remb_emp = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rb_rembo_admin = new MaterialSkin.Controls.MaterialRadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BTN_ajouterPerso = new MaterialSkin.Controls.MaterialButton();
-            this.BTN_Annuler = new MaterialSkin.Controls.MaterialButton();
             this.tabPage_labo = new System.Windows.Forms.TabPage();
-            this.tb_addLab = new MaterialSkin.Controls.MaterialButton();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.panel_lab = new System.Windows.Forms.Panel();
+            this.tb_webAdress = new MaterialSkin.Controls.MaterialTextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.cb_pay = new MaterialSkin.Controls.MaterialComboBox();
             this.tb_nomLab = new MaterialSkin.Controls.MaterialTextBox();
             this.tb_codeLab = new MaterialSkin.Controls.MaterialTextBox();
@@ -83,11 +69,10 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.tb_addLab = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage_addproduct = new System.Windows.Forms.TabPage();
-            this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
-            this.BTN_ajouterProduct = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_Dci = new MaterialSkin.Controls.MaterialComboBox();
@@ -128,6 +113,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.tb_refMed = new MaterialSkin.Controls.MaterialTextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.tp_alert = new System.Windows.Forms.TabPage();
             this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
             this.tp_lowSupply = new System.Windows.Forms.TabPage();
@@ -140,8 +128,24 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tb_webAdress = new MaterialSkin.Controls.MaterialTextBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.panel_add_employee = new System.Windows.Forms.Panel();
+            this.tb_conPass = new MaterialSkin.Controls.MaterialTextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tb_Nom = new MaterialSkin.Controls.MaterialTextBox();
+            this.tb_prenom = new MaterialSkin.Controls.MaterialTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tb_motpass = new MaterialSkin.Controls.MaterialTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_username = new MaterialSkin.Controls.MaterialTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox_role = new System.Windows.Forms.GroupBox();
+            this.rb_remb_emp = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rb_rembo_admin = new MaterialSkin.Controls.MaterialRadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BTN_Annuler = new MaterialSkin.Controls.MaterialButton();
+            this.BTN_ajouterPerso = new MaterialSkin.Controls.MaterialButton();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -149,12 +153,11 @@
             this.tp_admin.SuspendLayout();
             this.secondaryTabs_admin.SuspendLayout();
             this.tabPage_khdam.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox_role.SuspendLayout();
             this.tabPage_labo.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.materialCard1.SuspendLayout();
+            this.panel_lab.SuspendLayout();
             this.tabPage_addproduct.SuspendLayout();
+            this.materialCard2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gb_rembo.SuspendLayout();
             this.gb_comm.SuspendLayout();
@@ -164,6 +167,9 @@
             this.materialTabControl2.SuspendLayout();
             this.tp_lowSupply.SuspendLayout();
             this.tp_expired_med.SuspendLayout();
+            this.materialCard3.SuspendLayout();
+            this.panel_add_employee.SuspendLayout();
+            this.groupBox_role.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_control
@@ -185,42 +191,39 @@
             this.tab_control.Depth = 0;
             this.tab_control.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tab_control.ImageList = this.imageList1;
-            this.tab_control.Location = new System.Drawing.Point(3, 67);
-            this.tab_control.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_control.Location = new System.Drawing.Point(2, 66);
+            this.tab_control.Margin = new System.Windows.Forms.Padding(2);
             this.tab_control.MouseState = MaterialSkin.MouseState.HOVER;
             this.tab_control.Multiline = true;
             this.tab_control.Name = "tab_control";
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1719, 940);
+            this.tab_control.Size = new System.Drawing.Size(1603, 700);
             this.tab_control.TabIndex = 0;
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1689, 893);
+            this.tabPage1.Size = new System.Drawing.Size(1643, 900);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1689, 893);
+            this.tabPage2.Size = new System.Drawing.Size(1623, 857);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1689, 893);
+            this.tabPage3.Size = new System.Drawing.Size(1623, 857);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -229,10 +232,10 @@
             this.tp_home.BackColor = System.Drawing.Color.White;
             this.tp_home.ImageKey = "home.png";
             this.tp_home.Location = new System.Drawing.Point(4, 43);
-            this.tp_home.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
-            this.tp_home.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.tp_home.Size = new System.Drawing.Size(1689, 893);
+            this.tp_home.Padding = new System.Windows.Forms.Padding(20);
+            this.tp_home.Size = new System.Drawing.Size(1643, 653);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -244,9 +247,9 @@
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
             this.tp_list_stock.ImageKey = "list.png";
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
-            this.tp_list_stock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1689, 893);
+            this.tp_list_stock.Size = new System.Drawing.Size(1643, 653);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -268,14 +271,13 @@
             this.lv_listStock.FullRowSelect = true;
             this.lv_listStock.HideSelection = false;
             this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.lv_listStock.Location = new System.Drawing.Point(16, 117);
-            this.lv_listStock.Margin = new System.Windows.Forms.Padding(4);
-            this.lv_listStock.MinimumSize = new System.Drawing.Size(267, 123);
+            this.lv_listStock.Location = new System.Drawing.Point(12, 95);
+            this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
             this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
-            this.lv_listStock.Size = new System.Drawing.Size(1563, 604);
+            this.lv_listStock.Size = new System.Drawing.Size(1172, 491);
             this.lv_listStock.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.lv_listStock.StateImageList = this.imageList1;
             this.lv_listStock.TabIndex = 4;
@@ -333,13 +335,13 @@
             this.materialTextBox1.Depth = 0;
             this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(111, 28);
-            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.materialTextBox1.Location = new System.Drawing.Point(83, 23);
+            this.materialTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.materialTextBox1.MaxLength = 50;
             this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox1.Multiline = false;
             this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(332, 50);
+            this.materialTextBox1.Size = new System.Drawing.Size(249, 50);
             this.materialTextBox1.TabIndex = 3;
             this.materialTextBox1.Text = "";
             this.materialTextBox1.TrailingIcon = null;
@@ -354,8 +356,8 @@
             this.BTN_rechercher.Depth = 0;
             this.BTN_rechercher.HighEmphasis = true;
             this.BTN_rechercher.Icon = null;
-            this.BTN_rechercher.Location = new System.Drawing.Point(503, 36);
-            this.BTN_rechercher.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTN_rechercher.Location = new System.Drawing.Point(377, 29);
+            this.BTN_rechercher.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.BTN_rechercher.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTN_rechercher.Name = "BTN_rechercher";
             this.BTN_rechercher.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -371,9 +373,9 @@
             this.tp_transaction.Controls.Add(this.dgb_soldMed);
             this.tp_transaction.ImageKey = "transaction.png";
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
-            this.tp_transaction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1689, 893);
+            this.tp_transaction.Size = new System.Drawing.Size(1623, 857);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -385,12 +387,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgb_soldMed.BackgroundColor = System.Drawing.Color.White;
             this.dgb_soldMed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgb_soldMed.Location = new System.Drawing.Point(3, 37);
-            this.dgb_soldMed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgb_soldMed.Location = new System.Drawing.Point(2, 30);
+            this.dgb_soldMed.Margin = new System.Windows.Forms.Padding(2);
             this.dgb_soldMed.Name = "dgb_soldMed";
             this.dgb_soldMed.RowHeadersWidth = 51;
             this.dgb_soldMed.RowTemplate.Height = 24;
-            this.dgb_soldMed.Size = new System.Drawing.Size(44, 169);
+            this.dgb_soldMed.Size = new System.Drawing.Size(33, 137);
             this.dgb_soldMed.TabIndex = 0;
             // 
             // tp_admin
@@ -400,9 +402,9 @@
             this.tp_admin.Controls.Add(this.secondaryTabs_admin);
             this.tp_admin.ImageKey = "admin.png";
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
-            this.tp_admin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1711, 893);
+            this.tp_admin.Size = new System.Drawing.Size(1595, 653);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -416,11 +418,11 @@
             this.materialTabSelector2.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             this.materialTabSelector2.Depth = 0;
             this.materialTabSelector2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector2.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector2.Location = new System.Drawing.Point(-6, 0);
             this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1711, 47);
+            this.materialTabSelector2.Size = new System.Drawing.Size(1597, 38);
             this.materialTabSelector2.TabIndex = 27;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
@@ -431,385 +433,107 @@
             this.secondaryTabs_admin.Controls.Add(this.tabPage_addproduct);
             this.secondaryTabs_admin.Depth = 0;
             this.secondaryTabs_admin.ImageList = this.imageList1;
-            this.secondaryTabs_admin.Location = new System.Drawing.Point(0, 47);
+            this.secondaryTabs_admin.Location = new System.Drawing.Point(0, 38);
             this.secondaryTabs_admin.Margin = new System.Windows.Forms.Padding(0);
             this.secondaryTabs_admin.MouseState = MaterialSkin.MouseState.HOVER;
             this.secondaryTabs_admin.Multiline = true;
             this.secondaryTabs_admin.Name = "secondaryTabs_admin";
             this.secondaryTabs_admin.SelectedIndex = 0;
-            this.secondaryTabs_admin.Size = new System.Drawing.Size(1555, 789);
+            this.secondaryTabs_admin.Size = new System.Drawing.Size(1274, 641);
             this.secondaryTabs_admin.TabIndex = 26;
             // 
             // tabPage_khdam
             // 
             this.tabPage_khdam.BackColor = System.Drawing.Color.White;
-            this.tabPage_khdam.Controls.Add(this.panel4);
+            this.tabPage_khdam.Controls.Add(this.materialCard3);
             this.tabPage_khdam.Location = new System.Drawing.Point(4, 39);
-            this.tabPage_khdam.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_khdam.Name = "tabPage_khdam";
-            this.tabPage_khdam.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage_khdam.Size = new System.Drawing.Size(1547, 746);
+            this.tabPage_khdam.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_khdam.Size = new System.Drawing.Size(1266, 598);
             this.tabPage_khdam.TabIndex = 1;
             this.tabPage_khdam.Text = "Ajouter un Employee";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Controls.Add(this.BTN_ajouterPerso);
-            this.panel4.Controls.Add(this.BTN_Annuler);
-            this.panel4.Location = new System.Drawing.Point(7, 7);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1533, 732);
-            this.panel4.TabIndex = 105;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.tb_conPass);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.tb_Nom);
-            this.panel1.Controls.Add(this.tb_prenom);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.tb_motpass);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.tb_username);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.groupBox_role);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1525, 527);
-            this.panel1.TabIndex = 102;
-            // 
-            // tb_conPass
-            // 
-            this.tb_conPass.AnimateReadOnly = false;
-            this.tb_conPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_conPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_conPass.Depth = 0;
-            this.tb_conPass.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_conPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_conPass.Hint = "tapez ici....";
-            this.tb_conPass.LeadingIcon = null;
-            this.tb_conPass.Location = new System.Drawing.Point(229, 287);
-            this.tb_conPass.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_conPass.MaxLength = 50;
-            this.tb_conPass.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_conPass.Multiline = false;
-            this.tb_conPass.Name = "tb_conPass";
-            this.tb_conPass.Password = true;
-            this.tb_conPass.Size = new System.Drawing.Size(360, 36);
-            this.tb_conPass.TabIndex = 107;
-            this.tb_conPass.Text = "";
-            this.tb_conPass.TrailingIcon = null;
-            this.tb_conPass.UseTallSize = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(3, 298);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(219, 25);
-            this.label25.TabIndex = 106;
-            this.label25.Text = "Confirmer mot de pass :";
-            // 
-            // tb_Nom
-            // 
-            this.tb_Nom.AnimateReadOnly = false;
-            this.tb_Nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_Nom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_Nom.Depth = 0;
-            this.tb_Nom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_Nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_Nom.Hint = "tapez ici...";
-            this.tb_Nom.LeadingIcon = null;
-            this.tb_Nom.Location = new System.Drawing.Point(229, 44);
-            this.tb_Nom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Nom.MaxLength = 50;
-            this.tb_Nom.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_Nom.Multiline = false;
-            this.tb_Nom.Name = "tb_Nom";
-            this.tb_Nom.Size = new System.Drawing.Size(360, 36);
-            this.tb_Nom.TabIndex = 105;
-            this.tb_Nom.Text = "";
-            this.tb_Nom.TrailingIcon = null;
-            this.tb_Nom.UseTallSize = false;
-            this.tb_Nom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nomLab_KeyPress);
-            // 
-            // tb_prenom
-            // 
-            this.tb_prenom.AnimateReadOnly = false;
-            this.tb_prenom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_prenom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_prenom.Depth = 0;
-            this.tb_prenom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_prenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_prenom.Hint = "tapez ici...";
-            this.tb_prenom.LeadingIcon = null;
-            this.tb_prenom.Location = new System.Drawing.Point(231, 104);
-            this.tb_prenom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_prenom.MaxLength = 50;
-            this.tb_prenom.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_prenom.Multiline = false;
-            this.tb_prenom.Name = "tb_prenom";
-            this.tb_prenom.Size = new System.Drawing.Size(360, 36);
-            this.tb_prenom.TabIndex = 104;
-            this.tb_prenom.Text = "";
-            this.tb_prenom.TrailingIcon = null;
-            this.tb_prenom.UseTallSize = false;
-            this.tb_prenom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nomLab_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(130, 115);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(89, 25);
-            this.label13.TabIndex = 103;
-            this.label13.Text = "prenom :";
-            // 
-            // tb_motpass
-            // 
-            this.tb_motpass.AnimateReadOnly = false;
-            this.tb_motpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_motpass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_motpass.Depth = 0;
-            this.tb_motpass.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_motpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_motpass.Hint = "tapez ici....";
-            this.tb_motpass.LeadingIcon = null;
-            this.tb_motpass.Location = new System.Drawing.Point(231, 226);
-            this.tb_motpass.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_motpass.MaxLength = 50;
-            this.tb_motpass.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_motpass.Multiline = false;
-            this.tb_motpass.Name = "tb_motpass";
-            this.tb_motpass.Password = true;
-            this.tb_motpass.Size = new System.Drawing.Size(360, 36);
-            this.tb_motpass.TabIndex = 99;
-            this.tb_motpass.Text = "";
-            this.tb_motpass.TrailingIcon = null;
-            this.tb_motpass.UseTallSize = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(90, 237);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 25);
-            this.label6.TabIndex = 98;
-            this.label6.Text = "mot de pass :";
-            // 
-            // tb_username
-            // 
-            this.tb_username.AnimateReadOnly = false;
-            this.tb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_username.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_username.Depth = 0;
-            this.tb_username.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_username.Hint = "tapez ici....";
-            this.tb_username.LeadingIcon = null;
-            this.tb_username.Location = new System.Drawing.Point(229, 168);
-            this.tb_username.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_username.MaxLength = 50;
-            this.tb_username.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_username.Multiline = false;
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(360, 36);
-            this.tb_username.TabIndex = 97;
-            this.tb_username.Text = "";
-            this.tb_username.TrailingIcon = null;
-            this.tb_username.UseTallSize = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(70, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 25);
-            this.label5.TabIndex = 96;
-            this.label5.Text = "nom utilisateur : ";
-            // 
-            // groupBox_role
-            // 
-            this.groupBox_role.Controls.Add(this.rb_remb_emp);
-            this.groupBox_role.Controls.Add(this.rb_rembo_admin);
-            this.groupBox_role.Location = new System.Drawing.Point(226, 341);
-            this.groupBox_role.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox_role.Name = "groupBox_role";
-            this.groupBox_role.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_role.Size = new System.Drawing.Size(322, 63);
-            this.groupBox_role.TabIndex = 95;
-            this.groupBox_role.TabStop = false;
-            // 
-            // rb_remb_emp
-            // 
-            this.rb_remb_emp.AutoSize = true;
-            this.rb_remb_emp.BackColor = System.Drawing.Color.Transparent;
-            this.rb_remb_emp.Depth = 0;
-            this.rb_remb_emp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_remb_emp.Location = new System.Drawing.Point(129, 18);
-            this.rb_remb_emp.Margin = new System.Windows.Forms.Padding(0);
-            this.rb_remb_emp.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rb_remb_emp.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rb_remb_emp.Name = "rb_remb_emp";
-            this.rb_remb_emp.Ripple = true;
-            this.rb_remb_emp.Size = new System.Drawing.Size(68, 37);
-            this.rb_remb_emp.TabIndex = 1;
-            this.rb_remb_emp.TabStop = true;
-            this.rb_remb_emp.Text = "EMP";
-            this.rb_remb_emp.UseVisualStyleBackColor = false;
-            // 
-            // rb_rembo_admin
-            // 
-            this.rb_rembo_admin.AutoSize = true;
-            this.rb_rembo_admin.BackColor = System.Drawing.Color.Transparent;
-            this.rb_rembo_admin.Depth = 0;
-            this.rb_rembo_admin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_rembo_admin.Location = new System.Drawing.Point(0, 18);
-            this.rb_rembo_admin.Margin = new System.Windows.Forms.Padding(0);
-            this.rb_rembo_admin.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rb_rembo_admin.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rb_rembo_admin.Name = "rb_rembo_admin";
-            this.rb_rembo_admin.Ripple = true;
-            this.rb_rembo_admin.Size = new System.Drawing.Size(85, 37);
-            this.rb_rembo_admin.TabIndex = 0;
-            this.rb_rembo_admin.TabStop = true;
-            this.rb_rembo_admin.Text = "ADMIN";
-            this.rb_rembo_admin.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(157, 361);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 25);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "Role :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(155, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 25);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Nom :";
-            // 
-            // BTN_ajouterPerso
-            // 
-            this.BTN_ajouterPerso.AutoSize = false;
-            this.BTN_ajouterPerso.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BTN_ajouterPerso.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BTN_ajouterPerso.Depth = 0;
-            this.BTN_ajouterPerso.HighEmphasis = true;
-            this.BTN_ajouterPerso.Icon = null;
-            this.BTN_ajouterPerso.Location = new System.Drawing.Point(32, 575);
-            this.BTN_ajouterPerso.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.BTN_ajouterPerso.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BTN_ajouterPerso.Name = "BTN_ajouterPerso";
-            this.BTN_ajouterPerso.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BTN_ajouterPerso.Size = new System.Drawing.Size(277, 44);
-            this.BTN_ajouterPerso.TabIndex = 104;
-            this.BTN_ajouterPerso.Text = "ajouter un Emploiee";
-            this.BTN_ajouterPerso.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BTN_ajouterPerso.UseAccentColor = false;
-            this.BTN_ajouterPerso.UseVisualStyleBackColor = true;
-            this.BTN_ajouterPerso.Click += new System.EventHandler(this.BTN_ajouterPerso_Click);
-            // 
-            // BTN_Annuler
-            // 
-            this.BTN_Annuler.AutoSize = false;
-            this.BTN_Annuler.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BTN_Annuler.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BTN_Annuler.Depth = 0;
-            this.BTN_Annuler.HighEmphasis = false;
-            this.BTN_Annuler.Icon = null;
-            this.BTN_Annuler.Location = new System.Drawing.Point(359, 575);
-            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.BTN_Annuler.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BTN_Annuler.Name = "BTN_Annuler";
-            this.BTN_Annuler.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BTN_Annuler.Size = new System.Drawing.Size(141, 44);
-            this.BTN_Annuler.TabIndex = 103;
-            this.BTN_Annuler.Text = "Annuler";
-            this.BTN_Annuler.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BTN_Annuler.UseAccentColor = false;
-            this.BTN_Annuler.UseVisualStyleBackColor = true;
             // 
             // tabPage_labo
             // 
             this.tabPage_labo.BackColor = System.Drawing.Color.White;
+            this.tabPage_labo.Controls.Add(this.materialCard1);
             this.tabPage_labo.Controls.Add(this.tb_addLab);
-            this.tabPage_labo.Controls.Add(this.panel3);
             this.tabPage_labo.Controls.Add(this.materialButton2);
             this.tabPage_labo.Location = new System.Drawing.Point(4, 39);
-            this.tabPage_labo.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage_labo.Name = "tabPage_labo";
-            this.tabPage_labo.Size = new System.Drawing.Size(1547, 746);
+            this.tabPage_labo.Size = new System.Drawing.Size(1266, 598);
             this.tabPage_labo.TabIndex = 2;
             this.tabPage_labo.Text = "Ajouter un Laboratoire";
             // 
-            // tb_addLab
+            // materialCard1
             // 
-            this.tb_addLab.AutoSize = false;
-            this.tb_addLab.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tb_addLab.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.tb_addLab.Depth = 0;
-            this.tb_addLab.HighEmphasis = true;
-            this.tb_addLab.Icon = null;
-            this.tb_addLab.Location = new System.Drawing.Point(84, 555);
-            this.tb_addLab.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.tb_addLab.MouseState = MaterialSkin.MouseState.HOVER;
-            this.tb_addLab.Name = "tb_addLab";
-            this.tb_addLab.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.tb_addLab.Size = new System.Drawing.Size(224, 44);
-            this.tb_addLab.TabIndex = 107;
-            this.tb_addLab.Text = "ajouter Lab";
-            this.tb_addLab.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.tb_addLab.UseAccentColor = false;
-            this.tb_addLab.UseVisualStyleBackColor = true;
-            this.tb_addLab.Click += new System.EventHandler(this.tb_addLab_Click);
+            this.materialCard1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.panel_lab);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(381, 33);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(528, 356);
+            this.materialCard1.TabIndex = 108;
             // 
-            // panel3
+            // panel_lab
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel_lab.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.tb_webAdress);
-            this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.cb_pay);
-            this.panel3.Controls.Add(this.tb_nomLab);
-            this.panel3.Controls.Add(this.tb_codeLab);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.tb_phone);
-            this.panel3.Controls.Add(this.label21);
-            this.panel3.Controls.Add(this.tb_adress);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.label24);
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1168, 527);
-            this.panel3.TabIndex = 105;
+            this.panel_lab.BackColor = System.Drawing.Color.White;
+            this.panel_lab.Controls.Add(this.tb_webAdress);
+            this.panel_lab.Controls.Add(this.label26);
+            this.panel_lab.Controls.Add(this.cb_pay);
+            this.panel_lab.Controls.Add(this.tb_nomLab);
+            this.panel_lab.Controls.Add(this.tb_codeLab);
+            this.panel_lab.Controls.Add(this.label20);
+            this.panel_lab.Controls.Add(this.tb_phone);
+            this.panel_lab.Controls.Add(this.label21);
+            this.panel_lab.Controls.Add(this.tb_adress);
+            this.panel_lab.Controls.Add(this.label22);
+            this.panel_lab.Controls.Add(this.label23);
+            this.panel_lab.Controls.Add(this.label24);
+            this.panel_lab.Location = new System.Drawing.Point(17, 9);
+            this.panel_lab.Name = "panel_lab";
+            this.panel_lab.Size = new System.Drawing.Size(469, 330);
+            this.panel_lab.TabIndex = 105;
+            // 
+            // tb_webAdress
+            // 
+            this.tb_webAdress.AnimateReadOnly = false;
+            this.tb_webAdress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_webAdress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_webAdress.Depth = 0;
+            this.tb_webAdress.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_webAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_webAdress.Hint = "tapez ici....";
+            this.tb_webAdress.LeadingIcon = null;
+            this.tb_webAdress.Location = new System.Drawing.Point(139, 228);
+            this.tb_webAdress.MaxLength = 50;
+            this.tb_webAdress.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_webAdress.Multiline = false;
+            this.tb_webAdress.Name = "tb_webAdress";
+            this.tb_webAdress.Size = new System.Drawing.Size(270, 36);
+            this.tb_webAdress.TabIndex = 108;
+            this.tb_webAdress.Text = "";
+            this.tb_webAdress.TrailingIcon = null;
+            this.tb_webAdress.UseTallSize = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(15, 235);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(102, 20);
+            this.label26.TabIndex = 107;
+            this.label26.Text = "web adress : ";
             // 
             // cb_pay
             // 
@@ -826,12 +550,11 @@
             this.cb_pay.Hint = "choisissez le pays";
             this.cb_pay.IntegralHeight = false;
             this.cb_pay.ItemHeight = 29;
-            this.cb_pay.Location = new System.Drawing.Point(176, 370);
-            this.cb_pay.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_pay.Location = new System.Drawing.Point(139, 284);
             this.cb_pay.MaxDropDownItems = 4;
             this.cb_pay.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_pay.Name = "cb_pay";
-            this.cb_pay.Size = new System.Drawing.Size(360, 35);
+            this.cb_pay.Size = new System.Drawing.Size(271, 35);
             this.cb_pay.StartIndex = -1;
             this.cb_pay.TabIndex = 106;
             this.cb_pay.UseTallSize = false;
@@ -846,13 +569,12 @@
             this.tb_nomLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_nomLab.Hint = "tapez ici...";
             this.tb_nomLab.LeadingIcon = null;
-            this.tb_nomLab.Location = new System.Drawing.Point(176, 44);
-            this.tb_nomLab.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_nomLab.Location = new System.Drawing.Point(139, 19);
             this.tb_nomLab.MaxLength = 50;
             this.tb_nomLab.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_nomLab.Multiline = false;
             this.tb_nomLab.Name = "tb_nomLab";
-            this.tb_nomLab.Size = new System.Drawing.Size(360, 36);
+            this.tb_nomLab.Size = new System.Drawing.Size(270, 36);
             this.tb_nomLab.TabIndex = 105;
             this.tb_nomLab.Text = "";
             this.tb_nomLab.TrailingIcon = null;
@@ -869,13 +591,12 @@
             this.tb_codeLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_codeLab.Hint = "tapez ici...";
             this.tb_codeLab.LeadingIcon = null;
-            this.tb_codeLab.Location = new System.Drawing.Point(178, 104);
-            this.tb_codeLab.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_codeLab.Location = new System.Drawing.Point(141, 67);
             this.tb_codeLab.MaxLength = 50;
             this.tb_codeLab.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_codeLab.Multiline = false;
             this.tb_codeLab.Name = "tb_codeLab";
-            this.tb_codeLab.Size = new System.Drawing.Size(360, 36);
+            this.tb_codeLab.Size = new System.Drawing.Size(270, 36);
             this.tb_codeLab.TabIndex = 104;
             this.tb_codeLab.Text = "";
             this.tb_codeLab.TrailingIcon = null;
@@ -886,9 +607,10 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(48, 115);
+            this.label20.Location = new System.Drawing.Point(15, 83);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 25);
+            this.label20.Size = new System.Drawing.Size(83, 20);
             this.label20.TabIndex = 103;
             this.label20.Text = "code Lab :";
             // 
@@ -902,13 +624,12 @@
             this.tb_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_phone.Hint = "tapez ici....";
             this.tb_phone.LeadingIcon = null;
-            this.tb_phone.Location = new System.Drawing.Point(178, 226);
-            this.tb_phone.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_phone.Location = new System.Drawing.Point(141, 167);
             this.tb_phone.MaxLength = 50;
             this.tb_phone.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_phone.Multiline = false;
             this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(360, 36);
+            this.tb_phone.Size = new System.Drawing.Size(270, 36);
             this.tb_phone.TabIndex = 99;
             this.tb_phone.Text = "";
             this.tb_phone.TrailingIcon = null;
@@ -920,9 +641,10 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(53, 237);
+            this.label21.Location = new System.Drawing.Point(15, 183);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 25);
+            this.label21.Size = new System.Drawing.Size(79, 20);
             this.label21.TabIndex = 98;
             this.label21.Text = "numero   :";
             // 
@@ -936,13 +658,12 @@
             this.tb_adress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_adress.Hint = "tapez ici....";
             this.tb_adress.LeadingIcon = null;
-            this.tb_adress.Location = new System.Drawing.Point(176, 168);
-            this.tb_adress.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_adress.Location = new System.Drawing.Point(139, 119);
             this.tb_adress.MaxLength = 50;
             this.tb_adress.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_adress.Multiline = false;
             this.tb_adress.Name = "tb_adress";
-            this.tb_adress.Size = new System.Drawing.Size(360, 36);
+            this.tb_adress.Size = new System.Drawing.Size(270, 36);
             this.tb_adress.TabIndex = 97;
             this.tb_adress.Text = "";
             this.tb_adress.TrailingIcon = null;
@@ -953,9 +674,10 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(65, 179);
+            this.label22.Location = new System.Drawing.Point(15, 135);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(87, 25);
+            this.label22.Size = new System.Drawing.Size(69, 20);
             this.label22.TabIndex = 96;
             this.label22.Text = "adress : ";
             // 
@@ -964,9 +686,10 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(75, 369);
+            this.label23.Location = new System.Drawing.Point(24, 287);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 25);
+            this.label23.Size = new System.Drawing.Size(51, 20);
             this.label23.TabIndex = 94;
             this.label23.Text = "Pays :";
             // 
@@ -975,11 +698,33 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(50, 55);
+            this.label24.Location = new System.Drawing.Point(13, 35);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(102, 25);
+            this.label24.Size = new System.Drawing.Size(81, 20);
             this.label24.TabIndex = 93;
             this.label24.Text = "Nom Lab :";
+            // 
+            // tb_addLab
+            // 
+            this.tb_addLab.AutoSize = false;
+            this.tb_addLab.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tb_addLab.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.tb_addLab.Depth = 0;
+            this.tb_addLab.HighEmphasis = true;
+            this.tb_addLab.Icon = null;
+            this.tb_addLab.Location = new System.Drawing.Point(487, 424);
+            this.tb_addLab.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.tb_addLab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.tb_addLab.Name = "tb_addLab";
+            this.tb_addLab.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.tb_addLab.Size = new System.Drawing.Size(168, 36);
+            this.tb_addLab.TabIndex = 107;
+            this.tb_addLab.Text = "ajouter Lab";
+            this.tb_addLab.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.tb_addLab.UseAccentColor = false;
+            this.tb_addLab.UseVisualStyleBackColor = true;
+            this.tb_addLab.Click += new System.EventHandler(this.tb_addLab_Click);
             // 
             // materialButton2
             // 
@@ -989,12 +734,12 @@
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = false;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(346, 554);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.materialButton2.Location = new System.Drawing.Point(684, 423);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
             this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton2.Size = new System.Drawing.Size(141, 44);
+            this.materialButton2.Size = new System.Drawing.Size(106, 36);
             this.materialButton2.TabIndex = 98;
             this.materialButton2.Text = "Annuler";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -1003,85 +748,36 @@
             // 
             // tabPage_addproduct
             // 
-            this.tabPage_addproduct.Controls.Add(this.materialButton4);
-            this.tabPage_addproduct.Controls.Add(this.BTN_ajouterProduct);
-            this.tabPage_addproduct.Controls.Add(this.materialButton1);
-            this.tabPage_addproduct.Controls.Add(this.panel2);
+            this.tabPage_addproduct.Controls.Add(this.materialCard2);
             this.tabPage_addproduct.Location = new System.Drawing.Point(4, 39);
+            this.tabPage_addproduct.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_addproduct.Name = "tabPage_addproduct";
-            this.tabPage_addproduct.Size = new System.Drawing.Size(1547, 746);
+            this.tabPage_addproduct.Size = new System.Drawing.Size(1266, 598);
             this.tabPage_addproduct.TabIndex = 3;
             this.tabPage_addproduct.Text = "Ajouter un produit";
             this.tabPage_addproduct.UseVisualStyleBackColor = true;
             // 
-            // materialButton4
+            // materialCard2
             // 
-            this.materialButton4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.materialButton4.AutoSize = false;
-            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton4.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton4.Depth = 0;
-            this.materialButton4.HighEmphasis = false;
-            this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(575, 604);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton4.Name = "materialButton4";
-            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton4.Size = new System.Drawing.Size(141, 44);
-            this.materialButton4.TabIndex = 104;
-            this.materialButton4.Text = "Annuler";
-            this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton4.UseAccentColor = false;
-            this.materialButton4.UseVisualStyleBackColor = true;
-            // 
-            // BTN_ajouterProduct
-            // 
-            this.BTN_ajouterProduct.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.BTN_ajouterProduct.AutoSize = false;
-            this.BTN_ajouterProduct.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BTN_ajouterProduct.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.BTN_ajouterProduct.Depth = 0;
-            this.BTN_ajouterProduct.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BTN_ajouterProduct.HighEmphasis = true;
-            this.BTN_ajouterProduct.Icon = null;
-            this.BTN_ajouterProduct.Location = new System.Drawing.Point(33, 604);
-            this.BTN_ajouterProduct.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.BTN_ajouterProduct.MouseState = MaterialSkin.MouseState.HOVER;
-            this.BTN_ajouterProduct.Name = "BTN_ajouterProduct";
-            this.BTN_ajouterProduct.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.BTN_ajouterProduct.Size = new System.Drawing.Size(224, 44);
-            this.BTN_ajouterProduct.TabIndex = 103;
-            this.BTN_ajouterProduct.Text = "Sauvegarder";
-            this.BTN_ajouterProduct.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.BTN_ajouterProduct.UseAccentColor = false;
-            this.BTN_ajouterProduct.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(286, 604);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(252, 44);
-            this.materialButton1.TabIndex = 102;
-            this.materialButton1.Text = "ajouter une nouvelle classe";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.panel2);
+            this.materialCard2.Controls.Add(this.materialButton1);
+            this.materialCard2.Controls.Add(this.materialButton9);
+            this.materialCard2.Controls.Add(this.materialButton5);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(52, 17);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(1143, 567);
+            this.materialCard2.TabIndex = 111;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.cb_Dci);
             this.panel2.Controls.Add(this.label14);
@@ -1112,19 +808,19 @@
             this.panel2.Controls.Add(this.label18);
             this.panel2.Controls.Add(this.tb_refMed);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Location = new System.Drawing.Point(4, 15);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(57, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1502, 550);
-            this.panel2.TabIndex = 101;
+            this.panel2.Size = new System.Drawing.Size(1036, 447);
+            this.panel2.TabIndex = 112;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(828, 516);
+            this.label15.Location = new System.Drawing.Point(621, 419);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 25);
+            this.label15.Size = new System.Drawing.Size(45, 20);
             this.label15.TabIndex = 107;
             this.label15.Text = "DCI :";
             // 
@@ -1143,12 +839,11 @@
             this.cb_Dci.Hint = "sélectionner une classe";
             this.cb_Dci.IntegralHeight = false;
             this.cb_Dci.ItemHeight = 29;
-            this.cb_Dci.Location = new System.Drawing.Point(957, 506);
-            this.cb_Dci.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_Dci.Location = new System.Drawing.Point(718, 411);
             this.cb_Dci.MaxDropDownItems = 4;
             this.cb_Dci.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_Dci.Name = "cb_Dci";
-            this.cb_Dci.Size = new System.Drawing.Size(360, 35);
+            this.cb_Dci.Size = new System.Drawing.Size(271, 35);
             this.cb_Dci.StartIndex = -1;
             this.cb_Dci.TabIndex = 106;
             this.cb_Dci.UseTallSize = false;
@@ -1158,9 +853,10 @@
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(677, 465);
+            this.label14.Location = new System.Drawing.Point(508, 378);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(208, 25);
+            this.label14.Size = new System.Drawing.Size(168, 20);
             this.label14.TabIndex = 105;
             this.label14.Text = "Classe thérapeutique :";
             // 
@@ -1179,12 +875,11 @@
             this.cb_classThera.Hint = "sélectionner une classe";
             this.cb_classThera.IntegralHeight = false;
             this.cb_classThera.ItemHeight = 29;
-            this.cb_classThera.Location = new System.Drawing.Point(957, 455);
-            this.cb_classThera.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_classThera.Location = new System.Drawing.Point(718, 370);
             this.cb_classThera.MaxDropDownItems = 4;
             this.cb_classThera.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_classThera.Name = "cb_classThera";
-            this.cb_classThera.Size = new System.Drawing.Size(360, 35);
+            this.cb_classThera.Size = new System.Drawing.Size(271, 35);
             this.cb_classThera.StartIndex = -1;
             this.cb_classThera.TabIndex = 104;
             this.cb_classThera.UseTallSize = false;
@@ -1194,9 +889,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(646, 404);
+            this.label1.Location = new System.Drawing.Point(484, 328);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 25);
+            this.label1.Size = new System.Drawing.Size(191, 20);
             this.label1.TabIndex = 103;
             this.label1.Text = "Classe pharmacologique :";
             // 
@@ -1215,12 +911,11 @@
             this.cb_classPharma.Hint = "sélectionner une classe";
             this.cb_classPharma.IntegralHeight = false;
             this.cb_classPharma.ItemHeight = 29;
-            this.cb_classPharma.Location = new System.Drawing.Point(957, 397);
-            this.cb_classPharma.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_classPharma.Location = new System.Drawing.Point(718, 323);
             this.cb_classPharma.MaxDropDownItems = 4;
             this.cb_classPharma.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_classPharma.Name = "cb_classPharma";
-            this.cb_classPharma.Size = new System.Drawing.Size(360, 35);
+            this.cb_classPharma.Size = new System.Drawing.Size(271, 35);
             this.cb_classPharma.StartIndex = -1;
             this.cb_classPharma.TabIndex = 102;
             this.cb_classPharma.UseTallSize = false;
@@ -1230,9 +925,10 @@
             this.tb_lab.AutoSize = true;
             this.tb_lab.BackColor = System.Drawing.Color.Transparent;
             this.tb_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_lab.Location = new System.Drawing.Point(764, 342);
+            this.tb_lab.Location = new System.Drawing.Point(573, 278);
+            this.tb_lab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tb_lab.Name = "tb_lab";
-            this.tb_lab.Size = new System.Drawing.Size(121, 25);
+            this.tb_lab.Size = new System.Drawing.Size(98, 20);
             this.tb_lab.TabIndex = 101;
             this.tb_lab.Text = "Laboratoire :";
             // 
@@ -1251,12 +947,11 @@
             this.cb_lab.Hint = "sélectionner un laboratoire";
             this.cb_lab.IntegralHeight = false;
             this.cb_lab.ItemHeight = 29;
-            this.cb_lab.Location = new System.Drawing.Point(957, 332);
-            this.cb_lab.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_lab.Location = new System.Drawing.Point(718, 270);
             this.cb_lab.MaxDropDownItems = 4;
             this.cb_lab.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_lab.Name = "cb_lab";
-            this.cb_lab.Size = new System.Drawing.Size(360, 35);
+            this.cb_lab.Size = new System.Drawing.Size(271, 35);
             this.cb_lab.StartIndex = -1;
             this.cb_lab.TabIndex = 100;
             this.cb_lab.UseTallSize = false;
@@ -1271,13 +966,12 @@
             this.tb_ppa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_ppa.Hint = "tapez ici....";
             this.tb_ppa.LeadingIcon = null;
-            this.tb_ppa.Location = new System.Drawing.Point(957, 254);
-            this.tb_ppa.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_ppa.Location = new System.Drawing.Point(718, 206);
             this.tb_ppa.MaxLength = 50;
             this.tb_ppa.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_ppa.Multiline = false;
             this.tb_ppa.Name = "tb_ppa";
-            this.tb_ppa.Size = new System.Drawing.Size(360, 36);
+            this.tb_ppa.Size = new System.Drawing.Size(270, 36);
             this.tb_ppa.TabIndex = 99;
             this.tb_ppa.Text = "";
             this.tb_ppa.TrailingIcon = null;
@@ -1288,9 +982,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(738, 265);
+            this.label2.Location = new System.Drawing.Point(554, 215);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.Size = new System.Drawing.Size(116, 20);
             this.label2.TabIndex = 98;
             this.label2.Text = "PPA (indicatif) :";
             // 
@@ -1304,13 +999,12 @@
             this.tb_tarif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_tarif.Hint = "tapez ici....";
             this.tb_tarif.LeadingIcon = null;
-            this.tb_tarif.Location = new System.Drawing.Point(957, 181);
-            this.tb_tarif.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_tarif.Location = new System.Drawing.Point(718, 147);
             this.tb_tarif.MaxLength = 50;
             this.tb_tarif.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_tarif.Multiline = false;
             this.tb_tarif.Name = "tb_tarif";
-            this.tb_tarif.Size = new System.Drawing.Size(360, 36);
+            this.tb_tarif.Size = new System.Drawing.Size(270, 36);
             this.tb_tarif.TabIndex = 97;
             this.tb_tarif.Text = "";
             this.tb_tarif.TrailingIcon = null;
@@ -1321,9 +1015,10 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(709, 192);
+            this.label7.Location = new System.Drawing.Point(532, 156);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(176, 25);
+            this.label7.Size = new System.Drawing.Size(142, 20);
             this.label7.TabIndex = 96;
             this.label7.Text = "Tarif de référence: ";
             // 
@@ -1331,11 +1026,9 @@
             // 
             this.gb_rembo.Controls.Add(this.materialRadioButton1);
             this.gb_rembo.Controls.Add(this.materialRadioButton2);
-            this.gb_rembo.Location = new System.Drawing.Point(957, 86);
-            this.gb_rembo.Margin = new System.Windows.Forms.Padding(4);
+            this.gb_rembo.Location = new System.Drawing.Point(718, 70);
             this.gb_rembo.Name = "gb_rembo";
-            this.gb_rembo.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_rembo.Size = new System.Drawing.Size(360, 63);
+            this.gb_rembo.Size = new System.Drawing.Size(270, 51);
             this.gb_rembo.TabIndex = 95;
             this.gb_rembo.TabStop = false;
             // 
@@ -1345,7 +1038,7 @@
             this.materialRadioButton1.BackColor = System.Drawing.Color.Transparent;
             this.materialRadioButton1.Depth = 0;
             this.materialRadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton1.Location = new System.Drawing.Point(154, 19);
+            this.materialRadioButton1.Location = new System.Drawing.Point(116, 15);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1363,7 +1056,7 @@
             this.materialRadioButton2.BackColor = System.Drawing.Color.Transparent;
             this.materialRadioButton2.Depth = 0;
             this.materialRadioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton2.Location = new System.Drawing.Point(16, 19);
+            this.materialRadioButton2.Location = new System.Drawing.Point(12, 15);
             this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1380,9 +1073,10 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(736, 111);
+            this.label8.Location = new System.Drawing.Point(552, 90);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(149, 25);
+            this.label8.Size = new System.Drawing.Size(121, 20);
             this.label8.TabIndex = 94;
             this.label8.Text = "Remboursable :";
             // 
@@ -1391,9 +1085,10 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(795, 49);
+            this.label9.Location = new System.Drawing.Point(596, 40);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 25);
+            this.label9.Size = new System.Drawing.Size(51, 20);
             this.label9.TabIndex = 93;
             this.label9.Text = "Pays :";
             // 
@@ -1401,11 +1096,9 @@
             // 
             this.gb_comm.Controls.Add(this.rb_comme_No);
             this.gb_comm.Controls.Add(this.rb_comme_Oui);
-            this.gb_comm.Location = new System.Drawing.Point(231, 459);
-            this.gb_comm.Margin = new System.Windows.Forms.Padding(4);
+            this.gb_comm.Location = new System.Drawing.Point(173, 373);
             this.gb_comm.Name = "gb_comm";
-            this.gb_comm.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_comm.Size = new System.Drawing.Size(361, 76);
+            this.gb_comm.Size = new System.Drawing.Size(271, 62);
             this.gb_comm.TabIndex = 92;
             this.gb_comm.TabStop = false;
             // 
@@ -1415,7 +1108,7 @@
             this.rb_comme_No.BackColor = System.Drawing.Color.Transparent;
             this.rb_comme_No.Depth = 0;
             this.rb_comme_No.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_comme_No.Location = new System.Drawing.Point(195, 18);
+            this.rb_comme_No.Location = new System.Drawing.Point(146, 15);
             this.rb_comme_No.Margin = new System.Windows.Forms.Padding(0);
             this.rb_comme_No.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_comme_No.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1433,7 +1126,7 @@
             this.rb_comme_Oui.BackColor = System.Drawing.Color.Transparent;
             this.rb_comme_Oui.Depth = 0;
             this.rb_comme_Oui.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_comme_Oui.Location = new System.Drawing.Point(64, 20);
+            this.rb_comme_Oui.Location = new System.Drawing.Point(48, 16);
             this.rb_comme_Oui.Margin = new System.Windows.Forms.Padding(0);
             this.rb_comme_Oui.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_comme_Oui.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1450,9 +1143,10 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(24, 487);
+            this.label10.Location = new System.Drawing.Point(18, 396);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 25);
+            this.label10.Size = new System.Drawing.Size(146, 20);
             this.label10.TabIndex = 91;
             this.label10.Text = "Commercialisation :";
             // 
@@ -1461,11 +1155,9 @@
             this.gb_list.Controls.Add(this.rb_list3);
             this.gb_list.Controls.Add(this.rb_list2);
             this.gb_list.Controls.Add(this.rb_list1);
-            this.gb_list.Location = new System.Drawing.Point(163, 384);
-            this.gb_list.Margin = new System.Windows.Forms.Padding(4);
+            this.gb_list.Location = new System.Drawing.Point(122, 312);
             this.gb_list.Name = "gb_list";
-            this.gb_list.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_list.Size = new System.Drawing.Size(429, 76);
+            this.gb_list.Size = new System.Drawing.Size(322, 62);
             this.gb_list.TabIndex = 90;
             this.gb_list.TabStop = false;
             // 
@@ -1475,7 +1167,7 @@
             this.rb_list3.BackColor = System.Drawing.Color.Transparent;
             this.rb_list3.Depth = 0;
             this.rb_list3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_list3.Location = new System.Drawing.Point(263, 20);
+            this.rb_list3.Location = new System.Drawing.Point(197, 16);
             this.rb_list3.Margin = new System.Windows.Forms.Padding(0);
             this.rb_list3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_list3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1493,7 +1185,7 @@
             this.rb_list2.BackColor = System.Drawing.Color.Transparent;
             this.rb_list2.Depth = 0;
             this.rb_list2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_list2.Location = new System.Drawing.Point(132, 20);
+            this.rb_list2.Location = new System.Drawing.Point(99, 16);
             this.rb_list2.Margin = new System.Windows.Forms.Padding(0);
             this.rb_list2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_list2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1511,7 +1203,7 @@
             this.rb_list1.BackColor = System.Drawing.Color.Transparent;
             this.rb_list1.Depth = 0;
             this.rb_list1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_list1.Location = new System.Drawing.Point(17, 20);
+            this.rb_list1.Location = new System.Drawing.Point(13, 16);
             this.rb_list1.Margin = new System.Windows.Forms.Padding(0);
             this.rb_list1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_list1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1528,9 +1220,10 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(40, 414);
+            this.label11.Location = new System.Drawing.Point(30, 336);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 25);
+            this.label11.Size = new System.Drawing.Size(42, 20);
             this.label11.TabIndex = 89;
             this.label11.Text = "List :";
             // 
@@ -1538,11 +1231,9 @@
             // 
             this.gb_type.Controls.Add(this.materialRadioButton3);
             this.gb_type.Controls.Add(this.rb_type_generique);
-            this.gb_type.Location = new System.Drawing.Point(163, 300);
-            this.gb_type.Margin = new System.Windows.Forms.Padding(4);
+            this.gb_type.Location = new System.Drawing.Point(122, 244);
             this.gb_type.Name = "gb_type";
-            this.gb_type.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_type.Size = new System.Drawing.Size(429, 76);
+            this.gb_type.Size = new System.Drawing.Size(322, 62);
             this.gb_type.TabIndex = 88;
             this.gb_type.TabStop = false;
             // 
@@ -1552,7 +1243,7 @@
             this.materialRadioButton3.BackColor = System.Drawing.Color.Transparent;
             this.materialRadioButton3.Depth = 0;
             this.materialRadioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton3.Location = new System.Drawing.Point(263, 20);
+            this.materialRadioButton3.Location = new System.Drawing.Point(197, 16);
             this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1570,7 +1261,7 @@
             this.rb_type_generique.BackColor = System.Drawing.Color.Transparent;
             this.rb_type_generique.Depth = 0;
             this.rb_type_generique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rb_type_generique.Location = new System.Drawing.Point(17, 20);
+            this.rb_type_generique.Location = new System.Drawing.Point(13, 16);
             this.rb_type_generique.Margin = new System.Windows.Forms.Padding(0);
             this.rb_type_generique.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rb_type_generique.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1587,9 +1278,10 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(25, 192);
+            this.label12.Location = new System.Drawing.Point(19, 156);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 25);
+            this.label12.Size = new System.Drawing.Size(54, 20);
             this.label12.TabIndex = 82;
             this.label12.Text = "Form :";
             // 
@@ -1608,12 +1300,11 @@
             this.cb_pays.Hint = "choisissez le pays";
             this.cb_pays.IntegralHeight = false;
             this.cb_pays.ItemHeight = 29;
-            this.cb_pays.Location = new System.Drawing.Point(957, 42);
-            this.cb_pays.Margin = new System.Windows.Forms.Padding(4);
+            this.cb_pays.Location = new System.Drawing.Point(718, 34);
             this.cb_pays.MaxDropDownItems = 4;
             this.cb_pays.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_pays.Name = "cb_pays";
-            this.cb_pays.Size = new System.Drawing.Size(360, 35);
+            this.cb_pays.Size = new System.Drawing.Size(271, 35);
             this.cb_pays.StartIndex = -1;
             this.cb_pays.TabIndex = 71;
             this.cb_pays.UseTallSize = false;
@@ -1628,13 +1319,12 @@
             this.tb_dossage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_dossage.Hint = "tapez ici....";
             this.tb_dossage.LeadingIcon = null;
-            this.tb_dossage.Location = new System.Drawing.Point(163, 249);
-            this.tb_dossage.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_dossage.Location = new System.Drawing.Point(122, 202);
             this.tb_dossage.MaxLength = 50;
             this.tb_dossage.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_dossage.Multiline = false;
             this.tb_dossage.Name = "tb_dossage";
-            this.tb_dossage.Size = new System.Drawing.Size(429, 36);
+            this.tb_dossage.Size = new System.Drawing.Size(322, 36);
             this.tb_dossage.TabIndex = 87;
             this.tb_dossage.Text = "";
             this.tb_dossage.TrailingIcon = null;
@@ -1645,9 +1335,10 @@
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(25, 111);
+            this.label16.Location = new System.Drawing.Point(19, 90);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 25);
+            this.label16.Size = new System.Drawing.Size(85, 20);
             this.label16.TabIndex = 78;
             this.label16.Text = "Nom Med :";
             // 
@@ -1661,13 +1352,12 @@
             this.tb_form.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_form.Hint = "tapez ici....";
             this.tb_form.LeadingIcon = null;
-            this.tb_form.Location = new System.Drawing.Point(163, 181);
-            this.tb_form.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_form.Location = new System.Drawing.Point(122, 147);
             this.tb_form.MaxLength = 50;
             this.tb_form.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_form.Multiline = false;
             this.tb_form.Name = "tb_form";
-            this.tb_form.Size = new System.Drawing.Size(429, 36);
+            this.tb_form.Size = new System.Drawing.Size(322, 36);
             this.tb_form.TabIndex = 86;
             this.tb_form.Text = "";
             this.tb_form.TrailingIcon = null;
@@ -1678,9 +1368,10 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(24, 260);
+            this.label17.Location = new System.Drawing.Point(18, 211);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(101, 25);
+            this.label17.Size = new System.Drawing.Size(81, 20);
             this.label17.TabIndex = 79;
             this.label17.Text = "Dossage :";
             // 
@@ -1694,13 +1385,12 @@
             this.tb_NomMed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_NomMed.Hint = "tapez ici....";
             this.tb_NomMed.LeadingIcon = null;
-            this.tb_NomMed.Location = new System.Drawing.Point(163, 100);
-            this.tb_NomMed.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_NomMed.Location = new System.Drawing.Point(122, 81);
             this.tb_NomMed.MaxLength = 50;
             this.tb_NomMed.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_NomMed.Multiline = false;
             this.tb_NomMed.Name = "tb_NomMed";
-            this.tb_NomMed.Size = new System.Drawing.Size(429, 36);
+            this.tb_NomMed.Size = new System.Drawing.Size(322, 36);
             this.tb_NomMed.TabIndex = 85;
             this.tb_NomMed.Text = "";
             this.tb_NomMed.TrailingIcon = null;
@@ -1711,9 +1401,10 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(29, 342);
+            this.label18.Location = new System.Drawing.Point(22, 278);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(68, 25);
+            this.label18.Size = new System.Drawing.Size(51, 20);
             this.label18.TabIndex = 80;
             this.label18.Text = "Type :";
             // 
@@ -1727,13 +1418,12 @@
             this.tb_refMed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_refMed.Hint = "tapez ici...";
             this.tb_refMed.LeadingIcon = null;
-            this.tb_refMed.Location = new System.Drawing.Point(167, 42);
-            this.tb_refMed.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_refMed.Location = new System.Drawing.Point(125, 34);
             this.tb_refMed.MaxLength = 50;
             this.tb_refMed.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_refMed.Multiline = false;
             this.tb_refMed.Name = "tb_refMed";
-            this.tb_refMed.Size = new System.Drawing.Size(425, 36);
+            this.tb_refMed.Size = new System.Drawing.Size(319, 36);
             this.tb_refMed.TabIndex = 84;
             this.tb_refMed.Text = "";
             this.tb_refMed.TrailingIcon = null;
@@ -1744,11 +1434,73 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(25, 49);
+            this.label19.Location = new System.Drawing.Point(19, 40);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(96, 25);
+            this.label19.Size = new System.Drawing.Size(78, 20);
             this.label19.TabIndex = 81;
             this.label19.Text = "Ref Med :";
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = false;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(738, 511);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(108, 36);
+            this.materialButton1.TabIndex = 108;
+            this.materialButton1.Text = "Annuler";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            // 
+            // materialButton9
+            // 
+            this.materialButton9.AutoSize = false;
+            this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton9.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton9.Depth = 0;
+            this.materialButton9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialButton9.HighEmphasis = true;
+            this.materialButton9.Icon = null;
+            this.materialButton9.Location = new System.Drawing.Point(292, 511);
+            this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton9.Name = "materialButton9";
+            this.materialButton9.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton9.Size = new System.Drawing.Size(168, 36);
+            this.materialButton9.TabIndex = 110;
+            this.materialButton9.Text = "Sauvegarder";
+            this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton9.UseAccentColor = false;
+            this.materialButton9.UseVisualStyleBackColor = true;
+            // 
+            // materialButton5
+            // 
+            this.materialButton5.AutoSize = false;
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = null;
+            this.materialButton5.Location = new System.Drawing.Point(497, 486);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton5.Size = new System.Drawing.Size(189, 61);
+            this.materialButton5.TabIndex = 109;
+            this.materialButton5.Text = "ajouter une nouvelle classe";
+            this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.materialButton5.UseAccentColor = false;
+            this.materialButton5.UseVisualStyleBackColor = true;
             // 
             // tp_alert
             // 
@@ -1756,9 +1508,9 @@
             this.tp_alert.Controls.Add(this.materialTabSelector1);
             this.tp_alert.ImageKey = "danger.png";
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
-            this.tp_alert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1689, 893);
+            this.tp_alert.Size = new System.Drawing.Size(1643, 653);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -1770,13 +1522,13 @@
             this.materialTabControl2.Controls.Add(this.tp_other);
             this.materialTabControl2.Depth = 0;
             this.materialTabControl2.ImageList = this.imageList1;
-            this.materialTabControl2.Location = new System.Drawing.Point(5, 47);
+            this.materialTabControl2.Location = new System.Drawing.Point(4, 38);
             this.materialTabControl2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl2.Multiline = true;
             this.materialTabControl2.Name = "materialTabControl2";
             this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(1574, 481);
+            this.materialTabControl2.Size = new System.Drawing.Size(1180, 391);
             this.materialTabControl2.TabIndex = 25;
             // 
             // tp_lowSupply
@@ -1786,10 +1538,9 @@
             this.tp_lowSupply.Controls.Add(this.materialLabel44);
             this.tp_lowSupply.ImageKey = "product.png";
             this.tp_lowSupply.Location = new System.Drawing.Point(4, 39);
-            this.tp_lowSupply.Margin = new System.Windows.Forms.Padding(4);
             this.tp_lowSupply.Name = "tp_lowSupply";
-            this.tp_lowSupply.Padding = new System.Windows.Forms.Padding(4);
-            this.tp_lowSupply.Size = new System.Drawing.Size(1566, 438);
+            this.tp_lowSupply.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_lowSupply.Size = new System.Drawing.Size(1172, 348);
             this.tp_lowSupply.TabIndex = 0;
             this.tp_lowSupply.Text = "approv Insuffisant";
             // 
@@ -1800,8 +1551,7 @@
             this.materialLabel45.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel45.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
             this.materialLabel45.HighEmphasis = true;
-            this.materialLabel45.Location = new System.Drawing.Point(20, 17);
-            this.materialLabel45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel45.Location = new System.Drawing.Point(15, 14);
             this.materialLabel45.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel45.Name = "materialLabel45";
             this.materialLabel45.Size = new System.Drawing.Size(174, 24);
@@ -1815,11 +1565,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel44.Depth = 0;
             this.materialLabel44.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel44.Location = new System.Drawing.Point(20, 68);
-            this.materialLabel44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel44.Location = new System.Drawing.Point(15, 55);
             this.materialLabel44.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel44.Name = "materialLabel44";
-            this.materialLabel44.Size = new System.Drawing.Size(1514, 338);
+            this.materialLabel44.Size = new System.Drawing.Size(1136, 275);
             this.materialLabel44.TabIndex = 3;
             this.materialLabel44.Text = "However, in accordance with the Material Design principles, tabs should NOT be us" +
     "ed together with the Drawer menu, chose one or the other :)\r\n\r\nTry \'em!";
@@ -1829,10 +1578,9 @@
             this.tp_expired_med.BackColor = System.Drawing.Color.White;
             this.tp_expired_med.Controls.Add(this.materialLabel10);
             this.tp_expired_med.Location = new System.Drawing.Point(4, 39);
-            this.tp_expired_med.Margin = new System.Windows.Forms.Padding(4);
             this.tp_expired_med.Name = "tp_expired_med";
-            this.tp_expired_med.Padding = new System.Windows.Forms.Padding(4);
-            this.tp_expired_med.Size = new System.Drawing.Size(1566, 438);
+            this.tp_expired_med.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_expired_med.Size = new System.Drawing.Size(1172, 348);
             this.tp_expired_med.TabIndex = 1;
             this.tp_expired_med.Text = "médicaments expirés";
             // 
@@ -1844,8 +1592,7 @@
             this.materialLabel10.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
             this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel10.HighEmphasis = true;
-            this.materialLabel10.Location = new System.Drawing.Point(8, 9);
-            this.materialLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel10.Location = new System.Drawing.Point(6, 7);
             this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel10.Name = "materialLabel10";
             this.materialLabel10.Size = new System.Drawing.Size(475, 58);
@@ -1857,9 +1604,8 @@
             // 
             this.tp_other.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tp_other.Location = new System.Drawing.Point(4, 39);
-            this.tp_other.Margin = new System.Windows.Forms.Padding(4);
             this.tp_other.Name = "tp_other";
-            this.tp_other.Size = new System.Drawing.Size(1566, 438);
+            this.tp_other.Size = new System.Drawing.Size(1172, 348);
             this.tp_other.TabIndex = 2;
             this.tp_other.Text = "Autre";
             // 
@@ -1873,20 +1619,19 @@
             this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(5, 0);
+            this.materialTabSelector1.Location = new System.Drawing.Point(4, 0);
             this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1578, 47);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1438, 38);
             this.materialTabSelector1.TabIndex = 26;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 43);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1689, 893);
+            this.tabPage5.Size = new System.Drawing.Size(1623, 857);
             this.tabPage5.TabIndex = 10;
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
@@ -1895,71 +1640,340 @@
             this.tp_logout.BackColor = System.Drawing.Color.White;
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
-            this.tp_logout.Margin = new System.Windows.Forms.Padding(4);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1689, 893);
+            this.tp_logout.Size = new System.Drawing.Size(1623, 857);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
             // tabPage6
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1689, 893);
+            this.tabPage6.Size = new System.Drawing.Size(1623, 857);
             this.tabPage6.TabIndex = 13;
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // tb_webAdress
+            // materialCard3
             // 
-            this.tb_webAdress.AnimateReadOnly = false;
-            this.tb_webAdress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_webAdress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_webAdress.Depth = 0;
-            this.tb_webAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_webAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_webAdress.Hint = "tapez ici....";
-            this.tb_webAdress.LeadingIcon = null;
-            this.tb_webAdress.Location = new System.Drawing.Point(176, 301);
-            this.tb_webAdress.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_webAdress.MaxLength = 50;
-            this.tb_webAdress.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_webAdress.Multiline = false;
-            this.tb_webAdress.Name = "tb_webAdress";
-            this.tb_webAdress.Size = new System.Drawing.Size(360, 36);
-            this.tb_webAdress.TabIndex = 108;
-            this.tb_webAdress.Text = "";
-            this.tb_webAdress.TrailingIcon = null;
-            this.tb_webAdress.UseTallSize = false;
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.panel_add_employee);
+            this.materialCard3.Controls.Add(this.BTN_Annuler);
+            this.materialCard3.Controls.Add(this.BTN_ajouterPerso);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard3.Location = new System.Drawing.Point(385, 65);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard3.Size = new System.Drawing.Size(497, 468);
+            this.materialCard3.TabIndex = 106;
             // 
-            // label26
+            // panel_add_employee
             // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(24, 301);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(128, 25);
-            this.label26.TabIndex = 107;
-            this.label26.Text = "web adress : ";
+            this.panel_add_employee.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_add_employee.BackColor = System.Drawing.Color.Transparent;
+            this.panel_add_employee.Controls.Add(this.tb_conPass);
+            this.panel_add_employee.Controls.Add(this.label25);
+            this.panel_add_employee.Controls.Add(this.tb_Nom);
+            this.panel_add_employee.Controls.Add(this.tb_prenom);
+            this.panel_add_employee.Controls.Add(this.label13);
+            this.panel_add_employee.Controls.Add(this.tb_motpass);
+            this.panel_add_employee.Controls.Add(this.label6);
+            this.panel_add_employee.Controls.Add(this.tb_username);
+            this.panel_add_employee.Controls.Add(this.label5);
+            this.panel_add_employee.Controls.Add(this.groupBox_role);
+            this.panel_add_employee.Controls.Add(this.label4);
+            this.panel_add_employee.Controls.Add(this.label3);
+            this.panel_add_employee.Location = new System.Drawing.Point(0, 0);
+            this.panel_add_employee.Name = "panel_add_employee";
+            this.panel_add_employee.Size = new System.Drawing.Size(497, 361);
+            this.panel_add_employee.TabIndex = 105;
+            // 
+            // tb_conPass
+            // 
+            this.tb_conPass.AnimateReadOnly = false;
+            this.tb_conPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_conPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_conPass.Depth = 0;
+            this.tb_conPass.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_conPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_conPass.Hint = "tapez ici....";
+            this.tb_conPass.LeadingIcon = null;
+            this.tb_conPass.Location = new System.Drawing.Point(133, 211);
+            this.tb_conPass.MaxLength = 50;
+            this.tb_conPass.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_conPass.Multiline = false;
+            this.tb_conPass.Name = "tb_conPass";
+            this.tb_conPass.Password = true;
+            this.tb_conPass.Size = new System.Drawing.Size(270, 36);
+            this.tb_conPass.TabIndex = 107;
+            this.tb_conPass.Text = "";
+            this.tb_conPass.TrailingIcon = null;
+            this.tb_conPass.UseTallSize = false;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(15, 211);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(113, 40);
+            this.label25.TabIndex = 106;
+            this.label25.Text = "Confirmer mot \r\n de pass :";
+            // 
+            // tb_Nom
+            // 
+            this.tb_Nom.AnimateReadOnly = false;
+            this.tb_Nom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_Nom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_Nom.Depth = 0;
+            this.tb_Nom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_Nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_Nom.Hint = "tapez ici...";
+            this.tb_Nom.LeadingIcon = null;
+            this.tb_Nom.Location = new System.Drawing.Point(133, 14);
+            this.tb_Nom.MaxLength = 50;
+            this.tb_Nom.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_Nom.Multiline = false;
+            this.tb_Nom.Name = "tb_Nom";
+            this.tb_Nom.Size = new System.Drawing.Size(270, 36);
+            this.tb_Nom.TabIndex = 105;
+            this.tb_Nom.Text = "";
+            this.tb_Nom.TrailingIcon = null;
+            this.tb_Nom.UseTallSize = false;
+            // 
+            // tb_prenom
+            // 
+            this.tb_prenom.AnimateReadOnly = false;
+            this.tb_prenom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_prenom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_prenom.Depth = 0;
+            this.tb_prenom.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_prenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_prenom.Hint = "tapez ici...";
+            this.tb_prenom.LeadingIcon = null;
+            this.tb_prenom.Location = new System.Drawing.Point(134, 62);
+            this.tb_prenom.MaxLength = 50;
+            this.tb_prenom.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_prenom.Multiline = false;
+            this.tb_prenom.Name = "tb_prenom";
+            this.tb_prenom.Size = new System.Drawing.Size(270, 36);
+            this.tb_prenom.TabIndex = 104;
+            this.tb_prenom.Text = "";
+            this.tb_prenom.TrailingIcon = null;
+            this.tb_prenom.UseTallSize = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 73);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(71, 20);
+            this.label13.TabIndex = 103;
+            this.label13.Text = "prenom :";
+            // 
+            // tb_motpass
+            // 
+            this.tb_motpass.AnimateReadOnly = false;
+            this.tb_motpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_motpass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_motpass.Depth = 0;
+            this.tb_motpass.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_motpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_motpass.Hint = "tapez ici....";
+            this.tb_motpass.LeadingIcon = null;
+            this.tb_motpass.Location = new System.Drawing.Point(134, 162);
+            this.tb_motpass.MaxLength = 50;
+            this.tb_motpass.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_motpass.Multiline = false;
+            this.tb_motpass.Name = "tb_motpass";
+            this.tb_motpass.Password = true;
+            this.tb_motpass.Size = new System.Drawing.Size(270, 36);
+            this.tb_motpass.TabIndex = 99;
+            this.tb_motpass.Text = "";
+            this.tb_motpass.TrailingIcon = null;
+            this.tb_motpass.UseTallSize = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 173);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 20);
+            this.label6.TabIndex = 98;
+            this.label6.Text = "mot de pass :";
+            // 
+            // tb_username
+            // 
+            this.tb_username.AnimateReadOnly = false;
+            this.tb_username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_username.Depth = 0;
+            this.tb_username.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_username.Hint = "tapez ici....";
+            this.tb_username.LeadingIcon = null;
+            this.tb_username.Location = new System.Drawing.Point(133, 114);
+            this.tb_username.MaxLength = 50;
+            this.tb_username.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_username.Multiline = false;
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(270, 36);
+            this.tb_username.TabIndex = 97;
+            this.tb_username.Text = "";
+            this.tb_username.TrailingIcon = null;
+            this.tb_username.UseTallSize = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 125);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 20);
+            this.label5.TabIndex = 96;
+            this.label5.Text = "nom utilisateur : ";
+            // 
+            // groupBox_role
+            // 
+            this.groupBox_role.Controls.Add(this.rb_remb_emp);
+            this.groupBox_role.Controls.Add(this.rb_rembo_admin);
+            this.groupBox_role.Location = new System.Drawing.Point(134, 253);
+            this.groupBox_role.Name = "groupBox_role";
+            this.groupBox_role.Size = new System.Drawing.Size(292, 63);
+            this.groupBox_role.TabIndex = 95;
+            this.groupBox_role.TabStop = false;
+            // 
+            // rb_remb_emp
+            // 
+            this.rb_remb_emp.AutoSize = true;
+            this.rb_remb_emp.BackColor = System.Drawing.Color.Transparent;
+            this.rb_remb_emp.Depth = 0;
+            this.rb_remb_emp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rb_remb_emp.Location = new System.Drawing.Point(182, 17);
+            this.rb_remb_emp.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_remb_emp.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_remb_emp.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_remb_emp.Name = "rb_remb_emp";
+            this.rb_remb_emp.Ripple = true;
+            this.rb_remb_emp.Size = new System.Drawing.Size(68, 37);
+            this.rb_remb_emp.TabIndex = 1;
+            this.rb_remb_emp.TabStop = true;
+            this.rb_remb_emp.Text = "EMP";
+            this.rb_remb_emp.UseVisualStyleBackColor = false;
+            // 
+            // rb_rembo_admin
+            // 
+            this.rb_rembo_admin.AutoSize = true;
+            this.rb_rembo_admin.BackColor = System.Drawing.Color.Transparent;
+            this.rb_rembo_admin.Depth = 0;
+            this.rb_rembo_admin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rb_rembo_admin.Location = new System.Drawing.Point(16, 17);
+            this.rb_rembo_admin.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_rembo_admin.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_rembo_admin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_rembo_admin.Name = "rb_rembo_admin";
+            this.rb_rembo_admin.Ripple = true;
+            this.rb_rembo_admin.Size = new System.Drawing.Size(85, 37);
+            this.rb_rembo_admin.TabIndex = 0;
+            this.rb_rembo_admin.TabStop = true;
+            this.rb_rembo_admin.Text = "ADMIN";
+            this.rb_rembo_admin.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 265);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "Role :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "Nom :";
+            // 
+            // BTN_Annuler
+            // 
+            this.BTN_Annuler.AutoSize = false;
+            this.BTN_Annuler.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTN_Annuler.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTN_Annuler.Depth = 0;
+            this.BTN_Annuler.HighEmphasis = false;
+            this.BTN_Annuler.Icon = null;
+            this.BTN_Annuler.Location = new System.Drawing.Point(320, 392);
+            this.BTN_Annuler.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTN_Annuler.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTN_Annuler.Name = "BTN_Annuler";
+            this.BTN_Annuler.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTN_Annuler.Size = new System.Drawing.Size(106, 36);
+            this.BTN_Annuler.TabIndex = 103;
+            this.BTN_Annuler.Text = "Annuler";
+            this.BTN_Annuler.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTN_Annuler.UseAccentColor = false;
+            this.BTN_Annuler.UseVisualStyleBackColor = true;
+            // 
+            // BTN_ajouterPerso
+            // 
+            this.BTN_ajouterPerso.AutoSize = false;
+            this.BTN_ajouterPerso.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BTN_ajouterPerso.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.BTN_ajouterPerso.Depth = 0;
+            this.BTN_ajouterPerso.HighEmphasis = true;
+            this.BTN_ajouterPerso.Icon = null;
+            this.BTN_ajouterPerso.Location = new System.Drawing.Point(54, 392);
+            this.BTN_ajouterPerso.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.BTN_ajouterPerso.MouseState = MaterialSkin.MouseState.HOVER;
+            this.BTN_ajouterPerso.Name = "BTN_ajouterPerso";
+            this.BTN_ajouterPerso.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.BTN_ajouterPerso.Size = new System.Drawing.Size(208, 36);
+            this.BTN_ajouterPerso.TabIndex = 104;
+            this.BTN_ajouterPerso.Text = "ajouter un Emploiee";
+            this.BTN_ajouterPerso.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.BTN_ajouterPerso.UseAccentColor = false;
+            this.BTN_ajouterPerso.UseVisualStyleBackColor = true;
             // 
             // frm_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1721, 1102);
+            this.ClientSize = new System.Drawing.Size(1338, 771);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
             this.DrawerWidth = 400;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_main";
-            this.Padding = new System.Windows.Forms.Padding(0, 79, 3, 2);
+            this.Padding = new System.Windows.Forms.Padding(0, 64, 2, 2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_main_Load);
             this.tab_control.ResumeLayout(false);
             this.tp_list_stock.ResumeLayout(false);
@@ -1969,15 +1983,12 @@
             this.tp_admin.ResumeLayout(false);
             this.secondaryTabs_admin.ResumeLayout(false);
             this.tabPage_khdam.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.groupBox_role.ResumeLayout(false);
-            this.groupBox_role.PerformLayout();
             this.tabPage_labo.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.materialCard1.ResumeLayout(false);
+            this.panel_lab.ResumeLayout(false);
+            this.panel_lab.PerformLayout();
             this.tabPage_addproduct.ResumeLayout(false);
+            this.materialCard2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gb_rembo.ResumeLayout(false);
@@ -1994,6 +2005,11 @@
             this.tp_lowSupply.PerformLayout();
             this.tp_expired_med.ResumeLayout(false);
             this.tp_expired_med.PerformLayout();
+            this.materialCard3.ResumeLayout(false);
+            this.panel_add_employee.ResumeLayout(false);
+            this.panel_add_employee.PerformLayout();
+            this.groupBox_role.ResumeLayout(false);
+            this.groupBox_role.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2038,22 +2054,9 @@
 
         private System.Windows.Forms.TabPage tabPage_labo;
         private System.Windows.Forms.TabPage tabPage_addproduct;
-        private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
-        private MaterialSkin.Controls.MaterialButton BTN_Annuler;
-        private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialTextBox tb_Nom;
-        private MaterialSkin.Controls.MaterialTextBox tb_prenom;
-        private System.Windows.Forms.Label label13;
-        private MaterialSkin.Controls.MaterialTextBox tb_motpass;
-        private System.Windows.Forms.Label label6;
-        private MaterialSkin.Controls.MaterialTextBox tb_username;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox_role;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private MaterialSkin.Controls.MaterialButton materialButton2;
         private MaterialSkin.Controls.MaterialButton tb_addLab;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_lab;
         private MaterialSkin.Controls.MaterialTextBox tb_nomLab;
         private MaterialSkin.Controls.MaterialTextBox tb_codeLab;
         private System.Windows.Forms.Label label20;
@@ -2063,8 +2066,14 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private MaterialSkin.Controls.MaterialButton BTN_ajouterProduct;
+        private MaterialSkin.Controls.MaterialComboBox cb_pay;
+        private MaterialSkin.Controls.MaterialTextBox tb_webAdress;
+        private System.Windows.Forms.Label label26;
+        private MaterialSkin.Controls.MaterialButton materialButton9;
+        private MaterialSkin.Controls.MaterialButton materialButton5;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label15;
         private MaterialSkin.Controls.MaterialComboBox cb_Dci;
@@ -2105,14 +2114,23 @@
         private System.Windows.Forms.Label label18;
         private MaterialSkin.Controls.MaterialTextBox tb_refMed;
         private System.Windows.Forms.Label label19;
-        private MaterialSkin.Controls.MaterialComboBox cb_pay;
-        private MaterialSkin.Controls.MaterialButton materialButton4;
-        private System.Windows.Forms.Panel panel4;
+        private MaterialSkin.Controls.MaterialCard materialCard3;
+        private Panel panel_add_employee;
+        private MaterialSkin.Controls.MaterialTextBox tb_conPass;
+        private Label label25;
+        private MaterialSkin.Controls.MaterialTextBox tb_Nom;
+        private MaterialSkin.Controls.MaterialTextBox tb_prenom;
+        private Label label13;
+        private MaterialSkin.Controls.MaterialTextBox tb_motpass;
+        private Label label6;
+        private MaterialSkin.Controls.MaterialTextBox tb_username;
+        private Label label5;
+        private GroupBox groupBox_role;
         private MaterialSkin.Controls.MaterialRadioButton rb_remb_emp;
         private MaterialSkin.Controls.MaterialRadioButton rb_rembo_admin;
-        private MaterialSkin.Controls.MaterialTextBox tb_conPass;
-        private System.Windows.Forms.Label label25;
-        private MaterialSkin.Controls.MaterialTextBox tb_webAdress;
-        private System.Windows.Forms.Label label26;
+        private Label label4;
+        private Label label3;
+        private MaterialSkin.Controls.MaterialButton BTN_Annuler;
+        private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
     }
 }
