@@ -167,6 +167,14 @@ namespace User_Interface.forms
                     e.Cancel = true;
                     break;
 
+                case "tabPage4":
+                    e.Cancel = true;
+                    break;
+
+                case "tabPage7":
+                    e.Cancel = true;
+                    break;
+
             }
 
 
@@ -346,7 +354,7 @@ namespace User_Interface.forms
               tel = tb_phone.Text,
               web_adress = tb_webAdress.Text,
               //error hna
-              //pay_code = cb_pays.SelectedText,
+              pay_code = cb_pays.SelectedText,
 
 
             };

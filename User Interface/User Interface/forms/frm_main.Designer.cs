@@ -55,7 +55,7 @@ namespace User_Interface.forms
             this.secondaryTabs_admin = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage_khdam = new System.Windows.Forms.TabPage();
             this.tabPage_labo = new System.Windows.Forms.TabPage();
-            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.card_lab = new MaterialSkin.Controls.MaterialCard();
             this.panel_lab = new System.Windows.Forms.Panel();
             this.tb_webAdress = new MaterialSkin.Controls.MaterialTextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@ namespace User_Interface.forms
             this.tb_addLab = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage_addproduct = new System.Windows.Forms.TabPage();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.card_produit = new MaterialSkin.Controls.MaterialCard();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_Dci = new MaterialSkin.Controls.MaterialComboBox();
@@ -128,7 +128,7 @@ namespace User_Interface.forms
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.materialCard3 = new MaterialSkin.Controls.MaterialCard();
+            this.card_employee = new MaterialSkin.Controls.MaterialCard();
             this.panel_add_employee = new System.Windows.Forms.Panel();
             this.tb_conPass = new MaterialSkin.Controls.MaterialTextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -146,6 +146,8 @@ namespace User_Interface.forms
             this.label3 = new System.Windows.Forms.Label();
             this.BTN_Annuler = new MaterialSkin.Controls.MaterialButton();
             this.BTN_ajouterPerso = new MaterialSkin.Controls.MaterialButton();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -154,10 +156,10 @@ namespace User_Interface.forms
             this.secondaryTabs_admin.SuspendLayout();
             this.tabPage_khdam.SuspendLayout();
             this.tabPage_labo.SuspendLayout();
-            this.materialCard1.SuspendLayout();
+            this.card_lab.SuspendLayout();
             this.panel_lab.SuspendLayout();
             this.tabPage_addproduct.SuspendLayout();
-            this.materialCard2.SuspendLayout();
+            this.card_produit.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gb_rembo.SuspendLayout();
             this.gb_comm.SuspendLayout();
@@ -167,7 +169,7 @@ namespace User_Interface.forms
             this.materialTabControl2.SuspendLayout();
             this.tp_lowSupply.SuspendLayout();
             this.tp_expired_med.SuspendLayout();
-            this.materialCard3.SuspendLayout();
+            this.card_employee.SuspendLayout();
             this.panel_add_employee.SuspendLayout();
             this.groupBox_role.SuspendLayout();
             this.SuspendLayout();
@@ -186,8 +188,10 @@ namespace User_Interface.forms
             this.tab_control.Controls.Add(this.tp_admin);
             this.tab_control.Controls.Add(this.tp_alert);
             this.tab_control.Controls.Add(this.tabPage5);
-            this.tab_control.Controls.Add(this.tp_logout);
             this.tab_control.Controls.Add(this.tabPage6);
+            this.tab_control.Controls.Add(this.tabPage4);
+            this.tab_control.Controls.Add(this.tabPage7);
+            this.tab_control.Controls.Add(this.tp_logout);
             this.tab_control.Depth = 0;
             this.tab_control.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tab_control.ImageList = this.imageList1;
@@ -207,7 +211,7 @@ namespace User_Interface.forms
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1643, 900);
+            this.tabPage1.Size = new System.Drawing.Size(1595, 653);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -215,7 +219,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1623, 857);
+            this.tabPage2.Size = new System.Drawing.Size(1595, 653);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -223,7 +227,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1623, 857);
+            this.tabPage3.Size = new System.Drawing.Size(1595, 653);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -235,7 +239,7 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1643, 653);
+            this.tp_home.Size = new System.Drawing.Size(1595, 653);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -249,7 +253,7 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1643, 653);
+            this.tp_list_stock.Size = new System.Drawing.Size(1595, 653);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -375,7 +379,7 @@ namespace User_Interface.forms
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1623, 857);
+            this.tp_transaction.Size = new System.Drawing.Size(1595, 653);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -392,7 +396,7 @@ namespace User_Interface.forms
             this.dgb_soldMed.Name = "dgb_soldMed";
             this.dgb_soldMed.RowHeadersWidth = 51;
             this.dgb_soldMed.RowTemplate.Height = 24;
-            this.dgb_soldMed.Size = new System.Drawing.Size(33, 137);
+            this.dgb_soldMed.Size = new System.Drawing.Size(5, 0);
             this.dgb_soldMed.TabIndex = 0;
             // 
             // tp_admin
@@ -445,7 +449,7 @@ namespace User_Interface.forms
             // tabPage_khdam
             // 
             this.tabPage_khdam.BackColor = System.Drawing.Color.White;
-            this.tabPage_khdam.Controls.Add(this.materialCard3);
+            this.tabPage_khdam.Controls.Add(this.card_employee);
             this.tabPage_khdam.Location = new System.Drawing.Point(4, 39);
             this.tabPage_khdam.Name = "tabPage_khdam";
             this.tabPage_khdam.Padding = new System.Windows.Forms.Padding(3);
@@ -456,29 +460,29 @@ namespace User_Interface.forms
             // tabPage_labo
             // 
             this.tabPage_labo.BackColor = System.Drawing.Color.White;
-            this.tabPage_labo.Controls.Add(this.materialCard1);
-            this.tabPage_labo.Controls.Add(this.tb_addLab);
-            this.tabPage_labo.Controls.Add(this.materialButton2);
+            this.tabPage_labo.Controls.Add(this.card_lab);
             this.tabPage_labo.Location = new System.Drawing.Point(4, 39);
             this.tabPage_labo.Name = "tabPage_labo";
             this.tabPage_labo.Size = new System.Drawing.Size(1266, 598);
             this.tabPage_labo.TabIndex = 2;
             this.tabPage_labo.Text = "Ajouter un Laboratoire";
             // 
-            // materialCard1
+            // card_lab
             // 
-            this.materialCard1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.panel_lab);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(381, 33);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(528, 356);
-            this.materialCard1.TabIndex = 108;
+            this.card_lab.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.card_lab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.card_lab.Controls.Add(this.panel_lab);
+            this.card_lab.Controls.Add(this.tb_addLab);
+            this.card_lab.Controls.Add(this.materialButton2);
+            this.card_lab.Depth = 0;
+            this.card_lab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.card_lab.Location = new System.Drawing.Point(355, 53);
+            this.card_lab.Margin = new System.Windows.Forms.Padding(14);
+            this.card_lab.MouseState = MaterialSkin.MouseState.HOVER;
+            this.card_lab.Name = "card_lab";
+            this.card_lab.Padding = new System.Windows.Forms.Padding(14);
+            this.card_lab.Size = new System.Drawing.Size(492, 433);
+            this.card_lab.TabIndex = 108;
             // 
             // panel_lab
             // 
@@ -497,9 +501,9 @@ namespace User_Interface.forms
             this.panel_lab.Controls.Add(this.label22);
             this.panel_lab.Controls.Add(this.label23);
             this.panel_lab.Controls.Add(this.label24);
-            this.panel_lab.Location = new System.Drawing.Point(17, 9);
+            this.panel_lab.Location = new System.Drawing.Point(0, 0);
             this.panel_lab.Name = "panel_lab";
-            this.panel_lab.Size = new System.Drawing.Size(469, 330);
+            this.panel_lab.Size = new System.Drawing.Size(497, 361);
             this.panel_lab.TabIndex = 105;
             // 
             // tb_webAdress
@@ -512,7 +516,7 @@ namespace User_Interface.forms
             this.tb_webAdress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_webAdress.Hint = "tapez ici....";
             this.tb_webAdress.LeadingIcon = null;
-            this.tb_webAdress.Location = new System.Drawing.Point(139, 228);
+            this.tb_webAdress.Location = new System.Drawing.Point(172, 228);
             this.tb_webAdress.MaxLength = 50;
             this.tb_webAdress.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_webAdress.Multiline = false;
@@ -528,7 +532,7 @@ namespace User_Interface.forms
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(15, 235);
+            this.label26.Location = new System.Drawing.Point(48, 235);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(102, 20);
@@ -550,7 +554,7 @@ namespace User_Interface.forms
             this.cb_pay.Hint = "choisissez le pays";
             this.cb_pay.IntegralHeight = false;
             this.cb_pay.ItemHeight = 29;
-            this.cb_pay.Location = new System.Drawing.Point(139, 284);
+            this.cb_pay.Location = new System.Drawing.Point(172, 284);
             this.cb_pay.MaxDropDownItems = 4;
             this.cb_pay.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_pay.Name = "cb_pay";
@@ -569,7 +573,7 @@ namespace User_Interface.forms
             this.tb_nomLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_nomLab.Hint = "tapez ici...";
             this.tb_nomLab.LeadingIcon = null;
-            this.tb_nomLab.Location = new System.Drawing.Point(139, 19);
+            this.tb_nomLab.Location = new System.Drawing.Point(172, 19);
             this.tb_nomLab.MaxLength = 50;
             this.tb_nomLab.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_nomLab.Multiline = false;
@@ -591,7 +595,7 @@ namespace User_Interface.forms
             this.tb_codeLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_codeLab.Hint = "tapez ici...";
             this.tb_codeLab.LeadingIcon = null;
-            this.tb_codeLab.Location = new System.Drawing.Point(141, 67);
+            this.tb_codeLab.Location = new System.Drawing.Point(174, 67);
             this.tb_codeLab.MaxLength = 50;
             this.tb_codeLab.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_codeLab.Multiline = false;
@@ -607,7 +611,7 @@ namespace User_Interface.forms
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(15, 83);
+            this.label20.Location = new System.Drawing.Point(48, 83);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(83, 20);
@@ -624,7 +628,7 @@ namespace User_Interface.forms
             this.tb_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_phone.Hint = "tapez ici....";
             this.tb_phone.LeadingIcon = null;
-            this.tb_phone.Location = new System.Drawing.Point(141, 167);
+            this.tb_phone.Location = new System.Drawing.Point(174, 167);
             this.tb_phone.MaxLength = 50;
             this.tb_phone.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_phone.Multiline = false;
@@ -641,7 +645,7 @@ namespace User_Interface.forms
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(15, 183);
+            this.label21.Location = new System.Drawing.Point(48, 183);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 20);
@@ -658,7 +662,7 @@ namespace User_Interface.forms
             this.tb_adress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_adress.Hint = "tapez ici....";
             this.tb_adress.LeadingIcon = null;
-            this.tb_adress.Location = new System.Drawing.Point(139, 119);
+            this.tb_adress.Location = new System.Drawing.Point(172, 119);
             this.tb_adress.MaxLength = 50;
             this.tb_adress.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_adress.Multiline = false;
@@ -674,7 +678,7 @@ namespace User_Interface.forms
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(15, 135);
+            this.label22.Location = new System.Drawing.Point(48, 135);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(69, 20);
@@ -686,7 +690,7 @@ namespace User_Interface.forms
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(24, 287);
+            this.label23.Location = new System.Drawing.Point(57, 287);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(51, 20);
@@ -698,7 +702,7 @@ namespace User_Interface.forms
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(13, 35);
+            this.label24.Location = new System.Drawing.Point(46, 35);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(81, 20);
@@ -713,7 +717,7 @@ namespace User_Interface.forms
             this.tb_addLab.Depth = 0;
             this.tb_addLab.HighEmphasis = true;
             this.tb_addLab.Icon = null;
-            this.tb_addLab.Location = new System.Drawing.Point(487, 424);
+            this.tb_addLab.Location = new System.Drawing.Point(86, 377);
             this.tb_addLab.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.tb_addLab.MouseState = MaterialSkin.MouseState.HOVER;
             this.tb_addLab.Name = "tb_addLab";
@@ -734,7 +738,7 @@ namespace User_Interface.forms
             this.materialButton2.Depth = 0;
             this.materialButton2.HighEmphasis = false;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(684, 423);
+            this.materialButton2.Location = new System.Drawing.Point(305, 377);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -748,7 +752,7 @@ namespace User_Interface.forms
             // 
             // tabPage_addproduct
             // 
-            this.tabPage_addproduct.Controls.Add(this.materialCard2);
+            this.tabPage_addproduct.Controls.Add(this.card_produit);
             this.tabPage_addproduct.Location = new System.Drawing.Point(4, 39);
             this.tabPage_addproduct.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_addproduct.Name = "tabPage_addproduct";
@@ -757,22 +761,22 @@ namespace User_Interface.forms
             this.tabPage_addproduct.Text = "Ajouter un produit";
             this.tabPage_addproduct.UseVisualStyleBackColor = true;
             // 
-            // materialCard2
+            // card_produit
             // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.panel2);
-            this.materialCard2.Controls.Add(this.materialButton1);
-            this.materialCard2.Controls.Add(this.materialButton9);
-            this.materialCard2.Controls.Add(this.materialButton5);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(52, 17);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(1143, 567);
-            this.materialCard2.TabIndex = 111;
+            this.card_produit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.card_produit.Controls.Add(this.panel2);
+            this.card_produit.Controls.Add(this.materialButton1);
+            this.card_produit.Controls.Add(this.materialButton9);
+            this.card_produit.Controls.Add(this.materialButton5);
+            this.card_produit.Depth = 0;
+            this.card_produit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.card_produit.Location = new System.Drawing.Point(52, 17);
+            this.card_produit.Margin = new System.Windows.Forms.Padding(14);
+            this.card_produit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.card_produit.Name = "card_produit";
+            this.card_produit.Padding = new System.Windows.Forms.Padding(14);
+            this.card_produit.Size = new System.Drawing.Size(1143, 567);
+            this.card_produit.TabIndex = 111;
             // 
             // panel2
             // 
@@ -1028,7 +1032,7 @@ namespace User_Interface.forms
             this.gb_rembo.Controls.Add(this.materialRadioButton2);
             this.gb_rembo.Location = new System.Drawing.Point(718, 70);
             this.gb_rembo.Name = "gb_rembo";
-            this.gb_rembo.Size = new System.Drawing.Size(270, 51);
+            this.gb_rembo.Size = new System.Drawing.Size(270, 61);
             this.gb_rembo.TabIndex = 95;
             this.gb_rembo.TabStop = false;
             // 
@@ -1038,7 +1042,7 @@ namespace User_Interface.forms
             this.materialRadioButton1.BackColor = System.Drawing.Color.Transparent;
             this.materialRadioButton1.Depth = 0;
             this.materialRadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton1.Location = new System.Drawing.Point(116, 15);
+            this.materialRadioButton1.Location = new System.Drawing.Point(176, 15);
             this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
             this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1510,7 +1514,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1643, 653);
+            this.tp_alert.Size = new System.Drawing.Size(1595, 653);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -1623,7 +1627,7 @@ namespace User_Interface.forms
             this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1438, 38);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1390, 38);
             this.materialTabSelector1.TabIndex = 26;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -1631,7 +1635,7 @@ namespace User_Interface.forms
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 43);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1623, 857);
+            this.tabPage5.Size = new System.Drawing.Size(1595, 653);
             this.tabPage5.TabIndex = 10;
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
@@ -1641,7 +1645,7 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1623, 857);
+            this.tp_logout.Size = new System.Drawing.Size(1595, 653);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -1649,25 +1653,25 @@ namespace User_Interface.forms
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1623, 857);
+            this.tabPage6.Size = new System.Drawing.Size(1595, 653);
             this.tabPage6.TabIndex = 13;
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // materialCard3
+            // card_employee
             // 
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.panel_add_employee);
-            this.materialCard3.Controls.Add(this.BTN_Annuler);
-            this.materialCard3.Controls.Add(this.BTN_ajouterPerso);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(385, 65);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(497, 468);
-            this.materialCard3.TabIndex = 106;
+            this.card_employee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.card_employee.Controls.Add(this.panel_add_employee);
+            this.card_employee.Controls.Add(this.BTN_Annuler);
+            this.card_employee.Controls.Add(this.BTN_ajouterPerso);
+            this.card_employee.Depth = 0;
+            this.card_employee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.card_employee.Location = new System.Drawing.Point(385, 65);
+            this.card_employee.Margin = new System.Windows.Forms.Padding(14);
+            this.card_employee.MouseState = MaterialSkin.MouseState.HOVER;
+            this.card_employee.Name = "card_employee";
+            this.card_employee.Padding = new System.Windows.Forms.Padding(14);
+            this.card_employee.Size = new System.Drawing.Size(497, 468);
+            this.card_employee.TabIndex = 106;
             // 
             // panel_add_employee
             // 
@@ -1701,7 +1705,7 @@ namespace User_Interface.forms
             this.tb_conPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_conPass.Hint = "tapez ici....";
             this.tb_conPass.LeadingIcon = null;
-            this.tb_conPass.Location = new System.Drawing.Point(133, 211);
+            this.tb_conPass.Location = new System.Drawing.Point(171, 211);
             this.tb_conPass.MaxLength = 50;
             this.tb_conPass.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_conPass.Multiline = false;
@@ -1718,7 +1722,7 @@ namespace User_Interface.forms
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(15, 211);
+            this.label25.Location = new System.Drawing.Point(53, 211);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(113, 40);
@@ -1735,7 +1739,7 @@ namespace User_Interface.forms
             this.tb_Nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_Nom.Hint = "tapez ici...";
             this.tb_Nom.LeadingIcon = null;
-            this.tb_Nom.Location = new System.Drawing.Point(133, 14);
+            this.tb_Nom.Location = new System.Drawing.Point(171, 14);
             this.tb_Nom.MaxLength = 50;
             this.tb_Nom.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_Nom.Multiline = false;
@@ -1756,7 +1760,7 @@ namespace User_Interface.forms
             this.tb_prenom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_prenom.Hint = "tapez ici...";
             this.tb_prenom.LeadingIcon = null;
-            this.tb_prenom.Location = new System.Drawing.Point(134, 62);
+            this.tb_prenom.Location = new System.Drawing.Point(172, 62);
             this.tb_prenom.MaxLength = 50;
             this.tb_prenom.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_prenom.Multiline = false;
@@ -1772,7 +1776,7 @@ namespace User_Interface.forms
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(15, 73);
+            this.label13.Location = new System.Drawing.Point(53, 73);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(71, 20);
@@ -1789,7 +1793,7 @@ namespace User_Interface.forms
             this.tb_motpass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_motpass.Hint = "tapez ici....";
             this.tb_motpass.LeadingIcon = null;
-            this.tb_motpass.Location = new System.Drawing.Point(134, 162);
+            this.tb_motpass.Location = new System.Drawing.Point(172, 162);
             this.tb_motpass.MaxLength = 50;
             this.tb_motpass.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_motpass.Multiline = false;
@@ -1806,7 +1810,7 @@ namespace User_Interface.forms
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 173);
+            this.label6.Location = new System.Drawing.Point(53, 173);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 20);
@@ -1823,7 +1827,7 @@ namespace User_Interface.forms
             this.tb_username.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_username.Hint = "tapez ici....";
             this.tb_username.LeadingIcon = null;
-            this.tb_username.Location = new System.Drawing.Point(133, 114);
+            this.tb_username.Location = new System.Drawing.Point(171, 114);
             this.tb_username.MaxLength = 50;
             this.tb_username.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_username.Multiline = false;
@@ -1839,7 +1843,7 @@ namespace User_Interface.forms
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 125);
+            this.label5.Location = new System.Drawing.Point(53, 125);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 20);
@@ -1850,7 +1854,7 @@ namespace User_Interface.forms
             // 
             this.groupBox_role.Controls.Add(this.rb_remb_emp);
             this.groupBox_role.Controls.Add(this.rb_rembo_admin);
-            this.groupBox_role.Location = new System.Drawing.Point(134, 253);
+            this.groupBox_role.Location = new System.Drawing.Point(172, 253);
             this.groupBox_role.Name = "groupBox_role";
             this.groupBox_role.Size = new System.Drawing.Size(292, 63);
             this.groupBox_role.TabIndex = 95;
@@ -1897,7 +1901,7 @@ namespace User_Interface.forms
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 265);
+            this.label4.Location = new System.Drawing.Point(53, 265);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 20);
@@ -1909,7 +1913,7 @@ namespace User_Interface.forms
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 34);
+            this.label3.Location = new System.Drawing.Point(53, 34);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
@@ -1956,6 +1960,24 @@ namespace User_Interface.forms
             this.BTN_ajouterPerso.UseAccentColor = false;
             this.BTN_ajouterPerso.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 43);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(1595, 653);
+            this.tabPage4.TabIndex = 14;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 43);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1595, 653);
+            this.tabPage7.TabIndex = 15;
+            this.tabPage7.Text = "tabPage7";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1984,11 +2006,11 @@ namespace User_Interface.forms
             this.secondaryTabs_admin.ResumeLayout(false);
             this.tabPage_khdam.ResumeLayout(false);
             this.tabPage_labo.ResumeLayout(false);
-            this.materialCard1.ResumeLayout(false);
+            this.card_lab.ResumeLayout(false);
             this.panel_lab.ResumeLayout(false);
             this.panel_lab.PerformLayout();
             this.tabPage_addproduct.ResumeLayout(false);
-            this.materialCard2.ResumeLayout(false);
+            this.card_produit.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.gb_rembo.ResumeLayout(false);
@@ -2005,7 +2027,7 @@ namespace User_Interface.forms
             this.tp_lowSupply.PerformLayout();
             this.tp_expired_med.ResumeLayout(false);
             this.tp_expired_med.PerformLayout();
-            this.materialCard3.ResumeLayout(false);
+            this.card_employee.ResumeLayout(false);
             this.panel_add_employee.ResumeLayout(false);
             this.panel_add_employee.PerformLayout();
             this.groupBox_role.ResumeLayout(false);
@@ -2072,8 +2094,8 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialButton materialButton9;
         private MaterialSkin.Controls.MaterialButton materialButton5;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialCard card_lab;
+        private MaterialSkin.Controls.MaterialCard card_produit;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label15;
         private MaterialSkin.Controls.MaterialComboBox cb_Dci;
@@ -2114,7 +2136,7 @@ namespace User_Interface.forms
         private System.Windows.Forms.Label label18;
         private MaterialSkin.Controls.MaterialTextBox tb_refMed;
         private System.Windows.Forms.Label label19;
-        private MaterialSkin.Controls.MaterialCard materialCard3;
+        private MaterialSkin.Controls.MaterialCard card_employee;
         private Panel panel_add_employee;
         private MaterialSkin.Controls.MaterialTextBox tb_conPass;
         private Label label25;
@@ -2132,5 +2154,7 @@ namespace User_Interface.forms
         private Label label3;
         private MaterialSkin.Controls.MaterialButton BTN_Annuler;
         private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
+        private TabPage tabPage4;
+        private TabPage tabPage7;
     }
 }
