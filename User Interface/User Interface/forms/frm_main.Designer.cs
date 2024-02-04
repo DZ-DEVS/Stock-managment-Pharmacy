@@ -148,7 +148,6 @@ namespace User_Interface.forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
-            this.tp_add_class = new System.Windows.Forms.TabPage();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -437,7 +436,6 @@ namespace User_Interface.forms
             this.secondaryTabs_admin.Controls.Add(this.tabPage_khdam);
             this.secondaryTabs_admin.Controls.Add(this.tabPage_labo);
             this.secondaryTabs_admin.Controls.Add(this.tabPage_addproduct);
-            this.secondaryTabs_admin.Controls.Add(this.tp_add_class);
             this.secondaryTabs_admin.Depth = 0;
             this.secondaryTabs_admin.ImageList = this.imageList1;
             this.secondaryTabs_admin.Location = new System.Drawing.Point(0, 38);
@@ -1982,15 +1980,6 @@ namespace User_Interface.forms
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
-            // tp_add_class
-            // 
-            this.tp_add_class.BackColor = System.Drawing.Color.White;
-            this.tp_add_class.Location = new System.Drawing.Point(4, 39);
-            this.tp_add_class.Name = "tp_add_class";
-            this.tp_add_class.Size = new System.Drawing.Size(1266, 598);
-            this.tp_add_class.TabIndex = 4;
-            this.tp_add_class.Text = "Ajouter une Class";
-            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2169,6 +2158,5 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
         private TabPage tabPage4;
         private TabPage tabPage7;
-        private TabPage tp_add_class;
     }
 }
