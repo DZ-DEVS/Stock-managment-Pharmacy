@@ -33,6 +33,7 @@ namespace User_Interface.forms
             InitializeComponent();
 
             MaterialFormTheme.ApplyTheme(this);
+            
 
 
            
@@ -412,6 +413,30 @@ namespace User_Interface.forms
                 MessageBox.Show("saved");
             }
             
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_darkTheme_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void rb_darkTheme_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_darkTheme.Checked)
+            {
+                MaterialFormTheme.ApplyDarkTheme();
+            }
+            else MaterialFormTheme.ApplyLightTheme();
+        }
+
+        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

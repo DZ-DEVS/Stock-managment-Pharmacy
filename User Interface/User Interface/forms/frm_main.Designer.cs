@@ -143,7 +143,12 @@ namespace User_Interface.forms
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.tp_other = new System.Windows.Forms.TabPage();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tp_settings = new System.Windows.Forms.TabPage();
+            this.card_settings = new MaterialSkin.Controls.MaterialCard();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_darkTheme = new MaterialSkin.Controls.MaterialRadioButton();
+            this.materialRadioButton5 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -172,6 +177,9 @@ namespace User_Interface.forms
             this.materialTabControl2.SuspendLayout();
             this.tp_lowSupply.SuspendLayout();
             this.tp_expired_med.SuspendLayout();
+            this.tp_settings.SuspendLayout();
+            this.card_settings.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_control
@@ -187,7 +195,7 @@ namespace User_Interface.forms
             this.tab_control.Controls.Add(this.tp_transaction);
             this.tab_control.Controls.Add(this.tp_admin);
             this.tab_control.Controls.Add(this.tp_alert);
-            this.tab_control.Controls.Add(this.tabPage5);
+            this.tab_control.Controls.Add(this.tp_settings);
             this.tab_control.Controls.Add(this.tabPage6);
             this.tab_control.Controls.Add(this.tabPage4);
             this.tab_control.Controls.Add(this.tabPage7);
@@ -215,12 +223,13 @@ namespace User_Interface.forms
             this.tabPage1.Size = new System.Drawing.Size(1643, 670);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1635, 670);
+            this.tabPage2.Size = new System.Drawing.Size(1643, 670);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -228,7 +237,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1635, 670);
+            this.tabPage3.Size = new System.Drawing.Size(1643, 670);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -240,7 +249,7 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1635, 670);
+            this.tp_home.Size = new System.Drawing.Size(1643, 670);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -254,7 +263,7 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1635, 670);
+            this.tp_list_stock.Size = new System.Drawing.Size(1643, 670);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -1819,7 +1828,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1635, 670);
+            this.tp_alert.Size = new System.Drawing.Size(1643, 670);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -1932,42 +1941,120 @@ namespace User_Interface.forms
             this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1390, 38);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1398, 38);
             this.materialTabSelector1.TabIndex = 26;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
-            // tabPage5
+            // tp_settings
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 43);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1635, 670);
-            this.tabPage5.TabIndex = 10;
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.tp_settings.BackColor = System.Drawing.Color.White;
+            this.tp_settings.Controls.Add(this.card_settings);
+            this.tp_settings.ImageKey = "management.png";
+            this.tp_settings.Location = new System.Drawing.Point(4, 43);
+            this.tp_settings.Name = "tp_settings";
+            this.tp_settings.Size = new System.Drawing.Size(1643, 670);
+            this.tp_settings.TabIndex = 10;
+            this.tp_settings.Text = "Parametre";
+            // 
+            // card_settings
+            // 
+            this.card_settings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.card_settings.Controls.Add(this.groupBox1);
+            this.card_settings.Controls.Add(this.label27);
+            this.card_settings.Depth = 0;
+            this.card_settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.card_settings.Location = new System.Drawing.Point(234, 84);
+            this.card_settings.Margin = new System.Windows.Forms.Padding(14);
+            this.card_settings.MouseState = MaterialSkin.MouseState.HOVER;
+            this.card_settings.Name = "card_settings";
+            this.card_settings.Padding = new System.Windows.Forms.Padding(14);
+            this.card_settings.Size = new System.Drawing.Size(474, 197);
+            this.card_settings.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb_darkTheme);
+            this.groupBox1.Controls.Add(this.materialRadioButton5);
+            this.groupBox1.Location = new System.Drawing.Point(112, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(322, 62);
+            this.groupBox1.TabIndex = 90;
+            this.groupBox1.TabStop = false;
+            // 
+            // rb_darkTheme
+            // 
+            this.rb_darkTheme.AutoSize = true;
+            this.rb_darkTheme.BackColor = System.Drawing.Color.Transparent;
+            this.rb_darkTheme.Depth = 0;
+            this.rb_darkTheme.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rb_darkTheme.Location = new System.Drawing.Point(197, 16);
+            this.rb_darkTheme.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_darkTheme.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_darkTheme.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_darkTheme.Name = "rb_darkTheme";
+            this.rb_darkTheme.Ripple = true;
+            this.rb_darkTheme.Size = new System.Drawing.Size(68, 37);
+            this.rb_darkTheme.TabIndex = 1;
+            this.rb_darkTheme.TabStop = true;
+            this.rb_darkTheme.Text = "Dark";
+            this.rb_darkTheme.UseVisualStyleBackColor = false;
+            this.rb_darkTheme.CheckedChanged += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
+            this.rb_darkTheme.Click += new System.EventHandler(this.rb_darkTheme_Click);
+            // 
+            // materialRadioButton5
+            // 
+            this.materialRadioButton5.AutoSize = true;
+            this.materialRadioButton5.BackColor = System.Drawing.Color.Transparent;
+            this.materialRadioButton5.Depth = 0;
+            this.materialRadioButton5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.materialRadioButton5.Location = new System.Drawing.Point(13, 16);
+            this.materialRadioButton5.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRadioButton5.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialRadioButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRadioButton5.Name = "materialRadioButton5";
+            this.materialRadioButton5.Ripple = true;
+            this.materialRadioButton5.Size = new System.Drawing.Size(75, 37);
+            this.materialRadioButton5.TabIndex = 0;
+            this.materialRadioButton5.TabStop = true;
+            this.materialRadioButton5.Text = "Light ";
+            this.materialRadioButton5.UseVisualStyleBackColor = false;
+            this.materialRadioButton5.CheckedChanged += new System.EventHandler(this.materialRadioButton5_CheckedChanged);
+            this.materialRadioButton5.Click += new System.EventHandler(this.rb_darkTheme_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Transparent;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(12, 51);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(66, 20);
+            this.label27.TabIndex = 89;
+            this.label27.Text = "Theme :";
             // 
             // tabPage6
             // 
+            this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1635, 670);
+            this.tabPage6.Size = new System.Drawing.Size(1643, 670);
             this.tabPage6.TabIndex = 13;
-            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1635, 670);
+            this.tabPage4.Size = new System.Drawing.Size(1643, 670);
             this.tabPage4.TabIndex = 14;
-            this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1635, 670);
+            this.tabPage7.Size = new System.Drawing.Size(1643, 670);
             this.tabPage7.TabIndex = 15;
-            this.tabPage7.Text = "tabPage7";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tp_logout
@@ -1976,7 +2063,7 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1635, 670);
+            this.tp_logout.Size = new System.Drawing.Size(1643, 670);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -2034,6 +2121,11 @@ namespace User_Interface.forms
             this.tp_lowSupply.PerformLayout();
             this.tp_expired_med.ResumeLayout(false);
             this.tp_expired_med.PerformLayout();
+            this.tp_settings.ResumeLayout(false);
+            this.card_settings.ResumeLayout(false);
+            this.card_settings.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2061,7 +2153,7 @@ namespace User_Interface.forms
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tp_settings;
         private System.Windows.Forms.TabPage tp_logout;
         private System.Windows.Forms.TabPage tabPage6;
         private MaterialSkin.Controls.MaterialListView lv_listStock;
@@ -2158,5 +2250,10 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
         private TabPage tabPage4;
         private TabPage tabPage7;
+        private MaterialSkin.Controls.MaterialCard card_settings;
+        private GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialRadioButton rb_darkTheme;
+        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton5;
+        private Label label27;
     }
 }
