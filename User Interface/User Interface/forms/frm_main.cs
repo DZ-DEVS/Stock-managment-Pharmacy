@@ -34,6 +34,7 @@ namespace User_Interface.forms
 
             MaterialFormTheme.ApplyTheme(this);
 
+
            
 
         }
@@ -176,7 +177,7 @@ namespace User_Interface.forms
                     break;
 
                 case "tp_admin":
-                    WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
+                    //WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
 
                  break;
 
@@ -399,6 +400,18 @@ namespace User_Interface.forms
         private void tab_control_Click(object sender, EventArgs e)
         {
             MessageBox.Show("f");
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+            diag_addClass frm = new diag_addClass();
+            frm.ShowDialog();
+            if (frm.DialogResult==DialogResult.OK)
+            {
+                // TODO: reload all three classes
+                MessageBox.Show("saved");
+            }
+            
         }
     }
 
