@@ -1,11 +1,10 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms.VisualStyles;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.AxHost;
 
 namespace User_Interface.Ui_classes
 {
@@ -13,7 +12,7 @@ namespace User_Interface.Ui_classes
     {
         private readonly Dictionary<int, ListViewColumn> _columns = new Dictionary<int, ListViewColumn>();
 
-        public ListViewExtender(ListView listView)
+        public ListViewExtender(MaterialListView listView)
         {
             if (listView == null)
                 throw new ArgumentNullException("listView");
@@ -33,7 +32,7 @@ namespace User_Interface.Ui_classes
         }
 
         public virtual Font Font { get; private set; }
-        public ListView ListView { get; private set; }
+        public MaterialListView ListView { get; private set; }
 
         protected virtual void OnMouseClick(object sender, MouseEventArgs e)
         {
@@ -232,9 +231,10 @@ namespace User_Interface.Ui_classes
             if (e.ColumnIndex == ColumnIndex)
             {
                 e.Cancel = true;
-                e.NewWidth = ListView.Columns[e.ColumnIndex].Width;
+                e.NewWidth = 33;
             }
         }
+
 
         public override void Draw(DrawListViewSubItemEventArgs e)
         {
@@ -253,13 +253,46 @@ namespace User_Interface.Ui_classes
             Point mouse = e.Item.ListView.PointToClient(Control.MousePosition);
             if ((ListView.GetItemAt(mouse.X, mouse.Y) == e.Item) && (e.Item.GetSubItemAt(mouse.X, mouse.Y) == e.SubItem))
             {
-                ButtonRenderer.DrawButton(e.Graphics, e.Bounds, e.SubItem.Text, Font, true, PushButtonState.Hot);
+                // Draw hot button with image
+                DrawButtonWithImage(e.Graphics, e.Bounds, e.SubItem.Text, Font, true, PushButtonState.Hot);
                 _hot = e.Bounds;
             }
             else
             {
-                ButtonRenderer.DrawButton(e.Graphics, e.Bounds, e.SubItem.Text, Font, false, PushButtonState.Default);
+                // Draw flat button with image (using PushButtonState.Normal)
+                DrawButtonWithImage(e.Graphics, e.Bounds, e.SubItem.Text, Font, false, PushButtonState.Normal);
             }
         }
+
+
+        public string ImageFilePath { get; set; }
+        private void DrawButtonWithImage(Graphics g, Rectangle bounds, string buttonText, Font font, bool hot, PushButtonState state)
+        {
+            // Set the fixed width to 32
+            bounds.Width = 32;
+
+            // Draw the transparent button background manually based on FlatStyle
+            Color backgroundColor = hot ? SystemColors.Highlight : SystemColors.Control;
+            using (Brush brush = new SolidBrush(Color.FromArgb(0, backgroundColor)))
+            {
+                g.FillRectangle(brush, bounds);
+            }
+
+            // Draw the button text
+            TextRenderer.DrawText(g, buttonText, font, bounds, SystemColors.ControlText, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+            // Load your 32x32 resolution bitmap image
+            Bitmap image = new Bitmap(ImageFilePath);
+
+            // Adjust the image position to the center of the fixed-width button
+            int imageX = bounds.Left + (bounds.Width - image.Width) / 2;
+            int imageY = bounds.Top + (bounds.Height - image.Height) / 2;
+            g.DrawImage(image, imageX, imageY, image.Width, image.Height);
+        }
+
+
+
+
+
     }
 }

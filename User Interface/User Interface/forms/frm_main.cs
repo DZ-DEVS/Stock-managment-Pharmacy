@@ -20,6 +20,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
 using Microsoft.IdentityModel.Tokens;
+using User_Interface.Ui_classes;
 
 namespace User_Interface.forms
 {
@@ -182,10 +183,12 @@ namespace User_Interface.forms
 
 
                     case "tp_list_stock":
-                        fillListView<Pay>(lv_listStock);
+                        fillListView_Stock();
+                        //fillListView<Pay>(lv_listStock);
                         break;
 
                     case "tp_admin":
+                        
                         //WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
 
 
@@ -208,15 +211,42 @@ namespace User_Interface.forms
 
 
         }
-
-        public bool confirmerpass()
+        private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
         {
-            
-            if(tb_motpass.Text == tb_conPass.Text) return true;
+            MessageBox.Show(this, @"you clicked " + e.SubItem.Text);
+        }
 
-            
+        private void OnButtonInThirdColumnClick(object sender, ListViewColumnMouseEventArgs e)
+        {
+            MessageBox.Show(this, @"you clicked button in the third column");
+        }
+        public void fillListView_Stock()
+        {
+            // Create an instance of ListViewExtender
+            ListViewExtender extender = new ListViewExtender(lv_listStock);
 
-            return false;
+            // Extend the 2nd column
+            ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
+            buttonAction.Click += OnButtonActionClick;
+            buttonAction.ImageFilePath = "C:\\Users\\bouro\\Downloads\\edit-_1_.bmp";
+            buttonAction.FixedWidth = true;
+
+            // Extend the 3rd column
+            ListViewButtonColumn buttonInThirdColumn = new ListViewButtonColumn(2);
+            buttonInThirdColumn.Click += OnButtonInThirdColumnClick;
+            buttonInThirdColumn.ImageFilePath = "C:\\Users\\bouro\\Downloads\\delete.bmp"; // Specify the path to your image
+            buttonInThirdColumn.FixedWidth = true;
+
+            // Add the columns to the extender
+            extender.AddColumn(buttonAction);
+            extender.AddColumn(buttonInThirdColumn);
+            // Populate the ListView
+            for (int i = 0; i < 5; i++)
+            {
+                ListViewItem item = lv_listStock.Items.Add("" + i);
+                item.SubItems.Add(" ");
+                item.SubItems.Add(" "); // Add an extra subitem for the third column
+            }
         }
 
 
@@ -388,7 +418,7 @@ namespace User_Interface.forms
                 return;
             }
 
-            if (!confirmerpass())
+            if (tb_motpass.Text != tb_conPass.Text)
             {
                 MessageBox.Show("password Doesnt match"); clear_fields(null, tb_motpass, tb_conPass);
                 return;

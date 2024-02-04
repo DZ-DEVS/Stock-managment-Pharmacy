@@ -39,13 +39,6 @@ namespace User_Interface.forms
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
             this.btn_search = new MaterialSkin.Controls.MaterialTextBox();
-            this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.BTN_rechercher = new MaterialSkin.Controls.MaterialButton();
             this.tp_transaction = new System.Windows.Forms.TabPage();
@@ -153,6 +146,10 @@ namespace User_Interface.forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
+            this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader28 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.a = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.b = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -254,8 +251,8 @@ namespace User_Interface.forms
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tp_list_stock.Controls.Add(this.btn_search);
             this.tp_list_stock.Controls.Add(this.lv_listStock);
+            this.tp_list_stock.Controls.Add(this.btn_search);
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
             this.tp_list_stock.ImageKey = "list.png";
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
@@ -285,65 +282,6 @@ namespace User_Interface.forms
             this.btn_search.Text = "";
             this.btn_search.TrailingIcon = null;
             this.btn_search.UseTallSize = false;
-            // 
-            // lv_listStock
-            // 
-            this.lv_listStock.AllowColumnReorder = true;
-            this.lv_listStock.AutoSizeTable = false;
-            this.lv_listStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.lv_listStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lv_listStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lv_listStock.Depth = 0;
-            this.lv_listStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lv_listStock.FullRowSelect = true;
-            this.lv_listStock.HideSelection = false;
-            this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.lv_listStock.Location = new System.Drawing.Point(12, 95);
-            this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
-            this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
-            this.lv_listStock.Name = "lv_listStock";
-            this.lv_listStock.OwnerDraw = true;
-            this.lv_listStock.Size = new System.Drawing.Size(1172, 491);
-            this.lv_listStock.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lv_listStock.StateImageList = this.imageList1;
-            this.lv_listStock.TabIndex = 4;
-            this.lv_listStock.UseCompatibleStateImageBehavior = false;
-            this.lv_listStock.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Dessert (100g serving)";
-            this.columnHeader1.Width = 200;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Calories";
-            this.columnHeader2.Width = 99;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Fat (g)";
-            this.columnHeader3.Width = 94;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Protein (g)";
-            this.columnHeader4.Width = 154;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Width = 154;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Width = 154;
             // 
             // imageList1
             // 
@@ -2064,6 +2002,45 @@ namespace User_Interface.forms
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
+            // lv_listStock
+            // 
+            this.lv_listStock.AllowColumnReorder = true;
+            this.lv_listStock.AutoSizeTable = false;
+            this.lv_listStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.lv_listStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lv_listStock.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader28,
+            this.a,
+            this.b});
+            this.lv_listStock.Depth = 0;
+            this.lv_listStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lv_listStock.FullRowSelect = true;
+            this.lv_listStock.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lv_listStock.HideSelection = false;
+            this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lv_listStock.Location = new System.Drawing.Point(86, 91);
+            this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
+            this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
+            this.lv_listStock.Name = "lv_listStock";
+            this.lv_listStock.OwnerDraw = true;
+            this.lv_listStock.Size = new System.Drawing.Size(478, 390);
+            this.lv_listStock.TabIndex = 107;
+            this.lv_listStock.UseCompatibleStateImageBehavior = false;
+            this.lv_listStock.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader28
+            // 
+            this.columnHeader28.Width = 145;
+            // 
+            // a
+            // 
+            this.a.Width = 32;
+            // 
+            // b
+            // 
+            this.b.Width = 30;
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2152,13 +2129,6 @@ namespace User_Interface.forms
         private System.Windows.Forms.TabPage tp_settings;
         private System.Windows.Forms.TabPage tp_logout;
         private System.Windows.Forms.TabPage tabPage6;
-        private MaterialSkin.Controls.MaterialListView lv_listStock;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector2;
         private MaterialSkin.Controls.MaterialTabControl tp_admin_second;
         private System.Windows.Forms.TabPage tp_employee;
@@ -2252,5 +2222,9 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialRadioButton rb_rembo_admin;
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialButton BTN_ajouterPerso;
+        private MaterialSkin.Controls.MaterialListView lv_listStock;
+        private ColumnHeader columnHeader28;
+        private ColumnHeader a;
+        private ColumnHeader b;
     }
 }
