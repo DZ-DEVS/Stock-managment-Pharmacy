@@ -52,8 +52,8 @@ namespace User_Interface.forms
 
             //filldatatable<Medicament>();
             //filldatatable<Selle>(dgb_soldMed);
-            fillListView<Pay>(lv_listStock);
-            intialiazeCountries<Pay>(cb_pay, "Pays_code", "Pays_code");
+            
+            
             tab_control.SelectedTab = tp_alert;
 
             
@@ -71,19 +71,20 @@ namespace User_Interface.forms
 
         private void intialiazeCountries<T>(MaterialComboBox comboBox, string name, string id) where T : class
         {
-
-          
             using (var dbContext = new dbcontext())
             {
                 var table = dbContext.Set<T>().ToList();
+
+                // Assuming 'name' property is a string property in the class T
+                // You can modify this based on your actual class structure
+                table = table.OrderBy(item => item.GetType().GetProperty(name)?.GetValue(item, null) as string).ToList();
+
                 comboBox.DataSource = table;
                 comboBox.DisplayMember = name;
                 comboBox.ValueMember = id;
             }
-
-
-
         }
+
 
 
 
@@ -145,64 +146,67 @@ namespace User_Interface.forms
         private void tab_control_Selecting(object sender, TabControlCancelEventArgs e)
         {
 
-
-            switch (e.TabPage.Name)
+            try
             {
-                case "tabPage1":
-                    // Perform actions for tabPage1 if needed
-                    e.Cancel = true;
-                    break;
+                Cursor.Current = Cursors.WaitCursor;
+                switch (e.TabPage.Name)
+                {
+                    case "tabPage1":
+                        // Perform actions for tabPage1 if needed
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage2":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage2":
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage3":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage3":
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage5":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage5":
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage6":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage6":
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage4":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage4":
+                        e.Cancel = true;
+                        break;
 
-                case "tabPage7":
-                    e.Cancel = true;
-                    break;
+                    case "tabPage7":
+                        e.Cancel = true;
+                        break;
 
-                case "tp_admin":
-                    //WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
 
-                 break;
+                    case "tp_list_stock":
+                        fillListView<Pay>(lv_listStock);
+                        break;
 
+                    case "tp_admin":
+                        //WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
+
+
+
+
+                        break;
+
+                    case "tp_lab":
+                        intialiazeCountries<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        break;
+
+                }
             }
+            finally 
+            {
+
+                Cursor.Current = Cursors.Default;
+            }
+            
 
 
-        }
-
-
-
-      
-
-        public bool get_role()
-        {
-
-           
-                if (rb_rembo_admin.Checked)
-                    return true;
-                if (rb_remb_emp.Checked)
-                    return false;
-
-
-
-            return false ;
         }
 
         public bool confirmerpass()
@@ -267,82 +271,19 @@ namespace User_Interface.forms
             return true;
         }
 
-        private bool validateWebadress(string webadress)
-        {
-
-            if(!webadress.Contains('@') || !webadress.Contains('.') ) return false;
-            
+        
 
 
-
-            return true;
-        }
-
-
-        private void BTN_ajouterPerso_Click(object sender, EventArgs e)
-        {
-            
-            if (!validateallInputs(tb_username, tb_Nom, tb_motpass,tb_prenom)) 
-            {
-                MessageBox.Show("Please make sure to fill all neccassery shit"); 
-                return; 
-            }
-           if(!rb_rembo_admin.Checked && !rb_remb_emp.Checked) 
-            { 
-                MessageBox.Show("Please make sure to select a role "); 
-                return; 
-            }
-
-            if (tb_motpass.Text.Length < 8) 
-            { 
-                MessageBox.Show("For security reason , the passowrd must me atleast 8 chars long "); clear_fields(null, tb_motpass, tb_conPass);
-                return; 
-            }
-
-            if (!confirmerpass()) 
-            {
-                MessageBox.Show("password Doesnt match"); clear_fields(null, tb_motpass, tb_conPass);
-                return;
-            }
-            
-            if(!validateWebadress(tb_webAdress.Text)) 
-            {
-
-                MessageBox.Show("invalid web adress"); clear_fields(null,tb_webAdress);
-                return;
-            }
-
-
-            User user = new User
-            {
-                userName = tb_username.Text,
-                nom = tb_Nom.Text,
-                prenom = tb_prenom.Text,
-                password = tb_motpass.Text,
-                isAdmin = get_role(),
-
-
-            };
-
-            if (sql_connection.add_newUser(user))
-            {
-                MessageBox.Show("User added succefuly UwU"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
-            }
-            else MessageBox.Show("error adding user , wtf did u do"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
-
-
-
-        }
+        
 
         private void tb_addLab_Click(object sender, EventArgs e)
         {
 
-            if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab, tb_phone))
+            if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab))
             {
                 MessageBox.Show("Please make sure to fill all neccassery shit");
                 return;
             }
-
             if (!validatphoneNumber(tb_phone.Text)) 
             { 
                 MessageBox.Show("invalid phone number"); 
@@ -398,12 +339,9 @@ namespace User_Interface.forms
             }
         }
 
-        private void tab_control_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("f");
-        }
+        
 
-        private void materialButton5_Click(object sender, EventArgs e)
+        private void btn_addClass_Click(object sender, EventArgs e)
         {
             diag_addClass frm = new diag_addClass();
             frm.ShowDialog();
@@ -415,15 +353,7 @@ namespace User_Interface.forms
             
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rb_darkTheme_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void rb_darkTheme_CheckedChanged(object sender, EventArgs e)
         {
@@ -437,6 +367,89 @@ namespace User_Interface.forms
         private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTN_ajouterPerso_Click_1(object sender, EventArgs e)
+        {
+            if (!validateallInputs(tb_username, tb_Nom, tb_motpass, tb_prenom))
+            {
+                MessageBox.Show("Please make sure to fill all neccassery shit");
+                return;
+            }
+            if (!rb_rembo_admin.Checked && !rb_remb_emp.Checked)
+            {
+                MessageBox.Show("Please make sure to select a role ");
+                return;
+            }
+
+            if (tb_motpass.Text.Length < 8)
+            {
+                MessageBox.Show("For security reason , the passowrd must me atleast 8 chars long "); clear_fields(null, tb_motpass, tb_conPass);
+                return;
+            }
+
+            if (!confirmerpass())
+            {
+                MessageBox.Show("password Doesnt match"); clear_fields(null, tb_motpass, tb_conPass);
+                return;
+            }
+
+            if (!tb_webAdress.Text.Equals(""))
+                
+            {
+
+                if (!tb_webAdress.Text.Contains('@') || !tb_webAdress.Text.Contains('.')) {
+
+                    MessageBox.Show("invalid web adress"); clear_fields(null, tb_webAdress);
+                    return;
+                }
+                   
+            }
+            bool admin = false;
+            if (rb_rembo_admin.Checked) admin=true;
+            User user = new User
+            {
+                userName = tb_username.Text,
+                nom = tb_Nom.Text,
+                prenom = tb_prenom.Text,
+                password = tb_motpass.Text,
+                isAdmin = admin,
+
+
+            };
+
+            if (sql_connection.add_newUser(user))
+            {
+                MessageBox.Show("User added succefuly UwU"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
+            }
+            else MessageBox.Show("error adding user , wtf did u do"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
+
+        }
+
+        private void tp_admin_second_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                switch (e.TabPage.Name)
+                {
+                    case "tp_lab":
+                        intialiazeCountries<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        break;
+
+
+                    case "tp_produit":
+                        intialiazeCountries<Pay>(cb_pays, "pay_nom", "Pays_code");
+                        break;
+
+                }
+            }
+            finally 
+            {
+
+                Cursor.Current = Cursors.Default;
+            }
+            
         }
     }
 
