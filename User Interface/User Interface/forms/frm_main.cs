@@ -54,10 +54,12 @@ namespace User_Interface.forms
 
 
             ////// drtha hna to avoid dupilcate tables 
-            fillListView<Medicament>(lv_listStock,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Liste", "Commercialisation", "edited_by", "Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
-             ///////////
-             ///
-             fillListView<User>()
+            fillListView<Medicament>(lv_listStock,105,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Liste", "Commercialisation", "edited_by", "Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+            ///////////
+            ///
+            fillListView<User>(listview_khdamin,200, "nom", "prenom", "username");
+
+
             tab_control.SelectedTab = tp_alert;
             
             
@@ -101,7 +103,7 @@ namespace User_Interface.forms
         /// 
 
 
-        private void fillListView<T>(ListView listView, params string[] leschamps_de_tableux) where T : class
+        private void fillListView<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
         {
 
             
@@ -117,9 +119,9 @@ namespace User_Interface.forms
 
           
          
-                foreach (var propertyName in leschamps_de_tableux)
+                foreach (var champs in leschamps_de_tableux)
                 {
-                    listView.Columns.Add(propertyName,105);
+                    listView.Columns.Add(champs, taille_De_champ);
                 }
 
                 

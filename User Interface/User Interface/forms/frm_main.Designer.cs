@@ -2226,6 +2226,9 @@ namespace User_Interface.forms
             // 
             // panel_listkhdamin
             // 
+            this.panel_listkhdamin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_listkhdamin.Controls.Add(this.listview_khdamin);
             this.panel_listkhdamin.Location = new System.Drawing.Point(3, 0);
             this.panel_listkhdamin.Name = "panel_listkhdamin";
@@ -2234,6 +2237,9 @@ namespace User_Interface.forms
             // 
             // listview_khdamin
             // 
+            this.listview_khdamin.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listview_khdamin.AutoSizeTable = false;
             this.listview_khdamin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listview_khdamin.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -2246,7 +2252,7 @@ namespace User_Interface.forms
             this.listview_khdamin.MouseState = MaterialSkin.MouseState.OUT;
             this.listview_khdamin.Name = "listview_khdamin";
             this.listview_khdamin.OwnerDraw = true;
-            this.listview_khdamin.Size = new System.Drawing.Size(1688, 621);
+            this.listview_khdamin.Size = new System.Drawing.Size(1688, 736);
             this.listview_khdamin.TabIndex = 0;
             this.listview_khdamin.UseCompatibleStateImageBehavior = false;
             this.listview_khdamin.View = System.Windows.Forms.View.Details;
