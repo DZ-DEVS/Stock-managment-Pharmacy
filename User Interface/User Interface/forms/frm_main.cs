@@ -53,9 +53,11 @@ namespace User_Interface.forms
         {
 
 
-            ////// drtha hna to avoid dupilcate tables ( ana fanyan ) put it back in switch case bch tchof the error
+            ////// drtha hna to avoid dupilcate tables 
             fillListView<Medicament>(lv_listStock,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Liste", "Commercialisation", "edited_by", "Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
              ///////////
+             ///
+             fillListView<User>()
             tab_control.SelectedTab = tp_alert;
             
             
@@ -99,7 +101,7 @@ namespace User_Interface.forms
         /// 
 
 
-        private void fillListView<T>(ListView listView, params string[] propertyNames) where T : class
+        private void fillListView<T>(ListView listView, params string[] leschamps_de_tableux) where T : class
         {
 
             
@@ -115,7 +117,7 @@ namespace User_Interface.forms
 
           
          
-                foreach (var propertyName in propertyNames)
+                foreach (var propertyName in leschamps_de_tableux)
                 {
                     listView.Columns.Add(propertyName,105);
                 }
@@ -132,13 +134,13 @@ namespace User_Interface.forms
                     var listItem = new ListViewItem();
 
                 
-                    var firstitem = propertyNames.FirstOrDefault();
+                    var firstitem = leschamps_de_tableux.FirstOrDefault();
                    
                     var first_item = typeof(T).GetProperty(firstitem)?.GetValue(item)?.ToString() ?? "";
                         listItem.Text = first_item;
                     
 
-                    foreach (var subitems in propertyNames.Skip(1))
+                    foreach (var subitems in leschamps_de_tableux.Skip(1))
                     {
                         var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
                         listItem.SubItems.Add(value);
