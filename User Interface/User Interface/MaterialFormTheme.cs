@@ -2,7 +2,7 @@
     using System.Drawing;
     using System.Windows.Forms;
 
-    public static class MaterialFormTheme    {        public static void ApplyTheme(MaterialForm form)        {            var materialSkinManager = MaterialSkinManager.Instance;            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue300, Primary.Indigo100, Accent.DeepOrange700, TextShade.WHITE);
+    public static class MaterialFormTheme    {        public static void ApplyTheme(MaterialForm form)        {            var materialSkinManager = MaterialSkinManager.Instance;            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;            materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue300, Primary.Indigo100, Accent.DeepOrange700, TextShade.WHITE);
             materialSkinManager.AddFormToManage(form);            materialSkinManager.ThemeChanged += (sender) => form.Invalidate();            form.Disposed += (sender, args) => materialSkinManager.RemoveFormToManage(form);        }        public static void ApplyDarkTheme()
         {
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -11,43 +11,39 @@
         {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-        }        public static void ApplyMenuStripTheme(params MenuStrip[] menuStrips)
+        }
+
+
+
+
+        public static void Changecolorsetting(string theme)
         {
+            var materialSkinManager = MaterialSkinManager.Instance;
 
-            foreach (MenuStrip menuStrip in menuStrips) {
-
-
-
-
-
-                menuStrip.RenderMode = ToolStripRenderMode.System;
-                menuStrip.BackColor = Color.DodgerBlue;
-                menuStrip.ForeColor = Color.White;
-                menuStrip.Font = new Font("poppins", 8, FontStyle.Bold);
-                menuStrip.Dock = DockStyle.Top;
-                menuStrip.Location = new Point(0, 0);
-                
-
-
-
-            }
-
-        }        public static void ApplyHeaderSkin(params Label[] labels)
-        {
-
-            foreach(Label label in labels)
+            switch (theme)
             {
-
-                label.Size = new System.Drawing.Size(1529, 58);
-                label.BackColor = System.Drawing.Color.CornflowerBlue;
-                label.ForeColor = Color.White;
-                label.Font = new System.Drawing.Font("Poppins", 20F);
-
-
+                case "blue":
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue300, Primary.Indigo100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
+                case "green":
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green300, Primary.LightGreen100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
+                case "red":
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Red600, Primary.Red300, Primary.Pink100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
+                case "yellow":
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Yellow600, Primary.Yellow300, Primary.Amber100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
+                case "orange":
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Orange600, Primary.Orange300, Primary.DeepOrange100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
+                default:
+                   
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue300, Primary.Indigo100, Accent.DeepOrange700, TextShade.WHITE);
+                    break;
             }
-
-
-        }    }
+        }
+          }
 
 
 }

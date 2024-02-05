@@ -21,6 +21,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
 using Microsoft.IdentityModel.Tokens;
 using User_Interface.Ui_classes;
+using ReactiveUI;
+using Button = System.Windows.Forms.Button;
 
 namespace User_Interface.forms
 {
@@ -51,12 +53,11 @@ namespace User_Interface.forms
         {
 
 
-            //filldatatable<Medicament>();
-            //filldatatable<Selle>(dgb_soldMed);
-            
-            
+            ////// drtha hna to avoid dupilcate tables ( ana fanyan ) put it back in switch case bch tchof the error
+            fillListView<Medicament>(lv_listStock,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Liste", "Commercialisation", "edited_by", "Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+             ///////////
             tab_control.SelectedTab = tp_alert;
-
+            
             
 
 
@@ -98,42 +99,81 @@ namespace User_Interface.forms
         /// 
 
 
-        private void fillListView<T>(ListView listView) where T : class
+        private void fillListView<T>(ListView listView, params string[] propertyNames) where T : class
         {
+
+            
             if (listView == null)
             {
                 throw new ArgumentNullException(nameof(listView), "ListView cannot be null.");
             }
-
+     
             using (dbcontext context = new dbcontext())
             {
+
                 var data = context.Set<T>().ToList();
+
+          
+         
+                foreach (var propertyName in propertyNames)
+                {
+                    listView.Columns.Add(propertyName,105);
+                }
+
+                
+           
+                listView.View = View.Details;
+                listView.GridLines = true;
 
                 foreach (var item in data)
                 {
-                    var listViewItem = new ListViewItem();
+                    MaterialButton editbutton = new MaterialButton();
+                    MaterialButton deletebutton = new MaterialButton();
+                    var listItem = new ListViewItem();
 
-                    // Get the value of the "pay_nom" property
-                    var payNomProperty = typeof(T).GetProperty("pay_nom");
+                
+                    var firstitem = propertyNames.FirstOrDefault();
+                   
+                    var first_item = typeof(T).GetProperty(firstitem)?.GetValue(item)?.ToString() ?? "";
+                        listItem.Text = first_item;
+                    
 
-                    if (payNomProperty != null)
+                    foreach (var subitems in propertyNames.Skip(1))
                     {
-                        var payNomValue = payNomProperty.GetValue(item);
-
-                        // Set the item text directly for the first column
-                        listViewItem.Text = payNomValue?.ToString();
-
-                        // Add the ListViewItem to the ListView
-                        listView.Items.Add(listViewItem);
+                        var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
+                        listItem.SubItems.Add(value);
                     }
+
+                    listView.Items.Add(listItem);
+                    listView.Controls.Add(editbutton);
+                    listView.Controls.Add(deletebutton);
+
+
+                    addbutton(250,100,100,"edit",listItem,listView,editbutton);
+                    addbutton(170, 100, 100, "delete", listItem, listView, deletebutton);
+
                 }
             }
         }
 
+        
 
 
+       
+        private void addbutton(int width , int btol , int bwidth, string name, ListViewItem lvi , ListView lv, MaterialButton btn) 
+        {
 
+          
+            
 
+                btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
+
+               
+                btn.Text = name;
+            
+           
+
+        }
 
 
 
@@ -183,7 +223,7 @@ namespace User_Interface.forms
 
 
                     case "tp_list_stock":
-                        fillListView_Stock();
+                       
                         //fillListView<Pay>(lv_listStock);
                         break;
 
@@ -220,34 +260,7 @@ namespace User_Interface.forms
         {
             MessageBox.Show(this, @"you clicked button in the third column");
         }
-        public void fillListView_Stock()
-        {
-            // Create an instance of ListViewExtender
-            ListViewExtender extender = new ListViewExtender(lv_listStock);
-
-            // Extend the 2nd column
-            ListViewButtonColumn buttonAction = new ListViewButtonColumn(1);
-            buttonAction.Click += OnButtonActionClick;
-            buttonAction.ImageFilePath = "C:\\Users\\bouro\\Downloads\\edit-_1_.bmp";
-            buttonAction.FixedWidth = true;
-
-            // Extend the 3rd column
-            ListViewButtonColumn buttonInThirdColumn = new ListViewButtonColumn(2);
-            buttonInThirdColumn.Click += OnButtonInThirdColumnClick;
-            buttonInThirdColumn.ImageFilePath = "C:\\Users\\bouro\\Downloads\\delete.bmp"; // Specify the path to your image
-            buttonInThirdColumn.FixedWidth = true;
-
-            // Add the columns to the extender
-            extender.AddColumn(buttonAction);
-            extender.AddColumn(buttonInThirdColumn);
-            // Populate the ListView
-            for (int i = 0; i < 5; i++)
-            {
-                ListViewItem item = lv_listStock.Items.Add("" + i);
-                item.SubItems.Add(" ");
-                item.SubItems.Add(" "); // Add an extra subitem for the third column
-            }
-        }
+        
 
 
         public bool validateallInputs(params MaterialTextBox[] tbs) {
@@ -394,10 +407,7 @@ namespace User_Interface.forms
             else MaterialFormTheme.ApplyLightTheme();
         }
 
-        private void materialRadioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void BTN_ajouterPerso_Click_1(object sender, EventArgs e)
         {
@@ -481,6 +491,35 @@ namespace User_Interface.forms
             }
             
         }
+
+        private void BTN_rechercher_Click(object sender, EventArgs e)
+        {
+
+
+          
+     
+
+        }
+
+        private void btn_Useranuller_Click(object sender, EventArgs e)
+        {
+            clear_fields(groupBox_role,tb_Nom,tb_motpass,tb_prenom, tb_conPass,tb_username);
+        }
+
+        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+            string selecteditem = materialComboBox1.SelectedItem.ToString();
+            MaterialFormTheme.Changecolorsetting(selecteditem);
+
+
+
+        }
+
+     
     }
 
 

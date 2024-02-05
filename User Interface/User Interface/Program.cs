@@ -17,7 +17,7 @@ namespace User_Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_icon_firstApear());
+            Application.Run(new frm_main());
         }
     }
 }
