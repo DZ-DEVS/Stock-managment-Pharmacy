@@ -6,6 +6,7 @@ using Pharma_Libarary.Model;
 using System.Data.Entity;
 using System.Drawing;
 using MaterialSkin.Controls;
+using System.Linq;
 
 namespace User_Interface
 {
@@ -17,140 +18,68 @@ namespace User_Interface
         {
             _context = new dbcontext();
         }
-        private static void addbutton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
+        private static void position_newButton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
         {
             btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
-            btn.Text = name;
+            btn.Text = "";
             btn.Name = name;
-
-            btn.Click += ButtonClick;
-            btn.Tag = lvi;
-
-
-            lv.Controls.Add(btn);
-
         }
-        private static void ButtonClick(object sender, EventArgs e)
+        private static void add_button_Edit_Delete(ListView listView,ListViewItem item)
         {
+            Button editbutton = new Button();
+            Button deletebutton = new Button();
+            listView.Controls.Add(editbutton);
+            listView.Controls.Add(deletebutton);
+            position_newButton(250, 32, 32, "edit", item, listView, editbutton);
+            position_newButton(288, 32, 32, "delete", item, listView, deletebutton);
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            Button clickedButton = sender as Button;
+            editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
+            deletebutton.Image = Image.FromFile(currentDirectory + "\\delete.bmp");
+        }
+        private static ListViewItem listviewItem_MEd(Medicament med)
+        {
+            var item = new ListViewItem($"{med.nom_comrsl}, {med.Dossage} ({med.Dossage}/100ml) {med.Form}, {med.Conditionnement}");
+            item.SubItems.Add(med.Laboratoire.Lab_nom);
+            item.SubItems.Add(med.Classe_pharmacologique.nom_Cpharma);
+            item.SubItems.Add(med.Classe_thérapeutique.code_Cthera);
+            item.SubItems.Add(med.Type ? "Générique" : "Princeps");
+            item.SubItems.Add(med.Laboratoire.Pay.Pays_code == "DZD" ? "OUI" : "NON");
+            item.SubItems.Add(med.Remboursable == true ? "OUI" : "NON");
 
-
-            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
-
-            string id = listItem.SubItems[0].Text;
-            string temp = clickedButton.Name;
-            switch (temp)
-            {
-                case "delete":
-                    
-                    break;
-                case "edit":
-                    // Code to execute for case2
-                    break;
-                case "case3":
-                    // Code to execute for case3
-                    break;
-                default:
-                    // Code to execute if userInput does not match any of the cases above
-                    break;
-            }
-
-
-            if (clickedButton.Name == "edit")
-            {
-                Edit_table edit_Table = new Edit_table();
-
-                edit_Table.Ref_med = id;
-
-                edit_Table.Show();
-
-                using (dbcontext db = new dbcontext())
-                {
-
-
-
-                    Medicament md = db.Medicaments.Find(id);
-
-
-                    db.Medicaments.Remove(md);
-
-
-                    db.SaveChanges();
-
-
-
-
-
-                }
-
-
-
-
-            }
-
-            else if (clickedButton.Name == "delete")
-            {
-                
-
-
-
-            }
+            return item;
         }
         public static void add_Med_ToListView(MaterialListView listView)
         {
             if (_context != null)
             {
-                _context.Medicaments.Load();
-                _context.Laboratoires.Load();
-                _context.Classe_pharmacologiques.Load();
-                _context.Pays.Load();
+                var labs = _context.Laboratoires.ToList();
+                var medicaments = _context.Medicaments
+                    .Include(m => m.Laboratoire) // Include Laboratoire entity
+                    .Include(m => m.Classe_pharmacologique)
+                    .Include(m => m.Laboratoire.Pay)
+                    .ToList(); // Force immediate execution and close the DataReader
+
                 listView.View = View.Details;
                 listView.Scrollable = true;
                 listView.GridLines = true;
-                foreach (var Med in _context.Medicaments)
+
+                foreach (var med in medicaments)
                 {
-                    
-                    ListViewItem item = new ListViewItem(Med.nom_comrsl + "," + Med.Dossage + "(" 
-                        + Med.Dossage+"/100ml) "+ Med.Form+","+Med.Conditionnement);
-                    item.SubItems.Add(Med.Laboratoire.Lab_nom);
-                    item.SubItems.Add(Med.Classe_pharmacologique.nom_Cpharma);
-                    item.SubItems.Add(Med.Classe_thérapeutique.code_Cthera);
-                    if (Med.Type)
-                    {
-                        item.SubItems.Add("Générique");
-                    }else item.SubItems.Add("Princeps");
-                    if (Med.Laboratoire.Pay.Pays_code=="DZD")
-                    {
-                        item.SubItems.Add("OUI");
-                    }else item.SubItems.Add("NON");
-
-
+                    var item = listviewItem_MEd(med);
                     listView.Items.Add(item);
+                    add_button_Edit_Delete(listView, item);
                 }
             }
-            else MessageBox.Show("data base isnt intialized");
-            
-
-        }
-        public static void edit_Med(Medicament med)
-        {
-
-        }
-        public static void deleteMed(string Ref_Med)
-        {
-            using (var context = new dbcontext())
+            else
             {
-                var entityToDelete = context.Users.Find(Ref_Med);
-
-                if (entityToDelete != null)
-                {
-                    context.Users.Remove(entityToDelete);
-                    context.SaveChanges();
-                }
+                MessageBox.Show("Database isn't initialized");
             }
         }
-        
+
+
+
+
 
     }
 }

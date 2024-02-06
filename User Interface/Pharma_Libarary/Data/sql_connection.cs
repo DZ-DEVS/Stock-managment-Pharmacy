@@ -1,6 +1,7 @@
 ﻿using Pharma_Libarary.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -194,7 +195,7 @@ namespace Pharma_Libarary.Data
 
         }
 
-        public static bool add_Med(Medicament med)
+        public static void add_Med(Medicament med)
         {
 
             try
@@ -242,13 +243,10 @@ namespace Pharma_Libarary.Data
 
                     }
                 }
-
-                return true;
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-                return false;
             }
         }
 
@@ -257,6 +255,31 @@ namespace Pharma_Libarary.Data
 
 
 
+
+        #endregion
+
+        #region edit and delete
+        public static void edit_Med(Medicament med)
+        {
+            using (var dbContext = new dbcontext())
+            {
+                dbContext.Entry(med).State = EntityState.Modified;
+                dbContext.SaveChanges();
+            }
+        }
+        public static void deleteMed(string Ref_Med)
+        {
+            using (var context = new dbcontext())
+            {
+                var entityToDelete = context.Users.Find(Ref_Med);
+
+                if (entityToDelete != null)
+                {
+                    context.Users.Remove(entityToDelete);
+                    context.SaveChanges();
+                }
+            }
+        }
         #endregion
     }
 }
