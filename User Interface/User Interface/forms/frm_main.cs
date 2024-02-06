@@ -23,6 +23,8 @@ using Microsoft.IdentityModel.Tokens;
 using User_Interface.Ui_classes;
 using ReactiveUI;
 using Button = System.Windows.Forms.Button;
+using Bogus;
+using User_Interface.Properties;
 
 namespace User_Interface.forms
 {
@@ -54,13 +56,14 @@ namespace User_Interface.forms
 
 
             ////// drtha hna to avoid dupilcate tables 
-            fillListView<Medicament>(lv_listStock,105,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Liste", "Commercialisation", "edited_by", "Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+            //test<Medicament>(lv_listStock,105,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+            test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
             ///////////
             ///
-            fillListView<User>(listview_khdamin,200, "nom", "prenom", "username");
+            test<User>(listview_khdamin,200, "nom", "prenom", "username");
 
-
-            tab_control.SelectedTab = tp_alert;
+            
+            tab_control.SelectedTab = tp_list_stock;
             
             
 
@@ -117,30 +120,32 @@ namespace User_Interface.forms
 
                 var data = context.Set<T>().ToList();
 
-          
-         
+
+
+
                 foreach (var champs in leschamps_de_tableux)
                 {
                     listView.Columns.Add(champs, taille_De_champ);
                 }
 
-                
-           
+
+
                 listView.View = View.Details;
+                listView.Scrollable = true;
                 listView.GridLines = true;
 
                 foreach (var item in data)
                 {
-                    MaterialButton editbutton = new MaterialButton();
-                    MaterialButton deletebutton = new MaterialButton();
+                    Button editbutton = new Button();
+                    Button deletebutton = new Button();
                     var listItem = new ListViewItem();
-
+                    
                 
                     var firstitem = leschamps_de_tableux.FirstOrDefault();
-                   
+
                     var first_item = typeof(T).GetProperty(firstitem)?.GetValue(item)?.ToString() ?? "";
-                        listItem.Text = first_item;
-                    
+                    listItem.Text = first_item;
+
 
                     foreach (var subitems in leschamps_de_tableux.Skip(1))
                     {
@@ -153,34 +158,74 @@ namespace User_Interface.forms
                     listView.Controls.Add(deletebutton);
 
 
-                    addbutton(250,100,100,"edit",listItem,listView,editbutton);
-                    addbutton(170, 100, 100, "delete", listItem, listView, deletebutton);
+                    addbutton(250,34,34,"edit",listItem,listView,editbutton);
+                    addbutton(280, 34, 34, "delete", listItem, listView, deletebutton);
+
 
                 }
+
             }
         }
 
-        
 
 
-       
-        private void addbutton(int width , int btol , int bwidth, string name, ListViewItem lvi , ListView lv, MaterialButton btn) 
+
+
+        private void addbutton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
         {
-
-          
-            
-
-                btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
-
-               
-                btn.Text = name;
-            
-           
+            btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
+            btn.Text = "";
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
 
         }
 
+        private void test<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
+        {
 
 
+            if (listView == null)
+            {
+                throw new ArgumentNullException(nameof(listView), "ListView cannot be null.");
+            }
+
+            using (dbcontext context = new dbcontext())
+            {
+
+                var data = context.Set<T>().ToList();
+
+                listView.View = View.Details;
+                listView.Scrollable = true;
+                listView.GridLines = true;
+
+                foreach (var item in data)
+                {
+                    Button editbutton = new Button();
+                    Button deletebutton = new Button();
+                    var listItem = new ListViewItem();
+                    
+                    foreach (var subitems in leschamps_de_tableux)
+                    {
+                        var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
+                        listItem.SubItems.Add(value);
+                        
+                    }
+
+                    listView.Items.Add(listItem);
+                    listView.Controls.Add(editbutton);
+                    listView.Controls.Add(deletebutton);
+
+
+                    addbutton(250, 32, 32, "edit", listItem, listView, editbutton);
+                    addbutton(288, 32, 32, "delete", listItem, listView, deletebutton);
+                    string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                    editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
+                    deletebutton.Image = Image.FromFile(currentDirectory + "\\delete.bmp");
+                }
+
+            }
+        }
 
 
 
