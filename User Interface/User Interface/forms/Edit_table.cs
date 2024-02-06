@@ -18,7 +18,7 @@ namespace User_Interface.forms
     public partial class Edit_table : Form
     {
 
-        frm_main frm = new frm_main();
+
 
         public string Ref_med { get; set; }
 
@@ -42,7 +42,7 @@ namespace User_Interface.forms
         public Edit_table()
         {
             InitializeComponent();
-          
+            frm_main frm = new frm_main();
             frm.intialiazeCountries<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
             frm.intialiazeCountries<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
             frm.intialiazeCountries<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
