@@ -299,6 +299,12 @@
     <Compile Include="forms\diag_addNewProduct.Designer.cs">
       <DependentUpon>diag_addNewProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Edit_table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Edit_table.Designer.cs">
+      <DependentUpon>Edit_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_icon_firstApear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\diag_addNewProduct.resx">
       <DependentUpon>diag_addNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Edit_table.resx">
+      <DependentUpon>Edit_table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_icon_firstApear.resx">
       <DependentUpon>frm_icon_firstApear.cs</DependentUpon>

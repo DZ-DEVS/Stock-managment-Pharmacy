@@ -25,6 +25,7 @@ using ReactiveUI;
 using Button = System.Windows.Forms.Button;
 using Bogus;
 using User_Interface.Properties;
+using Microsoft.EntityFrameworkCore;
 
 namespace User_Interface.forms
 {
@@ -55,12 +56,12 @@ namespace User_Interface.forms
         {
 
 
-            ////// drtha hna to avoid dupilcate tables 
-            //test<Medicament>(lv_listStock,105,"nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
-            test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
-            ///////////
-            ///
-            test<User>(listview_khdamin,200, "nom", "prenom", "username");
+        
+            fillListView<Medicament>(lv_listStock,100,"Ref_med","nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+          
+            // test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
+           
+           //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
 
             
             tab_control.SelectedTab = tp_list_stock;
@@ -70,15 +71,9 @@ namespace User_Interface.forms
 
         }
 
-        /// <summary>
-        /// use this to fill combo box withh all talbe infos
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="comboBox"></param>
-        /// <param name="name"> champs t 3 </param>
-        /// <param name="id">primary key</param>
 
-        private void intialiazeCountries<T>(MaterialComboBox comboBox, string name, string id) where T : class
+
+        public void intialiazeCountries<T>(MaterialComboBox comboBox, string name, string id) where T : class
         {
             using (var dbContext = new dbcontext())
             {
@@ -98,12 +93,6 @@ namespace User_Interface.forms
 
 
 
-        /// <summary>
-        /// fetch data from a specifi table
-        /// </summary>
-        /// <typeparam name="T">db classes</typeparam>
-        /// <param name="dgv"> data grid view </param>
-        /// 
 
 
         private void fillListView<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
@@ -145,39 +134,116 @@ namespace User_Interface.forms
 
                     var first_item = typeof(T).GetProperty(firstitem)?.GetValue(item)?.ToString() ?? "";
                     listItem.Text = first_item;
+          
 
 
                     foreach (var subitems in leschamps_de_tableux.Skip(1))
                     {
                         var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
                         listItem.SubItems.Add(value);
+
                     }
 
                     listView.Items.Add(listItem);
-                    listView.Controls.Add(editbutton);
-                    listView.Controls.Add(deletebutton);
+      
 
+                            //250 //34 
+                    addbutton(220,40,40,"edit",listItem,listView,editbutton);
+                             //280  //34 
+                    addbutton(160, 40, 40, "delete", listItem, listView, deletebutton);
 
-                    addbutton(250,34,34,"edit",listItem,listView,editbutton);
-                    addbutton(280, 34, 34, "delete", listItem, listView, deletebutton);
-
-
+               
                 }
 
             }
         }
 
-
+    
 
 
 
         private void addbutton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
         {
             btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
-            btn.Text = "";
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 0;
+            btn.Text = name;
+            btn.Name = name;  
 
+            btn.Click += ButtonClick;
+            btn.Tag = lvi;
+
+          
+            lv.Controls.Add(btn);
+        
+    }
+        //we add update and delete operation in sql connection later
+        // ki tclick 3la edit wla delete ysra tmnyik t3hom
+        private void ButtonClick(object sender, EventArgs e)
+        {
+            
+            Button clickedButton = sender as Button;
+
+           
+            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
+
+            string id = listItem.SubItems[0].Text;
+
+            if (clickedButton.Name == "edit")
+            {
+              Edit_table edit_Table = new Edit_table();
+
+              edit_Table.Ref_med = id;
+
+              edit_Table.Show();
+
+                using (dbcontext db = new dbcontext())
+                {
+
+
+
+                    Medicament md = db.Medicaments.Find(id);
+
+                   
+                        db.Medicaments.Remove(md);
+
+
+                        db.SaveChanges();
+
+                   
+                    
+                  
+
+                }
+
+
+
+
+            }
+            
+            else if (clickedButton.Name == "delete")
+            {
+
+
+
+
+
+                using (dbcontext db = new dbcontext())
+                {
+                    Medicament md = db.Medicaments.Find(id);
+
+                  
+                        db.Medicaments.Remove(md);
+
+                    
+                        db.SaveChanges();
+
+                        MessageBox.Show("deleted.");
+                    
+                   
+
+                }
+
+                
+            }
         }
 
         private void test<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
@@ -568,7 +634,6 @@ namespace User_Interface.forms
 
         }
 
-     
     }
 
 
