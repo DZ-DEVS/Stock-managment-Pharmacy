@@ -18,20 +18,21 @@ namespace User_Interface
         {
             _context = new dbcontext();
         }
-        private static void position_newButton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
+        private static void position_newButton(int width, int btol, int bwidth, string Type_AndID, ListViewItem lvi, ListView lv, Button btn)
         {
             btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
             btn.Text = "";
-            btn.Name = name;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.Name = Type_AndID;//e edit
         }
-        private static void add_button_Edit_Delete(ListView listView,ListViewItem item)
+        private static void add_button_Edit_Delete(ListView listView,string  ID,ListViewItem item)
         {
             Button editbutton = new Button();
             Button deletebutton = new Button();
             listView.Controls.Add(editbutton);
             listView.Controls.Add(deletebutton);
-            position_newButton(250, 34, 34, "edit", item, listView, editbutton);
-            position_newButton(288, 34, 34, "delete", item, listView, deletebutton);
+            position_newButton(250, 34, 34, "e/"+ID, item, listView, editbutton);
+            position_newButton(288, 34, 34, "d/"+ID, item, listView, deletebutton);
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
@@ -68,7 +69,7 @@ namespace User_Interface
                 {
                     var item = listviewItem_MEd(med);
                     listView.Items.Add(item);
-                    add_button_Edit_Delete(listView, item);
+                    add_button_Edit_Delete(listView, med.Ref_med,item);
                 }
             }
             else

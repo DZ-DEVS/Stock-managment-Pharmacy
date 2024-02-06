@@ -338,7 +338,7 @@ namespace User_Interface.forms
             // columnHeader2
             // 
             this.columnHeader2.Text = "Laboratoire";
-            this.columnHeader2.Width = 70;
+            this.columnHeader2.Width = 80;
             // 
             // btn_search
             // 
@@ -2247,10 +2247,16 @@ namespace User_Interface.forms
             // columnHeader3
             // 
             this.columnHeader3.Text = "C.Thérapeutique";
+            this.columnHeader3.Width = 80;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "C.Pharmacologique";
+            this.columnHeader4.Width = 80;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Width = 80;
             // 
             // columnHeader6
             // 
