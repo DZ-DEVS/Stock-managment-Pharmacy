@@ -39,10 +39,9 @@ namespace User_Interface.forms
             InitializeComponent();
 
             MaterialFormTheme.ApplyTheme(this);
-            
 
 
-           
+
 
         }
 
@@ -56,14 +55,13 @@ namespace User_Interface.forms
         {
 
 
-        
-            fillListView<Medicament>(lv_listStock,100,"Ref_med","nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
-          
-            // test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
-           
-           //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
 
-            
+            //test<Medicament>(lv_listStock,100,"Ref_med","nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
+
+            // test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
+
+            //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
+            WinformClassLibrary.add_Med_ToListView(lv_listStock);
             tab_control.SelectedTab = tp_list_stock;
             
             
@@ -245,7 +243,7 @@ namespace User_Interface.forms
                 
             }
         }
-
+        
         private void test<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
         {
 
@@ -266,22 +264,24 @@ namespace User_Interface.forms
 
                 foreach (var item in data)
                 {
-                    Button editbutton = new Button();
-                    Button deletebutton = new Button();
-                    var listItem = new ListViewItem();
                     
+                    var listItem = new ListViewItem();
+
                     foreach (var subitems in leschamps_de_tableux)
                     {
                         var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
                         listItem.SubItems.Add(value);
-                        
+
                     }
 
                     listView.Items.Add(listItem);
+                    
+                    
+
+                    Button editbutton = new Button();
+                    Button deletebutton = new Button();
                     listView.Controls.Add(editbutton);
                     listView.Controls.Add(deletebutton);
-
-
                     addbutton(250, 32, 32, "edit", listItem, listView, editbutton);
                     addbutton(288, 32, 32, "delete", listItem, listView, deletebutton);
                     string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -365,15 +365,6 @@ namespace User_Interface.forms
             
 
 
-        }
-        private void OnButtonActionClick(object sender, ListViewColumnMouseEventArgs e)
-        {
-            MessageBox.Show(this, @"you clicked " + e.SubItem.Text);
-        }
-
-        private void OnButtonInThirdColumnClick(object sender, ListViewColumnMouseEventArgs e)
-        {
-            MessageBox.Show(this, @"you clicked button in the third column");
         }
         
 
@@ -464,19 +455,7 @@ namespace User_Interface.forms
 
 
             };
-
-            if (sql_connection.add_Lab(lab))
-            {
-                MessageBox.Show("Lab added succefuly UwU"); clear_fields(null,tb_nomLab,tb_adress,tb_codeLab,tb_phone,tb_webAdress);
-            }
-            else MessageBox.Show("error adding user , wtf did u do");clear_fields(null,tb_nomLab,tb_adress,tb_codeLab,tb_phone,tb_webAdress);
-
-
-
-
-
-
-
+            sql_connection.add_Lab(lab);
         }
 
         private void tb_nomLab_KeyPress(object sender, KeyPressEventArgs e)
@@ -634,6 +613,7 @@ namespace User_Interface.forms
 
         }
 
+        
     }
 
 

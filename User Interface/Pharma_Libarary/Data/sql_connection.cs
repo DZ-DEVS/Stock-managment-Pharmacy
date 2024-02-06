@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Pharma_Libarary.Data
 {
-    public  class sql_connection
+    public class sql_connection
     {
         #region insert in data base tables
         public static bool add_newUser(User newUser)
@@ -23,7 +23,8 @@ namespace Pharma_Libarary.Data
                         MessageBox.Show("Ce utilisatuer existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return false;
                     }
-                    else {
+                    else
+                    {
                         // Step 2: Create a new User instance and set its properties
                         User instance = new User
                         {
@@ -40,7 +41,7 @@ namespace Pharma_Libarary.Data
                         // Step 4: Save changes to the database
                         context.SaveChanges();
                     }
-                    
+
                 }
                 return true;
             }
@@ -49,7 +50,7 @@ namespace Pharma_Libarary.Data
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
                 return false;
             }
-            
+
         }
 
         public static void add_newClass_phatmacologique(String classe_pharmacologique_Name)
@@ -64,7 +65,8 @@ namespace Pharma_Libarary.Data
                     {
                         MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else {
+                    else
+                    {
                         Classe_pharmacologique instance = new Classe_pharmacologique
                         {
                             nom_Cpharma = classe_pharmacologique_Name
@@ -74,15 +76,15 @@ namespace Pharma_Libarary.Data
 
                         MessageBox.Show("la class pharmalogique a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
+
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-                
+
             }
-            
+
 
         }
         public static void add_newClass_therapeutique(String Classe_therapeutique_Name)
@@ -97,7 +99,8 @@ namespace Pharma_Libarary.Data
                     {
                         MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else {
+                    else
+                    {
                         Classe_thérapeutique instance = new Classe_thérapeutique
                         {
                             code_Cthera = Classe_therapeutique_Name
@@ -107,15 +110,15 @@ namespace Pharma_Libarary.Data
 
                         MessageBox.Show("la class thérapeutique a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    
+
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-                
+
             }
-            
+
 
         }
         public static void add_newClass_DCI(String Classe_DCI_Name)
@@ -152,7 +155,7 @@ namespace Pharma_Libarary.Data
 
 
         }
-        public static bool add_Lab(Laboratoire lab)
+        public static void add_Lab(Laboratoire lab)
         {
             try
             {
@@ -182,56 +185,54 @@ namespace Pharma_Libarary.Data
                     }
 
                 }
-                return true;
             }
             catch (Exception e)
             {
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-                return false;
             }
 
 
         }
 
-      public static bool add_Med(Medicament med)
+        public static bool add_Med(Medicament med)
         {
-           
-                try
+
+            try
+            {
+                using (var context = new dbcontext())
                 {
-                    using (var context = new dbcontext())
+                    bool recordExist = context.Medicaments.Any(e => e.Ref_med == med.Ref_med);
+
+                    if (recordExist)
                     {
-                        bool recordExist = context.Medicaments.Any(e => e.Ref_med == med.Ref_med);
-
-                        if (recordExist)
+                        MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        Medicament instance = new Medicament
                         {
-                            MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            Medicament instance = new Medicament 
-                            {
 
-                                Ref_med = med.Ref_med,
-                                nom_comrsl = med.nom_comrsl,
-                                Form = med.Form,
-                                Dossage = med.Dossage,
-                                Conditionnement = med.Conditionnement,
-                                Type = med.Type,
-                                Liste = med.Liste,
-                                Commercialisation = med.Commercialisation,
-                                Remboursable = med.Remboursable,
-                                Tarif = med.Tarif,
-                                PPA = med.PPA,
-                                edited_by = med.edited_by,
-                                nom_Cpharma = med.nom_Cpharma,
-                                code_Cthera = med.code_Cthera,
-                                nom_DCI = med.nom_DCI,
-                                Classe_pharmacologique = med.Classe_pharmacologique,
-                                Classe_thérapeutique = med.Classe_thérapeutique,
-                                DCI = med.DCI
+                            Ref_med = med.Ref_med,
+                            nom_comrsl = med.nom_comrsl,
+                            Form = med.Form,
+                            Dossage = med.Dossage,
+                            Conditionnement = med.Conditionnement,
+                            Type = med.Type,
+                            Liste = med.Liste,
+                            Commercialisation = med.Commercialisation,
+                            Remboursable = med.Remboursable,
+                            Tarif = med.Tarif,
+                            PPA = med.PPA,
+                            edited_by = med.edited_by,
+                            nom_Cpharma = med.nom_Cpharma,
+                            code_Cthera = med.code_Cthera,
+                            nom_DCI = med.nom_DCI,
+                            Classe_pharmacologique = med.Classe_pharmacologique,
+                            Classe_thérapeutique = med.Classe_thérapeutique,
+                            DCI = med.DCI
 
 
-                            };
+                        };
 
                         context.Medicaments.Add(instance);
                         context.SaveChanges();
@@ -240,26 +241,18 @@ namespace Pharma_Libarary.Data
 
 
                     }
-                    }
+                }
 
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
-                    return false;
-                }
+                return true;
             }
+            catch (Exception e)
+            {
+                MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
+                return false;
+            }
+        }
 
 
-
-
-
-
-          
-
-
-        
 
 
 
