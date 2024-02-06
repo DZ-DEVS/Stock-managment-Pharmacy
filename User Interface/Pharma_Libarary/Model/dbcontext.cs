@@ -8,7 +8,7 @@ namespace Pharma_Libarary.Model
     public partial class dbcontext : DbContext
     {
         public dbcontext()
-            : base("dbcontext")
+            : base("name=dbcontext")
         {
         }
 
@@ -22,7 +22,7 @@ namespace Pharma_Libarary.Model
         public virtual DbSet<Selle> Selles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Classe_pharmacologique>()
@@ -89,8 +89,9 @@ namespace Pharma_Libarary.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<Laboratoire>()
-                .HasOptional(e => e.Medicament)
-                .WithRequired(e => e.Laboratoire);
+                .HasMany(e => e.Medicaments)
+                .WithRequired(e => e.Laboratoire)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Ref_med)
@@ -213,7 +214,6 @@ namespace Pharma_Libarary.Model
                 .HasMany(e => e.Selles)
                 .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
-
         }
     }
 }

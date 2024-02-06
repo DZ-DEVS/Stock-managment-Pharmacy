@@ -10,20 +10,10 @@ namespace Pharma_Libarary.Model
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-
-      
         public User()
         {
             Medicaments = new HashSet<Medicament>();
             Selles = new HashSet<Selle>();
-        }
-
-        public User(string userName, string password, string nom, string prenom)
-        {
-            this.userName = userName;
-            this.password = password;
-            this.nom = nom;
-            this.prenom = prenom;
         }
 
         [Key]
@@ -41,14 +31,13 @@ namespace Pharma_Libarary.Model
         [Required]
         [StringLength(15)]
         public string prenom { get; set; }
-        public bool? isAdmin { get; set; }
 
+        public bool? isAdmin { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medicament> Medicaments { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selle> Selles { get; set; }
-
     }
 }

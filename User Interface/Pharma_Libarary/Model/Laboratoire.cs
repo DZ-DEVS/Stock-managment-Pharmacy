@@ -9,14 +9,10 @@ namespace Pharma_Libarary.Model
     [Table("Laboratoire")]
     public partial class Laboratoire
     {
-        public Laboratoire(string lab_code, string lab_nom, string adress, string tel, string web_adress, string pay_code)
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Laboratoire()
         {
-            Lab_code = lab_code;
-            Lab_nom = lab_nom;
-            Adress = adress;
-            this.tel = tel;
-            this.web_adress = web_adress;
-            this.pay_code = pay_code;
+            Medicaments = new HashSet<Medicament>();
         }
 
         [Key]
@@ -33,14 +29,6 @@ namespace Pharma_Libarary.Model
         [StringLength(10)]
         public string tel { get; set; }
 
-        public Laboratoire(string lab_code, string lab_nom, string adress, string pay_code)
-        {
-            Lab_code = lab_code;
-            Lab_nom = lab_nom;
-            Adress = adress;
-            this.pay_code = pay_code;
-        }
-
         [StringLength(50)]
         public string web_adress { get; set; }
 
@@ -50,11 +38,7 @@ namespace Pharma_Libarary.Model
 
         public virtual Pay Pay { get; set; }
 
-        public virtual Medicament Medicament { get; set; }
-
-        public Laboratoire() { }
-        
-            
-        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Medicament> Medicaments { get; set; }
     }
 }
