@@ -30,8 +30,8 @@ namespace User_Interface
             Button deletebutton = new Button();
             listView.Controls.Add(editbutton);
             listView.Controls.Add(deletebutton);
-            position_newButton(250, 32, 32, "edit", item, listView, editbutton);
-            position_newButton(288, 32, 32, "delete", item, listView, deletebutton);
+            position_newButton(250, 34, 34, "edit", item, listView, editbutton);
+            position_newButton(288, 34, 34, "delete", item, listView, deletebutton);
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
@@ -53,7 +53,7 @@ namespace User_Interface
         {
             if (_context != null)
             {
-                var labs = _context.Laboratoires.ToList();
+                
                 var medicaments = _context.Medicaments
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)
