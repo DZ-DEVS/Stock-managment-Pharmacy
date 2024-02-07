@@ -24,13 +24,21 @@ namespace User_Interface
             btn.Text = "";
             btn.FlatStyle = FlatStyle.Flat;
             btn.Name = Type_AndID;//e edit
+
+           
         }
         private static void add_button_Edit_Delete(ListView listView,string  ID,ListViewItem item)
         {
             Button editbutton = new Button();
             Button deletebutton = new Button();
+          
             listView.Controls.Add(editbutton);
             listView.Controls.Add(deletebutton);
+         //   editbutton.Click += EditButtonClick;
+        //    deletebutton.Click += DeleteButtonClick;
+            editbutton.Tag = item;
+            deletebutton.Tag = item;
+     
             position_newButton(250, 34, 34, "e/"+ID, item, listView, editbutton);
             position_newButton(288, 34, 34, "d/"+ID, item, listView, deletebutton);
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -75,6 +83,42 @@ namespace User_Interface
             else
             {
                 MessageBox.Show("Database isn't initialized");
+            }
+        }
+
+
+        private static void EditButtonClick(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
+            string id = listItem.SubItems[0].Text;
+
+            Edit_table edit_Table = new Edit_table();
+            edit_Table.Ref_med = id;
+            edit_Table.Show();
+
+          
+
+           
+        }
+
+        private static void DeleteButtonClick(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
+            string id = listItem.SubItems[0].Text;
+
+            Medicament md = _context.Medicaments.Find(id);
+
+            if (md != null)
+            {
+                _context.Medicaments.Remove(md);
+                _context.SaveChanges();
+                MessageBox.Show("Deleted.");
+            }
+            else
+            {
+                MessageBox.Show("Medicament not found.");
             }
         }
 
