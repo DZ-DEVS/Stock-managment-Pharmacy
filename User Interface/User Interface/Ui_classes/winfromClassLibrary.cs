@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using User_Interface.Ui_classes;
 using User_Interface.forms;
 using Pharma_Libarary.Model;
 using System.Data.Entity;
@@ -44,13 +43,16 @@ namespace User_Interface
                     sql_connection.delete_elemnt<Medicament>(op[1]);
                     
                     MessageBox.Show("le médicament a été supprimé avec succès");
-                    /// TODO : delete med aiint working
                     /// 
-                    load_Med_ToListView_withButton(listGlobal);
+                    load_Med_ToListView_with_OutButton(listGlobal);
                 }
                 else return;
             }
-            MessageBox.Show(clickedButton.Name);
+            else
+            {
+                diag_Edit_Med edit_Table = new diag_Edit_Med(op[1]);
+                edit_Table.ShowDialog();
+            }
         }
 
         private static void add_button_Edit_Delete(ListView listView,string  ID,ListViewItem item,ListView listView1)
@@ -144,9 +146,8 @@ namespace User_Interface
             ListViewItem listItem = (ListViewItem)clickedButton.Tag;
             string id = listItem.SubItems[0].Text;
 
-            Edit_table edit_Table = new Edit_table();
-            edit_Table.Ref_med = id;
-            edit_Table.Show();
+            Edit_table edit_Table = new Edit_table(id);
+            edit_Table.ShowDialog();
 
           
 
@@ -172,7 +173,21 @@ namespace User_Interface
                 MessageBox.Show("Medicament not found.");
             }
         }
+        public static void intialiaze_ComboBox<T>(MaterialComboBox comboBox, string name, string id) where T : class
+        {
+            using (var dbContext = new dbcontext())
+            {
+                var table = dbContext.Set<T>().ToList();
 
+                // Assuming 'name' property is a string property in the class T
+                // You can modify this based on your actual class structure
+                table = table.OrderBy(item => item.GetType().GetProperty(name)?.GetValue(item, null) as string).ToList();
+
+                comboBox.DataSource = table;
+                comboBox.DisplayMember = name;
+                comboBox.ValueMember = id;
+            }
+        }
 
 
 

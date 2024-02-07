@@ -263,6 +263,8 @@ namespace Pharma_Libarary.Data
         {
             using (var dbContext = new dbcontext())
             {
+                var context = dbContext.Classe_thérapeutique.ToList();
+                // todo : fix the nchar problem in the data base
                 dbContext.Entry(med).State = EntityState.Modified;
                 dbContext.SaveChanges();
             }
@@ -284,5 +286,25 @@ namespace Pharma_Libarary.Data
             }
         }
         #endregion
+        #region load class
+        public static Medicament load_med(string ID)
+        {
+            Medicament med = new Medicament();
+            using (var db = new dbcontext())
+            {
+
+                var load = db.Medicaments
+                  .Include(m => m.Laboratoire.Pay)
+                  .Include(m => m.Classe_pharmacologique)
+                  .Include(m => m.Classe_thérapeutique)
+                  .Include(m => m.DCI)
+                  .FirstOrDefault(m => m.Ref_med == ID);
+                med = load;
+                return med;
+            }
+            
+        }
+        #endregion
+
     }
 }

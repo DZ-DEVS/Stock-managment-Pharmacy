@@ -1,6 +1,6 @@
 ﻿namespace User_Interface.forms
 {
-    partial class diag_addClass
+    partial class diag_Add_Class
     {
         /// <summary>
         /// Required designer variable.

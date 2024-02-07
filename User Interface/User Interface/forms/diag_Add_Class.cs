@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace User_Interface.forms
 {
-    public partial class diag_addClass : Form
+    public partial class diag_Add_Class : Form
     {
         
-        public diag_addClass()
+        public diag_Add_Class()
         {
             InitializeComponent();
             

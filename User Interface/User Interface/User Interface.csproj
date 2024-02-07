@@ -287,23 +287,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\diag_addClass.cs">
+    <Compile Include="forms\diag_Add_Class.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\diag_addClass.Designer.cs">
-      <DependentUpon>diag_addClass.cs</DependentUpon>
+    <Compile Include="forms\diag_Add_Class.Designer.cs">
+      <DependentUpon>diag_Add_Class.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\diag_addNewProduct.cs">
+    <Compile Include="forms\diag_Edit_Med.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\diag_addNewProduct.Designer.cs">
-      <DependentUpon>diag_addNewProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\Edit_table.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\Edit_table.Designer.cs">
-      <DependentUpon>Edit_table.cs</DependentUpon>
+    <Compile Include="forms\diag_Edit_Med.Designer.cs">
+      <DependentUpon>diag_Edit_Med.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frm_icon_firstApear.cs">
       <SubType>Form</SubType>
@@ -331,16 +325,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Stock_Managment_PharmacyDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Ui_classes\ListViewExtender.cs" />
     <Compile Include="Ui_classes\winfromClassLibrary.cs" />
-    <EmbeddedResource Include="forms\diag_addClass.resx">
-      <DependentUpon>diag_addClass.cs</DependentUpon>
+    <EmbeddedResource Include="forms\diag_Add_Class.resx">
+      <DependentUpon>diag_Add_Class.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\diag_addNewProduct.resx">
-      <DependentUpon>diag_addNewProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\Edit_table.resx">
-      <DependentUpon>Edit_table.cs</DependentUpon>
+    <EmbeddedResource Include="forms\diag_Edit_Med.resx">
+      <DependentUpon>diag_Edit_Med.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_icon_firstApear.resx">
       <DependentUpon>frm_icon_firstApear.cs</DependentUpon>
@@ -433,7 +423,6 @@
     <None Include="Resources\edit_icon.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="forms\edit-_1_.bmp" />
     <None Include="Resources\delete.bmp" />
     <None Include="Resources\edit-_1_.bmp" />
     <None Include="Resources\edit_bmp.bmp" />

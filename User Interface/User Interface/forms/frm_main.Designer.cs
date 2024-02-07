@@ -38,16 +38,15 @@ namespace User_Interface.forms
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
-            this.holo = new System.Windows.Forms.Button();
             this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_search = new MaterialSkin.Controls.MaterialTextBox();
             this.BTN_rechercher = new MaterialSkin.Controls.MaterialButton();
             this.tp_transaction = new System.Windows.Forms.TabPage();
@@ -94,6 +93,10 @@ namespace User_Interface.forms
             this.tp_produit = new System.Windows.Forms.TabPage();
             this.card_produit = new MaterialSkin.Controls.MaterialCard();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_Dci = new MaterialSkin.Controls.MaterialComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -183,6 +186,7 @@ namespace User_Interface.forms
             this.tp_produit.SuspendLayout();
             this.card_produit.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.gb_rembo.SuspendLayout();
             this.gb_comm.SuspendLayout();
             this.gb_list.SuspendLayout();
@@ -230,15 +234,16 @@ namespace User_Interface.forms
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1063, 1000);
+            this.tab_control.Size = new System.Drawing.Size(1103, 1000);
             this.tab_control.TabIndex = 0;
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
+            this.tab_control.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage1.Size = new System.Drawing.Size(1075, 953);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +251,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage2.Size = new System.Drawing.Size(1075, 953);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -254,7 +259,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage3.Size = new System.Drawing.Size(1075, 953);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -266,14 +271,13 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1055, 953);
+            this.tp_home.Size = new System.Drawing.Size(1075, 953);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tp_list_stock.Controls.Add(this.holo);
             this.tp_list_stock.Controls.Add(this.lv_listStock);
             this.tp_list_stock.Controls.Add(this.btn_search);
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
@@ -281,19 +285,9 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1055, 953);
+            this.tp_list_stock.Size = new System.Drawing.Size(1075, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
-            // 
-            // holo
-            // 
-            this.holo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.holo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.holo.Location = new System.Drawing.Point(618, 29);
-            this.holo.Name = "holo";
-            this.holo.Size = new System.Drawing.Size(32, 32);
-            this.holo.TabIndex = 108;
-            this.holo.UseVisualStyleBackColor = true;
             // 
             // lv_listStock
             // 
@@ -308,10 +302,10 @@ namespace User_Interface.forms
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader9});
             this.lv_listStock.Depth = 0;
             this.lv_listStock.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_listStock.ForeColor = System.Drawing.SystemColors.Info;
@@ -325,7 +319,7 @@ namespace User_Interface.forms
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
             this.lv_listStock.Scrollable = false;
-            this.lv_listStock.Size = new System.Drawing.Size(1049, 550);
+            this.lv_listStock.Size = new System.Drawing.Size(1069, 550);
             this.lv_listStock.TabIndex = 107;
             this.lv_listStock.UseCompatibleStateImageBehavior = false;
             this.lv_listStock.View = System.Windows.Forms.View.Details;
@@ -350,10 +344,6 @@ namespace User_Interface.forms
             this.columnHeader4.Text = "C.Pharmacologique";
             this.columnHeader4.Width = 80;
             // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Width = 80;
-            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Type";
@@ -365,6 +355,11 @@ namespace User_Interface.forms
             // columnHeader8
             // 
             this.columnHeader8.Text = "Remboursable";
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Tarif";
+            this.columnHeader9.Width = 80;
             // 
             // btn_search
             // 
@@ -417,7 +412,7 @@ namespace User_Interface.forms
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1055, 953);
+            this.tp_transaction.Size = new System.Drawing.Size(1075, 953);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -434,7 +429,7 @@ namespace User_Interface.forms
             this.dgb_soldMed.Name = "dgb_soldMed";
             this.dgb_soldMed.RowHeadersWidth = 51;
             this.dgb_soldMed.RowTemplate.Height = 24;
-            this.dgb_soldMed.Size = new System.Drawing.Size(0, 125);
+            this.dgb_soldMed.Size = new System.Drawing.Size(20, 125);
             this.dgb_soldMed.TabIndex = 0;
             // 
             // tp_admin
@@ -446,7 +441,7 @@ namespace User_Interface.forms
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1055, 953);
+            this.tp_admin.Size = new System.Drawing.Size(1095, 953);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -464,7 +459,7 @@ namespace User_Interface.forms
             this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1216, 38);
+            this.materialTabSelector2.Size = new System.Drawing.Size(1256, 38);
             this.materialTabSelector2.TabIndex = 27;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
@@ -1125,6 +1120,10 @@ namespace User_Interface.forms
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.label30);
+            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.label29);
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.cb_Dci);
             this.panel2.Controls.Add(this.label14);
@@ -1157,14 +1156,55 @@ namespace User_Interface.forms
             this.panel2.Controls.Add(this.label19);
             this.panel2.Location = new System.Drawing.Point(57, 17);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 447);
+            this.panel2.Size = new System.Drawing.Size(1036, 473);
             this.panel2.TabIndex = 112;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(561, 424);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(97, 20);
+            this.label30.TabIndex = 111;
+            this.label30.Text = "La quantité :";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(710, 416);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 35);
+            this.numericUpDown1.TabIndex = 110;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(15, 423);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(133, 20);
+            this.label29.TabIndex = 109;
+            this.label29.Text = "date d\'expiration :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(166, 423);
+            this.dateTimePicker1.MinDate = new System.DateTime(2024, 2, 7, 21, 6, 54, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(271, 21);
+            this.dateTimePicker1.TabIndex = 108;
+            this.dateTimePicker1.Value = new System.DateTime(2024, 2, 7, 21, 6, 54, 0);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(621, 419);
+            this.label15.Location = new System.Drawing.Point(613, 370);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(45, 20);
@@ -1186,7 +1226,7 @@ namespace User_Interface.forms
             this.cb_Dci.Hint = "sélectionner une classe";
             this.cb_Dci.IntegralHeight = false;
             this.cb_Dci.ItemHeight = 29;
-            this.cb_Dci.Location = new System.Drawing.Point(718, 411);
+            this.cb_Dci.Location = new System.Drawing.Point(710, 362);
             this.cb_Dci.MaxDropDownItems = 4;
             this.cb_Dci.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_Dci.Name = "cb_Dci";
@@ -1200,7 +1240,7 @@ namespace User_Interface.forms
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(508, 378);
+            this.label14.Location = new System.Drawing.Point(500, 329);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(168, 20);
@@ -1222,7 +1262,7 @@ namespace User_Interface.forms
             this.cb_classThera.Hint = "sélectionner une classe";
             this.cb_classThera.IntegralHeight = false;
             this.cb_classThera.ItemHeight = 29;
-            this.cb_classThera.Location = new System.Drawing.Point(718, 370);
+            this.cb_classThera.Location = new System.Drawing.Point(710, 321);
             this.cb_classThera.MaxDropDownItems = 4;
             this.cb_classThera.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_classThera.Name = "cb_classThera";
@@ -1236,7 +1276,7 @@ namespace User_Interface.forms
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(484, 328);
+            this.label1.Location = new System.Drawing.Point(476, 279);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 20);
@@ -1258,7 +1298,7 @@ namespace User_Interface.forms
             this.cb_classPharma.Hint = "sélectionner une classe";
             this.cb_classPharma.IntegralHeight = false;
             this.cb_classPharma.ItemHeight = 29;
-            this.cb_classPharma.Location = new System.Drawing.Point(718, 323);
+            this.cb_classPharma.Location = new System.Drawing.Point(710, 274);
             this.cb_classPharma.MaxDropDownItems = 4;
             this.cb_classPharma.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_classPharma.Name = "cb_classPharma";
@@ -1272,7 +1312,7 @@ namespace User_Interface.forms
             this.tb_lab.AutoSize = true;
             this.tb_lab.BackColor = System.Drawing.Color.Transparent;
             this.tb_lab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_lab.Location = new System.Drawing.Point(573, 278);
+            this.tb_lab.Location = new System.Drawing.Point(565, 229);
             this.tb_lab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tb_lab.Name = "tb_lab";
             this.tb_lab.Size = new System.Drawing.Size(98, 20);
@@ -1294,7 +1334,7 @@ namespace User_Interface.forms
             this.cb_lab.Hint = "sélectionner un laboratoire";
             this.cb_lab.IntegralHeight = false;
             this.cb_lab.ItemHeight = 29;
-            this.cb_lab.Location = new System.Drawing.Point(718, 270);
+            this.cb_lab.Location = new System.Drawing.Point(710, 221);
             this.cb_lab.MaxDropDownItems = 4;
             this.cb_lab.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_lab.Name = "cb_lab";
@@ -1313,7 +1353,7 @@ namespace User_Interface.forms
             this.tb_ppa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_ppa.Hint = "tapez ici....";
             this.tb_ppa.LeadingIcon = null;
-            this.tb_ppa.Location = new System.Drawing.Point(718, 206);
+            this.tb_ppa.Location = new System.Drawing.Point(711, 175);
             this.tb_ppa.MaxLength = 50;
             this.tb_ppa.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_ppa.Multiline = false;
@@ -1329,7 +1369,7 @@ namespace User_Interface.forms
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(554, 215);
+            this.label2.Location = new System.Drawing.Point(547, 184);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 20);
@@ -1346,7 +1386,7 @@ namespace User_Interface.forms
             this.tb_tarif.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_tarif.Hint = "tapez ici....";
             this.tb_tarif.LeadingIcon = null;
-            this.tb_tarif.Location = new System.Drawing.Point(718, 147);
+            this.tb_tarif.Location = new System.Drawing.Point(711, 116);
             this.tb_tarif.MaxLength = 50;
             this.tb_tarif.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_tarif.Multiline = false;
@@ -1362,7 +1402,7 @@ namespace User_Interface.forms
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(532, 156);
+            this.label7.Location = new System.Drawing.Point(525, 125);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 20);
@@ -1373,7 +1413,7 @@ namespace User_Interface.forms
             // 
             this.gb_rembo.Controls.Add(this.materialRadioButton1);
             this.gb_rembo.Controls.Add(this.materialRadioButton2);
-            this.gb_rembo.Location = new System.Drawing.Point(718, 70);
+            this.gb_rembo.Location = new System.Drawing.Point(711, 39);
             this.gb_rembo.Name = "gb_rembo";
             this.gb_rembo.Size = new System.Drawing.Size(270, 61);
             this.gb_rembo.TabIndex = 95;
@@ -1420,7 +1460,7 @@ namespace User_Interface.forms
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(552, 90);
+            this.label8.Location = new System.Drawing.Point(545, 59);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(121, 20);
@@ -1432,7 +1472,7 @@ namespace User_Interface.forms
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(596, 40);
+            this.label9.Location = new System.Drawing.Point(589, 9);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 20);
@@ -1443,7 +1483,7 @@ namespace User_Interface.forms
             // 
             this.gb_comm.Controls.Add(this.rb_comme_No);
             this.gb_comm.Controls.Add(this.rb_comme_Oui);
-            this.gb_comm.Location = new System.Drawing.Point(173, 373);
+            this.gb_comm.Location = new System.Drawing.Point(166, 342);
             this.gb_comm.Name = "gb_comm";
             this.gb_comm.Size = new System.Drawing.Size(271, 62);
             this.gb_comm.TabIndex = 92;
@@ -1490,7 +1530,7 @@ namespace User_Interface.forms
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 396);
+            this.label10.Location = new System.Drawing.Point(11, 365);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(146, 20);
@@ -1502,7 +1542,7 @@ namespace User_Interface.forms
             this.gb_list.Controls.Add(this.rb_list3);
             this.gb_list.Controls.Add(this.rb_list2);
             this.gb_list.Controls.Add(this.rb_list1);
-            this.gb_list.Location = new System.Drawing.Point(122, 312);
+            this.gb_list.Location = new System.Drawing.Point(115, 281);
             this.gb_list.Name = "gb_list";
             this.gb_list.Size = new System.Drawing.Size(322, 62);
             this.gb_list.TabIndex = 90;
@@ -1567,7 +1607,7 @@ namespace User_Interface.forms
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(30, 336);
+            this.label11.Location = new System.Drawing.Point(23, 305);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 20);
@@ -1578,7 +1618,7 @@ namespace User_Interface.forms
             // 
             this.gb_type.Controls.Add(this.materialRadioButton3);
             this.gb_type.Controls.Add(this.rb_type_generique);
-            this.gb_type.Location = new System.Drawing.Point(122, 244);
+            this.gb_type.Location = new System.Drawing.Point(115, 213);
             this.gb_type.Name = "gb_type";
             this.gb_type.Size = new System.Drawing.Size(322, 62);
             this.gb_type.TabIndex = 88;
@@ -1625,7 +1665,7 @@ namespace User_Interface.forms
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 156);
+            this.label12.Location = new System.Drawing.Point(12, 125);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 20);
@@ -1647,7 +1687,7 @@ namespace User_Interface.forms
             this.cb_pays.Hint = "choisissez le pays";
             this.cb_pays.IntegralHeight = false;
             this.cb_pays.ItemHeight = 29;
-            this.cb_pays.Location = new System.Drawing.Point(718, 34);
+            this.cb_pays.Location = new System.Drawing.Point(711, 3);
             this.cb_pays.MaxDropDownItems = 4;
             this.cb_pays.MouseState = MaterialSkin.MouseState.HOVER;
             this.cb_pays.Name = "cb_pays";
@@ -1666,7 +1706,7 @@ namespace User_Interface.forms
             this.tb_dossage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_dossage.Hint = "tapez ici....";
             this.tb_dossage.LeadingIcon = null;
-            this.tb_dossage.Location = new System.Drawing.Point(122, 202);
+            this.tb_dossage.Location = new System.Drawing.Point(115, 171);
             this.tb_dossage.MaxLength = 50;
             this.tb_dossage.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_dossage.Multiline = false;
@@ -1682,7 +1722,7 @@ namespace User_Interface.forms
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(19, 90);
+            this.label16.Location = new System.Drawing.Point(12, 59);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 20);
@@ -1699,7 +1739,7 @@ namespace User_Interface.forms
             this.tb_form.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_form.Hint = "tapez ici....";
             this.tb_form.LeadingIcon = null;
-            this.tb_form.Location = new System.Drawing.Point(122, 147);
+            this.tb_form.Location = new System.Drawing.Point(115, 116);
             this.tb_form.MaxLength = 50;
             this.tb_form.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_form.Multiline = false;
@@ -1715,7 +1755,7 @@ namespace User_Interface.forms
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(18, 211);
+            this.label17.Location = new System.Drawing.Point(11, 180);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(81, 20);
@@ -1732,7 +1772,7 @@ namespace User_Interface.forms
             this.tb_NomMed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_NomMed.Hint = "tapez ici....";
             this.tb_NomMed.LeadingIcon = null;
-            this.tb_NomMed.Location = new System.Drawing.Point(122, 81);
+            this.tb_NomMed.Location = new System.Drawing.Point(115, 50);
             this.tb_NomMed.MaxLength = 50;
             this.tb_NomMed.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_NomMed.Multiline = false;
@@ -1748,7 +1788,7 @@ namespace User_Interface.forms
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(22, 278);
+            this.label18.Location = new System.Drawing.Point(15, 247);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(51, 20);
@@ -1765,7 +1805,7 @@ namespace User_Interface.forms
             this.tb_refMed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_refMed.Hint = "tapez ici...";
             this.tb_refMed.LeadingIcon = null;
-            this.tb_refMed.Location = new System.Drawing.Point(125, 34);
+            this.tb_refMed.Location = new System.Drawing.Point(118, 3);
             this.tb_refMed.MaxLength = 50;
             this.tb_refMed.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_refMed.Multiline = false;
@@ -1781,7 +1821,7 @@ namespace User_Interface.forms
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(19, 40);
+            this.label19.Location = new System.Drawing.Point(12, 9);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(78, 20);
@@ -1828,6 +1868,7 @@ namespace User_Interface.forms
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton9.UseAccentColor = false;
             this.materialButton9.UseVisualStyleBackColor = true;
+            this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
             // 
             // materialButton5
             // 
@@ -1869,7 +1910,7 @@ namespace User_Interface.forms
             this.panel_listkhdamin.Location = new System.Drawing.Point(2, 0);
             this.panel_listkhdamin.Margin = new System.Windows.Forms.Padding(2);
             this.panel_listkhdamin.Name = "panel_listkhdamin";
-            this.panel_listkhdamin.Size = new System.Drawing.Size(1264, 604);
+            this.panel_listkhdamin.Size = new System.Drawing.Size(1538, 604);
             this.panel_listkhdamin.TabIndex = 0;
             // 
             // imageList1
@@ -1894,7 +1935,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1055, 953);
+            this.tp_alert.Size = new System.Drawing.Size(1075, 953);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2007,7 +2048,7 @@ namespace User_Interface.forms
             this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1100, 38);
+            this.materialTabSelector1.Size = new System.Drawing.Size(1120, 38);
             this.materialTabSelector1.TabIndex = 26;
             this.materialTabSelector1.Text = "materialTabSelector1";
             // 
@@ -2019,7 +2060,7 @@ namespace User_Interface.forms
             this.tp_settings.ImageKey = "setting (1).png";
             this.tp_settings.Location = new System.Drawing.Point(4, 43);
             this.tp_settings.Name = "tp_settings";
-            this.tp_settings.Size = new System.Drawing.Size(1055, 953);
+            this.tp_settings.Size = new System.Drawing.Size(1095, 953);
             this.tp_settings.TabIndex = 10;
             this.tp_settings.Text = "Parametre";
             // 
@@ -2037,7 +2078,7 @@ namespace User_Interface.forms
             this.materialTabSelector3.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector3.Name = "materialTabSelector3";
-            this.materialTabSelector3.Size = new System.Drawing.Size(1123, 38);
+            this.materialTabSelector3.Size = new System.Drawing.Size(1163, 38);
             this.materialTabSelector3.TabIndex = 93;
             this.materialTabSelector3.Text = "materialTabSelector3";
             // 
@@ -2169,6 +2210,7 @@ namespace User_Interface.forms
             this.rb_darkTheme.TabStop = true;
             this.rb_darkTheme.Text = "Dark";
             this.rb_darkTheme.UseVisualStyleBackColor = false;
+            this.rb_darkTheme.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
             // 
             // materialRadioButton5
             // 
@@ -2187,6 +2229,7 @@ namespace User_Interface.forms
             this.materialRadioButton5.TabStop = true;
             this.materialRadioButton5.Text = "Light ";
             this.materialRadioButton5.UseVisualStyleBackColor = false;
+            this.materialRadioButton5.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
             // 
             // label27
             // 
@@ -2241,14 +2284,14 @@ namespace User_Interface.forms
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage6.Size = new System.Drawing.Size(1075, 953);
             this.tabPage6.TabIndex = 13;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage4.Size = new System.Drawing.Size(1075, 953);
             this.tabPage4.TabIndex = 14;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -2256,7 +2299,7 @@ namespace User_Interface.forms
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1055, 953);
+            this.tabPage7.Size = new System.Drawing.Size(1075, 953);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -2266,7 +2309,7 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1055, 953);
+            this.tp_logout.Size = new System.Drawing.Size(1075, 953);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -2275,7 +2318,7 @@ namespace User_Interface.forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1090, 788);
+            this.ClientSize = new System.Drawing.Size(1130, 788);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -2310,6 +2353,7 @@ namespace User_Interface.forms
             this.card_produit.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.gb_rembo.ResumeLayout(false);
             this.gb_rembo.PerformLayout();
             this.gb_comm.ResumeLayout(false);
@@ -2470,14 +2514,17 @@ namespace User_Interface.forms
         private TabPage tabPage9;
         private TabPage tabPage10;
         private Panel panel_listkhdamin;
-        private Button holo;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private DateTimePicker dateTimePicker1;
+        private Label label30;
+        private NumericUpDown numericUpDown1;
+        private Label label29;
     }
 }

@@ -20,7 +20,6 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ListView = System.Windows.Forms.ListView;
 using Microsoft.IdentityModel.Tokens;
-using User_Interface.Ui_classes;
 using ReactiveUI;
 using Button = System.Windows.Forms.Button;
 using Bogus;
@@ -53,252 +52,16 @@ namespace User_Interface.forms
 
         private void frm_main_Load(object sender, EventArgs e)
         {
-
-
-
-            //test<Medicament>(lv_listStock,100,"Ref_med","nom_comrsl", "Form", "Dossage", "Conditionnement","Type", "Tarif", "Commercialisation","Lab_code","nom_Cpharma","code_Cthera", "nom_DCI");
-
-            // test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
-
             //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
             WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
             tab_control.SelectedTab = tp_list_stock;
-            
-            
-
-
         }
 
 
 
-        public void intialiazeCountries<T>(MaterialComboBox comboBox, string name, string id) where T : class
-        {
-            using (var dbContext = new dbcontext())
-            {
-                var table = dbContext.Set<T>().ToList();
-
-                // Assuming 'name' property is a string property in the class T
-                // You can modify this based on your actual class structure
-                table = table.OrderBy(item => item.GetType().GetProperty(name)?.GetValue(item, null) as string).ToList();
-
-                comboBox.DataSource = table;
-                comboBox.DisplayMember = name;
-                comboBox.ValueMember = id;
-            }
-        }
-
-
-
-
-
-
-
-        private void fillListView<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
-        {
-
-            
-            if (listView == null)
-            {
-                throw new ArgumentNullException(nameof(listView), "ListView cannot be null.");
-            }
-     
-            using (dbcontext context = new dbcontext())
-            {
-
-                var data = context.Set<T>().ToList();
-
-
-
-
-                foreach (var champs in leschamps_de_tableux)
-                {
-                    listView.Columns.Add(champs, taille_De_champ);
-                }
-
-
-
-                listView.View = View.Details;
-                listView.Scrollable = true;
-                listView.GridLines = true;
-
-                foreach (var item in data)
-                {
-                    Button editbutton = new Button();
-                    Button deletebutton = new Button();
-                    var listItem = new ListViewItem();
-                    
-                
-                    var firstitem = leschamps_de_tableux.FirstOrDefault();
-
-                    var first_item = typeof(T).GetProperty(firstitem)?.GetValue(item)?.ToString() ?? "";
-                    listItem.Text = first_item;
-          
-
-
-                    foreach (var subitems in leschamps_de_tableux.Skip(1))
-                    {
-                        var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
-                        listItem.SubItems.Add(value);
-
-                    }
-
-                    listView.Items.Add(listItem);
-      
-
-                            //250 //34 
-                    addbutton(220,40,40,"edit",listItem,listView,editbutton);
-                             //280  //34 
-                    addbutton(160, 40, 40, "delete", listItem, listView, deletebutton);
-
-               
-                }
-
-            }
-        }
-
-    
-
-
-
-        private void addbutton(int width, int btol, int bwidth, string name, ListViewItem lvi, ListView lv, Button btn)
-        {
-            btn.Bounds = new Rectangle(lv.Width - width, lvi.Bounds.Top, btol, bwidth);
-            btn.Text = name;
-            btn.Name = name;  
-
-            btn.Click += ButtonClick;
-            btn.Tag = lvi;
-
-          
-            lv.Controls.Add(btn);
+       
         
-    }
-        //we add update and delete operation in sql connection later
-        // ki tclick 3la edit wla delete ysra tmnyik t3hom
-        private void ButtonClick(object sender, EventArgs e)
-        {
-            
-            Button clickedButton = sender as Button;
-
-           
-            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
-
-            string id = listItem.SubItems[0].Text;
-
-            if (clickedButton.Name == "edit")
-            {
-              Edit_table edit_Table = new Edit_table();
-
-              edit_Table.Ref_med = id;
-
-              edit_Table.Show();
-
-                using (dbcontext db = new dbcontext())
-                {
-
-
-
-                    Medicament md = db.Medicaments.Find(id);
-
-                   
-                        db.Medicaments.Remove(md);
-
-
-                        db.SaveChanges();
-
-                   
-                    
-                  
-
-                }
-
-
-
-
-            }
-            
-            else if (clickedButton.Name == "delete")
-            {
-
-
-
-
-
-                using (dbcontext db = new dbcontext())
-                {
-                    Medicament md = db.Medicaments.Find(id);
-
-                  
-                        db.Medicaments.Remove(md);
-
-                    
-                        db.SaveChanges();
-
-                        MessageBox.Show("deleted.");
-                    
-                   
-
-                }
-
-                
-            }
-        }
         
-        private void test<T>(ListView listView, int taille_De_champ, params string[] leschamps_de_tableux) where T : class
-        {
-
-
-            if (listView == null)
-            {
-                throw new ArgumentNullException(nameof(listView), "ListView cannot be null.");
-            }
-
-            using (dbcontext context = new dbcontext())
-            {
-
-                var data = context.Set<T>().ToList();
-
-                listView.View = View.Details;
-                listView.Scrollable = true;
-                listView.GridLines = true;
-
-                foreach (var item in data)
-                {
-                    
-                    var listItem = new ListViewItem();
-
-                    foreach (var subitems in leschamps_de_tableux)
-                    {
-                        var value = typeof(T).GetProperty(subitems)?.GetValue(item)?.ToString() ?? "";
-                        listItem.SubItems.Add(value);
-
-                    }
-
-                    listView.Items.Add(listItem);
-                    
-                    
-
-                    Button editbutton = new Button();
-                    Button deletebutton = new Button();
-                    listView.Controls.Add(editbutton);
-                    listView.Controls.Add(deletebutton);
-                    addbutton(250, 32, 32, "edit", listItem, listView, editbutton);
-                    addbutton(288, 32, 32, "delete", listItem, listView, deletebutton);
-                    string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-
-                    editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
-                    deletebutton.Image = Image.FromFile(currentDirectory + "\\delete.bmp");
-                }
-
-            }
-        }
-
-
-
-
-
-
-
         private void tab_control_Selecting(object sender, TabControlCancelEventArgs e)
         {
 
@@ -352,7 +115,7 @@ namespace User_Interface.forms
                         break;
 
                     case "tp_lab":
-                        intialiazeCountries<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
                         break;
 
                 }
@@ -480,7 +243,7 @@ namespace User_Interface.forms
 
         private void btn_addClass_Click(object sender, EventArgs e)
         {
-            diag_addClass frm = new diag_addClass();
+            diag_Add_Class frm = new diag_Add_Class();
             frm.ShowDialog();
             if (frm.DialogResult==DialogResult.OK)
             {
@@ -568,12 +331,12 @@ namespace User_Interface.forms
                 switch (e.TabPage.Name)
                 {
                     case "tp_lab":
-                        intialiazeCountries<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_nom", "Lab_code");
                         break;
 
 
                     case "tp_produit":
-                        intialiazeCountries<Pay>(cb_pays, "pay_nom", "Pays_code");
+                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pays, "pay_nom", "Pays_code");
                         break;
 
                 }
@@ -602,10 +365,6 @@ namespace User_Interface.forms
 
         private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-
-
             string selecteditem = materialComboBox1.SelectedItem.ToString();
             MaterialFormTheme.Changecolorsetting(selecteditem);
 
@@ -613,7 +372,10 @@ namespace User_Interface.forms
 
         }
 
-        
+        private void materialButton9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
