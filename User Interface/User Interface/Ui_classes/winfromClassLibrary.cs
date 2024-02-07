@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Drawing;
 using MaterialSkin.Controls;
 using System.Linq;
+using Pharma_Libarary.Data;
 
 namespace User_Interface
 {
@@ -24,23 +25,43 @@ namespace User_Interface
             btn.Text = "";
             btn.FlatStyle = FlatStyle.Flat;
             btn.Name = Type_AndID;//e edit
-
-           
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Click += edit_delete_click;
         }
-        private static void add_button_Edit_Delete(ListView listView,string  ID,ListViewItem item)
+
+        private static void edit_delete_click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            string[] op = clickedButton.Name.Split('/');
+
+            if (op[0]=="d")
+            {
+                DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce médicament ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Check the user's response
+                if (result == DialogResult.Yes)
+                {
+                    sql_connection.deleteMed(op[1]);
+                    
+                    MessageBox.Show("le médicament a été supprimé avec succès");
+                    /// TODO : delete med aiint working
+                    /// 
+                    load_Med_ToListView_with_OutButton(listGlobal);
+                }
+                else return;
+            }
+            MessageBox.Show(clickedButton.Name);
+        }
+
+        private static void add_button_Edit_Delete(ListView listView,string  ID,ListViewItem item,ListView listView1)
         {
             Button editbutton = new Button();
             Button deletebutton = new Button();
           
             listView.Controls.Add(editbutton);
             listView.Controls.Add(deletebutton);
-         //   editbutton.Click += EditButtonClick;
-        //    deletebutton.Click += DeleteButtonClick;
-            editbutton.Tag = item;
-            deletebutton.Tag = item;
-     
-            position_newButton(250, 34, 34, "e/"+ID, item, listView, editbutton);
-            position_newButton(288, 34, 34, "d/"+ID, item, listView, deletebutton);
+            position_newButton(160, 34, 34, "e/"+ID, item, listView, editbutton);
+            position_newButton(200, 34, 34, "d/"+ID, item, listView, deletebutton);
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
             editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
@@ -54,15 +75,17 @@ namespace User_Interface
             item.SubItems.Add(med.Classe_thérapeutique.code_Cthera);
             item.SubItems.Add(med.Type ? "Générique" : "Princeps");
             item.SubItems.Add(med.Laboratoire.Pay.Pays_code == "DZD" ? "OUI" : "NON");
-            item.SubItems.Add(med.Remboursable == true ? "OUI" : "NON");
+            item.SubItems.Add((bool)med.Remboursable ? "OUI" : "NON");
+            item.SubItems.Add(med.Tarif.ToString());
 
             return item;
         }
-        public static void add_Med_ToListView(MaterialListView listView)
+        public static ListView listGlobal = new ListView();
+        public static void load_Med_ToListView_withButton(MaterialListView listView)
         {
             if (_context != null)
             {
-                
+                listGlobal = listView;
                 var medicaments = _context.Medicaments
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)
@@ -77,7 +100,34 @@ namespace User_Interface
                 {
                     var item = listviewItem_MEd(med);
                     listView.Items.Add(item);
-                    add_button_Edit_Delete(listView, med.Ref_med,item);
+                    add_button_Edit_Delete(listView, med.Ref_med,item,listView);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Database isn't initialized");
+            }
+        }
+        
+        public static void load_Med_ToListView_with_OutButton(ListView listView)
+        {
+            if (_context != null)
+            {
+
+                var medicaments = _context.Medicaments
+                    .Include(m => m.Laboratoire) // Include Laboratoire entity
+                    .Include(m => m.Classe_pharmacologique)
+                    .Include(m => m.Laboratoire.Pay)
+                    .ToList(); // Force immediate execution and close the DataReader
+
+                listView.View = View.Details;
+                listView.Scrollable = true;
+                listView.GridLines = true;
+
+                foreach (var med in medicaments)
+                {
+                    var item = listviewItem_MEd(med);
+                    listView.Items.Add(item);
                 }
             }
             else

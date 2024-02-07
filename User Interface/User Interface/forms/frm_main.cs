@@ -61,7 +61,7 @@ namespace User_Interface.forms
             // test<Medicament>(lv_listStock,105, "nom_comrsl", "Form");
 
             //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
-            WinformClassLibrary.add_Med_ToListView(lv_listStock);
+            WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
             tab_control.SelectedTab = tp_list_stock;
             
             
