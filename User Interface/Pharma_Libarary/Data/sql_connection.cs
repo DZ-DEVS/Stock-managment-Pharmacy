@@ -271,13 +271,14 @@ namespace Pharma_Libarary.Data
         {
             using (var context = new dbcontext())
             {
-                var entityToDelete = context.Users.Find(Ref_Med);
+                var entityToDelete = context.Medicaments.Find(Ref_Med);
 
                 if (entityToDelete != null)
                 {
-                    context.Users.Remove(entityToDelete);
+                    context.Medicaments.Remove(entityToDelete);
                     context.SaveChanges();
                 }
+                entityToDelete = context.Medicaments.Find(Ref_Med);
             }
         }
         #endregion

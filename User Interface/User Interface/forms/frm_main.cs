@@ -39,10 +39,6 @@ namespace User_Interface.forms
             InitializeComponent();
 
             MaterialFormTheme.ApplyTheme(this);
-
-
-
-
         }
 
 

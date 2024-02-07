@@ -119,7 +119,7 @@ namespace User_Interface
                     .Include(m => m.Classe_pharmacologique)
                     .Include(m => m.Laboratoire.Pay)
                     .ToList(); // Force immediate execution and close the DataReader
-
+                listView.Items.Clear();
                 listView.View = View.Details;
                 listView.Scrollable = true;
                 listView.GridLines = true;
