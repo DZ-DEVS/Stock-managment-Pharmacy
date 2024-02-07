@@ -38,7 +38,6 @@ namespace User_Interface.forms
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
-            this.holo = new System.Windows.Forms.Button();
             this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -163,10 +162,10 @@ namespace User_Interface.forms
             this.tp_logout = new System.Windows.Forms.TabPage();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -273,7 +272,6 @@ namespace User_Interface.forms
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tp_list_stock.Controls.Add(this.holo);
             this.tp_list_stock.Controls.Add(this.lv_listStock);
             this.tp_list_stock.Controls.Add(this.btn_search);
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
@@ -284,16 +282,6 @@ namespace User_Interface.forms
             this.tp_list_stock.Size = new System.Drawing.Size(1055, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
-            // 
-            // holo
-            // 
-            this.holo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.holo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.holo.Location = new System.Drawing.Point(618, 29);
-            this.holo.Name = "holo";
-            this.holo.Size = new System.Drawing.Size(32, 32);
-            this.holo.TabIndex = 108;
-            this.holo.UseVisualStyleBackColor = true;
             // 
             // lv_listStock
             // 
@@ -308,24 +296,24 @@ namespace User_Interface.forms
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5,
             this.columnHeader6,
             this.columnHeader7,
-            this.columnHeader8});
+            this.columnHeader8,
+            this.columnHeader5});
             this.lv_listStock.Depth = 0;
             this.lv_listStock.Font = new System.Drawing.Font("Segoe UI Semilight", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_listStock.ForeColor = System.Drawing.SystemColors.Info;
             this.lv_listStock.FullRowSelect = true;
             this.lv_listStock.HideSelection = false;
             this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lv_listStock.Location = new System.Drawing.Point(3, 73);
+            this.lv_listStock.Location = new System.Drawing.Point(66, 83);
             this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
             this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
             this.lv_listStock.Scrollable = false;
-            this.lv_listStock.Size = new System.Drawing.Size(1049, 550);
+            this.lv_listStock.Size = new System.Drawing.Size(986, 550);
             this.lv_listStock.TabIndex = 107;
             this.lv_listStock.UseCompatibleStateImageBehavior = false;
             this.lv_listStock.View = System.Windows.Forms.View.Details;
@@ -338,7 +326,7 @@ namespace User_Interface.forms
             // columnHeader2
             // 
             this.columnHeader2.Text = "Laboratoire";
-            this.columnHeader2.Width = 80;
+            this.columnHeader2.Width = 100;
             // 
             // btn_search
             // 
@@ -350,7 +338,7 @@ namespace User_Interface.forms
             this.btn_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_search.Hint = "tapez ici...";
             this.btn_search.LeadingIcon = null;
-            this.btn_search.Location = new System.Drawing.Point(86, 29);
+            this.btn_search.Location = new System.Drawing.Point(209, 28);
             this.btn_search.MaxLength = 50;
             this.btn_search.MouseState = MaterialSkin.MouseState.OUT;
             this.btn_search.Multiline = false;
@@ -371,7 +359,7 @@ namespace User_Interface.forms
             this.BTN_rechercher.Depth = 0;
             this.BTN_rechercher.HighEmphasis = true;
             this.BTN_rechercher.Icon = null;
-            this.BTN_rechercher.Location = new System.Drawing.Point(377, 29);
+            this.BTN_rechercher.Location = new System.Drawing.Point(500, 28);
             this.BTN_rechercher.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.BTN_rechercher.MouseState = MaterialSkin.MouseState.HOVER;
             this.BTN_rechercher.Name = "BTN_rechercher";
@@ -2247,16 +2235,12 @@ namespace User_Interface.forms
             // columnHeader3
             // 
             this.columnHeader3.Text = "C.Thérapeutique";
-            this.columnHeader3.Width = 80;
+            this.columnHeader3.Width = 140;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "C.Pharmacologique";
-            this.columnHeader4.Width = 80;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Width = 80;
+            this.columnHeader4.Width = 140;
             // 
             // columnHeader6
             // 
@@ -2264,11 +2248,16 @@ namespace User_Interface.forms
             // 
             // columnHeader7
             // 
-            this.columnHeader7.Text = "Prod locale";
+            this.columnHeader7.Text = "Locale";
             // 
             // columnHeader8
             // 
             this.columnHeader8.Text = "Remboursable";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tarif";
+            this.columnHeader5.Width = 90;
             // 
             // frm_main
             // 
@@ -2470,14 +2459,13 @@ namespace User_Interface.forms
         private TabPage tabPage9;
         private TabPage tabPage10;
         private Panel panel_listkhdamin;
-        private Button holo;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
-        private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader5;
     }
 }
