@@ -41,12 +41,12 @@ namespace User_Interface
                 // Check the user's response
                 if (result == DialogResult.Yes)
                 {
-                    sql_connection.deleteMed(op[1]);
+                    sql_connection.delete_elemnt<Medicament>(op[1]);
                     
                     MessageBox.Show("le médicament a été supprimé avec succès");
                     /// TODO : delete med aiint working
                     /// 
-                    load_Med_ToListView_with_OutButton(listGlobal);
+                    load_Med_ToListView_withButton(listGlobal);
                 }
                 else return;
             }
@@ -81,11 +81,12 @@ namespace User_Interface
             return item;
         }
         public static ListView listGlobal = new ListView();
-        public static void load_Med_ToListView_withButton(MaterialListView listView)
+        public static void load_Med_ToListView_withButton(ListView listView)
         {
             if (_context != null)
             {
                 listGlobal = listView;
+                listView.Items.Clear();
                 var medicaments = _context.Medicaments
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)

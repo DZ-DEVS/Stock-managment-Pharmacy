@@ -267,18 +267,20 @@ namespace Pharma_Libarary.Data
                 dbContext.SaveChanges();
             }
         }
-        public static void deleteMed(string Ref_Med)
+        public static void delete_elemnt<T>(string Ref_Med) where T : class
         {
             using (var context = new dbcontext())
             {
-                var entityToDelete = context.Medicaments.Find(Ref_Med);
+                var dbSet = context.Set<T>(); // Get the DbSet for the specified entity type
+
+                var entityToDelete = dbSet.Find(Ref_Med);
 
                 if (entityToDelete != null)
                 {
-                    context.Medicaments.Remove(entityToDelete);
+                    dbSet.Remove(entityToDelete);
                     context.SaveChanges();
                 }
-                entityToDelete = context.Medicaments.Find(Ref_Med);
+                entityToDelete = dbSet.Find(Ref_Med);
             }
         }
         #endregion
