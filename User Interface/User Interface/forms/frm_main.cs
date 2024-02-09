@@ -105,15 +105,6 @@ namespace User_Interface.forms
                         //fillListView<Pay>(lv_listStock);
                         break;
 
-                    case "tp_admin":
-                        
-                        //WinformClassLibrary.LoadButtonOnListView(lv_listStock, 5);
-
-
-
-
-                        break;
-
                     case "tp_lab":
                         WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
                         break;
@@ -336,6 +327,10 @@ namespace User_Interface.forms
 
 
                     case "tp_produit":
+                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
+                        WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
+                        WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
+                        WinformClassLibrary.intialiaze_ComboBox<DCI>(cb_Dci, "nom_DCI", "nom_DCI");
                         WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pays, "pay_nom", "Pays_code");
                         break;
 
@@ -371,10 +366,51 @@ namespace User_Interface.forms
 
 
         }
-
-        private void materialButton9_Click(object sender, EventArgs e)
+        private MaterialRadioButton returnCheckedRadio(GroupBox gp)
         {
 
+            foreach (MaterialRadioButton rb in gp.Controls)
+            {
+
+                if (rb.Checked) return rb;
+
+            }
+
+            return null;
+        }
+        private void btn_addProduit_Click(object sender, EventArgs e)
+        {
+            
+            WinformClassLibrary.set_textBoxNullValuesTO(panel_add_employee);
+            Medicament med = new Medicament(tb_refMed.Text,
+                tb_NomMed.Text,
+                tb_form.Text,
+                tb_dossage.Text,
+                tb_conditionemnt.Text,
+                Convert.ToDecimal(tb_ppa.Text),
+                Convert.ToDecimal(tb_tarif.Text),
+                (Laboratoire)cb_lab.SelectedItem,
+                (Classe_pharmacologique)cb_classPharma.SelectedItem,
+                (Classe_thérapeutique)cb_classThera.SelectedItem,
+                (DCI)cb_Dci.SelectedItem
+                );
+            if (rb_comme_Oui.Checked)
+            {
+                med.Commercialisation = true;
+            }else med.Commercialisation = false;
+
+            if (returnCheckedRadio(gb_rembo).Text == "Oui") med.Remboursable = true; else med.Remboursable = false;
+            if (returnCheckedRadio(gb_type).Text == "Générique") med.Type = true; else med.Type = false;
+            if (rb_list1.Checked)
+            {
+                med.Liste = "List 1";
+            }
+            else if (rb_list2.Checked)
+            {
+                med.Liste = "List 2";
+            }
+            else med.Liste = "List 2";
+            sql_connection.add_Med(med);
         }
     }
 

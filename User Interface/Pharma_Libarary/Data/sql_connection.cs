@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -263,10 +264,28 @@ namespace Pharma_Libarary.Data
         {
             using (var dbContext = new dbcontext())
             {
-                var context = dbContext.Classe_thérapeutique.ToList();
-                // todo : fix the nchar problem in the data base
-                dbContext.Entry(med).State = EntityState.Modified;
-                dbContext.SaveChanges();
+                try
+                {
+                    var editedMed = dbContext.Medicaments
+                              .Include(m => m.Laboratoire.Pay)
+                              .Include(m => m.Classe_pharmacologique)
+                              .Include(m => m.Classe_thérapeutique)
+                              .Include(m => m.DCI)
+                              .FirstOrDefault(m => m.Ref_med == med.Ref_med);
+                    // todo : fix the nchar problem in the data base
+                    dbContext.Entry(editedMed).CurrentValues.SetValues(med);
+                    dbContext.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                    {
+                        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                        {
+                            MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                        }
+                    }
+                }
             }
         }
         public static void delete_elemnt<T>(string Ref_Med) where T : class
@@ -289,7 +308,7 @@ namespace Pharma_Libarary.Data
         #region load class
         public static Medicament load_med(string ID)
         {
-            Medicament med = new Medicament();
+            
             using (var db = new dbcontext())
             {
 
@@ -299,10 +318,22 @@ namespace Pharma_Libarary.Data
                   .Include(m => m.Classe_thérapeutique)
                   .Include(m => m.DCI)
                   .FirstOrDefault(m => m.Ref_med == ID);
-                med = load;
+                Medicament med = load;
                 return med;
             }
             
+        }
+        public static Pay load_Pays(string code_pays)
+        {
+
+            using (var db = new dbcontext())
+            {
+
+                var load = db.Pays
+                  .FirstOrDefault(m => m.Pays_code == code_pays);
+                Pay pays = load;
+                return pays;
+            }
         }
         #endregion
 

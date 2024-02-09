@@ -92,11 +92,7 @@ namespace User_Interface.forms
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.tp_produit = new System.Windows.Forms.TabPage();
             this.card_produit = new MaterialSkin.Controls.MaterialCard();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label29 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel_add_med = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_Dci = new MaterialSkin.Controls.MaterialComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -170,6 +166,8 @@ namespace User_Interface.forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
+            this.tb_conditionemnt = new MaterialSkin.Controls.MaterialTextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -185,8 +183,7 @@ namespace User_Interface.forms
             this.panel_lab.SuspendLayout();
             this.tp_produit.SuspendLayout();
             this.card_produit.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel_add_med.SuspendLayout();
             this.gb_rembo.SuspendLayout();
             this.gb_comm.SuspendLayout();
             this.gb_list.SuspendLayout();
@@ -234,7 +231,7 @@ namespace User_Interface.forms
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1103, 1000);
+            this.tab_control.Size = new System.Drawing.Size(1143, 1000);
             this.tab_control.TabIndex = 0;
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
             this.tab_control.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
@@ -243,7 +240,7 @@ namespace User_Interface.forms
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage1.Size = new System.Drawing.Size(1115, 953);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -251,7 +248,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage2.Size = new System.Drawing.Size(1115, 953);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -259,7 +256,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage3.Size = new System.Drawing.Size(1115, 953);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -271,7 +268,7 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1075, 953);
+            this.tp_home.Size = new System.Drawing.Size(1115, 953);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -285,7 +282,7 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1075, 953);
+            this.tp_list_stock.Size = new System.Drawing.Size(1115, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -412,7 +409,7 @@ namespace User_Interface.forms
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1075, 953);
+            this.tp_transaction.Size = new System.Drawing.Size(1115, 953);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -441,7 +438,7 @@ namespace User_Interface.forms
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1095, 953);
+            this.tp_admin.Size = new System.Drawing.Size(1135, 953);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -459,7 +456,7 @@ namespace User_Interface.forms
             this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1256, 38);
+            this.materialTabSelector2.Size = new System.Drawing.Size(1296, 38);
             this.materialTabSelector2.TabIndex = 27;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
@@ -1102,7 +1099,7 @@ namespace User_Interface.forms
             // card_produit
             // 
             this.card_produit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.card_produit.Controls.Add(this.panel2);
+            this.card_produit.Controls.Add(this.panel_add_med);
             this.card_produit.Controls.Add(this.materialButton1);
             this.card_produit.Controls.Add(this.materialButton9);
             this.card_produit.Controls.Add(this.materialButton5);
@@ -1116,89 +1113,46 @@ namespace User_Interface.forms
             this.card_produit.Size = new System.Drawing.Size(1143, 567);
             this.card_produit.TabIndex = 111;
             // 
-            // panel2
+            // panel_add_med
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.label30);
-            this.panel2.Controls.Add(this.numericUpDown1);
-            this.panel2.Controls.Add(this.label29);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.cb_Dci);
-            this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.cb_classThera);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cb_classPharma);
-            this.panel2.Controls.Add(this.tb_lab);
-            this.panel2.Controls.Add(this.cb_lab);
-            this.panel2.Controls.Add(this.tb_ppa);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.tb_tarif);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.gb_rembo);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.gb_comm);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.gb_list);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.gb_type);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.cb_pays);
-            this.panel2.Controls.Add(this.tb_dossage);
-            this.panel2.Controls.Add(this.label16);
-            this.panel2.Controls.Add(this.tb_form);
-            this.panel2.Controls.Add(this.label17);
-            this.panel2.Controls.Add(this.tb_NomMed);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.tb_refMed);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Location = new System.Drawing.Point(57, 17);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1036, 473);
-            this.panel2.TabIndex = 112;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(561, 424);
-            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(97, 20);
-            this.label30.TabIndex = 111;
-            this.label30.Text = "La quantité :";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(710, 416);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 35);
-            this.numericUpDown1.TabIndex = 110;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(15, 423);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(133, 20);
-            this.label29.TabIndex = 109;
-            this.label29.Text = "date d\'expiration :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(166, 423);
-            this.dateTimePicker1.MinDate = new System.DateTime(2024, 2, 7, 21, 6, 54, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(271, 21);
-            this.dateTimePicker1.TabIndex = 108;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 2, 7, 21, 6, 54, 0);
+            this.panel_add_med.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_add_med.BackColor = System.Drawing.Color.Transparent;
+            this.panel_add_med.Controls.Add(this.tb_conditionemnt);
+            this.panel_add_med.Controls.Add(this.label29);
+            this.panel_add_med.Controls.Add(this.label15);
+            this.panel_add_med.Controls.Add(this.cb_Dci);
+            this.panel_add_med.Controls.Add(this.label14);
+            this.panel_add_med.Controls.Add(this.cb_classThera);
+            this.panel_add_med.Controls.Add(this.label1);
+            this.panel_add_med.Controls.Add(this.cb_classPharma);
+            this.panel_add_med.Controls.Add(this.tb_lab);
+            this.panel_add_med.Controls.Add(this.cb_lab);
+            this.panel_add_med.Controls.Add(this.tb_ppa);
+            this.panel_add_med.Controls.Add(this.label2);
+            this.panel_add_med.Controls.Add(this.tb_tarif);
+            this.panel_add_med.Controls.Add(this.label7);
+            this.panel_add_med.Controls.Add(this.gb_rembo);
+            this.panel_add_med.Controls.Add(this.label8);
+            this.panel_add_med.Controls.Add(this.label9);
+            this.panel_add_med.Controls.Add(this.gb_comm);
+            this.panel_add_med.Controls.Add(this.label10);
+            this.panel_add_med.Controls.Add(this.gb_list);
+            this.panel_add_med.Controls.Add(this.label11);
+            this.panel_add_med.Controls.Add(this.gb_type);
+            this.panel_add_med.Controls.Add(this.label12);
+            this.panel_add_med.Controls.Add(this.cb_pays);
+            this.panel_add_med.Controls.Add(this.tb_dossage);
+            this.panel_add_med.Controls.Add(this.label16);
+            this.panel_add_med.Controls.Add(this.tb_form);
+            this.panel_add_med.Controls.Add(this.label17);
+            this.panel_add_med.Controls.Add(this.tb_NomMed);
+            this.panel_add_med.Controls.Add(this.label18);
+            this.panel_add_med.Controls.Add(this.tb_refMed);
+            this.panel_add_med.Controls.Add(this.label19);
+            this.panel_add_med.Location = new System.Drawing.Point(57, 17);
+            this.panel_add_med.Name = "panel_add_med";
+            this.panel_add_med.Size = new System.Drawing.Size(1036, 460);
+            this.panel_add_med.TabIndex = 112;
             // 
             // label15
             // 
@@ -1868,7 +1822,7 @@ namespace User_Interface.forms
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton9.UseAccentColor = false;
             this.materialButton9.UseVisualStyleBackColor = true;
-            this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
+            this.materialButton9.Click += new System.EventHandler(this.btn_addProduit_Click);
             // 
             // materialButton5
             // 
@@ -1935,7 +1889,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1075, 953);
+            this.tp_alert.Size = new System.Drawing.Size(1115, 953);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2060,7 +2014,7 @@ namespace User_Interface.forms
             this.tp_settings.ImageKey = "setting (1).png";
             this.tp_settings.Location = new System.Drawing.Point(4, 43);
             this.tp_settings.Name = "tp_settings";
-            this.tp_settings.Size = new System.Drawing.Size(1095, 953);
+            this.tp_settings.Size = new System.Drawing.Size(1115, 953);
             this.tp_settings.TabIndex = 10;
             this.tp_settings.Text = "Parametre";
             // 
@@ -2284,14 +2238,14 @@ namespace User_Interface.forms
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage6.Size = new System.Drawing.Size(1115, 953);
             this.tabPage6.TabIndex = 13;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage4.Size = new System.Drawing.Size(1115, 953);
             this.tabPage4.TabIndex = 14;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -2299,7 +2253,7 @@ namespace User_Interface.forms
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1075, 953);
+            this.tabPage7.Size = new System.Drawing.Size(1115, 953);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -2309,16 +2263,50 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1075, 953);
+            this.tp_logout.Size = new System.Drawing.Size(1115, 953);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
+            // 
+            // tb_conditionemnt
+            // 
+            this.tb_conditionemnt.AnimateReadOnly = false;
+            this.tb_conditionemnt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tb_conditionemnt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_conditionemnt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_conditionemnt.Depth = 0;
+            this.tb_conditionemnt.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_conditionemnt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_conditionemnt.Hint = "tapez ici....";
+            this.tb_conditionemnt.LeadingIcon = null;
+            this.tb_conditionemnt.Location = new System.Drawing.Point(704, 403);
+            this.tb_conditionemnt.MaxLength = 50;
+            this.tb_conditionemnt.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_conditionemnt.Multiline = false;
+            this.tb_conditionemnt.Name = "tb_conditionemnt";
+            this.tb_conditionemnt.Size = new System.Drawing.Size(322, 36);
+            this.tb_conditionemnt.TabIndex = 109;
+            this.tb_conditionemnt.Text = "";
+            this.tb_conditionemnt.TrailingIcon = null;
+            this.tb_conditionemnt.UseTallSize = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(516, 409);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(142, 20);
+            this.label29.TabIndex = 108;
+            this.label29.Text = "Conditionnement  :";
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1130, 788);
+            this.ClientSize = new System.Drawing.Size(1170, 788);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -2351,9 +2339,8 @@ namespace User_Interface.forms
             this.panel_lab.PerformLayout();
             this.tp_produit.ResumeLayout(false);
             this.card_produit.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel_add_med.ResumeLayout(false);
+            this.panel_add_med.PerformLayout();
             this.gb_rembo.ResumeLayout(false);
             this.gb_rembo.PerformLayout();
             this.gb_comm.ResumeLayout(false);
@@ -2431,7 +2418,7 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialCard card_lab;
         private MaterialSkin.Controls.MaterialCard card_produit;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_add_med;
         private System.Windows.Forms.Label label15;
         private MaterialSkin.Controls.MaterialComboBox cb_Dci;
         private System.Windows.Forms.Label label14;
@@ -2522,9 +2509,7 @@ namespace User_Interface.forms
         private ColumnHeader columnHeader7;
         private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
-        private DateTimePicker dateTimePicker1;
-        private Label label30;
-        private NumericUpDown numericUpDown1;
+        private MaterialSkin.Controls.MaterialTextBox tb_conditionemnt;
         private Label label29;
     }
 }

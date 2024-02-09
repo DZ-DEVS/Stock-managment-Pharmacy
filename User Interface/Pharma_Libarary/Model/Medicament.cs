@@ -17,6 +17,28 @@ namespace Pharma_Libarary.Model
             Selles = new HashSet<Selle>();
         }
 
+        public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI)
+        {
+            Ref_med = ref_med;
+            this.nom_comrsl = nom_comrsl;
+            Form = form;
+            Dossage = dossage;
+            Conditionnement = conditionnement;
+            Tarif = tarif;
+            PPA = pPA;
+            this.edited_by = edited_by;
+            Lab_code = lab.Lab_code;
+            this.nom_Cpharma = classe_pharmacologique.nom_Cpharma;
+            this.code_Cthera = classe_thérapeutique.code_Cthera;
+            this.nom_DCI = dCI.nom_DCI;
+            Classe_pharmacologique = classe_pharmacologique;
+            Classe_thérapeutique = classe_thérapeutique;
+            DCI = dCI;
+            Générique = new HashSet<Générique>();
+            Générique1 = new HashSet<Générique>();
+            Selles = new HashSet<Selle>();
+        }
+
         [Key]
         [StringLength(10)]
         public string Ref_med { get; set; }
@@ -63,7 +85,7 @@ namespace Pharma_Libarary.Model
 
         [Required]
         [StringLength(20)]
-        public string code_Cthera { get; set; }
+        public string code_Cthera {get ; set ; }
 
         [Required]
         [StringLength(20)]

@@ -16,7 +16,7 @@ namespace Pharma_Libarary.Model
         }
 
         [Key]
-        [StringLength(20)]
+        [StringLength(50)]
         public string nom_Cpharma { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

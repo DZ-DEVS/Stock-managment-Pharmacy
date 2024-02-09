@@ -146,7 +146,7 @@ namespace User_Interface
             ListViewItem listItem = (ListViewItem)clickedButton.Tag;
             string id = listItem.SubItems[0].Text;
 
-            Edit_table edit_Table = new Edit_table(id);
+            diag_Edit_Med edit_Table = new diag_Edit_Med(id);
             edit_Table.ShowDialog();
 
           
@@ -178,14 +178,26 @@ namespace User_Interface
             using (var dbContext = new dbcontext())
             {
                 var table = dbContext.Set<T>().ToList();
-
-                // Assuming 'name' property is a string property in the class T
-                // You can modify this based on your actual class structure
                 table = table.OrderBy(item => item.GetType().GetProperty(name)?.GetValue(item, null) as string).ToList();
 
                 comboBox.DataSource = table;
                 comboBox.DisplayMember = name;
                 comboBox.ValueMember = id;
+            }
+        }
+        public static void set_textBoxNullValuesTO(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (textBox==null)
+                    {
+                        textBox.Text = "";
+                    }
+                    
+                }
             }
         }
 
