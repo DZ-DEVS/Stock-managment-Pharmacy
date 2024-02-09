@@ -16,6 +16,17 @@ namespace Pharma_Libarary.Model
             Selles = new HashSet<Selle>();
         }
 
+        public User(string userName, string password, string nom, string prenom, bool? isAdmin)
+        {
+            this.userName = userName;
+            this.password = password;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.isAdmin = isAdmin;
+            Medicaments = new HashSet<Medicament>();
+            Selles = new HashSet<Selle>();
+        }
+
         [Key]
         [StringLength(15)]
         public string userName { get; set; }

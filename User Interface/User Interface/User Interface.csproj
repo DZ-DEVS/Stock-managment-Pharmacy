@@ -299,6 +299,12 @@
     <Compile Include="forms\diag_Edit_Med.Designer.cs">
       <DependentUpon>diag_Edit_Med.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\diag_nonGeneriqueMedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\diag_nonGeneriqueMedList.Designer.cs">
+      <DependentUpon>diag_nonGeneriqueMedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frm_icon_firstApear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\diag_Edit_Med.resx">
       <DependentUpon>diag_Edit_Med.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\diag_nonGeneriqueMedList.resx">
+      <DependentUpon>diag_nonGeneriqueMedList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frm_icon_firstApear.resx">
       <DependentUpon>frm_icon_firstApear.cs</DependentUpon>

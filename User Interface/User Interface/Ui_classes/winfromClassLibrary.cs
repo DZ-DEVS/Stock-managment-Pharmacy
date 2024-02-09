@@ -93,6 +93,8 @@ namespace User_Interface
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)
                     .Include(m => m.Laboratoire.Pay)
+                    .Include(m => m.Classe_thérapeutique)
+                    .Include(m => m.DCI)
                     .ToList(); // Force immediate execution and close the DataReader
 
                 listView.View = View.Details;

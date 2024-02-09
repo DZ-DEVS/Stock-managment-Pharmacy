@@ -17,7 +17,7 @@ namespace Pharma_Libarary.Model
             Selles = new HashSet<Selle>();
         }
 
-        public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI)
+        public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI,User user)
         {
             Ref_med = ref_med;
             this.nom_comrsl = nom_comrsl;
@@ -26,14 +26,16 @@ namespace Pharma_Libarary.Model
             Conditionnement = conditionnement;
             Tarif = tarif;
             PPA = pPA;
-            this.edited_by = edited_by;
-            Lab_code = lab.Lab_code;
+            this.edited_by = user.userName;
+            this.Lab_code = lab.Lab_code;
             this.nom_Cpharma = classe_pharmacologique.nom_Cpharma;
             this.code_Cthera = classe_thérapeutique.code_Cthera;
             this.nom_DCI = dCI.nom_DCI;
-            Classe_pharmacologique = classe_pharmacologique;
-            Classe_thérapeutique = classe_thérapeutique;
-            DCI = dCI;
+            //this.Classe_pharmacologique = classe_pharmacologique;
+            //this.Classe_thérapeutique = classe_thérapeutique;
+            //this.DCI = dCI;
+            //this.Laboratoire = lab;
+            //this.User = user;
             Générique = new HashSet<Générique>();
             Générique1 = new HashSet<Générique>();
             Selles = new HashSet<Selle>();
@@ -79,15 +81,15 @@ namespace Pharma_Libarary.Model
         [StringLength(10)]
         public string Lab_code { get; set; }
 
-        [Required]
+        
         [StringLength(20)]
         public string nom_Cpharma { get; set; }
 
-        [Required]
+        
         [StringLength(20)]
         public string code_Cthera {get ; set ; }
 
-        [Required]
+        
         [StringLength(20)]
         public string nom_DCI { get; set; }
 

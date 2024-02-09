@@ -30,7 +30,7 @@ namespace User_Interface.forms
 {
     public partial class frm_main : MaterialForm
     {
-
+        User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
         public frm_main()
         {
 
@@ -387,20 +387,36 @@ namespace User_Interface.forms
                 tb_form.Text,
                 tb_dossage.Text,
                 tb_conditionemnt.Text,
+
                 Convert.ToDecimal(tb_ppa.Text),
                 Convert.ToDecimal(tb_tarif.Text),
                 (Laboratoire)cb_lab.SelectedItem,
                 (Classe_pharmacologique)cb_classPharma.SelectedItem,
                 (Classe_thérapeutique)cb_classThera.SelectedItem,
-                (DCI)cb_Dci.SelectedItem
-                );
+                (DCI)cb_Dci.SelectedItem,
+                thisUser);
+
             if (rb_comme_Oui.Checked)
             {
                 med.Commercialisation = true;
             }else med.Commercialisation = false;
 
-            if (returnCheckedRadio(gb_rembo).Text == "Oui") med.Remboursable = true; else med.Remboursable = false;
-            if (returnCheckedRadio(gb_type).Text == "Générique") med.Type = true; else med.Type = false;
+            if (rb_remborsable.Checked)
+            {
+                med.Remboursable = true;
+            }
+            else if (rb_non_remborsable.Checked)
+            {
+                med.Remboursable = false;
+            }
+            else med.Remboursable = null;
+
+            if (rb_type_generique.Checked)
+            {
+                med.Type = true;
+                // todo: add dialog to select original med 
+
+            }else med.Type=false;
             if (rb_list1.Checked)
             {
                 med.Liste = "List 1";
@@ -409,8 +425,32 @@ namespace User_Interface.forms
             {
                 med.Liste = "List 2";
             }
-            else med.Liste = "List 2";
+            else if (rb_list3.Checked)
+            {
+                med.Liste = "List 3";
+            }
+            else med.Liste = null;
             sql_connection.add_Med(med);
+        }
+
+        private void tb_tarif_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MaterialTextBox textBox = sender as MaterialTextBox;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                textBox.Hint = "Seuls les chiffres et les points sont autorisés."; 
+                e.Handled = true;
+            }
+            
+            if (e.KeyChar == '.' && textBox != null && textBox.Text.Contains('.'))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void type_non_generique_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

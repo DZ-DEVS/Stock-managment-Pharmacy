@@ -204,44 +204,36 @@ namespace Pharma_Libarary.Data
                 using (var context = new dbcontext())
                 {
                     bool recordExist = context.Medicaments.Any(e => e.Ref_med == med.Ref_med);
-
+                    var labs= context.Laboratoires.FirstOrDefault(p => p.Lab_code == med.Lab_code);
+                    var Cphara= context.Classe_pharmacologiques.FirstOrDefault(p => p.nom_Cpharma == med.nom_Cpharma);
+                    var Cthera= context.Classe_thérapeutique.FirstOrDefault(p => p.code_Cthera == med.code_Cthera);
+                    var Dci= context.DCIs.FirstOrDefault(p => p.nom_DCI == med.nom_DCI);
                     if (recordExist)
                     {
                         MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        Medicament instance = new Medicament
-                        {
-
-                            Ref_med = med.Ref_med,
-                            nom_comrsl = med.nom_comrsl,
-                            Form = med.Form,
-                            Dossage = med.Dossage,
-                            Conditionnement = med.Conditionnement,
-                            Type = med.Type,
-                            Liste = med.Liste,
-                            Commercialisation = med.Commercialisation,
-                            Remboursable = med.Remboursable,
-                            Tarif = med.Tarif,
-                            PPA = med.PPA,
-                            edited_by = med.edited_by,
-                            nom_Cpharma = med.nom_Cpharma,
-                            code_Cthera = med.code_Cthera,
-                            nom_DCI = med.nom_DCI,
-                            Classe_pharmacologique = med.Classe_pharmacologique,
-                            Classe_thérapeutique = med.Classe_thérapeutique,
-                            DCI = med.DCI
-
-
-                        };
-
-                        context.Medicaments.Add(instance);
+                        labs.Medicaments.Add(med);
+                        Cphara.Medicaments.Add(med);
+                        Cthera.Medicaments.Add(med);
+                        Dci.Medicaments.Add(med);
+                        context.Medicaments.Add(med);
                         context.SaveChanges();
 
                         MessageBox.Show("la class Produit a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
+                    }
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
                     }
                 }
             }
@@ -323,18 +315,24 @@ namespace Pharma_Libarary.Data
             }
             
         }
-        public static Pay load_Pays(string code_pays)
+        public static List<Medicament> load_nonGeneriqueMeds()
         {
-
             using (var db = new dbcontext())
             {
+                List<Medicament> meds = db.Medicaments
+                    .Include(m => m.Laboratoire.Pay)
+                    .Include(m => m.Laboratoire)
+                    .Include(m => m.Classe_pharmacologique)
+                    .Include(m => m.Classe_thérapeutique)
+                    .Include(m => m.DCI)
+                    .Where(m => m.Type == false)
+                    .ToList(); // Corrected: Call ToList() without angle brackets
 
-                var load = db.Pays
-                  .FirstOrDefault(m => m.Pays_code == code_pays);
-                Pay pays = load;
-                return pays;
+                return meds; // Return the loaded list of Medicament entities
             }
         }
+
+
         #endregion
 
     }

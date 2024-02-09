@@ -106,8 +106,8 @@ namespace User_Interface.forms
             this.tb_tarif = new MaterialSkin.Controls.MaterialTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.gb_rembo = new System.Windows.Forms.GroupBox();
-            this.materialRadioButton1 = new MaterialSkin.Controls.MaterialRadioButton();
-            this.materialRadioButton2 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rb_non_remborsable = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rb_remborsable = new MaterialSkin.Controls.MaterialRadioButton();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.gb_comm = new System.Windows.Forms.GroupBox();
@@ -120,7 +120,7 @@ namespace User_Interface.forms
             this.rb_list1 = new MaterialSkin.Controls.MaterialRadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.gb_type = new System.Windows.Forms.GroupBox();
-            this.materialRadioButton3 = new MaterialSkin.Controls.MaterialRadioButton();
+            this.type_non_generique = new MaterialSkin.Controls.MaterialRadioButton();
             this.rb_type_generique = new MaterialSkin.Controls.MaterialRadioButton();
             this.label12 = new System.Windows.Forms.Label();
             this.cb_pays = new MaterialSkin.Controls.MaterialComboBox();
@@ -1317,6 +1317,7 @@ namespace User_Interface.forms
             this.tb_ppa.Text = "";
             this.tb_ppa.TrailingIcon = null;
             this.tb_ppa.UseTallSize = false;
+            this.tb_ppa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tarif_KeyPress);
             // 
             // label2
             // 
@@ -1350,6 +1351,7 @@ namespace User_Interface.forms
             this.tb_tarif.Text = "";
             this.tb_tarif.TrailingIcon = null;
             this.tb_tarif.UseTallSize = false;
+            this.tb_tarif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tarif_KeyPress);
             // 
             // label7
             // 
@@ -1365,49 +1367,49 @@ namespace User_Interface.forms
             // 
             // gb_rembo
             // 
-            this.gb_rembo.Controls.Add(this.materialRadioButton1);
-            this.gb_rembo.Controls.Add(this.materialRadioButton2);
+            this.gb_rembo.Controls.Add(this.rb_non_remborsable);
+            this.gb_rembo.Controls.Add(this.rb_remborsable);
             this.gb_rembo.Location = new System.Drawing.Point(711, 39);
             this.gb_rembo.Name = "gb_rembo";
             this.gb_rembo.Size = new System.Drawing.Size(270, 61);
             this.gb_rembo.TabIndex = 95;
             this.gb_rembo.TabStop = false;
             // 
-            // materialRadioButton1
+            // rb_non_remborsable
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton1.Location = new System.Drawing.Point(176, 15);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(55, 37);
-            this.materialRadioButton1.TabIndex = 1;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Text = "No";
-            this.materialRadioButton1.UseVisualStyleBackColor = false;
+            this.rb_non_remborsable.AutoSize = true;
+            this.rb_non_remborsable.BackColor = System.Drawing.Color.Transparent;
+            this.rb_non_remborsable.Depth = 0;
+            this.rb_non_remborsable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rb_non_remborsable.Location = new System.Drawing.Point(176, 15);
+            this.rb_non_remborsable.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_non_remborsable.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_non_remborsable.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_non_remborsable.Name = "rb_non_remborsable";
+            this.rb_non_remborsable.Ripple = true;
+            this.rb_non_remborsable.Size = new System.Drawing.Size(55, 37);
+            this.rb_non_remborsable.TabIndex = 1;
+            this.rb_non_remborsable.TabStop = true;
+            this.rb_non_remborsable.Text = "No";
+            this.rb_non_remborsable.UseVisualStyleBackColor = false;
             // 
-            // materialRadioButton2
+            // rb_remborsable
             // 
-            this.materialRadioButton2.AutoSize = true;
-            this.materialRadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.materialRadioButton2.Depth = 0;
-            this.materialRadioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton2.Location = new System.Drawing.Point(12, 15);
-            this.materialRadioButton2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton2.Name = "materialRadioButton2";
-            this.materialRadioButton2.Ripple = true;
-            this.materialRadioButton2.Size = new System.Drawing.Size(59, 37);
-            this.materialRadioButton2.TabIndex = 0;
-            this.materialRadioButton2.TabStop = true;
-            this.materialRadioButton2.Text = "Oui";
-            this.materialRadioButton2.UseVisualStyleBackColor = false;
+            this.rb_remborsable.AutoSize = true;
+            this.rb_remborsable.BackColor = System.Drawing.Color.Transparent;
+            this.rb_remborsable.Depth = 0;
+            this.rb_remborsable.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rb_remborsable.Location = new System.Drawing.Point(12, 15);
+            this.rb_remborsable.Margin = new System.Windows.Forms.Padding(0);
+            this.rb_remborsable.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rb_remborsable.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rb_remborsable.Name = "rb_remborsable";
+            this.rb_remborsable.Ripple = true;
+            this.rb_remborsable.Size = new System.Drawing.Size(59, 37);
+            this.rb_remborsable.TabIndex = 0;
+            this.rb_remborsable.TabStop = true;
+            this.rb_remborsable.Text = "Oui";
+            this.rb_remborsable.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -1570,7 +1572,7 @@ namespace User_Interface.forms
             // 
             // gb_type
             // 
-            this.gb_type.Controls.Add(this.materialRadioButton3);
+            this.gb_type.Controls.Add(this.type_non_generique);
             this.gb_type.Controls.Add(this.rb_type_generique);
             this.gb_type.Location = new System.Drawing.Point(115, 213);
             this.gb_type.Name = "gb_type";
@@ -1578,28 +1580,30 @@ namespace User_Interface.forms
             this.gb_type.TabIndex = 88;
             this.gb_type.TabStop = false;
             // 
-            // materialRadioButton3
+            // type_non_generique
             // 
-            this.materialRadioButton3.AutoSize = true;
-            this.materialRadioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.materialRadioButton3.Depth = 0;
-            this.materialRadioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.materialRadioButton3.Location = new System.Drawing.Point(197, 16);
-            this.materialRadioButton3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRadioButton3.Name = "materialRadioButton3";
-            this.materialRadioButton3.Ripple = true;
-            this.materialRadioButton3.Size = new System.Drawing.Size(96, 37);
-            this.materialRadioButton3.TabIndex = 1;
-            this.materialRadioButton3.TabStop = true;
-            this.materialRadioButton3.Text = "Princeps";
-            this.materialRadioButton3.UseVisualStyleBackColor = false;
+            this.type_non_generique.AutoSize = true;
+            this.type_non_generique.BackColor = System.Drawing.Color.Transparent;
+            this.type_non_generique.Depth = 0;
+            this.type_non_generique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.type_non_generique.Location = new System.Drawing.Point(197, 16);
+            this.type_non_generique.Margin = new System.Windows.Forms.Padding(0);
+            this.type_non_generique.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.type_non_generique.MouseState = MaterialSkin.MouseState.HOVER;
+            this.type_non_generique.Name = "type_non_generique";
+            this.type_non_generique.Ripple = true;
+            this.type_non_generique.Size = new System.Drawing.Size(96, 37);
+            this.type_non_generique.TabIndex = 1;
+            this.type_non_generique.TabStop = true;
+            this.type_non_generique.Text = "Princeps";
+            this.type_non_generique.UseVisualStyleBackColor = false;
+            this.type_non_generique.Click += new System.EventHandler(this.type_non_generique_Click);
             // 
             // rb_type_generique
             // 
             this.rb_type_generique.AutoSize = true;
             this.rb_type_generique.BackColor = System.Drawing.Color.Transparent;
+            this.rb_type_generique.Checked = true;
             this.rb_type_generique.Depth = 0;
             this.rb_type_generique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rb_type_generique.Location = new System.Drawing.Point(13, 16);
@@ -2432,8 +2436,8 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialTextBox tb_tarif;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gb_rembo;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton1;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton2;
+        private MaterialSkin.Controls.MaterialRadioButton rb_non_remborsable;
+        private MaterialSkin.Controls.MaterialRadioButton rb_remborsable;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox gb_comm;
@@ -2446,7 +2450,7 @@ namespace User_Interface.forms
         private MaterialSkin.Controls.MaterialRadioButton rb_list1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox gb_type;
-        private MaterialSkin.Controls.MaterialRadioButton materialRadioButton3;
+        private MaterialSkin.Controls.MaterialRadioButton type_non_generique;
         private MaterialSkin.Controls.MaterialRadioButton rb_type_generique;
         private System.Windows.Forms.Label label12;
         private MaterialSkin.Controls.MaterialComboBox cb_pays;
