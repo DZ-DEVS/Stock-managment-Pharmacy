@@ -38,17 +38,7 @@ namespace User_Interface.forms
             InitializeComponent();
 
             MaterialFormTheme.ApplyTheme(this);
-
-
-
-
         }
-
-
-     
-
-
-
 
         private void frm_main_Load(object sender, EventArgs e)
         {
@@ -322,7 +312,7 @@ namespace User_Interface.forms
                 switch (e.TabPage.Name)
                 {
                     case "tp_lab":
-                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_nom", "Lab_code");
+                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_pay, "pay_nom", "Pays_code");
                         break;
 
 

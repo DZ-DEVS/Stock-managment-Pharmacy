@@ -267,6 +267,8 @@ namespace Pharma_Libarary.Data
                     // todo : fix the nchar problem in the data base
                     dbContext.Entry(editedMed).CurrentValues.SetValues(med);
                     dbContext.SaveChanges();
+                    MessageBox.Show("The details of the medication have been edited.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (DbEntityValidationException ex)
                 {

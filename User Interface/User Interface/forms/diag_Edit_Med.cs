@@ -19,6 +19,8 @@ namespace User_Interface.forms
     public partial class diag_Edit_Med : Form
     {
         string Ref_med;
+        // todo : link user in edit med diag
+        User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
         public diag_Edit_Med(String Id_forEditing)
         {
             InitializeComponent();
@@ -53,20 +55,47 @@ namespace User_Interface.forms
 
             return null;
         }
+        
         private void materialButton9_Click(object sender, EventArgs e)
         {
-            med.Ref_med = tb_ref_med.Text;
-            med.nom_comrsl = tb_nomMed.Text;
-            med.Dossage = tb_dossage.Text;
-            med.PPA = Convert.ToDecimal(tb_PPA.Text);
-            med.Tarif = Convert.ToDecimal(tb_tarif.Text);
+            WinformClassLibrary.set_textBoxNullValuesTO(panel1);
+            Medicament med = new Medicament(tb_ref_med.Text,
+                tb_nomMed.Text,
+                tb_form.Text,
+                tb_dossage.Text,
+                tb_conditionemnt.Text,
 
-            med.Lab_code = tb_lab.Text;
-            med.Form = tb_form.Text;
+                Convert.ToDecimal(tb_PPA.Text),
+                Convert.ToDecimal(tb_tarif.Text),
+                (Laboratoire)cb_lab.SelectedItem,
+                (Classe_pharmacologique)cb_classPharma.SelectedItem,
+                (Classe_thérapeutique)cb_classThera.SelectedItem,
+                (DCI)cb_Dci.SelectedItem,
+                thisUser);
 
-            if (returnCheckedRadio(gb_rembo).Text == "Oui") med.Remboursable = true; else med.Remboursable = false;
-            if (returnCheckedRadio(gb_type).Text == "Générique") med.Type = true; else med.Type = false;
-            if (returnCheckedRadio(gb_commersilation).Text == "oui") med.Commercialisation = true; else med.Commercialisation = false;
+            if (rb_comme_Oui.Checked)
+            {
+                med.Commercialisation = true;
+            }
+            else med.Commercialisation = false;
+
+            if (rb_rembo_yes.Checked)
+            {
+                med.Remboursable = true;
+            }
+            else if (rb_remb_no.Checked)
+            {
+                med.Remboursable = false;
+            }
+            else med.Remboursable = null;
+
+            if (rb_type_generique.Checked)
+            {
+                med.Type = true;
+                // todo: add dialog to select original med 
+
+            }
+            else med.Type = false;
             if (rb_list1.Checked)
             {
                 med.Liste = "List 1";
@@ -74,12 +103,14 @@ namespace User_Interface.forms
             else if (rb_list2.Checked)
             {
                 med.Liste = "List 2";
-            }else med.Liste = "List 2";
-            med.Lab_code = cb_lab.SelectedItem.ToString();
-            med.nom_Cpharma = cb_classPharma.SelectedItem.ToString();
-            med.nom_DCI = cb_Dci.SelectedItem.ToString();
-            med.code_Cthera = cb_classThera.SelectedItem.ToString();
+            }
+            else if (rb_list3.Checked)
+            {
+                med.Liste = "List 3";
+            }
+            else med.Liste = null;
             sql_connection.edit_Med(med);
+            DialogResult= DialogResult.OK;
             this.Close();
         }
         Medicament med = new Medicament();

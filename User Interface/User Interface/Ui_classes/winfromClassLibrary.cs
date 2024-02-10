@@ -50,8 +50,11 @@ namespace User_Interface
             }
             else
             {
-                diag_Edit_Med edit_Table = new diag_Edit_Med(op[1]);
-                edit_Table.ShowDialog();
+                diag_Edit_Med diag_Edit_Med = new diag_Edit_Med(op[1]);
+                diag_Edit_Med.ShowDialog();
+                if (diag_Edit_Med.DialogResult == DialogResult.OK) {
+                    load_Med_ToListView_with_OutButton(listGlobal);
+                }
             }
         }
 
