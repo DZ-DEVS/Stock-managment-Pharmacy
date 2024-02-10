@@ -163,38 +163,45 @@ namespace Pharma_Libarary.Data
             {
                 using (var context = new dbcontext())
                 {
-                    /// check is exist 
+                    // Check if the Laboratoire already exists
                     bool recordExists = context.Laboratoires.Any(e => e.Lab_code == lab.Lab_code);
                     if (recordExists)
                     {
-                        MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        Laboratoire instance = new Laboratoire
+                        var pays = context.Pays.FirstOrDefault(p => p.Pays_code == lab.pay_code);
+                        if (pays != null)
                         {
-                            Lab_code = lab.Lab_code,
-                            Lab_nom = lab.Lab_nom,
-                            Adress = lab.Adress,
-                            tel = lab.tel,
-                            web_adress = lab.web_adress,
-                            pay_code = lab.pay_code
-                        };
-                        context.Laboratoires.Add(instance);
-                        context.SaveChanges();
+                            context.Laboratoires.Add(lab);
+                            context.SaveChanges();
 
-                        MessageBox.Show("la class labo a ete bien ajoute", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("La classe labo a été ajoutée avec succès.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Le pays avec le code '" + lab.pay_code + "' n'existe pas.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        MessageBox.Show($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                    }
                 }
             }
             catch (Exception e)
             {
-                MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
+                MessageBox.Show("Une erreur s'est produite lors de la création : " + e.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
+
 
         public static void add_Med(Medicament med)
         {
@@ -204,16 +211,17 @@ namespace Pharma_Libarary.Data
                 using (var context = new dbcontext())
                 {
                     bool recordExist = context.Medicaments.Any(e => e.Ref_med == med.Ref_med);
-                    var labs= context.Laboratoires.FirstOrDefault(p => p.Lab_code == med.Lab_code);
-                    var Cphara= context.Classe_pharmacologiques.FirstOrDefault(p => p.nom_Cpharma == med.nom_Cpharma);
-                    var Cthera= context.Classe_thérapeutique.FirstOrDefault(p => p.code_Cthera == med.code_Cthera);
-                    var Dci= context.DCIs.FirstOrDefault(p => p.nom_DCI == med.nom_DCI);
+                    
                     if (recordExist)
                     {
                         MessageBox.Show("cette classe existe déjà !!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
+                        var labs = context.Laboratoires.FirstOrDefault(p => p.Lab_code == med.Lab_code);
+                        var Cphara = context.Classe_pharmacologiques.FirstOrDefault(p => p.nom_Cpharma == med.nom_Cpharma);
+                        var Cthera = context.Classe_thérapeutique.FirstOrDefault(p => p.code_Cthera == med.code_Cthera);
+                        var Dci = context.DCIs.FirstOrDefault(p => p.nom_DCI == med.nom_DCI);
                         labs.Medicaments.Add(med);
                         Cphara.Medicaments.Add(med);
                         Cthera.Medicaments.Add(med);

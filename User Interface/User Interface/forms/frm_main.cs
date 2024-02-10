@@ -183,22 +183,15 @@ namespace User_Interface.forms
                 clear_fields(null, tb_phone); return;  
             }
 
-            
 
 
-            Laboratoire lab = new Laboratoire
-            {
-                
-              Lab_code = tb_codeLab.Text,
-              Lab_nom = tb_nomLab.Text,
-              Adress = tb_adress.Text,
-              tel = tb_phone.Text,
-              web_adress = tb_webAdress.Text,
-              //error hna
-              pay_code = cb_pays.SelectedText,
 
-
-            };
+            Laboratoire lab = new Laboratoire( tb_codeLab.Text,
+                tb_nomLab.Text,
+                tb_adress.Text,
+                tb_phone.Text,
+                tb_webAdress.Text,
+                (Pay) cb_pay.SelectedItem);
             sql_connection.add_Lab(lab);
         }
 
@@ -312,7 +305,7 @@ namespace User_Interface.forms
                 switch (e.TabPage.Name)
                 {
                     case "tp_lab":
-                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_pay, "pay_nom", "Pays_code");
+                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
                         break;
 
 
@@ -355,18 +348,6 @@ namespace User_Interface.forms
 
 
 
-        }
-        private MaterialRadioButton returnCheckedRadio(GroupBox gp)
-        {
-
-            foreach (MaterialRadioButton rb in gp.Controls)
-            {
-
-                if (rb.Checked) return rb;
-
-            }
-
-            return null;
         }
         private void btn_addProduit_Click(object sender, EventArgs e)
         {

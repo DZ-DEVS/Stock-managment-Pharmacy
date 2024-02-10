@@ -13,10 +13,12 @@ namespace Pharma_Libarary.Model
         {
             Laboratoires = new HashSet<Laboratoire>();
         }
+
+
         [Key]
         [StringLength(3)]
         public string Pays_code { get; set; }
-
+        
         [Required]
         [StringLength(20)]
         public string pay_nom { get; set; }
