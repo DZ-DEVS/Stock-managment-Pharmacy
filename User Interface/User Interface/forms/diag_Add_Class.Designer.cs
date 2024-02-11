@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.btn_saveClass = new MaterialSkin.Controls.MaterialButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rb_DCI = new MaterialSkin.Controls.MaterialRadioButton();
             this.rb_classThera = new MaterialSkin.Controls.MaterialRadioButton();
             this.rb_classPharma = new MaterialSkin.Controls.MaterialRadioButton();
             this.label28 = new System.Windows.Forms.Label();
-            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.tb_className = new MaterialSkin.Controls.MaterialTextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.btn_saveClass = new MaterialSkin.Controls.MaterialButton();
             this.materialCard1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.materialCard1.Controls.Add(this.btn_saveClass);
             this.materialCard1.Controls.Add(this.groupBox1);
             this.materialCard1.Controls.Add(this.label28);
-            this.materialCard1.Controls.Add(this.materialTextBox2);
+            this.materialCard1.Controls.Add(this.tb_className);
             this.materialCard1.Controls.Add(this.label27);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -60,6 +60,49 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(485, 352);
             this.materialCard1.TabIndex = 1;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = false;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(277, 296);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(108, 36);
+            this.materialButton1.TabIndex = 111;
+            this.materialButton1.Text = "Annuler";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // btn_saveClass
+            // 
+            this.btn_saveClass.AutoSize = false;
+            this.btn_saveClass.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_saveClass.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btn_saveClass.Depth = 0;
+            this.btn_saveClass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_saveClass.HighEmphasis = true;
+            this.btn_saveClass.Icon = null;
+            this.btn_saveClass.Location = new System.Drawing.Point(81, 296);
+            this.btn_saveClass.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btn_saveClass.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_saveClass.Name = "btn_saveClass";
+            this.btn_saveClass.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btn_saveClass.Size = new System.Drawing.Size(168, 36);
+            this.btn_saveClass.TabIndex = 112;
+            this.btn_saveClass.Text = "Sauvegarder";
+            this.btn_saveClass.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btn_saveClass.UseAccentColor = false;
+            this.btn_saveClass.UseVisualStyleBackColor = true;
+            this.btn_saveClass.Click += new System.EventHandler(this.btn_saveClass_Click);
             // 
             // groupBox1
             // 
@@ -112,6 +155,7 @@
             // 
             this.rb_classPharma.AutoSize = true;
             this.rb_classPharma.BackColor = System.Drawing.Color.Transparent;
+            this.rb_classPharma.Checked = true;
             this.rb_classPharma.Depth = 0;
             this.rb_classPharma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rb_classPharma.Location = new System.Drawing.Point(7, 13);
@@ -138,26 +182,26 @@
             this.label28.TabIndex = 91;
             this.label28.Text = "Class Type :";
             // 
-            // materialTextBox2
+            // tb_className
             // 
-            this.materialTextBox2.AnimateReadOnly = false;
-            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.materialTextBox2.Depth = 0;
-            this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialTextBox2.Hint = "tapez ici...";
-            this.materialTextBox2.LeadingIcon = null;
-            this.materialTextBox2.Location = new System.Drawing.Point(123, 41);
-            this.materialTextBox2.MaxLength = 50;
-            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox2.Multiline = false;
-            this.materialTextBox2.Name = "materialTextBox2";
-            this.materialTextBox2.Size = new System.Drawing.Size(319, 36);
-            this.materialTextBox2.TabIndex = 86;
-            this.materialTextBox2.Text = "";
-            this.materialTextBox2.TrailingIcon = null;
-            this.materialTextBox2.UseTallSize = false;
+            this.tb_className.AnimateReadOnly = false;
+            this.tb_className.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_className.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_className.Depth = 0;
+            this.tb_className.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_className.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_className.Hint = "tapez ici...";
+            this.tb_className.LeadingIcon = null;
+            this.tb_className.Location = new System.Drawing.Point(123, 41);
+            this.tb_className.MaxLength = 50;
+            this.tb_className.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_className.Multiline = false;
+            this.tb_className.Name = "tb_className";
+            this.tb_className.Size = new System.Drawing.Size(319, 36);
+            this.tb_className.TabIndex = 86;
+            this.tb_className.Text = "";
+            this.tb_className.TrailingIcon = null;
+            this.tb_className.UseTallSize = false;
             // 
             // label27
             // 
@@ -171,50 +215,7 @@
             this.label27.TabIndex = 85;
             this.label27.Text = "Class Nom :";
             // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = false;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(277, 296);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(108, 36);
-            this.materialButton1.TabIndex = 111;
-            this.materialButton1.Text = "Annuler";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
-            // 
-            // btn_saveClass
-            // 
-            this.btn_saveClass.AutoSize = false;
-            this.btn_saveClass.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_saveClass.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btn_saveClass.Depth = 0;
-            this.btn_saveClass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_saveClass.HighEmphasis = true;
-            this.btn_saveClass.Icon = null;
-            this.btn_saveClass.Location = new System.Drawing.Point(81, 296);
-            this.btn_saveClass.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btn_saveClass.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btn_saveClass.Name = "btn_saveClass";
-            this.btn_saveClass.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btn_saveClass.Size = new System.Drawing.Size(168, 36);
-            this.btn_saveClass.TabIndex = 112;
-            this.btn_saveClass.Text = "Sauvegarder";
-            this.btn_saveClass.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btn_saveClass.UseAccentColor = false;
-            this.btn_saveClass.UseVisualStyleBackColor = true;
-            this.btn_saveClass.Click += new System.EventHandler(this.btn_saveClass_Click);
-            // 
-            // diag_addClass
+            // diag_Add_Class
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -222,7 +223,7 @@
             this.Controls.Add(this.materialCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimizeBox = false;
-            this.Name = "diag_addClass";
+            this.Name = "diag_Add_Class";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "diag_addClass";
@@ -242,7 +243,7 @@
         private MaterialSkin.Controls.MaterialRadioButton rb_classThera;
         private MaterialSkin.Controls.MaterialRadioButton rb_classPharma;
         private System.Windows.Forms.Label label28;
-        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox tb_className;
         private System.Windows.Forms.Label label27;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton btn_saveClass;

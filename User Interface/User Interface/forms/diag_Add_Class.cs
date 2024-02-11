@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pharma_Libarary.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,21 @@ namespace User_Interface.forms
         private void btn_saveClass_Click(object sender, EventArgs e)
         {
             // TODO : save class depend radio button 
-            this.DialogResult = DialogResult.OK;
+            if (rb_classPharma.Checked)
+            {
+                sql_connection.add_newClass_phatmacologique(tb_className.Text);
+                this.DialogResult = DialogResult.OK;
+            }
+            else if (rb_classThera.Checked)
+            {
+                sql_connection.add_newClass_therapeutique(tb_className.Text);
+                this.DialogResult = DialogResult.OK;
+            }
+            else {
+                sql_connection.add_newClass_DCI(tb_className.Text);
+                this.DialogResult = DialogResult.OK;
+            } 
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

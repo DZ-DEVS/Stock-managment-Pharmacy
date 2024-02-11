@@ -12,7 +12,12 @@ namespace User_Interface
 {
     public static class WinformClassLibrary  
     {
-
+        public enum classMed
+        {
+            cPharma,
+            cTheta,
+            dci,
+        }
         private static dbcontext _context;
         static WinformClassLibrary()
         {

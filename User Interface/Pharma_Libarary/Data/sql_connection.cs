@@ -272,7 +272,6 @@ namespace Pharma_Libarary.Data
                               .Include(m => m.Classe_thérapeutique)
                               .Include(m => m.DCI)
                               .FirstOrDefault(m => m.Ref_med == med.Ref_med);
-                    // todo : fix the nchar problem in the data base
                     dbContext.Entry(editedMed).CurrentValues.SetValues(med);
                     dbContext.SaveChanges();
                     MessageBox.Show("The details of the medication have been edited.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

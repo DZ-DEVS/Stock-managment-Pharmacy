@@ -113,17 +113,14 @@ namespace User_Interface.forms
         
 
 
-        public bool validateallInputs(params MaterialTextBox[] tbs) {
-
+        public bool validateallInputs(params MaterialTextBox[] tbs)
+        {
             foreach (MaterialTextBox t in tbs)
             {
-
                 if (t.Text.Length == 0) 
                 { 
                    return false; 
                 }
-             
-
             }
   
             return true;
@@ -132,42 +129,20 @@ namespace User_Interface.forms
 
         private void clear_fields(GroupBox gb,params MaterialTextBox[] tbs) 
         {
-        
-            foreach (MaterialTextBox t in tbs)
-            {
+            tbs.ToList().ForEach(t => t.Text = "");
 
-                t.Text = "";
-
-            }
-
-           if(gb != null)
-            foreach (RadioButton c in gb.Controls) 
-
-            {
-                c.Checked = false; 
-            }
-
-           
+            if (gb != null)
+            foreach (RadioButton c in gb.Controls) c.Checked = false;
         }
 
 
         private bool validatphoneNumber(string phone)
         {
-
             if (string.IsNullOrEmpty(phone)) return false;
             if (phone.Length != 10) return false;
             if (phone[0] != '0') return false;
-
-
-
-
             return true;
         }
-
-        
-
-
-        
 
         private void tb_addLab_Click(object sender, EventArgs e)
         {
@@ -182,10 +157,6 @@ namespace User_Interface.forms
                 MessageBox.Show("invalid phone number"); 
                 clear_fields(null, tb_phone); return;  
             }
-
-
-
-
             Laboratoire lab = new Laboratoire( tb_codeLab.Text,
                 tb_nomLab.Text,
                 tb_adress.Text,
@@ -197,20 +168,12 @@ namespace User_Interface.forms
 
         private void tb_nomLab_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
-            {
-               
-                e.Handled = true;
-            }
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.') e.Handled = true;
         }
 
         private void tb_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.')
-            {
-
-                e.Handled = true;
-            }
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.') e.Handled = true;
         }
 
         
@@ -223,6 +186,9 @@ namespace User_Interface.forms
             {
                 // TODO: reload all three classes
                 MessageBox.Show("saved");
+                WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
+                WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
+                WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
             }
             
         }
@@ -242,40 +208,26 @@ namespace User_Interface.forms
 
         private void BTN_ajouterPerso_Click_1(object sender, EventArgs e)
         {
+            User newUser = new User();
             if (!validateallInputs(tb_username, tb_Nom, tb_motpass, tb_prenom))
             {
-                MessageBox.Show("Please make sure to fill all neccassery shit");
-                return;
-            }
-            if (!rb_rembo_admin.Checked && !rb_remb_emp.Checked)
-            {
-                MessageBox.Show("Please make sure to select a role ");
+                MessageBox.Show("Veuillez vous assurer de remplir tous les champs nécessaires");
                 return;
             }
 
             if (tb_motpass.Text.Length < 8)
             {
-                MessageBox.Show("For security reason , the passowrd must me atleast 8 chars long "); clear_fields(null, tb_motpass, tb_conPass);
+                MessageBox.Show("Pour des raisons de sécurité, le mot de passe doit comporter au moins 8 caractères"); clear_fields(null, tb_motpass, tb_conPass);
                 return;
             }
 
             if (tb_motpass.Text != tb_conPass.Text)
             {
-                MessageBox.Show("password Doesnt match"); clear_fields(null, tb_motpass, tb_conPass);
+                MessageBox.Show("le mot de passe ne correspond pas"); clear_fields(null, tb_motpass, tb_conPass);
                 return;
             }
 
-            if (!tb_webAdress.Text.Equals(""))
-                
-            {
-
-                if (!tb_webAdress.Text.Contains('@') || !tb_webAdress.Text.Contains('.')) {
-
-                    MessageBox.Show("invalid web adress"); clear_fields(null, tb_webAdress);
-                    return;
-                }
-                   
-            }
+            
             bool admin = false;
             if (rb_rembo_admin.Checked) admin=true;
             User user = new User
@@ -285,15 +237,11 @@ namespace User_Interface.forms
                 prenom = tb_prenom.Text,
                 password = tb_motpass.Text,
                 isAdmin = admin,
-
-
             };
-
+            
             if (sql_connection.add_newUser(user))
-            {
-                MessageBox.Show("User added succefuly UwU"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
-            }
-            else MessageBox.Show("error adding user , wtf did u do"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
+                MessageBox.Show("Utilisateur ajouté avec succès"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
+            
 
         }
 
