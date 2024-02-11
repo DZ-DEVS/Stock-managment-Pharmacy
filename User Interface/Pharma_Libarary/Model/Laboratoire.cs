@@ -28,11 +28,11 @@ namespace Pharma_Libarary.Model
         }
 
         [Key]
-        [StringLength(10)]
+        [StringLength(50)]
         public string Lab_code { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Lab_nom { get; set; }
 
         [StringLength(250)]

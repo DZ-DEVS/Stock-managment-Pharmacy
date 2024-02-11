@@ -171,12 +171,12 @@ namespace Pharma_Libarary.Data
                     }
                     else
                     {
+                        lab.Pay = null;
                         var pays = context.Pays.FirstOrDefault(p => p.Pays_code == lab.pay_code);
                         if (pays != null)
                         {
-                            context.Laboratoires.Add(lab);
+                            pays.Laboratoires.Add(lab);
                             context.SaveChanges();
-
                             MessageBox.Show("La classe labo a été ajoutée avec succès.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
@@ -250,11 +250,6 @@ namespace Pharma_Libarary.Data
                 MessageBox.Show("une erreur s'est produite lors de la création :" + e.ToString());
             }
         }
-
-
-
-
-
 
 
         #endregion
@@ -340,8 +335,6 @@ namespace Pharma_Libarary.Data
                 return meds; // Return the loaded list of Medicament entities
             }
         }
-
-
         #endregion
 
     }

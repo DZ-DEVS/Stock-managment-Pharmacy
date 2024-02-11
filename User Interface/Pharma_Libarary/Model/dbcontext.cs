@@ -170,6 +170,10 @@ namespace Pharma_Libarary.Model
                 .Property(e => e.pay_nom)
                 .IsFixedLength();
 
+            //modelBuilder.Entity<Classe_pharmacologique>()
+            //    .HasMany(e => e.Medicaments)
+            //    .WithRequired(e => e.Classe_pharmacologique)
+            //    .WillCascadeOnDelete(false);
             modelBuilder.Entity<Pay>()
                 .HasMany(e => e.Laboratoires)
                 .WithRequired(e => e.Pay)
