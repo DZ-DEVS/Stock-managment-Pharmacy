@@ -239,6 +239,7 @@ namespace User_Interface.forms
                 isAdmin = admin,
             };
             
+
             if (sql_connection.add_newUser(user))
                 MessageBox.Show("Utilisateur ajouté avec succès"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
             
