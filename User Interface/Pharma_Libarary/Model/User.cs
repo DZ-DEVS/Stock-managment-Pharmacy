@@ -15,7 +15,6 @@ namespace Pharma_Libarary.Model
             Medicaments = new HashSet<Medicament>();
             Selles = new HashSet<Selle>();
         }
-
         public User(string userName, string password, string nom, string prenom, bool? isAdmin)
         {
             this.userName = userName;
@@ -26,7 +25,6 @@ namespace Pharma_Libarary.Model
             Medicaments = new HashSet<Medicament>();
             Selles = new HashSet<Selle>();
         }
-
         [Key]
         [StringLength(15)]
         public string userName { get; set; }
@@ -44,10 +42,6 @@ namespace Pharma_Libarary.Model
         public string prenom { get; set; }
 
         public bool? isAdmin { get; set; }
-
-        [StringLength(10)]
-        public string phone { get; set; }
-
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medicament> Medicaments { get; set; }

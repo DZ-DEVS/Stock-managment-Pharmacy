@@ -83,7 +83,7 @@ namespace User_Interface
             item.SubItems.Add(med.Laboratoire.Lab_nom);
             item.SubItems.Add(med.Classe_pharmacologique.nom_Cpharma);
             item.SubItems.Add(med.Classe_thérapeutique.code_Cthera);
-            item.SubItems.Add(med.Type ? "Générique" : "Princeps");
+            item.SubItems.Add((bool)med.Type ? "Générique" : "Princeps");
             item.SubItems.Add(med.Laboratoire.Pay.Pays_code == "DZD" ? "OUI" : "NON");
             item.SubItems.Add((bool)med.Remboursable ? "OUI" : "NON");
             item.SubItems.Add(med.Tarif.ToString());
@@ -210,7 +210,39 @@ namespace User_Interface
                 }
             }
         }
+        public static void RemoveSpacesAfterLastLetterOrDigit(Panel panel)
+        {
+            foreach (Control control in panel.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = (TextBox)control;
+                    if (textBox == null)
+                    {
+                        string text = textBox.Text;
+                        int lastLetterOrDigitIndex = -1;
 
+                        // Find the index of the last letter or digit
+                        for (int i = text.Length - 1; i >= 0; i--)
+                        {
+                            if (char.IsLetterOrDigit(text[i]))
+                            {
+                                lastLetterOrDigitIndex = i;
+                                break;
+                            }
+                        }
+
+                        // Remove spaces after the last letter or digit
+                        if (lastLetterOrDigitIndex != -1)
+                        {
+                            textBox.Text = text.Substring(0, lastLetterOrDigitIndex + 1) +
+                                             text.Substring(lastLetterOrDigitIndex + 1).Replace(" ", "");
+                        }
+                    }
+                }
+            }
+            
+        }
 
 
 

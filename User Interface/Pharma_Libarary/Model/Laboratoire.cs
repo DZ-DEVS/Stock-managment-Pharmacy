@@ -14,7 +14,6 @@ namespace Pharma_Libarary.Model
         {
             Medicaments = new HashSet<Medicament>();
         }
-
         public Laboratoire(string lab_code, string lab_nom, string adress, string tel, string web_adress, Pay pay)
         {
             Lab_code = lab_code;
@@ -26,7 +25,6 @@ namespace Pharma_Libarary.Model
             pay_code = pay.Pays_code;
             Medicaments = new HashSet<Medicament>();
         }
-
         [Key]
         [StringLength(50)]
         public string Lab_code { get; set; }
@@ -44,7 +42,6 @@ namespace Pharma_Libarary.Model
         [StringLength(50)]
         public string web_adress { get; set; }
 
-        [Required]
         [StringLength(3)]
         public string pay_code { get; set; }
 

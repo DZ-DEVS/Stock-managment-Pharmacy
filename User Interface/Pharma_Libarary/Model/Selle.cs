@@ -12,7 +12,7 @@ namespace Pharma_Libarary.Model
         public int orderID { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Ref_med { get; set; }
 
         public int Qts { get; set; }

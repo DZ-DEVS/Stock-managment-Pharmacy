@@ -58,6 +58,7 @@ namespace User_Interface.forms
         
         private void materialButton9_Click(object sender, EventArgs e)
         {
+            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel1);
             WinformClassLibrary.set_textBoxNullValuesTO(panel1);
             Medicament med = new Medicament(tb_ref_med.Text,
                 tb_nomMed.Text,

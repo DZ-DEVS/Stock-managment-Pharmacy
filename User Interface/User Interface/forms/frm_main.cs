@@ -91,8 +91,8 @@ namespace User_Interface.forms
 
 
                     case "tp_list_stock":
-                       
-                        //fillListView<Pay>(lv_listStock);
+
+                        WinformClassLibrary.load_Med_ToListView_with_OutButton(lv_listStock);
                         break;
 
                     case "tp_lab":
@@ -146,7 +146,7 @@ namespace User_Interface.forms
 
         private void tb_addLab_Click(object sender, EventArgs e)
         {
-
+            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel_lab);
             if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab))
             {
                 MessageBox.Show("Please make sure to fill all neccassery shit");
@@ -190,7 +190,7 @@ namespace User_Interface.forms
                 WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
                 WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
             }
-            
+            /// todo : refresh combo box dont work check it 
         }
 
         
@@ -300,8 +300,16 @@ namespace User_Interface.forms
         }
         private void btn_addProduit_Click(object sender, EventArgs e)
         {
-            
+            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel_lab);
             WinformClassLibrary.set_textBoxNullValuesTO(panel_add_employee);
+            if (tb_tarif.Text.IsNullOrEmpty())
+            {
+                tb_tarif.Text = "0.00";
+            }
+            if (tb_ppa.Text.IsNullOrEmpty())
+            {
+                tb_ppa.Text = "0.00";
+            }
             Medicament med = new Medicament(tb_refMed.Text,
                 tb_NomMed.Text,
                 tb_form.Text,
@@ -351,6 +359,7 @@ namespace User_Interface.forms
             }
             else med.Liste = null;
             sql_connection.add_Med(med);
+
         }
 
         private void tb_tarif_KeyPress(object sender, KeyPressEventArgs e)

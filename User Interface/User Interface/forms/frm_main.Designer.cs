@@ -231,7 +231,7 @@ namespace User_Interface.forms
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1203, 1000);
+            this.tab_control.Size = new System.Drawing.Size(1223, 1000);
             this.tab_control.TabIndex = 0;
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
             this.tab_control.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
@@ -240,7 +240,7 @@ namespace User_Interface.forms
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1195, 953);
+            this.tabPage1.Size = new System.Drawing.Size(1215, 953);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -248,7 +248,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1175, 953);
+            this.tabPage2.Size = new System.Drawing.Size(1195, 953);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -256,7 +256,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1175, 953);
+            this.tabPage3.Size = new System.Drawing.Size(1195, 953);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -268,7 +268,7 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1175, 953);
+            this.tp_home.Size = new System.Drawing.Size(1195, 953);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -282,7 +282,7 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1195, 953);
+            this.tp_list_stock.Size = new System.Drawing.Size(1215, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -316,7 +316,7 @@ namespace User_Interface.forms
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
             this.lv_listStock.Scrollable = false;
-            this.lv_listStock.Size = new System.Drawing.Size(1109, 550);
+            this.lv_listStock.Size = new System.Drawing.Size(1129, 550);
             this.lv_listStock.TabIndex = 107;
             this.lv_listStock.UseCompatibleStateImageBehavior = false;
             this.lv_listStock.View = System.Windows.Forms.View.Details;
@@ -1930,7 +1930,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1175, 953);
+            this.tp_alert.Size = new System.Drawing.Size(1195, 953);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2279,14 +2279,14 @@ namespace User_Interface.forms
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1175, 953);
+            this.tabPage6.Size = new System.Drawing.Size(1195, 953);
             this.tabPage6.TabIndex = 13;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1175, 953);
+            this.tabPage4.Size = new System.Drawing.Size(1195, 953);
             this.tabPage4.TabIndex = 14;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -2294,7 +2294,7 @@ namespace User_Interface.forms
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1175, 953);
+            this.tabPage7.Size = new System.Drawing.Size(1195, 953);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -2304,7 +2304,7 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1175, 953);
+            this.tp_logout.Size = new System.Drawing.Size(1195, 953);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -2313,7 +2313,7 @@ namespace User_Interface.forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1230, 788);
+            this.ClientSize = new System.Drawing.Size(1250, 788);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;

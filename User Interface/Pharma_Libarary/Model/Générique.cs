@@ -13,11 +13,11 @@ namespace Pharma_Libarary.Model
         public string Ref_generique_origine { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string ref_med_origine { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string ref_med_generique { get; set; }
 
         public virtual Medicament Medicament { get; set; }

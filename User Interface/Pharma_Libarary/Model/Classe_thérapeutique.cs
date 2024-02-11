@@ -14,8 +14,9 @@ namespace Pharma_Libarary.Model
         {
             Medicaments = new HashSet<Medicament>();
         }
+
         [Key]
-        [StringLength(50)]
+        [StringLength(100)]
         public string code_Cthera { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

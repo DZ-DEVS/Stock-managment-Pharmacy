@@ -29,7 +29,7 @@ namespace User_Interface.forms
 
         private void btn_saveClass_Click(object sender, EventArgs e)
         {
-            // TODO : save class depend radio button 
+            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel1);
             if (rb_classPharma.Checked)
             {
                 sql_connection.add_newClass_phatmacologique(tb_className.Text);

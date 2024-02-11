@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -257,6 +258,7 @@ namespace Pharma_Libarary.Data
         #region edit and delete
         public static void edit_Med(Medicament med)
         {
+            
             using (var dbContext = new dbcontext())
             {
                 try
@@ -267,6 +269,9 @@ namespace Pharma_Libarary.Data
                               .Include(m => m.Classe_thérapeutique)
                               .Include(m => m.DCI)
                               .FirstOrDefault(m => m.Ref_med == med.Ref_med);
+                    med.Classe_pharmacologique = dbContext.Classe_pharmacologiques.FirstOrDefault(p => p.nom_Cpharma == med.nom_Cpharma);
+                    med.Classe_thérapeutique = dbContext.Classe_thérapeutique.FirstOrDefault(p => p.code_Cthera == med.code_Cthera);
+                    med.DCI = dbContext.DCIs.FirstOrDefault(p => p.nom_DCI == med.nom_DCI);
                     dbContext.Entry(editedMed).CurrentValues.SetValues(med);
                     dbContext.SaveChanges();
                     MessageBox.Show("The details of the medication have been edited.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

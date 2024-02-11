@@ -16,8 +16,7 @@ namespace Pharma_Libarary.Model
             Générique1 = new HashSet<Générique>();
             Selles = new HashSet<Selle>();
         }
-
-        public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI,User user)
+        public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI, User user)
         {
             Ref_med = ref_med;
             this.nom_comrsl = nom_comrsl;
@@ -40,25 +39,24 @@ namespace Pharma_Libarary.Model
             Générique1 = new HashSet<Générique>();
             Selles = new HashSet<Selle>();
         }
-
         [Key]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Ref_med { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string nom_comrsl { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string Form { get; set; }
 
-        [StringLength(10)]
+        [StringLength(50)]
         public string Dossage { get; set; }
 
         [StringLength(10)]
         public string Conditionnement { get; set; }
 
-        public bool Type { get; set; }
+        public bool? Type { get; set; }
 
         [StringLength(10)]
         public string Liste { get; set; }
@@ -68,29 +66,25 @@ namespace Pharma_Libarary.Model
         public bool? Remboursable { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal Tarif { get; set; }
+        public decimal? Tarif { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal PPA { get; set; }
+        public decimal? PPA { get; set; }
 
         [Required]
         [StringLength(15)]
         public string edited_by { get; set; }
 
-        [Required]
-        [StringLength(10)]
+        [StringLength(50)]
         public string Lab_code { get; set; }
 
-        
-        [StringLength(20)]
+        [StringLength(100)]
         public string nom_Cpharma { get; set; }
 
-        
-        [StringLength(20)]
-        public string code_Cthera {get ; set ; }
+        [StringLength(100)]
+        public string code_Cthera { get; set; }
 
-        
-        [StringLength(20)]
+        [StringLength(100)]
         public string nom_DCI { get; set; }
 
         public virtual Classe_pharmacologique Classe_pharmacologique { get; set; }

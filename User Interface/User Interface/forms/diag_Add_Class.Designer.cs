@@ -38,19 +38,20 @@
             this.label28 = new System.Windows.Forms.Label();
             this.tb_className = new MaterialSkin.Controls.MaterialTextBox();
             this.label27 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.materialCard1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.panel1);
             this.materialCard1.Controls.Add(this.materialButton1);
             this.materialCard1.Controls.Add(this.btn_saveClass);
             this.materialCard1.Controls.Add(this.groupBox1);
             this.materialCard1.Controls.Add(this.label28);
-            this.materialCard1.Controls.Add(this.tb_className);
-            this.materialCard1.Controls.Add(this.label27);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard1.Location = new System.Drawing.Point(5, 4);
@@ -192,7 +193,7 @@
             this.tb_className.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_className.Hint = "tapez ici...";
             this.tb_className.LeadingIcon = null;
-            this.tb_className.Location = new System.Drawing.Point(123, 41);
+            this.tb_className.Location = new System.Drawing.Point(110, 7);
             this.tb_className.MaxLength = 50;
             this.tb_className.MouseState = MaterialSkin.MouseState.OUT;
             this.tb_className.Multiline = false;
@@ -208,12 +209,21 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(16, 49);
+            this.label27.Location = new System.Drawing.Point(11, 16);
             this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(93, 20);
             this.label27.TabIndex = 85;
             this.label27.Text = "Class Nom :";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tb_className);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Location = new System.Drawing.Point(17, 43);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 59);
+            this.panel1.TabIndex = 113;
             // 
             // diag_Add_Class
             // 
@@ -231,6 +241,8 @@
             this.materialCard1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +259,6 @@
         private System.Windows.Forms.Label label27;
         private MaterialSkin.Controls.MaterialButton materialButton1;
         private MaterialSkin.Controls.MaterialButton btn_saveClass;
+        private System.Windows.Forms.Panel panel1;
     }
 }
