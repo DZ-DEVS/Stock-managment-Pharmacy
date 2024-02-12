@@ -7,6 +7,7 @@ using System.Drawing;
 using MaterialSkin.Controls;
 using System.Linq;
 using Pharma_Libarary.Data;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace User_Interface
 {
@@ -74,12 +75,15 @@ namespace User_Interface
             position_newButton(200, 34, 34, "d/"+ID, item, listView, deletebutton);
             string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            editbutton.Image = Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
-            deletebutton.Image = Image.FromFile(currentDirectory + "\\delete.bmp");
+            editbutton.Image = System.Drawing.Image.FromFile(currentDirectory + "\\edit-_1_.bmp");
+            deletebutton.Image = System.Drawing.Image.FromFile(currentDirectory + "\\delete.bmp");
         }
         private static ListViewItem listviewItem_MEd(Medicament med)
         {
-            var item = new ListViewItem($"{med.nom_comrsl}, {med.Dossage} ({med.Dossage}/100ml) {med.Form}, {med.Conditionnement}");
+            var item = new ListViewItem($"{removeSpacesFromString(med.nom_comrsl)}, {removeSpacesFromString(med.Dossage)}" +
+                $" ({removeSpacesFromString(med.Dossage)}/100ml)" +
+                $" {removeSpacesFromString(med.Form)}, " +
+                $"{removeSpacesFromString(med.Conditionnement)}");
             item.SubItems.Add(med.Laboratoire.Lab_nom);
             item.SubItems.Add(med.Classe_pharmacologique.nom_Cpharma);
             item.SubItems.Add(med.Classe_thérapeutique.code_Cthera);
@@ -149,7 +153,28 @@ namespace User_Interface
             }
         }
 
+        private  static string removeSpacesFromString( string str)
+        {
+            int lastLetterOrDigitIndex = -1;
+            // Find the index of the last letter or digit
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                if (char.IsLetterOrDigit(str[i]))
+                {
+                    lastLetterOrDigitIndex = i;
+                    if (lastLetterOrDigitIndex != -1)
+                    {
+                        str = str.Substring(0, lastLetterOrDigitIndex + 1);
+                    }
+                    break;
 
+
+                }
+                
+               
+            }
+            return str;
+        }
         private static void EditButtonClick(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
@@ -210,39 +235,9 @@ namespace User_Interface
                 }
             }
         }
-        public static void RemoveSpacesAfterLastLetterOrDigit(Panel panel)
-        {
-            foreach (Control control in panel.Controls)
-            {
-                if (control is TextBox)
-                {
-                    TextBox textBox = (TextBox)control;
-                    if (textBox == null)
-                    {
-                        string text = textBox.Text;
-                        int lastLetterOrDigitIndex = -1;
-
-                        // Find the index of the last letter or digit
-                        for (int i = text.Length - 1; i >= 0; i--)
-                        {
-                            if (char.IsLetterOrDigit(text[i]))
-                            {
-                                lastLetterOrDigitIndex = i;
-                                break;
-                            }
-                        }
-
-                        // Remove spaces after the last letter or digit
-                        if (lastLetterOrDigitIndex != -1)
-                        {
-                            textBox.Text = text.Substring(0, lastLetterOrDigitIndex + 1) +
-                                             text.Substring(lastLetterOrDigitIndex + 1).Replace(" ", "");
-                        }
-                    }
-                }
-            }
+        
             
-        }
+        
 
 
 

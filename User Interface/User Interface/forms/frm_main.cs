@@ -92,7 +92,7 @@ namespace User_Interface.forms
 
                     case "tp_list_stock":
 
-                        WinformClassLibrary.load_Med_ToListView_with_OutButton(lv_listStock);
+                        WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
                         break;
 
                     case "tp_lab":
@@ -146,7 +146,7 @@ namespace User_Interface.forms
 
         private void tb_addLab_Click(object sender, EventArgs e)
         {
-            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel_lab);
+            
             if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab))
             {
                 MessageBox.Show("Please make sure to fill all neccassery shit");
@@ -300,7 +300,6 @@ namespace User_Interface.forms
         }
         private void btn_addProduit_Click(object sender, EventArgs e)
         {
-            WinformClassLibrary.RemoveSpacesAfterLastLetterOrDigit(panel_lab);
             WinformClassLibrary.set_textBoxNullValuesTO(panel_add_employee);
             if (tb_tarif.Text.IsNullOrEmpty())
             {

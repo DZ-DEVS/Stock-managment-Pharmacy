@@ -40,6 +40,8 @@
             this.tb_form = new MaterialSkin.Controls.MaterialTextBox();
             this.tb_dossage = new MaterialSkin.Controls.MaterialTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_conditionemnt = new MaterialSkin.Controls.MaterialTextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cb_Dci = new MaterialSkin.Controls.MaterialComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@
             this.BTN_Annuler = new MaterialSkin.Controls.MaterialButton();
             this.materialButton5 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
-            this.tb_conditionemnt = new MaterialSkin.Controls.MaterialTextBox();
-            this.label29 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.gb_rembo.SuspendLayout();
             this.gb_commersilation.SuspendLayout();
@@ -171,6 +171,7 @@
             this.tb_ref_med.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_ref_med.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_ref_med.Depth = 0;
+            this.tb_ref_med.Enabled = false;
             this.tb_ref_med.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.tb_ref_med.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.tb_ref_med.Hint = "tapez ici...";
@@ -288,6 +289,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1034, 487);
             this.panel1.TabIndex = 88;
+            // 
+            // tb_conditionemnt
+            // 
+            this.tb_conditionemnt.AnimateReadOnly = false;
+            this.tb_conditionemnt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tb_conditionemnt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_conditionemnt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_conditionemnt.Depth = 0;
+            this.tb_conditionemnt.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.tb_conditionemnt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.tb_conditionemnt.Hint = "tapez ici....";
+            this.tb_conditionemnt.LeadingIcon = null;
+            this.tb_conditionemnt.Location = new System.Drawing.Point(712, 438);
+            this.tb_conditionemnt.MaxLength = 50;
+            this.tb_conditionemnt.MouseState = MaterialSkin.MouseState.OUT;
+            this.tb_conditionemnt.Multiline = false;
+            this.tb_conditionemnt.Name = "tb_conditionemnt";
+            this.tb_conditionemnt.Size = new System.Drawing.Size(270, 36);
+            this.tb_conditionemnt.TabIndex = 111;
+            this.tb_conditionemnt.Text = "";
+            this.tb_conditionemnt.TrailingIcon = null;
+            this.tb_conditionemnt.UseTallSize = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.Transparent;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(524, 444);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(142, 20);
+            this.label29.TabIndex = 110;
+            this.label29.Text = "Conditionnement  :";
             // 
             // label15
             // 
@@ -530,6 +565,7 @@
             // 
             this.rb_rembo_yes.AutoSize = true;
             this.rb_rembo_yes.BackColor = System.Drawing.Color.Transparent;
+            this.rb_rembo_yes.Checked = true;
             this.rb_rembo_yes.Depth = 0;
             this.rb_rembo_yes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rb_rembo_yes.Location = new System.Drawing.Point(13, 16);
@@ -810,40 +846,6 @@
             this.materialButton9.UseAccentColor = false;
             this.materialButton9.UseVisualStyleBackColor = true;
             this.materialButton9.Click += new System.EventHandler(this.materialButton9_Click);
-            // 
-            // tb_conditionemnt
-            // 
-            this.tb_conditionemnt.AnimateReadOnly = false;
-            this.tb_conditionemnt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tb_conditionemnt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_conditionemnt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_conditionemnt.Depth = 0;
-            this.tb_conditionemnt.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.tb_conditionemnt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.tb_conditionemnt.Hint = "tapez ici....";
-            this.tb_conditionemnt.LeadingIcon = null;
-            this.tb_conditionemnt.Location = new System.Drawing.Point(712, 438);
-            this.tb_conditionemnt.MaxLength = 50;
-            this.tb_conditionemnt.MouseState = MaterialSkin.MouseState.OUT;
-            this.tb_conditionemnt.Multiline = false;
-            this.tb_conditionemnt.Name = "tb_conditionemnt";
-            this.tb_conditionemnt.Size = new System.Drawing.Size(270, 36);
-            this.tb_conditionemnt.TabIndex = 111;
-            this.tb_conditionemnt.Text = "";
-            this.tb_conditionemnt.TrailingIcon = null;
-            this.tb_conditionemnt.UseTallSize = false;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.Transparent;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(524, 444);
-            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(142, 20);
-            this.label29.TabIndex = 110;
-            this.label29.Text = "Conditionnement  :";
             // 
             // diag_Edit_Med
             // 
