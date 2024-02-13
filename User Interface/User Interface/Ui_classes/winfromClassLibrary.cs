@@ -100,7 +100,7 @@ namespace User_Interface
             if (_context != null)
             {
                 listGlobal = listView;
-                listView.Items.Clear();
+                cleanListview(listView);
                 var medicaments = _context.Medicaments
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)
@@ -175,39 +175,6 @@ namespace User_Interface
             }
             return str;
         }
-        private static void EditButtonClick(object sender, EventArgs e)
-        {
-            Button clickedButton = sender as Button;
-            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
-            string id = listItem.SubItems[0].Text;
-
-            diag_Edit_Med edit_Table = new diag_Edit_Med(id);
-            edit_Table.ShowDialog();
-
-          
-
-           
-        }
-
-        private static void DeleteButtonClick(object sender, EventArgs e)
-        {
-            Button clickedButton = sender as Button;
-            ListViewItem listItem = (ListViewItem)clickedButton.Tag;
-            string id = listItem.SubItems[0].Text;
-
-            Medicament md = _context.Medicaments.Find(id);
-
-            if (md != null)
-            {
-                _context.Medicaments.Remove(md);
-                _context.SaveChanges();
-                MessageBox.Show("Deleted.");
-            }
-            else
-            {
-                MessageBox.Show("Medicament not found.");
-            }
-        }
         public static void intialiaze_ComboBox<T>(MaterialComboBox comboBox, string name, string id) where T : class
         {
             using (var dbContext = new dbcontext())
@@ -237,7 +204,12 @@ namespace User_Interface
         }
         
             
-        
+        public static void cleanListview(ListView listView)
+        {
+            ListView listView1 = new ListView();
+
+        }
+
 
 
 

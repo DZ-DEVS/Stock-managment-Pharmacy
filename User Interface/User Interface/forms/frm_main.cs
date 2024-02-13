@@ -93,6 +93,7 @@ namespace User_Interface.forms
                     case "tp_list_stock":
 
                         WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
+                        //WinformClassLibrary.cleanListview(lv_listStock);
                         break;
 
                     case "tp_lab":

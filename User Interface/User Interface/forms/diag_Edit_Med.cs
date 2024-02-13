@@ -40,22 +40,6 @@ namespace User_Interface.forms
             //MaterialFormTheme.ApplyTheme(this);
 
         }
-        private MaterialRadioButton returnCheckedRadio(GroupBox gp)
-        {
-
-            foreach (MaterialRadioButton rb in gp.Controls)
-            {
-
-                if (rb.Checked)
-                {
-                    return rb;
-                }
-
-            }
-
-            return null;
-        }
-        
         private void materialButton9_Click(object sender, EventArgs e)
         {
             
