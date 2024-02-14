@@ -123,9 +123,9 @@ namespace User_Interface.forms
 
 
                 cb_lab.SelectedItem = cb_lab.Items.Cast<Laboratoire>().FirstOrDefault(item => item.Lab_code == med.Lab_code);
-                cb_Dci.SelectedItem = cb_Dci.Items.Cast<DCI>().FirstOrDefault(item => item.nom_DCI == med.nom_DCI);
-                cb_classPharma.SelectedItem = cb_classPharma.Items.Cast<Classe_pharmacologique>().FirstOrDefault(item => item.nom_Cpharma == med.nom_Cpharma);
-                cb_classThera.SelectedItem = cb_classThera.Items.Cast<Classe_thérapeutique>().FirstOrDefault(item => item.code_Cthera == med.code_Cthera);
+                cb_Dci.SelectedItem = cb_Dci.Items.Cast<DCI>().FirstOrDefault(item =>  item.nom_DCI == med.nom_DCI.Trim());
+                cb_classPharma.SelectedItem = cb_classPharma.Items.Cast<Classe_pharmacologique>().FirstOrDefault(item => item.nom_Cpharma.Trim() == med.nom_Cpharma.Trim());
+                cb_classThera.SelectedItem = cb_classThera.Items.Cast<Classe_thérapeutique>().FirstOrDefault(item => item.code_Cthera == med.code_Cthera.Trim());
 
             }
         }

@@ -100,7 +100,7 @@ namespace User_Interface
             if (_context != null)
             {
                 listGlobal = listView;
-                cleanListview(listView);
+                ListView listView1 = new ListView();
                 var medicaments = _context.Medicaments
                     .Include(m => m.Laboratoire) // Include Laboratoire entity
                     .Include(m => m.Classe_pharmacologique)
@@ -203,12 +203,6 @@ namespace User_Interface
             }
         }
         
-            
-        public static void cleanListview(ListView listView)
-        {
-            ListView listView1 = new ListView();
-
-        }
 
 
 

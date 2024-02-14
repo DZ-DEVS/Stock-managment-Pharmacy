@@ -320,6 +320,7 @@ namespace Pharma_Libarary.Data
                   .Include(m => m.Classe_thérapeutique)
                   .Include(m => m.DCI)
                   .FirstOrDefault(m => m.Ref_med == ID);
+
                 Medicament med = load;
                 return med;
             }

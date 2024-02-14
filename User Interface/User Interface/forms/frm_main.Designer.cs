@@ -441,7 +441,7 @@ namespace User_Interface.forms
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1235, 953);
+            this.tp_admin.Size = new System.Drawing.Size(1255, 953);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -459,7 +459,7 @@ namespace User_Interface.forms
             this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1376, 38);
+            this.materialTabSelector2.Size = new System.Drawing.Size(1396, 38);
             this.materialTabSelector2.TabIndex = 27;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
