@@ -341,6 +341,45 @@ namespace Pharma_Libarary.Data
                 return meds; // Return the loaded list of Medicament entities
             }
         }
+        public static int MedListCount()
+        {
+
+            using (var db = new dbcontext())
+            {
+                try
+                {
+                    var load = db.Medicaments
+                        .Include(m => m.Laboratoire.Pay)
+                        .Include(m => m.Classe_pharmacologique)
+                        .Include(m => m.Classe_thérapeutique)
+                        .Include(m => m.DCI).ToList();
+                    
+                    if (load != null)
+                    {
+                        // Accessing the Count method
+                        return load.Count(); // Assuming Count is a method, invoke it with ()
+                    }
+                    else
+                    {
+                        // Handle the case where the Medicament with the given ID is not found
+                        // You might want to throw an exception or return a default value
+                        // For now, I'll just return 0 as an example
+                        return 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions that might occur during database access
+                    // For example, log the exception and return a default value
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return 0;
+                }
+            }
+
+
+
+
+        }
         #endregion
 
     }

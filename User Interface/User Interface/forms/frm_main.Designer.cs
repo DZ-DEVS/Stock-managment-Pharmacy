@@ -38,6 +38,7 @@ namespace User_Interface.forms
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
+            this.btn_next = new System.Windows.Forms.Button();
             this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -168,6 +169,7 @@ namespace User_Interface.forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
+            this.btn_previou_s = new System.Windows.Forms.Button();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -231,7 +233,7 @@ namespace User_Interface.forms
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1303, 1000);
+            this.tab_control.Size = new System.Drawing.Size(1323, 1000);
             this.tab_control.TabIndex = 0;
             this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tab_control_Selecting);
             this.tab_control.Click += new System.EventHandler(this.Rb_darkTheme_CheckedChanged);
@@ -248,7 +250,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1275, 953);
+            this.tabPage2.Size = new System.Drawing.Size(1295, 953);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -256,7 +258,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1275, 953);
+            this.tabPage3.Size = new System.Drawing.Size(1295, 953);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -268,13 +270,15 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1275, 953);
+            this.tp_home.Size = new System.Drawing.Size(1295, 953);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tp_list_stock.Controls.Add(this.btn_previou_s);
+            this.tp_list_stock.Controls.Add(this.btn_next);
             this.tp_list_stock.Controls.Add(this.lv_listStock);
             this.tp_list_stock.Controls.Add(this.btn_search);
             this.tp_list_stock.Controls.Add(this.BTN_rechercher);
@@ -282,9 +286,19 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1295, 953);
+            this.tp_list_stock.Size = new System.Drawing.Size(1315, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
+            // 
+            // btn_next
+            // 
+            this.btn_next.Location = new System.Drawing.Point(612, 86);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(75, 23);
+            this.btn_next.TabIndex = 108;
+            this.btn_next.Text = "NEXT";
+            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lv_listStock
             // 
@@ -309,14 +323,14 @@ namespace User_Interface.forms
             this.lv_listStock.FullRowSelect = true;
             this.lv_listStock.HideSelection = false;
             this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lv_listStock.Location = new System.Drawing.Point(22, 73);
+            this.lv_listStock.Location = new System.Drawing.Point(16, 115);
             this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
             this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
             this.lv_listStock.Scrollable = false;
-            this.lv_listStock.Size = new System.Drawing.Size(1258, 100);
+            this.lv_listStock.Size = new System.Drawing.Size(1278, 482);
             this.lv_listStock.TabIndex = 107;
             this.lv_listStock.UseCompatibleStateImageBehavior = false;
             this.lv_listStock.View = System.Windows.Forms.View.Details;
@@ -1931,7 +1945,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1275, 953);
+            this.tp_alert.Size = new System.Drawing.Size(1295, 953);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2056,7 +2070,7 @@ namespace User_Interface.forms
             this.tp_settings.ImageKey = "setting (1).png";
             this.tp_settings.Location = new System.Drawing.Point(4, 43);
             this.tp_settings.Name = "tp_settings";
-            this.tp_settings.Size = new System.Drawing.Size(1275, 953);
+            this.tp_settings.Size = new System.Drawing.Size(1295, 953);
             this.tp_settings.TabIndex = 10;
             this.tp_settings.Text = "Parametre";
             // 
@@ -2280,14 +2294,14 @@ namespace User_Interface.forms
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1275, 953);
+            this.tabPage6.Size = new System.Drawing.Size(1295, 953);
             this.tabPage6.TabIndex = 13;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1275, 953);
+            this.tabPage4.Size = new System.Drawing.Size(1295, 953);
             this.tabPage4.TabIndex = 14;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -2295,7 +2309,7 @@ namespace User_Interface.forms
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1275, 953);
+            this.tabPage7.Size = new System.Drawing.Size(1295, 953);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -2305,16 +2319,26 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1275, 953);
+            this.tp_logout.Size = new System.Drawing.Size(1295, 953);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
+            // 
+            // btn_previou_s
+            // 
+            this.btn_previou_s.Location = new System.Drawing.Point(305, 86);
+            this.btn_previou_s.Name = "btn_previou_s";
+            this.btn_previou_s.Size = new System.Drawing.Size(75, 23);
+            this.btn_previou_s.TabIndex = 109;
+            this.btn_previou_s.Text = "previous ";
+            this.btn_previou_s.UseVisualStyleBackColor = true;
+            this.btn_previou_s.Click += new System.EventHandler(this.btn_previou_s_Click);
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1330, 788);
+            this.ClientSize = new System.Drawing.Size(1350, 788);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -2519,5 +2543,7 @@ namespace User_Interface.forms
         private ColumnHeader columnHeader9;
         private MaterialSkin.Controls.MaterialTextBox tb_conditionemnt;
         private Label label29;
+        private Button btn_next;
+        private Button btn_previou_s;
     }
 }

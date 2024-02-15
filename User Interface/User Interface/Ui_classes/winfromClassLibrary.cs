@@ -19,7 +19,7 @@ namespace User_Interface
             cTheta,
             dci,
         }
-        readonly private static dbcontext _context;
+        private static dbcontext _context;
         static WinformClassLibrary()
         {
             _context = new dbcontext();
@@ -50,7 +50,7 @@ namespace User_Interface
                     
                     MessageBox.Show("le médicament a été supprimé avec succès");
                     /// 
-                    Load_Med_ToListView_with_OutButton(listGlobal);
+                    //Load_Med_ToListView_with_OutButton(listGlobal);
                 }
                 else return;
             }
@@ -59,7 +59,7 @@ namespace User_Interface
                 diag_Edit_Med diag_Edit_Med = new diag_Edit_Med(op[1]);
                 diag_Edit_Med.ShowDialog();
                 if (diag_Edit_Med.DialogResult == DialogResult.OK) {
-                    Load_Med_ToListView_with_OutButton(listGlobal);
+                    //Load_Med_ToListView_with_OutButton(listGlobal);
                 }
             }
         }
@@ -94,68 +94,26 @@ namespace User_Interface
 
             return item;
         }
-        private static void ListView_DrawItem(object sender, DrawListViewItemEventArgs e)
-        {
-            // Draw the default item
-            e.DrawDefault = true;
-
-            // Get the bounds of the item
-            Rectangle bounds = e.Bounds;
-
-            // Example: Draw button at the right side of each item
-            Button editButton = new Button();
-            editButton.Text = "Edit";
-            editButton.Bounds = new Rectangle(bounds.Right - 100, bounds.Top, 50, bounds.Height);
-            editButton.Click += (s, args) => {
-                // Handle edit button click
-                // You can access item using e.Item
-            };
-
-            // Example: Draw delete button at the right side of each item
-            Button deleteButton = new Button();
-            deleteButton.Text = "Delete";
-            deleteButton.Bounds = new Rectangle(bounds.Right - 50, bounds.Top, 50, bounds.Height);
-            deleteButton.Click += (s, args) => {
-                // Handle delete button click
-                // You can access item using e.Item
-            };
-
-            // Add buttons to the ListView
-            e.Item.ListView.Controls.Add(editButton);
-            e.Item.ListView.Controls.Add(deleteButton);
-
-            // Subscribe to the ItemSelectionChanged event to hide buttons when the selection changes
-            e.Item.ListView.ItemSelectionChanged += (s, args) => {
-                editButton.Visible = false;
-                deleteButton.Visible = false;
-            };
-
-            // Show buttons only if the current item is selected
-            editButton.Visible = e.Item.Selected;
-            deleteButton.Visible = e.Item.Selected;
-        }
-
         public static ListView listGlobal = new ListView();
-        public static void Load_Med_ToListView_withButton(ListView listView)
+        public static void Load_Med_ToListView_withButton(ListView listView,int start)
         {
-            listView.View = View.Details;
-            listView.Scrollable = true;
-            listView.GridLines = true;
-            listView.OwnerDraw = true; // Enable owner drawing
-
-            // Event handler for drawing items
-            listView.DrawItem += ListView_DrawItem;
             if (_context != null)
             {
-                listGlobal = listView;
-                ListView listView1 = new ListView();
+                listView.Items.Clear();
+                listView.Controls.Clear();
+
+                listView.Refresh();
                 var medicaments = _context.Medicaments
-                    .Include(m => m.Laboratoire) // Include Laboratoire entity
-                    .Include(m => m.Classe_pharmacologique)
-                    .Include(m => m.Laboratoire.Pay)
-                    .Include(m => m.Classe_thérapeutique)
-                    .Include(m => m.DCI)
-                    .ToList(); // Force immediate execution and close the DataReader
+                .Include(m => m.Laboratoire)
+                .Include(m => m.Classe_pharmacologique)
+                .Include(m => m.Laboratoire.Pay)
+                .Include(m => m.Classe_thérapeutique)
+                .Include(m => m.DCI)
+                .OrderBy(m => m.nom_comrsl) // Assuming there's a property like Id you can order by
+                .Skip(start)
+                .Take(10)
+                .ToList();// Force immediate execution and close the DataReader
+
 
                 listView.View = View.Details;
                 listView.Scrollable = true;
@@ -246,6 +204,10 @@ namespace User_Interface
             }
 
         }
+
+
+
+
 
     }
 }

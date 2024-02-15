@@ -29,19 +29,22 @@ namespace User_Interface.forms
     public partial class frm_main : MaterialForm
     {
         readonly User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
+        int indexListviewStock = 0;
+        int numberOfpagesStock = (int)Math.Ceiling((double)Sql_connection.MedListCount() / 10);
+        int currentPaageStock = 1;
+
+
         public frm_main()
         {
 
 
             InitializeComponent();
-
             MaterialFormTheme.ApplyTheme(this);
         }
 
         private void Frm_main_Load(object sender, EventArgs e)
         {
-            //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
-            WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock);
+            //test<User>(listview_khdamin,200, "nom", "prenom", "username");
             tab_control.SelectedTab = tp_list_stock;
         }
 
@@ -90,7 +93,7 @@ namespace User_Interface.forms
 
                     case "tp_list_stock":
 
-                        WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock);
+                        WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock,indexListviewStock);
                         //WinformClassLibrary.cleanListview(lv_listStock);
                         break;
 
@@ -378,6 +381,40 @@ namespace User_Interface.forms
         private void Type_non_generique_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPaageStock < numberOfpagesStock)
+            {
+                btn_next.Enabled = true;
+                btn_previou_s.Enabled = true;
+                currentPaageStock++;
+                indexListviewStock += 10;
+                WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+            }
+            else {
+                btn_next.Enabled = false;
+                btn_previou_s.Enabled = true;
+            } 
+           
+
+        }
+
+        private void btn_previou_s_Click(object sender, EventArgs e)
+        {
+            if (currentPaageStock > 1)
+            {
+                btn_previou_s.Enabled = true;
+                btn_next.Enabled = true;
+                currentPaageStock--;
+                indexListviewStock -= 10;
+                WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+            }
+            else {
+                btn_previou_s.Enabled = false;
+                btn_next.Enabled = true;
+            }  
         }
     }
 
