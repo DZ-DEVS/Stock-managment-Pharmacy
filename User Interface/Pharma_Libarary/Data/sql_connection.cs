@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Pharma_Libarary.Data
 {
-    public class sql_connection
+    public class Sql_connection
     {
         #region insert in data base tables
-        public static bool add_newUser(User newUser)
+        public static bool Add_newUser(User newUser)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace Pharma_Libarary.Data
 
         }
 
-        public static void add_newClass_phatmacologique(String classe_pharmacologique_Name)
+        public static void Add_newClass_phatmacologique(String classe_pharmacologique_Name)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace Pharma_Libarary.Data
 
 
         }
-        public static void add_newClass_therapeutique(String Classe_therapeutique_Name)
+        public static void Add_newClass_therapeutique(String Classe_therapeutique_Name)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace Pharma_Libarary.Data
 
 
         }
-        public static void add_newClass_DCI(String Classe_DCI_Name)
+        public static void Add_newClass_DCI(String Classe_DCI_Name)
         {
             try
             {
@@ -158,7 +158,7 @@ namespace Pharma_Libarary.Data
 
 
         }
-        public static void add_Lab(Laboratoire lab)
+        public static void Add_Lab(Laboratoire lab)
         {
             try
             {
@@ -204,7 +204,7 @@ namespace Pharma_Libarary.Data
         }
 
 
-        public static void add_Med(Medicament med)
+        public static void Add_Med(Medicament med)
         {
 
             try
@@ -256,7 +256,7 @@ namespace Pharma_Libarary.Data
         #endregion
 
         #region edit and delete
-        public static void edit_Med(Medicament med)
+        public static void Edit_Med(Medicament med)
         {
             
             using (var dbContext = new dbcontext())
@@ -290,7 +290,7 @@ namespace Pharma_Libarary.Data
                 }
             }
         }
-        public static void delete_elemnt<T>(string Ref_Med) where T : class
+        public static void Delete_elemnt<T>(string Ref_Med) where T : class
         {
             using (var context = new dbcontext())
             {
@@ -303,12 +303,11 @@ namespace Pharma_Libarary.Data
                     dbSet.Remove(entityToDelete);
                     context.SaveChanges();
                 }
-                entityToDelete = dbSet.Find(Ref_Med);
             }
         }
         #endregion
         #region load class
-        public static Medicament load_med(string ID)
+        public static Medicament Load_med(string ID)
         {
             
             using (var db = new dbcontext())
@@ -326,7 +325,7 @@ namespace Pharma_Libarary.Data
             }
             
         }
-        public static List<Medicament> load_nonGeneriqueMeds()
+        public static List<Medicament> Load_nonGeneriqueMeds()
         {
             using (var db = new dbcontext())
             {

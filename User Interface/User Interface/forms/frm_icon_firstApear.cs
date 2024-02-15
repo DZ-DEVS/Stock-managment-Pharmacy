@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace User_Interface.forms
 {
-    public partial class frm_icon_firstApear : Form
+    public partial class Frm_icon_firstApear : Form
     {
-        public frm_icon_firstApear()
+        public Frm_icon_firstApear()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -34,7 +32,7 @@ namespace User_Interface.forms
             frm.Show();
             // Continue with the rest of your initialization code or any other logic
         }
-        private void frm_icon_firstApear_Load(object sender, EventArgs e)
+        private void Frm_icon_firstApear_Load(object sender, EventArgs e)
         {
             
 

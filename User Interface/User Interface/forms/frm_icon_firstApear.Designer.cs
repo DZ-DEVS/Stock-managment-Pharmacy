@@ -1,6 +1,6 @@
 ﻿namespace User_Interface.forms
 {
-    partial class frm_icon_firstApear
+    partial class Frm_icon_firstApear
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_icon_firstApear));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_icon_firstApear));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,7 +71,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_icon_firstApear";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.frm_icon_firstApear_Load);
+            this.Load += new System.EventHandler(this.Frm_icon_firstApear_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

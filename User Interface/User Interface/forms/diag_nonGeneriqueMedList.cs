@@ -22,7 +22,7 @@ namespace User_Interface.forms
 
         private void dialog_nonGeneriqueMedList_Load(object sender, EventArgs e)
         {
-            List<Medicament> meds=sql_connection.load_nonGeneriqueMeds();
+            List<Medicament> meds=Sql_connection.Load_nonGeneriqueMeds();
             combobox.DataSource = meds;
             combobox.DisplayMember = "nom_comrsl";
             combobox.ValueMember = "Ref_med";

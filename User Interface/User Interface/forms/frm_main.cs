@@ -13,8 +13,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Pharma_Libarary.Model;
-using Pharma_Libarary.Data;
 using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -30,7 +28,7 @@ namespace User_Interface.forms
 {
     public partial class frm_main : MaterialForm
     {
-        User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
+        readonly User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
         public frm_main()
         {
 
@@ -40,10 +38,10 @@ namespace User_Interface.forms
             MaterialFormTheme.ApplyTheme(this);
         }
 
-        private void frm_main_Load(object sender, EventArgs e)
+        private void Frm_main_Load(object sender, EventArgs e)
         {
             //  test<User>(listview_khdamin,200, "nom", "prenom", "username");
-            WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
+            WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock);
             tab_control.SelectedTab = tp_list_stock;
         }
 
@@ -52,7 +50,7 @@ namespace User_Interface.forms
        
         
         
-        private void tab_control_Selecting(object sender, TabControlCancelEventArgs e)
+        private void Tab_control_Selecting(object sender, TabControlCancelEventArgs e)
         {
 
             try
@@ -92,12 +90,12 @@ namespace User_Interface.forms
 
                     case "tp_list_stock":
 
-                        WinformClassLibrary.load_Med_ToListView_withButton(lv_listStock);
+                        WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock);
                         //WinformClassLibrary.cleanListview(lv_listStock);
                         break;
 
                     case "tp_lab":
-                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        WinformClassLibrary.Intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
                         break;
 
                 }
@@ -114,7 +112,7 @@ namespace User_Interface.forms
         
 
 
-        public bool validateallInputs(params MaterialTextBox[] tbs)
+        public bool ValidateallInputs(params MaterialTextBox[] tbs)
         {
             foreach (MaterialTextBox t in tbs)
             {
@@ -128,7 +126,7 @@ namespace User_Interface.forms
         }
 
 
-        private void clear_fields(GroupBox gb,params MaterialTextBox[] tbs) 
+        private void Clear_fields(GroupBox gb,params MaterialTextBox[] tbs) 
         {
             tbs.ToList().ForEach(t => t.Text = "");
 
@@ -137,7 +135,7 @@ namespace User_Interface.forms
         }
 
 
-        private bool validatphoneNumber(string phone)
+        private bool ValidatphoneNumber(string phone)
         {
             if (string.IsNullOrEmpty(phone)) return false;
             if (phone.Length != 10) return false;
@@ -145,18 +143,18 @@ namespace User_Interface.forms
             return true;
         }
 
-        private void tb_addLab_Click(object sender, EventArgs e)
+        private void Tb_addLab_Click(object sender, EventArgs e)
         {
             
-            if (!validateallInputs(tb_nomLab, tb_adress, tb_codeLab))
+            if (!ValidateallInputs(tb_nomLab, tb_adress, tb_codeLab))
             {
                 MessageBox.Show("Please make sure to fill all neccassery shit");
                 return;
             }
-            if (!validatphoneNumber(tb_phone.Text)) 
+            if (!ValidatphoneNumber(tb_phone.Text)) 
             { 
                 MessageBox.Show("invalid phone number"); 
-                clear_fields(null, tb_phone); return;  
+                Clear_fields(null, tb_phone); return;  
             }
             Laboratoire lab = new Laboratoire( tb_codeLab.Text,
                 tb_nomLab.Text,
@@ -164,22 +162,22 @@ namespace User_Interface.forms
                 tb_phone.Text,
                 tb_webAdress.Text,
                 (Pay) cb_pay.SelectedItem);
-            sql_connection.add_Lab(lab);
+            Sql_connection.Add_Lab(lab);
         }
 
-        private void tb_nomLab_KeyPress(object sender, KeyPressEventArgs e)
+        private void Tb_nomLab_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.') e.Handled = true;
         }
 
-        private void tb_phone_KeyPress(object sender, KeyPressEventArgs e)
+        private void Tb_phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8 && e.KeyChar != '.') e.Handled = true;
         }
 
         
 
-        private void btn_addClass_Click(object sender, EventArgs e)
+        private void Btn_addClass_Click(object sender, EventArgs e)
         {
             diag_Add_Class frm = new diag_Add_Class();
             frm.ShowDialog();
@@ -187,16 +185,16 @@ namespace User_Interface.forms
             {
                 // TODO: reload all three classes
                 MessageBox.Show("saved");
-                WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
-                WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
-                WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
+                WinformClassLibrary.Intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
+                WinformClassLibrary.Intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
+                WinformClassLibrary.Intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
             }
             /// todo : refresh combo box dont work check it 
         }
 
         
 
-        private void rb_darkTheme_CheckedChanged(object sender, EventArgs e)
+        private void Rb_darkTheme_CheckedChanged(object sender, EventArgs e)
         {
             if (rb_darkTheme.Checked)
             {
@@ -209,8 +207,8 @@ namespace User_Interface.forms
 
         private void BTN_ajouterPerso_Click_1(object sender, EventArgs e)
         {
-            User newUser = new User();
-            if (!validateallInputs(tb_username, tb_Nom, tb_motpass, tb_prenom))
+            
+            if (!ValidateallInputs(tb_username, tb_Nom, tb_motpass, tb_prenom))
             {
                 MessageBox.Show("Veuillez vous assurer de remplir tous les champs nécessaires");
                 return;
@@ -218,13 +216,13 @@ namespace User_Interface.forms
 
             if (tb_motpass.Text.Length < 8)
             {
-                MessageBox.Show("Pour des raisons de sécurité, le mot de passe doit comporter au moins 8 caractères"); clear_fields(null, tb_motpass, tb_conPass);
+                MessageBox.Show("Pour des raisons de sécurité, le mot de passe doit comporter au moins 8 caractères"); Clear_fields(null, tb_motpass, tb_conPass);
                 return;
             }
 
             if (tb_motpass.Text != tb_conPass.Text)
             {
-                MessageBox.Show("le mot de passe ne correspond pas"); clear_fields(null, tb_motpass, tb_conPass);
+                MessageBox.Show("le mot de passe ne correspond pas"); Clear_fields(null, tb_motpass, tb_conPass);
                 return;
             }
 
@@ -241,13 +239,13 @@ namespace User_Interface.forms
             };
             
 
-            if (sql_connection.add_newUser(user))
-                MessageBox.Show("Utilisateur ajouté avec succès"); clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
+            if (Sql_connection.Add_newUser(user))
+                MessageBox.Show("Utilisateur ajouté avec succès"); Clear_fields(groupBox_role, tb_username, tb_Nom, tb_motpass, tb_prenom, tb_conPass);
             
 
         }
 
-        private void tp_admin_second_Selecting(object sender, TabControlCancelEventArgs e)
+        private void Tp_admin_second_Selecting(object sender, TabControlCancelEventArgs e)
         {
             try
             {
@@ -255,16 +253,16 @@ namespace User_Interface.forms
                 switch (e.TabPage.Name)
                 {
                     case "tp_lab":
-                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
+                        WinformClassLibrary.Intialiaze_ComboBox<Pay>(cb_pay, "pay_nom", "Pays_code");
                         break;
 
 
                     case "tp_produit":
-                        WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
-                        WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
-                        WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
-                        WinformClassLibrary.intialiaze_ComboBox<DCI>(cb_Dci, "nom_DCI", "nom_DCI");
-                        WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pays, "pay_nom", "Pays_code");
+                        WinformClassLibrary.Intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
+                        WinformClassLibrary.Intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
+                        WinformClassLibrary.Intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
+                        WinformClassLibrary.Intialiaze_ComboBox<DCI>(cb_Dci, "nom_DCI", "nom_DCI");
+                        WinformClassLibrary.Intialiaze_ComboBox<Pay>(cb_pays, "pay_nom", "Pays_code");
                         break;
 
                 }
@@ -286,12 +284,12 @@ namespace User_Interface.forms
 
         }
 
-        private void btn_Useranuller_Click(object sender, EventArgs e)
+        private void Btn_Useranuller_Click(object sender, EventArgs e)
         {
-            clear_fields(groupBox_role,tb_Nom,tb_motpass,tb_prenom, tb_conPass,tb_username);
+            Clear_fields(groupBox_role,tb_Nom,tb_motpass,tb_prenom, tb_conPass,tb_username);
         }
 
-        private void materialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void MaterialComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selecteditem = materialComboBox1.SelectedItem.ToString();
             MaterialFormTheme.Changecolorsetting(selecteditem);
@@ -299,9 +297,9 @@ namespace User_Interface.forms
 
 
         }
-        private void btn_addProduit_Click(object sender, EventArgs e)
+        private void Btn_addProduit_Click(object sender, EventArgs e)
         {
-            WinformClassLibrary.set_textBoxNullValuesTO(panel_add_employee);
+            WinformClassLibrary.Set_textBoxNullValuesTO(panel_add_employee);
             if (tb_tarif.Text.IsNullOrEmpty())
             {
                 tb_tarif.Text = "0.00";
@@ -358,11 +356,11 @@ namespace User_Interface.forms
                 med.Liste = "List 3";
             }
             else med.Liste = null;
-            sql_connection.add_Med(med);
+            Sql_connection.Add_Med(med);
 
         }
 
-        private void tb_tarif_KeyPress(object sender, KeyPressEventArgs e)
+        private void Tb_tarif_KeyPress(object sender, KeyPressEventArgs e)
         {
             MaterialTextBox textBox = sender as MaterialTextBox;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -377,7 +375,7 @@ namespace User_Interface.forms
             }
         }
 
-        private void type_non_generique_Click(object sender, EventArgs e)
+        private void Type_non_generique_Click(object sender, EventArgs e)
         {
 
         }

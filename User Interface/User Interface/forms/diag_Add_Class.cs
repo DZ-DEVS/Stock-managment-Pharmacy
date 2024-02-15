@@ -32,16 +32,16 @@ namespace User_Interface.forms
             
             if (rb_classPharma.Checked)
             {
-                sql_connection.add_newClass_phatmacologique(tb_className.Text);
+                Sql_connection.Add_newClass_phatmacologique(tb_className.Text);
                 this.DialogResult = DialogResult.OK;
             }
             else if (rb_classThera.Checked)
             {
-                sql_connection.add_newClass_therapeutique(tb_className.Text);
+                Sql_connection.Add_newClass_therapeutique(tb_className.Text);
                 this.DialogResult = DialogResult.OK;
             }
             else {
-                sql_connection.add_newClass_DCI(tb_className.Text);
+                Sql_connection.Add_newClass_DCI(tb_className.Text);
                 this.DialogResult = DialogResult.OK;
             } 
             this.DialogResult = DialogResult.Cancel;

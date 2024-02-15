@@ -28,11 +28,11 @@ namespace User_Interface.forms
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue900, Primary.Blue50, Primary.LightBlue700, Accent.LightBlue700, TextShade.WHITE);
-            WinformClassLibrary.intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
-            WinformClassLibrary.intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
-            WinformClassLibrary.intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
-            WinformClassLibrary.intialiaze_ComboBox<DCI>(cb_Dci, "nom_DCI", "nom_DCI");
-            WinformClassLibrary.intialiaze_ComboBox<Pay>(cb_pays,"pay_nom", "Pays_code");
+            WinformClassLibrary.Intialiaze_ComboBox<Laboratoire>(cb_lab, "Lab_code", "Lab_nom");
+            WinformClassLibrary.Intialiaze_ComboBox<Classe_pharmacologique>(cb_classPharma, "nom_Cpharma", "nom_Cpharma");
+            WinformClassLibrary.Intialiaze_ComboBox<Classe_thérapeutique>(cb_classThera, "code_Cthera", "code_Cthera");
+            WinformClassLibrary.Intialiaze_ComboBox<DCI>(cb_Dci, "nom_DCI", "nom_DCI");
+            WinformClassLibrary.Intialiaze_ComboBox<Pay>(cb_pays,"pay_nom", "Pays_code");
             Ref_med = Id_forEditing;
             
             
@@ -43,7 +43,7 @@ namespace User_Interface.forms
         private void materialButton9_Click(object sender, EventArgs e)
         {
             
-            WinformClassLibrary.set_textBoxNullValuesTO(panel1);
+            WinformClassLibrary.Set_textBoxNullValuesTO(panel1);
             Medicament med = new Medicament(tb_ref_med.Text,
                 tb_nomMed.Text,
                 tb_form.Text,
@@ -94,7 +94,7 @@ namespace User_Interface.forms
                 med.Liste = "List 3";
             }
             else med.Liste = null;
-            sql_connection.edit_Med(med);
+            Sql_connection.Edit_Med(med);
             DialogResult= DialogResult.OK;
             this.Close();
         }
@@ -103,7 +103,7 @@ namespace User_Interface.forms
         {
             if (Ref_med !=null)
             {
-                med = sql_connection.load_med(Ref_med);
+                med = Sql_connection.Load_med(Ref_med);
                 tb_ref_med.Text = med.Ref_med;
                 tb_nomMed.Text = med.nom_comrsl;
                 tb_dossage.Text = med.Dossage;

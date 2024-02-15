@@ -231,16 +231,16 @@ namespace User_Interface.forms
             this.tab_control.Padding = new System.Drawing.Point(4, 5);
             this.tab_control.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tab_control.SelectedIndex = 0;
-            this.tab_control.Size = new System.Drawing.Size(1263, 1000);
+            this.tab_control.Size = new System.Drawing.Size(1303, 1000);
             this.tab_control.TabIndex = 0;
-            this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tab_control_Selecting);
-            this.tab_control.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
+            this.tab_control.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tab_control_Selecting);
+            this.tab_control.Click += new System.EventHandler(this.Rb_darkTheme_CheckedChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 43);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1255, 953);
+            this.tabPage1.Size = new System.Drawing.Size(1295, 953);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -248,7 +248,7 @@ namespace User_Interface.forms
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 43);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1235, 953);
+            this.tabPage2.Size = new System.Drawing.Size(1275, 953);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -256,7 +256,7 @@ namespace User_Interface.forms
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 43);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1235, 953);
+            this.tabPage3.Size = new System.Drawing.Size(1275, 953);
             this.tabPage3.TabIndex = 8;
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -268,7 +268,7 @@ namespace User_Interface.forms
             this.tp_home.Margin = new System.Windows.Forms.Padding(2);
             this.tp_home.Name = "tp_home";
             this.tp_home.Padding = new System.Windows.Forms.Padding(20);
-            this.tp_home.Size = new System.Drawing.Size(1235, 953);
+            this.tp_home.Size = new System.Drawing.Size(1275, 953);
             this.tp_home.TabIndex = 0;
             this.tp_home.Text = "Accueil ";
             // 
@@ -282,7 +282,7 @@ namespace User_Interface.forms
             this.tp_list_stock.Location = new System.Drawing.Point(4, 43);
             this.tp_list_stock.Margin = new System.Windows.Forms.Padding(2);
             this.tp_list_stock.Name = "tp_list_stock";
-            this.tp_list_stock.Size = new System.Drawing.Size(1255, 953);
+            this.tp_list_stock.Size = new System.Drawing.Size(1295, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
             // 
@@ -309,14 +309,14 @@ namespace User_Interface.forms
             this.lv_listStock.FullRowSelect = true;
             this.lv_listStock.HideSelection = false;
             this.lv_listStock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lv_listStock.Location = new System.Drawing.Point(3, 73);
+            this.lv_listStock.Location = new System.Drawing.Point(22, 73);
             this.lv_listStock.MinimumSize = new System.Drawing.Size(200, 100);
             this.lv_listStock.MouseLocation = new System.Drawing.Point(-1, -1);
             this.lv_listStock.MouseState = MaterialSkin.MouseState.OUT;
             this.lv_listStock.Name = "lv_listStock";
             this.lv_listStock.OwnerDraw = true;
             this.lv_listStock.Scrollable = false;
-            this.lv_listStock.Size = new System.Drawing.Size(1235, 578);
+            this.lv_listStock.Size = new System.Drawing.Size(1258, 100);
             this.lv_listStock.TabIndex = 107;
             this.lv_listStock.UseCompatibleStateImageBehavior = false;
             this.lv_listStock.View = System.Windows.Forms.View.Details;
@@ -412,7 +412,7 @@ namespace User_Interface.forms
             this.tp_transaction.Location = new System.Drawing.Point(4, 43);
             this.tp_transaction.Margin = new System.Windows.Forms.Padding(2);
             this.tp_transaction.Name = "tp_transaction";
-            this.tp_transaction.Size = new System.Drawing.Size(1235, 953);
+            this.tp_transaction.Size = new System.Drawing.Size(1295, 953);
             this.tp_transaction.TabIndex = 2;
             this.tp_transaction.Text = "Transaction";
             this.tp_transaction.UseVisualStyleBackColor = true;
@@ -429,7 +429,7 @@ namespace User_Interface.forms
             this.dgb_soldMed.Name = "dgb_soldMed";
             this.dgb_soldMed.RowHeadersWidth = 51;
             this.dgb_soldMed.RowTemplate.Height = 24;
-            this.dgb_soldMed.Size = new System.Drawing.Size(80, 125);
+            this.dgb_soldMed.Size = new System.Drawing.Size(100, 125);
             this.dgb_soldMed.TabIndex = 0;
             // 
             // tp_admin
@@ -441,7 +441,7 @@ namespace User_Interface.forms
             this.tp_admin.Location = new System.Drawing.Point(4, 43);
             this.tp_admin.Margin = new System.Windows.Forms.Padding(2);
             this.tp_admin.Name = "tp_admin";
-            this.tp_admin.Size = new System.Drawing.Size(1255, 953);
+            this.tp_admin.Size = new System.Drawing.Size(1295, 953);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
             // 
@@ -459,7 +459,7 @@ namespace User_Interface.forms
             this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
             this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1396, 38);
+            this.materialTabSelector2.Size = new System.Drawing.Size(1416, 38);
             this.materialTabSelector2.TabIndex = 27;
             this.materialTabSelector2.Text = "materialTabSelector2";
             // 
@@ -479,7 +479,7 @@ namespace User_Interface.forms
             this.tp_admin_second.SelectedIndex = 0;
             this.tp_admin_second.Size = new System.Drawing.Size(1274, 641);
             this.tp_admin_second.TabIndex = 26;
-            this.tp_admin_second.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tp_admin_second_Selecting);
+            this.tp_admin_second.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tp_admin_second_Selecting);
             // 
             // tp_employee
             // 
@@ -527,7 +527,7 @@ namespace User_Interface.forms
             this.btn_Useranuller.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btn_Useranuller.UseAccentColor = false;
             this.btn_Useranuller.UseVisualStyleBackColor = true;
-            this.btn_Useranuller.Click += new System.EventHandler(this.btn_Useranuller_Click);
+            this.btn_Useranuller.Click += new System.EventHandler(this.Btn_Useranuller_Click);
             // 
             // BTN_ajouterPerso
             // 
@@ -909,7 +909,7 @@ namespace User_Interface.forms
             this.tb_phone.Text = "";
             this.tb_phone.TrailingIcon = null;
             this.tb_phone.UseTallSize = false;
-            this.tb_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_phone_KeyPress);
+            this.tb_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_phone_KeyPress);
             // 
             // tb_adress
             // 
@@ -985,7 +985,7 @@ namespace User_Interface.forms
             this.tb_nomLab.Text = "";
             this.tb_nomLab.TrailingIcon = null;
             this.tb_nomLab.UseTallSize = false;
-            this.tb_nomLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_nomLab_KeyPress);
+            this.tb_nomLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_nomLab_KeyPress);
             // 
             // label20
             // 
@@ -1066,7 +1066,7 @@ namespace User_Interface.forms
             this.tb_addLab.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.tb_addLab.UseAccentColor = false;
             this.tb_addLab.UseVisualStyleBackColor = true;
-            this.tb_addLab.Click += new System.EventHandler(this.tb_addLab_Click);
+            this.tb_addLab.Click += new System.EventHandler(this.Tb_addLab_Click);
             // 
             // materialButton2
             // 
@@ -1354,7 +1354,7 @@ namespace User_Interface.forms
             this.tb_ppa.Text = "";
             this.tb_ppa.TrailingIcon = null;
             this.tb_ppa.UseTallSize = false;
-            this.tb_ppa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tarif_KeyPress);
+            this.tb_ppa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_tarif_KeyPress);
             // 
             // label2
             // 
@@ -1388,7 +1388,7 @@ namespace User_Interface.forms
             this.tb_tarif.Text = "";
             this.tb_tarif.TrailingIcon = null;
             this.tb_tarif.UseTallSize = false;
-            this.tb_tarif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_tarif_KeyPress);
+            this.tb_tarif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tb_tarif_KeyPress);
             // 
             // label7
             // 
@@ -1635,7 +1635,7 @@ namespace User_Interface.forms
             this.type_non_generique.TabStop = true;
             this.type_non_generique.Text = "Princeps";
             this.type_non_generique.UseVisualStyleBackColor = false;
-            this.type_non_generique.Click += new System.EventHandler(this.type_non_generique_Click);
+            this.type_non_generique.Click += new System.EventHandler(this.Type_non_generique_Click);
             // 
             // rb_type_generique
             // 
@@ -1864,7 +1864,7 @@ namespace User_Interface.forms
             this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton9.UseAccentColor = false;
             this.materialButton9.UseVisualStyleBackColor = true;
-            this.materialButton9.Click += new System.EventHandler(this.btn_addProduit_Click);
+            this.materialButton9.Click += new System.EventHandler(this.Btn_addProduit_Click);
             // 
             // materialButton5
             // 
@@ -1885,7 +1885,7 @@ namespace User_Interface.forms
             this.materialButton5.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Outlined;
             this.materialButton5.UseAccentColor = false;
             this.materialButton5.UseVisualStyleBackColor = true;
-            this.materialButton5.Click += new System.EventHandler(this.btn_addClass_Click);
+            this.materialButton5.Click += new System.EventHandler(this.Btn_addClass_Click);
             // 
             // tabPage10
             // 
@@ -1931,7 +1931,7 @@ namespace User_Interface.forms
             this.tp_alert.Location = new System.Drawing.Point(4, 43);
             this.tp_alert.Margin = new System.Windows.Forms.Padding(2);
             this.tp_alert.Name = "tp_alert";
-            this.tp_alert.Size = new System.Drawing.Size(1235, 953);
+            this.tp_alert.Size = new System.Drawing.Size(1275, 953);
             this.tp_alert.TabIndex = 4;
             this.tp_alert.Text = "Alerts";
             this.tp_alert.UseVisualStyleBackColor = true;
@@ -2056,7 +2056,7 @@ namespace User_Interface.forms
             this.tp_settings.ImageKey = "setting (1).png";
             this.tp_settings.Location = new System.Drawing.Point(4, 43);
             this.tp_settings.Name = "tp_settings";
-            this.tp_settings.Size = new System.Drawing.Size(1235, 953);
+            this.tp_settings.Size = new System.Drawing.Size(1275, 953);
             this.tp_settings.TabIndex = 10;
             this.tp_settings.Text = "Parametre";
             // 
@@ -2150,7 +2150,7 @@ namespace User_Interface.forms
             this.materialComboBox1.Size = new System.Drawing.Size(323, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 90;
-            this.materialComboBox1.SelectedIndexChanged += new System.EventHandler(this.materialComboBox1_SelectedIndexChanged);
+            this.materialComboBox1.SelectedIndexChanged += new System.EventHandler(this.MaterialComboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -2206,7 +2206,7 @@ namespace User_Interface.forms
             this.rb_darkTheme.TabStop = true;
             this.rb_darkTheme.Text = "Dark";
             this.rb_darkTheme.UseVisualStyleBackColor = false;
-            this.rb_darkTheme.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
+            this.rb_darkTheme.Click += new System.EventHandler(this.Rb_darkTheme_CheckedChanged);
             // 
             // materialRadioButton5
             // 
@@ -2225,7 +2225,7 @@ namespace User_Interface.forms
             this.materialRadioButton5.TabStop = true;
             this.materialRadioButton5.Text = "Light ";
             this.materialRadioButton5.UseVisualStyleBackColor = false;
-            this.materialRadioButton5.Click += new System.EventHandler(this.rb_darkTheme_CheckedChanged);
+            this.materialRadioButton5.Click += new System.EventHandler(this.Rb_darkTheme_CheckedChanged);
             // 
             // label27
             // 
@@ -2280,14 +2280,14 @@ namespace User_Interface.forms
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Location = new System.Drawing.Point(4, 43);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1235, 953);
+            this.tabPage6.Size = new System.Drawing.Size(1275, 953);
             this.tabPage6.TabIndex = 13;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 43);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1235, 953);
+            this.tabPage4.Size = new System.Drawing.Size(1275, 953);
             this.tabPage4.TabIndex = 14;
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -2295,7 +2295,7 @@ namespace User_Interface.forms
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 43);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1235, 953);
+            this.tabPage7.Size = new System.Drawing.Size(1275, 953);
             this.tabPage7.TabIndex = 15;
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
@@ -2305,7 +2305,7 @@ namespace User_Interface.forms
             this.tp_logout.ImageKey = "exit.png";
             this.tp_logout.Location = new System.Drawing.Point(4, 43);
             this.tp_logout.Name = "tp_logout";
-            this.tp_logout.Size = new System.Drawing.Size(1235, 953);
+            this.tp_logout.Size = new System.Drawing.Size(1275, 953);
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
@@ -2314,7 +2314,7 @@ namespace User_Interface.forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1290, 788);
+            this.ClientSize = new System.Drawing.Size(1330, 788);
             this.Controls.Add(this.tab_control);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.tab_control;
@@ -2327,7 +2327,7 @@ namespace User_Interface.forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accueil";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frm_main_Load);
+            this.Load += new System.EventHandler(this.Frm_main_Load);
             this.tab_control.ResumeLayout(false);
             this.tp_list_stock.ResumeLayout(false);
             this.tp_list_stock.PerformLayout();
