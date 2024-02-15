@@ -436,6 +436,17 @@
     <None Include="Resources\edit-_1_.bmp" />
     <None Include="Resources\edit_bmp.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\arrow.png" />
+    <None Include="Resources\back.png" />
+    <Content Include="Resources\before.png" />
+    <None Include="Resources\next %281%29.png" />
+    <None Include="Resources\right-arrow.png" />
+    <None Include="Resources\left-arrow %281%29.png" />
+    <Content Include="Resources\left-arrow %282%29.png" />
+    <Content Include="Resources\left-arrow.png" />
+    <Content Include="Resources\next.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

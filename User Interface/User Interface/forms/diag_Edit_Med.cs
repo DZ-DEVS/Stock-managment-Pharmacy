@@ -109,8 +109,8 @@ namespace User_Interface.forms
                 tb_dossage.Text = med.Dossage;
                 tb_PPA.Text = med.PPA.ToString();
                 tb_tarif.Text = med.Tarif.ToString();
-                tb_lab.Text = med.Lab_code.ToString();
                 tb_form.Text = med.Form.ToString();
+                tb_conditionemnt.Text = med.Conditionnement;
 
 
                 if ((bool)med.Remboursable) { rb_rembo_yes.Checked = true; } else rb_remb_no.Checked = true;

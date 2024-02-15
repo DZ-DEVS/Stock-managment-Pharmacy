@@ -32,6 +32,7 @@ namespace User_Interface.forms
         int indexListviewStock = 0;
         int numberOfpagesStock = (int)Math.Ceiling((double)Sql_connection.MedListCount() / 10);
         int currentPaageStock = 1;
+        
 
 
         public frm_main()
@@ -40,6 +41,7 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
+            lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
         }
 
         private void Frm_main_Load(object sender, EventArgs e)
@@ -392,6 +394,7 @@ namespace User_Interface.forms
                 currentPaageStock++;
                 indexListviewStock += 10;
                 WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
             }
             else {
                 btn_next.Enabled = false;
@@ -410,6 +413,7 @@ namespace User_Interface.forms
                 currentPaageStock--;
                 indexListviewStock -= 10;
                 WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
             }
             else {
                 btn_previou_s.Enabled = false;

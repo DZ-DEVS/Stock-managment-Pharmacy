@@ -272,10 +272,11 @@ namespace Pharma_Libarary.Data
                     med.Classe_pharmacologique = dbContext.Classe_pharmacologiques.FirstOrDefault(p => p.nom_Cpharma == med.nom_Cpharma);
                     med.Classe_thérapeutique = dbContext.Classe_thérapeutique.FirstOrDefault(p => p.code_Cthera == med.code_Cthera);
                     med.DCI = dbContext.DCIs.FirstOrDefault(p => p.nom_DCI == med.nom_DCI);
-                    //dbContext.Entry(editedMed).CurrentValues.SetValues(med);
+                    dbContext.Entry(editedMed).CurrentValues.SetValues(med);
                     editedMed = med;
                     dbContext.SaveChanges();
-                    MessageBox.Show("The details of the medication have been edited.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Les détails du médicament ont été modifiés." +
+                        "\n Actualisez les données pour les mettre à jour", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (DbEntityValidationException ex)

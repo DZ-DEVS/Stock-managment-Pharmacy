@@ -37,6 +37,17 @@
                 case "orange":
                     materialSkinManager.ColorScheme = new ColorScheme(Primary.Orange600, Primary.Orange300, Primary.DeepOrange100, Accent.DeepOrange700, TextShade.WHITE);
                     break;
+
+                case "pink":
+                    materialSkinManager.ColorScheme = new ColorScheme(
+    Primary.Pink800,    // Primary color
+    Primary.Pink900,    // Dark primary color
+    Primary.Pink200,    // Light primary color
+    Accent.Pink200,     // Accent color
+    TextShade.WHITE     // Text color
+);
+
+                    break;
                 default:
                    
                     materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue600, Primary.Blue300, Primary.Indigo100, Accent.DeepOrange700, TextShade.WHITE);
