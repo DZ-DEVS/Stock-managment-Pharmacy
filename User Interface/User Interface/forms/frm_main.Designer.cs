@@ -38,6 +38,9 @@ namespace User_Interface.forms
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tp_home = new System.Windows.Forms.TabPage();
             this.tp_list_stock = new System.Windows.Forms.TabPage();
+            this.lb_pageIndex = new System.Windows.Forms.Label();
+            this.btn_previou_s = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
             this.lv_listStock = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,6 +55,7 @@ namespace User_Interface.forms
             this.tp_transaction = new System.Windows.Forms.TabPage();
             this.dgb_soldMed = new System.Windows.Forms.DataGridView();
             this.tp_admin = new System.Windows.Forms.TabPage();
+            this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tp_admin_second = new MaterialSkin.Controls.MaterialTabControl();
             this.tp_employee = new System.Windows.Forms.TabPage();
             this.card_employee = new MaterialSkin.Controls.MaterialCard();
@@ -147,7 +151,9 @@ namespace User_Interface.forms
             this.tp_expired_med = new System.Windows.Forms.TabPage();
             this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.tp_other = new System.Windows.Forms.TabPage();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tp_settings = new System.Windows.Forms.TabPage();
+            this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
             this.settins_tabcontrol = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
@@ -165,12 +171,7 @@ namespace User_Interface.forms
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tp_logout = new System.Windows.Forms.TabPage();
-            this.btn_previou_s = new System.Windows.Forms.Button();
-            this.btn_next = new System.Windows.Forms.Button();
-            this.materialTabSelector2 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialTabSelector3 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.lb_pageIndex = new System.Windows.Forms.Label();
+            this.btn_stocklist = new System.Windows.Forms.Button();
             this.tab_control.SuspendLayout();
             this.tp_list_stock.SuspendLayout();
             this.tp_transaction.SuspendLayout();
@@ -278,6 +279,7 @@ namespace User_Interface.forms
             // tp_list_stock
             // 
             this.tp_list_stock.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tp_list_stock.Controls.Add(this.btn_stocklist);
             this.tp_list_stock.Controls.Add(this.lb_pageIndex);
             this.tp_list_stock.Controls.Add(this.btn_previou_s);
             this.tp_list_stock.Controls.Add(this.btn_next);
@@ -291,6 +293,42 @@ namespace User_Interface.forms
             this.tp_list_stock.Size = new System.Drawing.Size(1351, 953);
             this.tp_list_stock.TabIndex = 5;
             this.tp_list_stock.Text = "List de stock";
+            // 
+            // lb_pageIndex
+            // 
+            this.lb_pageIndex.AutoSize = true;
+            this.lb_pageIndex.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_pageIndex.ForeColor = System.Drawing.Color.DimGray;
+            this.lb_pageIndex.Location = new System.Drawing.Point(505, 80);
+            this.lb_pageIndex.Name = "lb_pageIndex";
+            this.lb_pageIndex.Size = new System.Drawing.Size(35, 21);
+            this.lb_pageIndex.TabIndex = 110;
+            this.lb_pageIndex.Text = "2/3";
+            // 
+            // btn_previou_s
+            // 
+            this.btn_previou_s.FlatAppearance.BorderSize = 0;
+            this.btn_previou_s.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_previou_s.Image = global::User_Interface.Properties.Resources.back;
+            this.btn_previou_s.Location = new System.Drawing.Point(450, 73);
+            this.btn_previou_s.Name = "btn_previou_s";
+            this.btn_previou_s.Size = new System.Drawing.Size(34, 34);
+            this.btn_previou_s.TabIndex = 109;
+            this.btn_previou_s.UseVisualStyleBackColor = true;
+            this.btn_previou_s.Click += new System.EventHandler(this.btn_previou_s_Click);
+            // 
+            // btn_next
+            // 
+            this.btn_next.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
+            this.btn_next.FlatAppearance.BorderSize = 0;
+            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_next.Image = global::User_Interface.Properties.Resources.next__1_;
+            this.btn_next.Location = new System.Drawing.Point(556, 72);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(39, 34);
+            this.btn_next.TabIndex = 108;
+            this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lv_listStock
             // 
@@ -450,6 +488,24 @@ namespace User_Interface.forms
             this.tp_admin.Size = new System.Drawing.Size(1351, 953);
             this.tp_admin.TabIndex = 3;
             this.tp_admin.Text = "Page administration";
+            // 
+            // materialTabSelector2
+            // 
+            this.materialTabSelector2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector2.BackColor = System.Drawing.Color.White;
+            this.materialTabSelector2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector2.BackgroundImage")));
+            this.materialTabSelector2.BaseTabControl = this.tp_admin_second;
+            this.materialTabSelector2.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector2.Depth = 0;
+            this.materialTabSelector2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector2.Location = new System.Drawing.Point(-6, 0);
+            this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector2.Name = "materialTabSelector2";
+            this.materialTabSelector2.Size = new System.Drawing.Size(1452, 38);
+            this.materialTabSelector2.TabIndex = 27;
+            this.materialTabSelector2.Text = "materialTabSelector2";
             // 
             // tp_admin_second
             // 
@@ -2018,6 +2074,24 @@ namespace User_Interface.forms
             this.tp_other.TabIndex = 2;
             this.tp_other.Text = "Autre";
             // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector1.BackColor = System.Drawing.Color.White;
+            this.materialTabSelector1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector1.BackgroundImage")));
+            this.materialTabSelector1.BaseTabControl = this.materialTabControl2;
+            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector1.Location = new System.Drawing.Point(4, 0);
+            this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(1136, 38);
+            this.materialTabSelector1.TabIndex = 26;
+            this.materialTabSelector1.Text = "materialTabSelector1";
+            // 
             // tp_settings
             // 
             this.tp_settings.BackColor = System.Drawing.Color.White;
@@ -2029,6 +2103,24 @@ namespace User_Interface.forms
             this.tp_settings.Size = new System.Drawing.Size(1351, 953);
             this.tp_settings.TabIndex = 10;
             this.tp_settings.Text = "Parametre";
+            // 
+            // materialTabSelector3
+            // 
+            this.materialTabSelector3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialTabSelector3.BackColor = System.Drawing.Color.White;
+            this.materialTabSelector3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector3.BackgroundImage")));
+            this.materialTabSelector3.BaseTabControl = this.settins_tabcontrol;
+            this.materialTabSelector3.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
+            this.materialTabSelector3.Depth = 0;
+            this.materialTabSelector3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTabSelector3.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialTabSelector3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector3.Name = "materialTabSelector3";
+            this.materialTabSelector3.Size = new System.Drawing.Size(1199, 38);
+            this.materialTabSelector3.TabIndex = 93;
+            this.materialTabSelector3.Text = "materialTabSelector3";
             // 
             // settins_tabcontrol
             // 
@@ -2262,95 +2354,15 @@ namespace User_Interface.forms
             this.tp_logout.TabIndex = 12;
             this.tp_logout.Text = "Se déconnecter";
             // 
-            // btn_previou_s
+            // btn_stocklist
             // 
-            this.btn_previou_s.FlatAppearance.BorderSize = 0;
-            this.btn_previou_s.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_previou_s.Image = global::User_Interface.Properties.Resources.back;
-            this.btn_previou_s.Location = new System.Drawing.Point(450, 73);
-            this.btn_previou_s.Name = "btn_previou_s";
-            this.btn_previou_s.Size = new System.Drawing.Size(34, 34);
-            this.btn_previou_s.TabIndex = 109;
-            this.btn_previou_s.UseVisualStyleBackColor = true;
-            this.btn_previou_s.Click += new System.EventHandler(this.btn_previou_s_Click);
-            // 
-            // btn_next
-            // 
-            this.btn_next.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.btn_next.FlatAppearance.BorderSize = 0;
-            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_next.Image = global::User_Interface.Properties.Resources.next__1_;
-            this.btn_next.Location = new System.Drawing.Point(556, 72);
-            this.btn_next.Name = "btn_next";
-            this.btn_next.Size = new System.Drawing.Size(39, 34);
-            this.btn_next.TabIndex = 108;
-            this.btn_next.UseVisualStyleBackColor = true;
-            this.btn_next.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // materialTabSelector2
-            // 
-            this.materialTabSelector2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector2.BackColor = System.Drawing.Color.White;
-            this.materialTabSelector2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector2.BackgroundImage")));
-            this.materialTabSelector2.BaseTabControl = this.tp_admin_second;
-            this.materialTabSelector2.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
-            this.materialTabSelector2.Depth = 0;
-            this.materialTabSelector2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector2.Location = new System.Drawing.Point(-6, 0);
-            this.materialTabSelector2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTabSelector2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector2.Name = "materialTabSelector2";
-            this.materialTabSelector2.Size = new System.Drawing.Size(1452, 38);
-            this.materialTabSelector2.TabIndex = 27;
-            this.materialTabSelector2.Text = "materialTabSelector2";
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector1.BackColor = System.Drawing.Color.White;
-            this.materialTabSelector1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector1.BackgroundImage")));
-            this.materialTabSelector1.BaseTabControl = this.materialTabControl2;
-            this.materialTabSelector1.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector1.Location = new System.Drawing.Point(4, 0);
-            this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(1136, 38);
-            this.materialTabSelector1.TabIndex = 26;
-            this.materialTabSelector1.Text = "materialTabSelector1";
-            // 
-            // materialTabSelector3
-            // 
-            this.materialTabSelector3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialTabSelector3.BackColor = System.Drawing.Color.White;
-            this.materialTabSelector3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("materialTabSelector3.BackgroundImage")));
-            this.materialTabSelector3.BaseTabControl = this.settins_tabcontrol;
-            this.materialTabSelector3.CharacterCasing = MaterialSkin.Controls.MaterialTabSelector.CustomCharacterCasing.Normal;
-            this.materialTabSelector3.Depth = 0;
-            this.materialTabSelector3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTabSelector3.Location = new System.Drawing.Point(0, 0);
-            this.materialTabSelector3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTabSelector3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector3.Name = "materialTabSelector3";
-            this.materialTabSelector3.Size = new System.Drawing.Size(1199, 38);
-            this.materialTabSelector3.TabIndex = 93;
-            this.materialTabSelector3.Text = "materialTabSelector3";
-            // 
-            // lb_pageIndex
-            // 
-            this.lb_pageIndex.AutoSize = true;
-            this.lb_pageIndex.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_pageIndex.ForeColor = System.Drawing.Color.DimGray;
-            this.lb_pageIndex.Location = new System.Drawing.Point(505, 80);
-            this.lb_pageIndex.Name = "lb_pageIndex";
-            this.lb_pageIndex.Size = new System.Drawing.Size(35, 21);
-            this.lb_pageIndex.TabIndex = 110;
-            this.lb_pageIndex.Text = "2/3";
+            this.btn_stocklist.Location = new System.Drawing.Point(630, 78);
+            this.btn_stocklist.Name = "btn_stocklist";
+            this.btn_stocklist.Size = new System.Drawing.Size(75, 23);
+            this.btn_stocklist.TabIndex = 111;
+            this.btn_stocklist.Text = "button1";
+            this.btn_stocklist.UseVisualStyleBackColor = true;
+            this.btn_stocklist.Click += new System.EventHandler(this.btn_stocklist_Click);
             // 
             // frm_main
             // 
@@ -2565,5 +2577,6 @@ namespace User_Interface.forms
         private Button btn_next;
         private Button btn_previou_s;
         private Label lb_pageIndex;
+        private Button btn_stocklist;
     }
 }

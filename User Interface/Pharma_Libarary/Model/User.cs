@@ -14,6 +14,7 @@ namespace Pharma_Libarary.Model
         {
             Medicaments = new HashSet<Medicament>();
             Selles = new HashSet<Selle>();
+            stocklists = new HashSet<stocklist>();
         }
         public User(string userName, string password, string nom, string prenom, bool? isAdmin)
         {
@@ -48,5 +49,8 @@ namespace Pharma_Libarary.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selle> Selles { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<stocklist> stocklists { get; set; }
     }
 }

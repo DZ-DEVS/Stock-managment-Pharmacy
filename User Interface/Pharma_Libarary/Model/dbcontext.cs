@@ -20,6 +20,7 @@ namespace Pharma_Libarary.Model
         public virtual DbSet<Medicament> Medicaments { get; set; }
         public virtual DbSet<Pay> Pays { get; set; }
         public virtual DbSet<Selle> Selles { get; set; }
+        public virtual DbSet<stocklist> stocklists { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
 
@@ -27,30 +28,15 @@ namespace Pharma_Libarary.Model
         {
             modelBuilder.Entity<Classe_pharmacologique>()
                 .Property(e => e.nom_Cpharma)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Classe_pharmacologique>()
-                .HasMany(e => e.Medicaments)
-                .WithRequired(e => e.Classe_pharmacologique)
-                .WillCascadeOnDelete(false);
+                .IsUnicode(false);
 
             modelBuilder.Entity<Classe_thérapeutique>()
                 .Property(e => e.code_Cthera)
-                .IsFixedLength();
-
-            modelBuilder.Entity<Classe_thérapeutique>()
-                .HasMany(e => e.Medicaments)
-                .WithRequired(e => e.Classe_thérapeutique)
-                .WillCascadeOnDelete(false);
+                .IsUnicode(false);
 
             modelBuilder.Entity<DCI>()
                 .Property(e => e.nom_DCI)
-                .IsFixedLength();
-
-            modelBuilder.Entity<DCI>()
-                .HasMany(e => e.Medicaments)
-                .WithRequired(e => e.DCI)
-                .WillCascadeOnDelete(false);
+                .IsUnicode(false);
 
             modelBuilder.Entity<Générique>()
                 .Property(e => e.Ref_generique_origine)
@@ -66,11 +52,11 @@ namespace Pharma_Libarary.Model
 
             modelBuilder.Entity<Laboratoire>()
                 .Property(e => e.Lab_code)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Laboratoire>()
                 .Property(e => e.Lab_nom)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Laboratoire>()
                 .Property(e => e.Adress)
@@ -88,11 +74,6 @@ namespace Pharma_Libarary.Model
                 .Property(e => e.pay_code)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Laboratoire>()
-                .HasMany(e => e.Medicaments)
-                .WithRequired(e => e.Laboratoire)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Ref_med)
                 .IsFixedLength();
@@ -103,11 +84,11 @@ namespace Pharma_Libarary.Model
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Form)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Dossage)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Conditionnement)
@@ -131,19 +112,19 @@ namespace Pharma_Libarary.Model
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.Lab_code)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.nom_Cpharma)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.code_Cthera)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .Property(e => e.nom_DCI)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<Medicament>()
                 .HasMany(e => e.Générique)
@@ -155,6 +136,11 @@ namespace Pharma_Libarary.Model
                 .HasMany(e => e.Générique1)
                 .WithRequired(e => e.Medicament1)
                 .HasForeignKey(e => e.ref_med_generique)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Medicament>()
+                .HasMany(e => e.stocklists)
+                .WithRequired(e => e.Medicament)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Medicament>()
@@ -170,15 +156,10 @@ namespace Pharma_Libarary.Model
                 .Property(e => e.pay_nom)
                 .IsFixedLength();
 
-            //modelBuilder.Entity<Classe_pharmacologique>()
-            //    .HasMany(e => e.Medicaments)
-            //    .WithRequired(e => e.Classe_pharmacologique)
-            //    .WillCascadeOnDelete(false);
             modelBuilder.Entity<Pay>()
                 .HasMany(e => e.Laboratoires)
-                .WithRequired(e => e.Pay)
-                .HasForeignKey(e => e.pay_code)
-                .WillCascadeOnDelete(false);
+                .WithOptional(e => e.Pay)
+                .HasForeignKey(e => e.pay_code);
 
             modelBuilder.Entity<Selle>()
                 .Property(e => e.Ref_med)
@@ -190,6 +171,22 @@ namespace Pharma_Libarary.Model
 
             modelBuilder.Entity<Selle>()
                 .Property(e => e.userName)
+                .IsFixedLength();
+
+            modelBuilder.Entity<stocklist>()
+                .Property(e => e.ref_med)
+                .IsFixedLength();
+
+            modelBuilder.Entity<stocklist>()
+                .Property(e => e.nom_fourni)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<stocklist>()
+                .Property(e => e.prenom_fourni)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<stocklist>()
+                .Property(e => e.edited_by)
                 .IsFixedLength();
 
             modelBuilder.Entity<User>()
@@ -217,6 +214,12 @@ namespace Pharma_Libarary.Model
             modelBuilder.Entity<User>()
                 .HasMany(e => e.Selles)
                 .WithRequired(e => e.User)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.stocklists)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.edited_by)
                 .WillCascadeOnDelete(false);
         }
     }

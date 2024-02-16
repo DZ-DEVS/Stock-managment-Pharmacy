@@ -420,6 +420,11 @@ namespace User_Interface.forms
                 btn_next.Enabled = true;
             }  
         }
+
+        private void btn_stocklist_Click(object sender, EventArgs e)
+        {
+            WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+        }
     }
 
 

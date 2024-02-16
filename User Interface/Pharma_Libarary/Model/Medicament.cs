@@ -14,6 +14,7 @@ namespace Pharma_Libarary.Model
         {
             Générique = new HashSet<Générique>();
             Générique1 = new HashSet<Générique>();
+            stocklists = new HashSet<stocklist>();
             Selles = new HashSet<Selle>();
         }
         public Medicament(string ref_med, string nom_comrsl, string form, string dossage, string conditionnement, decimal tarif, decimal pPA, Laboratoire lab, Classe_pharmacologique classe_pharmacologique, Classe_thérapeutique classe_thérapeutique, DCI dCI, User user)
@@ -102,6 +103,9 @@ namespace Pharma_Libarary.Model
         public virtual Laboratoire Laboratoire { get; set; }
 
         public virtual User User { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<stocklist> stocklists { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Selle> Selles { get; set; }
