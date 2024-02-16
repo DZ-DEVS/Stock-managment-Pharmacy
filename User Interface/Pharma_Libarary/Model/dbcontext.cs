@@ -139,7 +139,7 @@ namespace Pharma_Libarary.Model
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Medicament>()
-                .HasMany(e => e.stocklists)
+                .HasMany(e => e.Stocklists)
                 .WithRequired(e => e.Medicament)
                 .WillCascadeOnDelete(false);
 

@@ -438,6 +438,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\arrow.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\refresh.png" />
     <None Include="Resources\back.png" />
     <Content Include="Resources\before.png" />
     <None Include="Resources\next %281%29.png" />

@@ -9,16 +9,17 @@ using System.Linq;
 using Pharma_Libarary.Data;
 using static System.Net.Mime.MediaTypeNames;
 using System.IdentityModel.Metadata;
+using System.Collections.Generic;
 
 namespace User_Interface
 {
     public static class WinformClassLibrary 
     {
-        public enum ClassMed
+        public enum SearchType
         {
-            cPharma,
-            cTheta,
-            dci,
+            all,
+            name,
+            
         }
         private static void Position_newButton(int width, int btol, int bwidth, string Type_AndID, ListViewItem lvi, ListView lv, Button btn)
         {
@@ -88,7 +89,7 @@ namespace User_Interface
             return item;
         }
         public static ListView listGlobal = new ListView();
-        public static void Load_Med_ToListView_withButton(ListView listView,int start)
+        public static void Load_Med_ToListView_withButton(ListView listView,int start,SearchType searchtype,string searchParamatre)
         {
             using (var dbContext = new dbcontext())
             {
@@ -98,17 +99,36 @@ namespace User_Interface
                     listView.Controls.Clear();
 
                     listView.Refresh();
-                    var medicaments = dbContext.Medicaments
-                     .OrderBy(m => m.Ref_med)
-                    .Include(m => m.Laboratoire)
-                    .Include(m => m.Classe_pharmacologique)
-                    .Include(m => m.Laboratoire.Pay)
-                    .Include(m => m.Classe_thérapeutique)
-                    .Include(m => m.DCI)
-                    // Assuming there's a property like Id you can order by
-                    .Skip(start)
-                    .Take(10)
-                    .ToList();// Force immediate execution and close the DataReader
+                    List<Medicament> medicaments = new List<Medicament>();
+                    if (searchtype==SearchType.all)
+                    {
+                              medicaments = dbContext.Medicaments
+                             .OrderBy(m => m.Ref_med)
+                            .Include(m => m.Laboratoire)
+                            .Include(m => m.Classe_pharmacologique)
+                            .Include(m => m.Laboratoire.Pay)
+                            .Include(m => m.Classe_thérapeutique)
+                            .Include(m => m.DCI)
+                            // Assuming there's a property like Id you can order by
+                            .Skip(start)
+                            .Take(10)
+                            .ToList();// Force immediate execution and close the DataReader
+                    }else 
+                    if (searchtype == SearchType.name)
+                    {
+                             medicaments = dbContext.Medicaments
+                            .Where(p => p.nom_comrsl.Contains(searchParamatre))
+                             .OrderBy(m => m.Ref_med)
+                            .Include(m => m.Laboratoire)
+                            .Include(m => m.Classe_pharmacologique)
+                            .Include(m => m.Laboratoire.Pay)
+                            .Include(m => m.Classe_thérapeutique)
+                            .Include(m => m.DCI)
+                            .Skip(start)
+                            .Take(10)
+                            .ToList();
+                    }
+                    
 
 
                     listView.View = View.Details;
@@ -120,36 +140,6 @@ namespace User_Interface
                         var item = ListviewItem_MEd(med);
                         listView.Items.Add(item);
                         Add_button_Edit_Delete(listView, med.Ref_med, item);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Database isn't initialized");
-                }
-            }
-        }
-        
-        public static void Load_Med_ToListView_with_OutButton(ListView listView)
-        {
-            using (var dbContext = new dbcontext())
-            {
-                if (dbContext != null)
-                {
-
-                    var medicaments = dbContext.Medicaments
-                        .Include(m => m.Laboratoire) // Include Laboratoire entity
-                        .Include(m => m.Classe_pharmacologique)
-                        .Include(m => m.Laboratoire.Pay)
-                        .ToList(); // Force immediate execution and close the DataReader
-                    listView.Items.Clear();
-                    listView.View = View.Details;
-                    listView.Scrollable = true;
-                    listView.GridLines = true;
-
-                    foreach (var med in medicaments)
-                    {
-                        var item = ListviewItem_MEd(med);
-                        listView.Items.Add(item);
                     }
                 }
                 else

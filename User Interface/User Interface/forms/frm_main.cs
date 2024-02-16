@@ -48,13 +48,15 @@ namespace User_Interface.forms
         {
             //test<User>(listview_khdamin,200, "nom", "prenom", "username");
             tab_control.SelectedTab = tp_list_stock;
+            tp_list_stock.Focus();  
+
         }
 
 
 
-       
-        
-        
+
+
+
         private void Tab_control_Selecting(object sender, TabControlCancelEventArgs e)
         {
 
@@ -95,7 +97,8 @@ namespace User_Interface.forms
 
                     case "tp_list_stock":
 
-                        WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock,indexListviewStock);
+                        WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock,indexListviewStock,
+                            WinformClassLibrary.SearchType.all,"all");
                         //WinformClassLibrary.cleanListview(lv_listStock);
                         break;
 
@@ -282,11 +285,7 @@ namespace User_Interface.forms
 
         private void BTN_rechercher_Click(object sender, EventArgs e)
         {
-
-
-          
-     
-
+            checkOperationInStockList(0);
         }
 
         private void Btn_Useranuller_Click(object sender, EventArgs e)
@@ -393,7 +392,7 @@ namespace User_Interface.forms
                 btn_previou_s.Enabled = true;
                 currentPaageStock++;
                 indexListviewStock += 10;
-                WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+                checkOperationInStockList(indexListviewStock);
                 lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
             }
             else {
@@ -403,7 +402,16 @@ namespace User_Interface.forms
            
 
         }
+        public void checkOperationInStockList(int indexListviewStock)
+        {
+            if (tb_search.Text=="")
+            {
+                WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock,
+                        WinformClassLibrary.SearchType.all, "all");
+            }else WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock,
+                        WinformClassLibrary.SearchType.name, tb_search.Text);
 
+        }
         private void btn_previou_s_Click(object sender, EventArgs e)
         {
             if (currentPaageStock > 1)
@@ -412,7 +420,7 @@ namespace User_Interface.forms
                 btn_next.Enabled = true;
                 currentPaageStock--;
                 indexListviewStock -= 10;
-                WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+                checkOperationInStockList(indexListviewStock);
                 lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
             }
             else {
@@ -423,7 +431,43 @@ namespace User_Interface.forms
 
         private void btn_stocklist_Click(object sender, EventArgs e)
         {
-            WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock);
+            WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock,
+                            WinformClassLibrary.SearchType.all, "all");
+        }
+
+        private void btn_search_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tb_search.Text!="")
+            {
+                btn_deleteText.Visible = true;
+
+            }else btn_deleteText.Visible = false;
+
+        }
+
+        private void btn_deleteText_Click(object sender, EventArgs e)
+        {
+            tb_search.Text = "";
+        }
+
+        private void tab_control_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (tab_control.SelectedTab == tp_list_stock)
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    BTN_rechercher_Click(sender, e);
+                }
+                else if (e.KeyChar == (char)Keys.Escape)
+                {
+                    btn_deleteText_Click(sender, e);
+                }
+                else tb_search.Focus();
+
+
+            }
+            
+
         }
     }
 
