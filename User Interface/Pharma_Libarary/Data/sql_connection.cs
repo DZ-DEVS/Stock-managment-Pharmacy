@@ -365,7 +365,7 @@ namespace Pharma_Libarary.Data
                         // Handle the case where the Medicament with the given ID is not found
                         // You might want to throw an exception or return a default value
                         // For now, I'll just return 0 as an example
-                        return 0;
+                        return 1;
                     }
                 }
                 catch (Exception ex)
@@ -373,7 +373,39 @@ namespace Pharma_Libarary.Data
                     // Handle any exceptions that might occur during database access
                     // For example, log the exception and return a default value
                     Console.WriteLine("An error occurred: " + ex.Message);
-                    return 0;
+                    return 1;
+                }
+            }
+
+
+
+
+        }
+        public static int StockListCount()
+        {
+
+            using (var db = new dbcontext())
+            {
+                try
+                {
+                    var load = db.stocklists
+                        .Include(m => m.Medicament)
+                        .Include(m => m.User).ToList();
+
+                    if (load != null)
+                    {
+                        return load.Count(); 
+                    }
+                    else
+                    {
+                        return 1;
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return 1;
                 }
             }
 

@@ -30,7 +30,9 @@ namespace User_Interface.forms
     {
         readonly User thisUser = new User("admin", "06122099youcef           ", "youcef         ", "youcef         ", true);
         int indexListviewStock = 0;
-        int numberOfpagesStock = (int)Math.Ceiling((double)Sql_connection.MedListCount() / 10);
+
+        int numberOfpagesProduct = (int)Math.Ceiling((double)Sql_connection.MedListCount() / 10);
+        int numberOfpagesStock = (int)Math.Ceiling((double)Sql_connection.StockListCount() / 10);
         int currentPaageStock = 1;
         
 
@@ -41,7 +43,7 @@ namespace User_Interface.forms
 
             InitializeComponent();
             MaterialFormTheme.ApplyTheme(this);
-            lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
+            lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesProduct;
         }
 
         private void Frm_main_Load(object sender, EventArgs e)
@@ -94,12 +96,15 @@ namespace User_Interface.forms
                         e.Cancel = true;
                         break;
 
+                    case "tp_StockQts":
+                        lb_nbrPagesStockQts.Text = currentPaageStock + "/" + numberOfpagesStock;
+                        break;
 
                     case "tp_list_stock":
-
+                        lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesProduct;
+                        updateListStockPagePageNumber();
                         WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock,indexListviewStock,
                             WinformClassLibrary.SearchType.all,"all");
-                        //WinformClassLibrary.cleanListview(lv_listStock);
                         break;
 
                     case "tp_lab":
@@ -386,14 +391,14 @@ namespace User_Interface.forms
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPaageStock < numberOfpagesStock)
+            if (currentPaageStock < numberOfpagesProduct)
             {
                 btn_next.Enabled = true;
                 btn_previou_s.Enabled = true;
                 currentPaageStock++;
                 indexListviewStock += 10;
                 checkOperationInStockList(indexListviewStock);
-                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
+                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesProduct;
             }
             else {
                 btn_next.Enabled = false;
@@ -421,16 +426,23 @@ namespace User_Interface.forms
                 currentPaageStock--;
                 indexListviewStock -= 10;
                 checkOperationInStockList(indexListviewStock);
-                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesStock;
+                lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesProduct;
             }
             else {
                 btn_previou_s.Enabled = false;
                 btn_next.Enabled = true;
             }  
         }
-
+        public void updateListStockPagePageNumber()
+        {
+            indexListviewStock = 0;
+            numberOfpagesProduct = (int)Math.Ceiling((double)Sql_connection.MedListCount() / 10);
+            currentPaageStock = 1;
+            lb_pageIndex.Text = currentPaageStock + "/" + numberOfpagesProduct;
+        }
         private void btn_stocklist_Click(object sender, EventArgs e)
         {
+            updateListStockPagePageNumber();
             WinformClassLibrary.Load_Med_ToListView_withButton(lv_listStock, indexListviewStock,
                             WinformClassLibrary.SearchType.all, "all");
         }
@@ -448,6 +460,7 @@ namespace User_Interface.forms
         private void btn_deleteText_Click(object sender, EventArgs e)
         {
             tb_search.Text = "";
+            btn_deleteText.Visible = false;
         }
 
         private void tab_control_KeyPress(object sender, KeyPressEventArgs e)
